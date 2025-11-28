@@ -4,6 +4,7 @@
     "[latex]": {
         "editor.wordWrap": "on"
     },
+    "latex-workshop.formatting.latexindent.path": "/usr/local/texlive/2025/bin/universal-darwin/latexindent",
     "latex-workshop.latex.tools": [
         {
             "name": "latexmk",
