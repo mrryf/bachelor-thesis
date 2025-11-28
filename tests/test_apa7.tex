@@ -1,0 +1,27 @@
+\documentclass[stu, 12pt, a4paper, donotrepeattitle]{apa7}
+\usepackage[ngerman]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{csquotes}
+\usepackage{graphicx}
+\usepackage{hyperref}
+
+\title{Test Abstract for Bachelor Thesis}
+\shorttitle{Abstract Test}
+\author{Author Name}
+\affiliation{University Name}
+\course{Course Name}
+\professor{Professor Name}
+\duedate{\today}
+
+\begin{document}
+    \maketitle
+    
+    % APA7 usually puts abstract in an environment, but since 00_abstract.tex has a \section command,
+    % we will just include it here to see how it renders.
+    % Ideally, the content of 00_abstract.tex should be inside \begin{abstract} ... \end{abstract}
+    % and without the \section*{Management Summary} command if following strict APA7.
+    
+    \input{../sections/00_abstract.tex}
+    
+\end{document}
