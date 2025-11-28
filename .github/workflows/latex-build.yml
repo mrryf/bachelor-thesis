@@ -8,6 +8,8 @@ on:
 
 jobs:
   build_latex:
+    permissions:
+      contents: write
     runs-on: ubuntu-latest
     steps:
       - name: Set up Git repository
@@ -25,3 +27,11 @@ jobs:
         with:
           name: PDF
           path: main.pdf
+
+      - name: Create Release
+        uses: softprops/action-gh-release@v1
+        if: github.ref == 'refs/heads/main'
+        with:
+          tag_name: build-${{ github.run_number }}
+          name: ${{ github.event.head_commit.message }}
+          files: main.pdf
