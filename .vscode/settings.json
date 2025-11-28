@@ -3,5 +3,35 @@
     "latex-workshop.view.pdf.viewer": "tab",
     "[latex]": {
         "editor.wordWrap": "on"
-    }
+    },
+    "latex-workshop.latex.tools": [
+        {
+            "name": "latexmk",
+            "command": "latexmk",
+            "args": [
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "-pdf",
+                "-outdir=%OUTDIR%",
+                "%DOC%"
+            ],
+            "env": {
+                "PATH": "/usr/local/texlive/2025/bin/universal-darwin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+            }
+        },
+        {
+            "name": "pdflatex",
+            "command": "pdflatex",
+            "args": [
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "%DOC%"
+            ],
+            "env": {
+                "PATH": "/usr/local/texlive/2025/bin/universal-darwin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+            }
+        }
+    ]
 }
