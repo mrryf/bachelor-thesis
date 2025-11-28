@@ -19,5 +19,16 @@ if ! command -v pdflatex &> /dev/null; then
     exit 1
 fi
 
-# Build the document using latexmk (handles bibliography and multiple passes)
+# Build the main document
+echo "Building main.tex..."
 latexmk -pdf -interaction=nonstopmode -file-line-error -synctex=1 main.tex
+
+# Build individual sections
+echo "Building individual sections..."
+for file in sections/*.tex; do
+    filename=$(basename "$file")
+    echo "Building $filename..."
+    # Compile the section file. latexmk will handle the dependencies.
+    # We use -cd to change directory to the file's location, so ../main.tex is found.
+    latexmk -pdf -cd -interaction=nonstopmode -file-line-error -synctex=1 "$file"
+done
