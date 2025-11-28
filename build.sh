@@ -4,6 +4,9 @@
 # Attempt to fix PATH using path_helper
 eval "$(/usr/libexec/path_helper)"
 
+# Explicitly add MacTeX path
+export PATH="/usr/local/texlive/2025/bin/universal-darwin:$PATH"
+
 # Check if pdflatex is installed
 if ! command -v pdflatex &> /dev/null; then
     echo "Error: pdflatex could not be found."
@@ -16,5 +19,5 @@ if ! command -v pdflatex &> /dev/null; then
     exit 1
 fi
 
-# Build the document
-pdflatex -interaction=nonstopmode -file-line-error -synctex=1 main.tex
+# Build the document using latexmk (handles bibliography and multiple passes)
+latexmk -pdf -interaction=nonstopmode -file-line-error -synctex=1 main.tex
