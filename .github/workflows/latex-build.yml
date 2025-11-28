@@ -2,7 +2,7 @@ name: Build LaTeX Document
 
 on:
   push:
-    branches: [ "main", "master" ]
+    branches: [ "main", "master", "githuab-action-toc_i_t-check" ]
   pull_request:
     branches: [ "main", "master" ]
 
