@@ -231,6 +231,8 @@ INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/endfloat/endfloat.sty
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/endfloat/endfloat.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/float/float.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/float/float.sty
 INPUT /usr/local/texlive/2025/texmf-dist/tex/generic/babel/babel.sty
 INPUT /usr/local/texlive/2025/texmf-dist/tex/generic/babel/babel.sty
 INPUT /usr/local/texlive/2025/texmf-dist/tex/generic/babel/txtbabel.def
