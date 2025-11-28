@@ -1,4 +1,7 @@
 {
     "latex-workshop.formatting.latex": "latexindent",
-    "latex-workshop.view.pdf.viewer": "tab"
+    "latex-workshop.view.pdf.viewer": "tab",
+    "[latex]": {
+        "editor.wordWrap": "on"
+    }
 }
