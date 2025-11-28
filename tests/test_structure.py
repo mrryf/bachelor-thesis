@@ -55,10 +55,23 @@ def get_bibliography_keys():
     if not os.path.exists(BIB_FILE):
         return set()
     
-    with open(BIB_FILE, 'r') as bibtex_file:
-        bib_database = bibtexparser.load(bibtex_file)
-    
-    return set(entry['ID'] for entry in bib_database.entries)
+    try:
+        with open(BIB_FILE, 'r', encoding='utf-8') as bibtex_file:
+            bib_database = bibtexparser.load(bibtex_file)
+        keys = set(entry['ID'] for entry in bib_database.entries)
+    except Exception as e:
+        print(f"Warning: bibtexparser failed: {e}. Falling back to regex.")
+        keys = set()
+
+    if not keys:
+        # Fallback: simple regex to find @article{key, etc.
+        with open(BIB_FILE, 'r', encoding='utf-8') as f:
+            content = f.read()
+        # Match @type{key,
+        regex_keys = re.findall(r'@\w+\s*\{\s*([^,]+),', content)
+        keys = set(k.strip() for k in regex_keys)
+        
+    return keys
 
 def test_references_consistency():
     """Test 2 & 3: Check consistency between citations and bibliography."""
