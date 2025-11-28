@@ -326,10 +326,10 @@ INPUT ./10_quellenverzeichnis.out
 INPUT ./10_quellenverzeichnis.out
 INPUT 10_quellenverzeichnis.out
 INPUT 10_quellenverzeichnis.out
+OUTPUT 10_quellenverzeichnis.pdf
 INPUT ./10_quellenverzeichnis.out
 INPUT ./10_quellenverzeichnis.out
 OUTPUT 10_quellenverzeichnis.out
-OUTPUT 10_quellenverzeichnis.pdf
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/apa7/config/APA7ngerman.txt
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/apa7/config/APA7ngerman.txt
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/apa7/config/APA7ngerman.txt
