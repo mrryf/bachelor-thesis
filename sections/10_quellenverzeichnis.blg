@@ -1,19 +1,9 @@
 [0] Config.pm:308> INFO - This is Biber 2.20
 [0] Config.pm:311> INFO - Logfile is '10_quellenverzeichnis.blg'
-[45] biber-darwin:340> INFO - === Fr Nov 28, 2025, 22:41:03
-[56] Biber.pm:420> INFO - Reading '10_quellenverzeichnis.bcf'
-[112] Biber.pm:991> INFO - Using all citekeys in bib section 0
-[126] Biber.pm:4463> INFO - Processing section 0
-[132] Biber.pm:4654> INFO - Looking for bibtex file 'bibliography.bib' for section 0
-[134] bibtex.pm:1713> INFO - LaTeX decoding ...
-[148] bibtex.pm:1519> INFO - Found BibTeX data source 'bibliography.bib'
-[268] UCollate.pm:68> INFO - Overriding locale 'de-DE' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[268] UCollate.pm:68> INFO - Overriding locale 'de-DE' defaults 'variable = shifted' with 'variable = non-ignorable'
-[268] Biber.pm:4283> INFO - Sorting list 'apa/apasortcite//global/global/global' of type 'entry' with template 'apa' and locale 'de-DE'
-[269] Biber.pm:4289> INFO - No sort tailoring available for locale 'de-DE'
-[304] UCollate.pm:68> INFO - Overriding locale 'de-DE' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[304] UCollate.pm:68> INFO - Overriding locale 'de-DE' defaults 'variable = shifted' with 'variable = non-ignorable'
-[304] Biber.pm:4283> INFO - Sorting list 'apa/global//global/global/global' of type 'entry' with template 'apa' and locale 'de-DE'
-[304] Biber.pm:4289> INFO - No sort tailoring available for locale 'de-DE'
-[324] bbl.pm:676> INFO - Writing '10_quellenverzeichnis.bbl' with encoding 'UTF-8'
-[340] bbl.pm:779> INFO - Output to 10_quellenverzeichnis.bbl
+[40] biber-darwin:340> INFO - === Fr Nov 28, 2025, 23:11:46
+[50] Biber.pm:420> INFO - Reading '10_quellenverzeichnis.bcf'
+[106] Biber.pm:994> INFO - Found 0 citekeys in bib section 0
+[118] bbl.pm:676> INFO - Writing '10_quellenverzeichnis.bbl' with encoding 'UTF-8'
+[118] bbl.pm:779> INFO - Output to 10_quellenverzeichnis.bbl
+[118] Biber.pm:131> WARN - The file '10_quellenverzeichnis.bcf' does not contain any citations!
+[119] Biber.pm:133> INFO - WARNINGS: 1

@@ -1,12 +1,12 @@
 # Fdb version 4
-["biber main"] 1764362692.45457 "main.bcf" "main.bbl" "main" 1764366748.37591 0
-  "bibliography.bib" 1764352171.00965 7720 e780959460ae934914e10b137fc6bacb ""
-  "main.bcf" 1764366748.23224 137569 d90342398da8cf7ad25ecb8dcce2dc7a "pdflatex"
+["biber main"] 1764368247.25804 "main.bcf" "main.bbl" "main" 1764368315.17648 0
+  "bibliography.bib" 1764367885.8617 7721 36911ebfb0b8e6d2968b1161bc5595ed ""
+  "main.bcf" 1764368315.02327 137567 a62a3c2cf10a96f2d55f48d4a9a80c4d "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1764366746.01284 "main.tex" "main.pdf" "main" 1764366748.37625 2
+["pdflatex"] 1764368312.92136 "main.tex" "main.pdf" "main" 1764368315.17688 0
   "/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc" 1254269338 2375 baa924870cfb487815765f9094cf3728 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc" 1202520719 2405 5dcf2c1b967ee25cc46c58cd52244aed ""
   "/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc" 1202520719 2840 216e6e45ad352e2456e1149f28885bee ""
@@ -217,25 +217,25 @@
   "/usr/local/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1764347245 5467155 19efa205003f9ecad95fbbaa6ff24da1 ""
   "/usr/local/texlive/2025/texmf-var/web2c/pdftex/pdflatex.fmt" 1764347146 3345741 4676ea7f3e7a609a766b31b746a50cb9 ""
   "/usr/local/texlive/2025/texmf.cnf" 1741450484 577 418a7058ec8e006d8704f60ecd22c938 ""
-  "main.aux" 1764366748.22691 17736 f55f4fa7612a6902d8f3cbd1187fe378 "pdflatex"
-  "main.bbl" 1764362694.37486 38018 aadc3bf297a50e9ad0f8f7ad1c67d97d "biber main"
-  "main.fff" 1764366748.17381 619 12857576fbbc806eb1d3bb2ce4d89151 "pdflatex"
-  "main.lof" 1764366748.23314 407 b15245aee7b4810242c9ab351a0fcd7b "pdflatex"
-  "main.lot" 1764366748.23316 436 0405223f2293f7a977b7c824efae3746 "pdflatex"
-  "main.out" 1764366748.23106 11068 cdb626b0fca4c92ef5b60b83a6c740f4 "pdflatex"
-  "main.run.xml" 1764366748.23304 2425 7f10c5c2573b0c79e2d6c904ff829c6a "pdflatex"
+  "main.aux" 1764368315.01833 17524 94ae08e364ceed9ee927961931c8fb27 "pdflatex"
+  "main.bbl" 1764368248.67039 38020 40587755ce818d9d7b179d6f514dbcdd "biber main"
+  "main.fff" 1764368314.96864 699 0c6c546fbd0578f280dfbe76bcdb11a8 "pdflatex"
+  "main.lof" 1764368315.02421 407 b15245aee7b4810242c9ab351a0fcd7b "pdflatex"
+  "main.lot" 1764368315.02425 436 0405223f2293f7a977b7c824efae3746 "pdflatex"
+  "main.out" 1764368315.02215 10957 a78573f6cd006eb85c5d0d905a7032d6 "pdflatex"
+  "main.run.xml" 1764368315.02409 2425 7f10c5c2573b0c79e2d6c904ff829c6a "pdflatex"
   "main.tex" 1764366718.38571 1078 e6350484e139e5486b51c4a31c55caa2 ""
-  "main.toc" 1764366748.2331 5038 21c9818fe3c81c43c630611577d84616 "pdflatex"
-  "main.ttt" 1764366747.98555 3262 f1a789246259ddf11a978dad346b0e3c "pdflatex"
+  "main.toc" 1764368315.02416 4945 68bfc0204fc4bce46c8dc4f717c9b798 "pdflatex"
+  "main.ttt" 1764368314.76339 3262 f1a789246259ddf11a978dad346b0e3c "pdflatex"
   "resources/images/ba_faryf_ai_tam.jpg" 1764362483.08657 381155 7a9245e17c642b1feb43a37f995e94bf ""
   "resources/images/ba_faryf_messmodell.jpg" 1764362505.92695 613743 8fe573d902f73be3f0a41cc8c0243dbb ""
   "sections/00_abstract.tex" 1764361027.95765 3339 d0b55fe7ea12d6687a1be9e0a5f8cc30 ""
   "sections/01_introduction.tex" 1764362003.12294 5905 d10fbcb11576d8fd86d4a11679cb3036 ""
-  "sections/02_theory.tex" 1764363674.30006 16713 b1ac23c41a3f4fea4a255fe1aabc4043 ""
+  "sections/02_theory.tex" 1764368282.11591 16875 c5d24cc3deab5480f4109a382d3c680f ""
   "sections/03_methodology.tex" 1764362679.31496 21868 bb5005dd32a866165fa2bef63bda1470 ""
   "sections/04_ausgangslage.tex" 1764363996.95062 153 5ef4e59a625824136677fe99f8a12605 ""
   "sections/05_machbarkeit.tex" 1764364625.46078 152 5db7cd86cb8475f823db2c06da1b81ef ""
-  "sections/10_quellenverzeichnis.tex" 1764366049.36482 148 0eec4712899e82873f0868d0017f212c ""
+  "sections/10_quellenverzeichnis.tex" 1764368089.42108 150 030d411b94ad2def12c10f52dce736a9 ""
   "sections/11_abbildungen.tex" 1764366439.12482 85 0ffb816b8ae0ef6ac7d51b73546a80ea ""
   "sections/12_tabellenverzeichnis.tex" 1764366716.45328 84 f7b1924843a8913033d033601ac1b1a4 ""
   (generated)

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.11.28)  28 NOV 2025 22:52
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.11.28)  28 NOV 2025 23:14
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1214,84 +1214,40 @@ Package biblatex Info: ... file '10_quellenverzeichnis.bbl' found.
 (./10_quellenverzeichnis.bbl)
 Package biblatex Info: Reference section=0 on input line 2.
 Package biblatex Info: Reference segment=0 on input line 2.
-LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 7
-.
 
-(/usr/local/texlive/2025/texmf-dist/tex/latex/lm/ot1lmr.fd
-File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
-LaTeX Font Info:    Trying to load font information for OML+lmm on input line 7
-.
 
-(/usr/local/texlive/2025/texmf-dist/tex/latex/lm/omllmm.fd
-File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
-LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
-7.
+LaTeX Warning: Empty bibliography on input line 8.
 
-(/usr/local/texlive/2025/texmf-dist/tex/latex/lm/omslmsy.fd
-File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
-LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
-7.
-
-(/usr/local/texlive/2025/texmf-dist/tex/latex/lm/omxlmex.fd
-File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 7.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 7.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 7.
-
+AED endfloat: Processing end Figures and Tables
 
 [1{/usr/local/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/l
 ocal/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}
 
 ]
-./10_quellenverzeichnis.tex:7: Misplaced alignment tab character &.
-<argument> Restorative Dentistry &
-                                   Endodontics
-l.7 \printbibliography[heading=bibintoc]
-                                        
-I can't figure out why you would want to use a tab mark
-here. If you just want an ampersand, the remedy is
-simple: Just type `I\&' now. But if some right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
-
-
-
-[2] AED endfloat: Processing end Figures and Tables
-
-[3] (./10_quellenverzeichnis.aux)
+(./10_quellenverzeichnis.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
  ***********
 Package rerunfilecheck Info: File `10_quellenverzeichnis.out' has not changed.
-(rerunfilecheck)             Checksum: 0175B4AE37C1185D5FB81664C6965AE4;89.
+(rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
 Package logreq Info: Writing requests to '10_quellenverzeichnis.run.xml'.
 \openout1 = `10_quellenverzeichnis.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 32821 strings out of 473190
- 631795 string characters out of 5715799
- 1552205 words of memory out of 5000000
- 55539 multiletter control sequences out of 15000+600000
- 591911 words of font info for 61 fonts, out of 8000000 for 9000
+ 32325 strings out of 473190
+ 619181 string characters out of 5715799
+ 1537245 words of memory out of 5000000
+ 55102 multiletter control sequences out of 15000+600000
+ 562824 words of font info for 40 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
  119i,11n,122p,1198b,7179s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/lo
-cal/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive
-/2025/texmf-dist/fonts/type1/public/lm/lmri12.pfb>
-Output written on 10_quellenverzeichnis.pdf (3 pages, 91017 bytes).
+</usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr12.pfb>
+Output written on 10_quellenverzeichnis.pdf (1 page, 20564 bytes).
 PDF statistics:
- 99 PDF objects out of 1000 (max. 8388607)
- 87 compressed objects within 1 object stream
- 30 named destinations out of 1000 (max. 500000)
- 21 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 22 PDF objects out of 1000 (max. 8388607)
+ 16 compressed objects within 1 object stream
+ 2 named destinations out of 1000 (max. 500000)
+ 13 words of extra memory for PDF output out of 10000 (max. 10000000)
 
