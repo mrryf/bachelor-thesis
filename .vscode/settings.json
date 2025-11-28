@@ -1,7 +1,8 @@
 {
     "latex-workshop.view.pdf.viewer": "tab",
     "[latex]": {
-        "editor.wordWrap": "on"
+        "editor.wordWrap": "on",
+        "editor.formatOnSave": false
     },
     "latex-workshop.latex.tools": [
         {

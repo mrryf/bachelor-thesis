@@ -1,13 +1,13 @@
 # Fdb version 4
-["biber 10_quellenverzeichnis"] 1764366061.54699 "10_quellenverzeichnis.bcf" "10_quellenverzeichnis.bbl" "10_quellenverzeichnis" 1764366480.09494 0
-  "10_quellenverzeichnis.bcf" 1764366479.99423 133786 9df8320ae548457d061750a068afbfc5 "pdflatex"
-  "bibliography.bib" 1764366469.97643 7720 e780959460ae934914e10b137fc6bacb ""
+["biber 10_quellenverzeichnis"] 1764366061.54699 "10_quellenverzeichnis.bcf" "10_quellenverzeichnis.bbl" "10_quellenverzeichnis" 1764366758.75774 0
+  "10_quellenverzeichnis.bcf" 1764366758.60951 133786 9df8320ae548457d061750a068afbfc5 "pdflatex"
+  "bibliography.bib" 1764366748.3873 7720 e780959460ae934914e10b137fc6bacb ""
   (generated)
   "10_quellenverzeichnis.bbl"
   "10_quellenverzeichnis.blg"
   (rewritten before read)
-["pdflatex"] 1764366478.73889 "10_quellenverzeichnis.tex" "10_quellenverzeichnis.pdf" "10_quellenverzeichnis" 1764366480.09532 2
-  "../main.tex" 1764366441.09199 1036 da44f01c83cbc92c8d6a2f29c8c237aa ""
+["pdflatex"] 1764366757.25148 "10_quellenverzeichnis.tex" "10_quellenverzeichnis.pdf" "10_quellenverzeichnis" 1764366758.75818 2
+  "../main.tex" 1764366718.38571 1078 e6350484e139e5486b51c4a31c55caa2 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc" 1254269338 2375 baa924870cfb487815765f9094cf3728 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/tfm/adobe/symbol/psyr.tfm" 1136768653 1408 5937f58aa508ea2cea4901c07d10f5fe ""
@@ -205,10 +205,10 @@
   "/usr/local/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1764347245 5467155 19efa205003f9ecad95fbbaa6ff24da1 ""
   "/usr/local/texlive/2025/texmf-var/web2c/pdftex/pdflatex.fmt" 1764347146 3345741 4676ea7f3e7a609a766b31b746a50cb9 ""
   "/usr/local/texlive/2025/texmf.cnf" 1741450484 577 418a7058ec8e006d8704f60ecd22c938 ""
-  "10_quellenverzeichnis.aux" 1764366479.99081 2948 a453d8d075d423ec0f528d536a094f33 "pdflatex"
+  "10_quellenverzeichnis.aux" 1764366758.60661 2948 a453d8d075d423ec0f528d536a094f33 "pdflatex"
   "10_quellenverzeichnis.bbl" 1764366063.37571 93618 a55074863be8f856b7369852458d8ad3 "biber 10_quellenverzeichnis"
-  "10_quellenverzeichnis.out" 1764366479.99297 89 0175b4ae37c1185d5fb81664c6965ae4 "pdflatex"
-  "10_quellenverzeichnis.run.xml" 1764366479.99504 2544 f56c39f73a612202fdf16a546a1cf2da "pdflatex"
+  "10_quellenverzeichnis.out" 1764366758.60845 89 0175b4ae37c1185d5fb81664c6965ae4 "pdflatex"
+  "10_quellenverzeichnis.run.xml" 1764366758.61025 2544 f56c39f73a612202fdf16a546a1cf2da "pdflatex"
   "10_quellenverzeichnis.tex" 1764366049.36482 148 0eec4712899e82873f0868d0017f212c ""
   (generated)
   "10_quellenverzeichnis.aux"
