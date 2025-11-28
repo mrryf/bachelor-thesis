@@ -3,8 +3,8 @@ import sys
 from pyzotero import zotero
 
 def sync_zotero():
-    api_key = os.environ.get('ZOTERO_API_KEY')
-    user_id = os.environ.get('ZOTERO_USER_ID')
+    api_key = os.environ.get('ZOTERO_API_KEY', '').strip()
+    user_id = os.environ.get('ZOTERO_USER_ID', '').strip()
     collection_id = '6ABWTZEP' # Bachelor Thesis / 02_Prestudy
     
     if not api_key or not user_id:
