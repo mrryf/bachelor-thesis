@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.11.28)  28 NOV 2025 21:46
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.11.28)  28 NOV 2025 22:01
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1507,28 +1507,29 @@ LaTeX Warning: Float too large for page by 706.07071pt on input line 19.
 
 {/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}]
 (./02_theory.fff
-<../resources/images/image1.jpeg, id=161, 1370.11874pt x 558.085pt>
-File: ../resources/images/image1.jpeg Graphic file (type jpg)
-<use ../resources/images/image1.jpeg>
-Package pdftex.def Info: ../resources/images/image1.jpeg  used on input line 5.
-
-(pdftex.def)             Requested size: 452.9679pt x 184.50073pt.
+<../resources/images/ba_faryf_ai_tam.jpg, id=161, 4773.835pt x 3375.61125pt>
+File: ../resources/images/ba_faryf_ai_tam.jpg Graphic file (type jpg)
+<use ../resources/images/ba_faryf_ai_tam.jpg>
+Package pdftex.def Info: ../resources/images/ba_faryf_ai_tam.jpg  used on input
+ line 5.
+(pdftex.def)             Requested size: 452.9679pt x 320.27434pt.
 
 
 [10
 
- <../resources/images/image1.jpeg>]
-<../resources/images/image2.jpeg, id=169, 1378.14874pt x 973.6375pt>
-File: ../resources/images/image2.jpeg Graphic file (type jpg)
-<use ../resources/images/image2.jpeg>
-Package pdftex.def Info: ../resources/images/image2.jpeg  used on input line 15
-.
-(pdftex.def)             Requested size: 452.9679pt x 320.00885pt.
+ <../resources/images/ba_faryf_ai_tam.jpg>]
+<../resources/images/ba_faryf_messmodell.jpg, id=169, 4773.835pt x 3375.61125pt
+>
+File: ../resources/images/ba_faryf_messmodell.jpg Graphic file (type jpg)
+<use ../resources/images/ba_faryf_messmodell.jpg>
+Package pdftex.def Info: ../resources/images/ba_faryf_messmodell.jpg  used on i
+nput line 15.
+(pdftex.def)             Requested size: 452.9679pt x 320.27434pt.
 )
 
 [11
 
- <../resources/images/image2.jpeg>] (./02_theory.aux)
+ <../resources/images/ba_faryf_messmodell.jpg>] (./02_theory.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
@@ -1541,7 +1542,7 @@ Package logreq Info: Writing requests to '02_theory.run.xml'.
  ) 
 Here is how much of TeX's memory you used:
  32837 strings out of 473190
- 629696 string characters out of 5715799
+ 629876 string characters out of 5715799
  1545933 words of memory out of 5000000
  55530 multiletter control sequences out of 15000+600000
  602535 words of font info for 65 fonts, out of 8000000 for 9000
@@ -1581,7 +1582,7 @@ l/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbxi10.pfb></usr/local/texlive
 -dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2025/texmf-dist/fonts
 /type1/public/lm/lmri12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/pub
 lic/lm/lmsy10.pfb>
-Output written on 02_theory.pdf (11 pages, 373652 bytes).
+Output written on 02_theory.pdf (11 pages, 1156719 bytes).
 PDF statistics:
  219 PDF objects out of 1000 (max. 8388607)
  167 compressed objects within 2 object streams
