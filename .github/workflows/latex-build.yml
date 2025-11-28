@@ -25,6 +25,16 @@ jobs:
           python -m pip install --upgrade pip
           pip install pytest bibtexparser pyzotero
 
+      - name: Debug Zotero Secrets
+        env:
+          ZOTERO_API_KEY: ${{ secrets.ZOTERO_API_KEY }}
+          ZOTERO_USER_ID: ${{ secrets.ZOTERO_USER_ID }}
+        run: |
+          echo "Debug: API Key length: ${#ZOTERO_API_KEY}"
+          echo "Debug: User ID length: ${#ZOTERO_USER_ID}"
+          # Try a direct curl request to verify secrets
+          curl -v -H "Zotero-API-Key: $ZOTERO_API_KEY" "https://api.zotero.org/users/$ZOTERO_USER_ID/collections/6ABWTZEP/items?format=bibtex&limit=1"
+
       - name: Sync Zotero References
         env:
           ZOTERO_API_KEY: ${{ secrets.ZOTERO_API_KEY }}

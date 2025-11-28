@@ -10,6 +10,16 @@ def sync_zotero():
     if not api_key or not user_id:
         print("Error: ZOTERO_API_KEY or ZOTERO_USER_ID not set.")
         sys.exit(1)
+
+    print(f"Debug: API Key length: {len(api_key)}")
+    print(f"Debug: User ID length: {len(user_id)}")
+    print(f"Debug: API Key first 3 chars: {api_key[:3]}")
+    print(f"Debug: User ID first 3 chars: {user_id[:3]}")
+    # Check for common issues
+    if " " in api_key:
+        print("WARNING: API Key contains spaces!")
+    if "Bearer" in api_key:
+        print("WARNING: API Key contains 'Bearer'!")
         
     print(f"Syncing Zotero collection {collection_id} for user {user_id}...")
     
