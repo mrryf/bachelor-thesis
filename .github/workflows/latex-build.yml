@@ -7,9 +7,7 @@ on:
     branches: [ "main", "master" ]
 
 jobs:
-  build_latex:
-    permissions:
-      contents: write
+  test_structure:
     runs-on: ubuntu-latest
     steps:
       - name: Set up Git repository
@@ -34,12 +32,34 @@ jobs:
       - name: Run Unit Tests
         run: python tests/test_structure.py
 
+  build_latex:
+    permissions:
+      contents: write
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up Git repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install bibtexparser pyzotero
+
+      - name: Sync Zotero References
+        env:
+          ZOTERO_API_KEY: ${{ secrets.ZOTERO_API_KEY }}
+          ZOTERO_USER_ID: ${{ secrets.ZOTERO_USER_ID }}
+        run: python scripts/sync_zotero.py
+
       - name: Compile LaTeX document
         uses: xu-cheng/latex-action@v3
         with:
           root_file: main.tex
-          # Optional: Install extra packages if needed
-          # extra_system_packages: "pygments"
           
       - name: Verify TOC, LOF, LOT, and Bibliography
         run: python scripts/check_toc.py
