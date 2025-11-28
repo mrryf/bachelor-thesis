@@ -75,10 +75,9 @@ def test_references_consistency():
     missing_in_bib = all_citations - bib_keys
     assert not missing_in_bib, f"Citations found in text but missing in bibliography: {missing_in_bib}"
     
-    # Test 3: All bibliography entries must be cited in text
-    # Note: Sometimes you want to include uncited works, but the user asked to check this.
-    unused_in_bib = bib_keys - all_citations
-    assert not unused_in_bib, f"Entries in bibliography but not cited in text: {unused_in_bib}"
+    # Test 3: Check removed as per user request (we allow unused entries in bib)
+    # unused_in_bib = bib_keys - all_citations
+    # assert not unused_in_bib, f"Entries in bibliography but not cited in text: {unused_in_bib}"
 
 if __name__ == "__main__":
     # Manually run tests if executed as script
