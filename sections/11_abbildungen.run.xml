@@ -44,10 +44,10 @@
   <internal package="biblatex" priority="9" active="0">
     <generic>latex</generic>
     <provides type="dynamic">
-      <file>10_quellenverzeichnis.bcf</file>
+      <file>11_abbildungen.bcf</file>
     </provides>
     <requires type="dynamic">
-      <file>10_quellenverzeichnis.bbl</file>
+      <file>11_abbildungen.bbl</file>
     </requires>
     <requires type="static">
       <file>blx-dm.def</file>
@@ -68,19 +68,19 @@
     <generic>biber</generic>
     <cmdline>
       <binary>biber</binary>
-      <infile>10_quellenverzeichnis</infile>
+      <infile>11_abbildungen</infile>
     </cmdline>
     <input>
-      <file>10_quellenverzeichnis.bcf</file>
+      <file>11_abbildungen.bcf</file>
     </input>
     <output>
-      <file>10_quellenverzeichnis.bbl</file>
+      <file>11_abbildungen.bbl</file>
     </output>
     <provides type="dynamic">
-      <file>10_quellenverzeichnis.bbl</file>
+      <file>11_abbildungen.bbl</file>
     </provides>
     <requires type="dynamic">
-      <file>10_quellenverzeichnis.bcf</file>
+      <file>11_abbildungen.bcf</file>
     </requires>
     <requires type="editable">
       <file>bibliography.bib</file>
