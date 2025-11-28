@@ -40,6 +40,9 @@ jobs:
           root_file: main.tex
           # Optional: Install extra packages if needed
           # extra_system_packages: "pygments"
+          
+      - name: Verify TOC, LOF, LOT, and Bibliography
+        run: python scripts/check_toc.py
 
       - name: Upload PDF artifact
         uses: actions/upload-artifact@v4
