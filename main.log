@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.11.28)  28 NOV 2025 22:17
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.11.28)  28 NOV 2025 22:40
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1322,13 +1322,12 @@ ve/2025/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}]
 [25]
 
 [26]) (./sections/04_ausgangslage.tex) (./sections/05_machbarkeit.tex)
-
-[27]
-./main.tex:41: Misplaced alignment tab character &.
+(./sections/10_quellenverzeichnis.tex
+./sections/10_quellenverzeichnis.tex:7: Misplaced alignment tab character &.
 <argument> Restorative Dentistry &
                                    Endodontics
-l.41 
-     
+l.7 \printbibliography[heading=bibintoc]
+                                        
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
 simple: Just type `I\&' now. But if some right brace
@@ -1338,11 +1337,9 @@ might try typing `S' now just to see what is salvageable.
 
 
 
-[28
+[27]) AED endfloat: Processing end Figures and Tables
 
-] AED endfloat: Processing end Figures and Tables
-
-[29] (./main.ttt
+[28] (./main.ttt
 Overfull \hbox (34.79356pt too wide) in paragraph at lines 18--18
 []|\T1/lmr/bx/n/12 Definition| 
  []
@@ -1587,9 +1584,9 @@ LaTeX Warning: Float too large for page by 706.07071pt on input line 19.
 
 
 
-[30]
+[29]
 
-[31
+[30
 
 
 
@@ -1625,10 +1622,10 @@ Underfull \hbox (badness 1502) in paragraph at lines 68--68
 
 )
 
-[32
+[31
 
 ] (./main.fff
-<resources/images/ba_faryf_ai_tam.jpg, id=525, 4773.835pt x 3375.61125pt>
+<resources/images/ba_faryf_ai_tam.jpg, id=529, 4773.835pt x 3375.61125pt>
 File: resources/images/ba_faryf_ai_tam.jpg Graphic file (type jpg)
 <use resources/images/ba_faryf_ai_tam.jpg>
 Package pdftex.def Info: resources/images/ba_faryf_ai_tam.jpg  used on input li
@@ -1636,10 +1633,10 @@ ne 5.
 (pdftex.def)             Requested size: 452.9679pt x 320.27434pt.
 
 
-[33
+[32
 
  <./resources/images/ba_faryf_ai_tam.jpg>]
-<resources/images/ba_faryf_messmodell.jpg, id=532, 4773.835pt x 3375.61125pt>
+<resources/images/ba_faryf_messmodell.jpg, id=537, 4773.835pt x 3375.61125pt>
 File: resources/images/ba_faryf_messmodell.jpg Graphic file (type jpg)
 <use resources/images/ba_faryf_messmodell.jpg>
 Package pdftex.def Info: resources/images/ba_faryf_messmodell.jpg  used on inpu
@@ -1647,34 +1644,24 @@ t line 15.
 (pdftex.def)             Requested size: 452.9679pt x 320.27434pt.
 )
 
-[34
+[33
 
  <./resources/images/ba_faryf_messmodell.jpg>] (./main.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
  ***********
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
-
-Package rerunfilecheck Warning: File `main.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `main.out':
-(rerunfilecheck)             Before: 0381A31C9D5EB171846F194AD9B9F4C1;10876
-(rerunfilecheck)             After:  0E9666CADB6691382E33B5E9D1637060;10977.
+Package rerunfilecheck Info: File `main.out' has not changed.
+(rerunfilecheck)             Checksum: CDB626B0FCA4C92EF5B60B83A6C740F4;11068.
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 33051 strings out of 473190
- 633490 string characters out of 5715799
+ 33061 strings out of 473190
+ 633818 string characters out of 5715799
  1548376 words of memory out of 5000000
- 55650 multiletter control sequences out of 15000+600000
+ 55658 multiletter control sequences out of 15000+600000
  602535 words of font info for 65 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
  99i,12n,105p,1526b,7179s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1686,10 +1673,10 @@ nts/type1/public/lm/lmr12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/p
 ublic/lm/lmri12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/l
 msy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/zapfding/uzdr.pfb
 >
-Output written on main.pdf (34 pages, 1216516 bytes).
+Output written on main.pdf (33 pages, 1216582 bytes).
 PDF statistics:
- 611 PDF objects out of 1000 (max. 8388607)
- 527 compressed objects within 6 object streams
- 115 named destinations out of 1000 (max. 500000)
- 447 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 614 PDF objects out of 1000 (max. 8388607)
+ 531 compressed objects within 6 object streams
+ 114 named destinations out of 1000 (max. 500000)
+ 463 words of extra memory for PDF output out of 10000 (max. 10000000)
 

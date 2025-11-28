@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.11.28)  28 NOV 2025 22:40
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.11.28)  28 NOV 2025 22:41
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**04_ausgangslage.tex
-(./04_ausgangslage.tex
+**10_quellenverzeichnis.tex
+(./10_quellenverzeichnis.tex
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
 (/usr/local/texlive/2025/texmf-dist/tex/latex/subfiles/subfiles.cls
@@ -1076,8 +1076,8 @@ Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... found 'babel' package.
 Package csquotes Info: Adjusting default style.
 Package csquotes Info: Redefining alias 'default' -> 'ngerman'.
- (./04_ausgangslage.aux)
-\openout1 = `04_ausgangslage.aux'.
+ (./10_quellenverzeichnis.aux)
+\openout1 = `10_quellenverzeichnis.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 2.
 LaTeX Font Info:    ... okay on input line 2.
@@ -1156,9 +1156,9 @@ e
 ))
 Package hyperref Info: Link coloring OFF on input line 2.
 
-(./04_ausgangslage.out) (./04_ausgangslage.out)
+(./10_quellenverzeichnis.out) (./10_quellenverzeichnis.out)
 \@outlinefile=\write7
-\openout7 = `04_ausgangslage.out'.
+\openout7 = `10_quellenverzeichnis.out'.
 
 
 (/usr/local/texlive/2025/texmf-dist/tex/latex/apa7/config/APA7ngerman.txt
@@ -1206,45 +1206,106 @@ File: german.lbx 2024/03/21 v3.20 biblatex localization (PK/MW)
 Package biblatex Info: Input encoding 'utf8' detected.
 Package biblatex Info: Automatic encoding selection.
 (biblatex)             Assuming data encoding 'utf8'.
-\openout6 = `04_ausgangslage.bcf'.
+\openout6 = `10_quellenverzeichnis.bcf'.
 
 Package biblatex Info: Trying to load bibliographic data...
-Package biblatex Info: ... file '04_ausgangslage.bbl' found.
+Package biblatex Info: ... file '10_quellenverzeichnis.bbl' found.
 
-(./04_ausgangslage.bbl)
+(./10_quellenverzeichnis.bbl)
 Package biblatex Info: Reference section=0 on input line 2.
 Package biblatex Info: Reference segment=0 on input line 2.
- AED endfloat: Processing end Figures and Tables
+LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 7
+.
+
+(/usr/local/texlive/2025/texmf-dist/tex/latex/lm/ot1lmr.fd
+File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 7
+.
+
+(/usr/local/texlive/2025/texmf-dist/tex/latex/lm/omllmm.fd
+File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
+7.
+
+(/usr/local/texlive/2025/texmf-dist/tex/latex/lm/omslmsy.fd
+File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
+7.
+
+(/usr/local/texlive/2025/texmf-dist/tex/latex/lm/omxlmex.fd
+File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <12> on input line 7.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <8> on input line 7.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <6> on input line 7.
+
 
 [1{/usr/local/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/l
 ocal/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}
 
 ]
-(./04_ausgangslage.aux)
+./10_quellenverzeichnis.tex:7: Misplaced alignment tab character &.
+<argument> Restorative Dentistry &
+                                   Endodontics
+l.7 \printbibliography[heading=bibintoc]
+                                        
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+
+
+[2] AED endfloat: Processing end Figures and Tables
+
+[3] (./10_quellenverzeichnis.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
  ***********
-Package rerunfilecheck Info: File `04_ausgangslage.out' has not changed.
-(rerunfilecheck)             Checksum: CDE1B508F759B91DC6CBCDF71EEF00E4;104.
-Package logreq Info: Writing requests to '04_ausgangslage.run.xml'.
-\openout1 = `04_ausgangslage.run.xml'.
+
+
+LaTeX Warning: There were undefined references.
+
+
+Package rerunfilecheck Warning: File `10_quellenverzeichnis.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `10_quellenverzeichnis.out':
+(rerunfilecheck)             Before: D41D8CD98F00B204E9800998ECF8427E;0
+(rerunfilecheck)             After:  0175B4AE37C1185D5FB81664C6965AE4;89.
+
+Package biblatex Warning: Please rerun LaTeX.
+(biblatex)                Page breaks have changed.
+
+Package logreq Info: Writing requests to '10_quellenverzeichnis.run.xml'.
+\openout1 = `10_quellenverzeichnis.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 32332 strings out of 473190
- 619084 string characters out of 5715799
- 1537220 words of memory out of 5000000
- 55107 multiletter control sequences out of 15000+600000
- 565822 words of font info for 41 fonts, out of 8000000 for 9000
+ 32794 strings out of 473190
+ 631515 string characters out of 5715799
+ 1551258 words of memory out of 5000000
+ 55512 multiletter control sequences out of 15000+600000
+ 591911 words of font info for 61 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
- 119i,11n,122p,1192b,7179s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 119i,11n,122p,1198b,7179s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/lo
-cal/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr12.pfb>
-Output written on 04_ausgangslage.pdf (1 page, 43036 bytes).
+cal/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive
+/2025/texmf-dist/fonts/type1/public/lm/lmri12.pfb>
+Output written on 10_quellenverzeichnis.pdf (3 pages, 90926 bytes).
 PDF statistics:
- 32 PDF objects out of 1000 (max. 8388607)
- 24 compressed objects within 1 object stream
- 3 named destinations out of 1000 (max. 500000)
- 21 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 95 PDF objects out of 1000 (max. 8388607)
+ 83 compressed objects within 1 object stream
+ 30 named destinations out of 1000 (max. 500000)
+ 13 words of extra memory for PDF output out of 10000 (max. 10000000)
 

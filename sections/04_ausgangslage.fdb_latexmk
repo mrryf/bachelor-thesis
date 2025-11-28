@@ -1,12 +1,12 @@
 # Fdb version 4
-["biber 04_ausgangslage"] 1764364039.70391 "04_ausgangslage.bcf" "04_ausgangslage.bbl" "04_ausgangslage" 1764364681.56834 0
-  "04_ausgangslage.bcf" 1764364681.45864 133316 ca02b4e0918386efa7a6663345030df3 "pdflatex"
+["biber 04_ausgangslage"] 1764364039.70391 "04_ausgangslage.bcf" "04_ausgangslage.bbl" "04_ausgangslage" 1764366059.06356 0
+  "04_ausgangslage.bcf" 1764366058.97003 133316 ca02b4e0918386efa7a6663345030df3 "pdflatex"
   (generated)
   "04_ausgangslage.bbl"
   "04_ausgangslage.blg"
   (rewritten before read)
-["pdflatex"] 1764364680.11899 "04_ausgangslage.tex" "04_ausgangslage.pdf" "04_ausgangslage" 1764364681.56877 0
-  "../main.tex" 1764364643.58206 956 4581ca10d9fca0a5936ec725b7b25acb ""
+["pdflatex"] 1764366057.86566 "04_ausgangslage.tex" "04_ausgangslage.pdf" "04_ausgangslage" 1764366059.06394 0
+  "../main.tex" 1764366032.44882 1002 8f91b4dd36b423a10d440fb69e9c72de ""
   "/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc" 1254269338 2375 baa924870cfb487815765f9094cf3728 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/tfm/adobe/symbol/psyr.tfm" 1136768653 1408 5937f58aa508ea2cea4901c07d10f5fe ""
@@ -181,10 +181,10 @@
   "/usr/local/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1764347245 5467155 19efa205003f9ecad95fbbaa6ff24da1 ""
   "/usr/local/texlive/2025/texmf-var/web2c/pdftex/pdflatex.fmt" 1764347146 3345741 4676ea7f3e7a609a766b31b746a50cb9 ""
   "/usr/local/texlive/2025/texmf.cnf" 1741450484 577 418a7058ec8e006d8704f60ecd22c938 ""
-  "04_ausgangslage.aux" 1764364681.45394 511 69df0c1b20ebe8dc36acfcc401052539 "pdflatex"
+  "04_ausgangslage.aux" 1764366058.96664 511 69df0c1b20ebe8dc36acfcc401052539 "pdflatex"
   "04_ausgangslage.bbl" 1764364041.52201 466 76d65a242ec496c9b4361af646ff12cb "biber 04_ausgangslage"
-  "04_ausgangslage.out" 1764364681.45726 104 cde1b508f759b91dc6cbcdf71eef00e4 "pdflatex"
-  "04_ausgangslage.run.xml" 1764364681.45945 2502 66b6269c4b61b0636a9c2a42716081d7 "pdflatex"
+  "04_ausgangslage.out" 1764366058.96882 104 cde1b508f759b91dc6cbcdf71eef00e4 "pdflatex"
+  "04_ausgangslage.run.xml" 1764366058.97082 2502 66b6269c4b61b0636a9c2a42716081d7 "pdflatex"
   "04_ausgangslage.tex" 1764363996.95062 153 5ef4e59a625824136677fe99f8a12605 ""
   (generated)
   "04_ausgangslage.aux"
