@@ -1,61 +1,61 @@
 \babel@toc {ngerman}{}\relax 
-\contentsline {section}{\numberline {1}Relevanz-Einordnung}{4}{section.1}%
-\contentsline {section}{\numberline {2}Theoretische Einbettung, Forschungsfrage, Hypothesen und Forschungsdesign}{5}{section.2}%
-\contentsline {subsection}{\numberline {2.1}Theoretische Einbettung}{5}{subsection.2.1}%
-\contentsline {subsubsection}{\numberline {2.1.1}Technology Acceptance Model (Davis, 1987)}{6}{subsubsection.2.1.1}%
-\contentsline {subsubsection}{\numberline {2.1.2}Artificial Intelligence-Technology Acceptance Model (Baroni et al., 2022)}{6}{subsubsection.2.1.2}%
-\contentsline {paragraph}{Notwendigkeit der TAM-Erweiterung für KI-Systeme}{6}{section*.3}%
-\contentsline {paragraph}{Erweiterungen des TAM zum AI-TAM}{6}{section*.4}%
-\contentsline {paragraph}{Validierung durch die BumpOut-Studie (Baroni et al., 2022)}{7}{section*.5}%
-\contentsline {subsubsection}{\numberline {2.1.3}Framing-Effekt}{7}{subsubsection.2.1.3}%
-\contentsline {paragraph}{Attribute Framing nach Levin \& Gaeth (1988) und Dolgopolova (2021)}{8}{section*.6}%
-\contentsline {subsection}{\numberline {2.2}Forschungsfrage}{8}{subsection.2.2}%
-\contentsline {subsection}{\numberline {2.3}Latente Konstrukte}{8}{subsection.2.3}%
-\contentsline {subsection}{\numberline {2.4}Hypothesenübersicht}{9}{subsection.2.4}%
-\contentsline {subsubsection}{\numberline {2.4.1}Ausformulierte Hypothesen}{9}{subsubsection.2.4.1}%
-\contentsline {paragraph}{Haupthypothesen (Framing-Effekte)}{9}{section*.7}%
-\contentsline {paragraph}{AI-TAM Kernbeziehungen}{9}{section*.8}%
-\contentsline {paragraph}{TAM-Standardbeziehungen}{9}{section*.9}%
-\contentsline {paragraph}{Mediation}{9}{section*.10}%
-\contentsline {section}{\numberline {3}Forschungsdesign}{10}{section.3}%
-\contentsline {subsection}{\numberline {3.1}Experimentelles Design}{10}{subsection.3.1}%
-\contentsline {subsubsection}{\numberline {3.1.1}Between-Subject Design}{10}{subsubsection.3.1.1}%
-\contentsline {subsection}{\numberline {3.2}Ablauf Experiment}{10}{subsection.3.2}%
-\contentsline {subsubsection}{\numberline {3.2.1}Pre-Interaktionsphase «digitaler Assistent»}{10}{subsubsection.3.2.1}%
-\contentsline {subsubsection}{\numberline {3.2.2}Interaktionsphase «digitaler Assistent»}{11}{subsubsection.3.2.2}%
-\contentsline {subsubsection}{\numberline {3.2.3}Post-Interaktionsphase «digitaler Assistent»}{11}{subsubsection.3.2.3}%
-\contentsline {subsection}{\numberline {3.3}Stimulus-Konzept}{11}{subsection.3.3}%
-\contentsline {subsubsection}{\numberline {3.3.1}Konkrete Stimulus-Beispiele}{11}{subsubsection.3.3.1}%
-\contentsline {subsubsection}{\numberline {3.3.2}Manipulationscheck Stimulus}{11}{subsubsection.3.3.2}%
-\contentsline {subsection}{\numberline {3.4}Methodentriangulation}{11}{subsection.3.4}%
-\contentsline {subsubsection}{\numberline {3.4.1}Online-Befragung als Rahmenstruktur}{12}{subsubsection.3.4.1}%
-\contentsline {subsubsection}{\numberline {3.4.2}Verhaltensbeobachtung durch System-Logging}{12}{subsubsection.3.4.2}%
-\contentsline {subsubsection}{\numberline {3.4.3}Experimentelle Manipulation im Feldkontext}{12}{subsubsection.3.4.3}%
-\contentsline {subsubsection}{\numberline {3.4.4}Methodenintegration}{12}{subsubsection.3.4.4}%
-\contentsline {subsection}{\numberline {3.5}Pretest-Analyse}{13}{subsection.3.5}%
-\contentsline {subsubsection}{\numberline {3.5.1}Reliabilitätsanalyse (Cronbach's Alpha)}{13}{subsubsection.3.5.1}%
-\contentsline {subsubsection}{\numberline {3.5.2}Manipulationscheck (t-test unabh. Stichproben)}{13}{subsubsection.3.5.2}%
-\contentsline {subsection}{\numberline {3.6}Hauptanalyse: Deskriptive Statistik}{13}{subsection.3.6}%
-\contentsline {subsubsection}{\numberline {3.6.1}Stichprobenbeschreibung und Gruppenvergleichbarkeit}{13}{subsubsection.3.6.1}%
-\contentsline {subsubsection}{\numberline {3.6.2}Skaleneigenschaften und Verteilungsanalysen}{13}{subsubsection.3.6.2}%
-\contentsline {subsubsection}{\numberline {3.6.3}Manipulationscheck}{14}{subsubsection.3.6.3}%
-\contentsline {subsubsection}{\numberline {3.6.4}Nutzungsverhalten und Systemvariablen}{14}{subsubsection.3.6.4}%
-\contentsline {subsection}{\numberline {3.7}Hauptanalyse: Strukturgleichungsmodellierung (SEM)}{14}{subsection.3.7}%
-\contentsline {subsubsection}{\numberline {3.7.1}Parameterschätzung und Modell-Fit}{14}{subsubsection.3.7.1}%
-\contentsline {subsubsection}{\numberline {3.7.2}Evaluation des Messmodells}{15}{subsubsection.3.7.2}%
-\contentsline {subsubsection}{\numberline {3.7.3}Strukturmodell und Hypothesentests}{15}{subsubsection.3.7.3}%
-\contentsline {subsubsection}{\numberline {3.7.4}Indirekte Effekte und Mediation (H9)}{15}{subsubsection.3.7.4}%
-\contentsline {subsubsection}{\numberline {3.7.5}Kontrolle für Störvariablen}{16}{subsubsection.3.7.5}%
-\contentsline {subsection}{\numberline {3.8}Abgrenzung des Forschungsdesigns}{16}{subsection.3.8}%
-\contentsline {subsubsection}{\numberline {3.8.1}Inhaltlich}{16}{subsubsection.3.8.1}%
-\contentsline {subsubsection}{\numberline {3.8.2}Methodisch}{16}{subsubsection.3.8.2}%
-\contentsline {subsection}{\numberline {3.9}Operationalisierung Konstrukte}{16}{subsection.3.9}%
-\contentsline {subsection}{\numberline {3.10}Stichprobe/Feldzugang}{17}{subsection.3.10}%
-\contentsline {subsubsection}{\numberline {3.10.1}Beschreibung Stichprobe}{17}{subsubsection.3.10.1}%
-\contentsline {subsubsection}{\numberline {3.10.2}Rekrutierung Stichprobe}{17}{subsubsection.3.10.2}%
-\contentsline {subsubsection}{\numberline {3.10.3}Rekrutierung Stichprobe Pre-Test}{17}{subsubsection.3.10.3}%
-\contentsline {subsubsection}{\numberline {3.10.4}Pre-Test: Durchführung und Analyse}{17}{subsubsection.3.10.4}%
-\contentsline {subsection}{\numberline {3.11}Kritische Fragen und Überlegungen}{17}{subsection.3.11}%
-\contentsline {subsubsection}{\numberline {3.11.1}Stimulus-Design}{17}{subsubsection.3.11.1}%
-\contentsline {subsubsection}{\numberline {3.11.2}Experiment Ablauf}{17}{subsubsection.3.11.2}%
-\contentsline {subsubsection}{\numberline {3.11.3}Pre-Test}{18}{subsubsection.3.11.3}%
+\contentsline {section}{Relevanz-Einordnung}{6}{section*.3}%
+\contentsline {section}{Theoretische Einbettung, Forschungsfrage, Hypothesen und Forschungsdesign}{8}{section*.4}%
+\contentsline {subsection}{Theoretische Einbettung}{8}{section*.5}%
+\contentsline {subsubsection}{Technology Acceptance Model (Davis, 1987)}{9}{section*.6}%
+\contentsline {subsubsection}{Artificial Intelligence-Technology Acceptance Model (Baroni et al., 2022)}{10}{section*.7}%
+\contentsline {paragraph}{Notwendigkeit der TAM-Erweiterung für KI-Systeme}{10}{section*.8}%
+\contentsline {paragraph}{Erweiterungen des TAM zum AI-TAM}{10}{section*.9}%
+\contentsline {paragraph}{Validierung durch die BumpOut-Studie (Baroni et al., 2022)}{10}{section*.10}%
+\contentsline {subsubsection}{Framing-Effekt}{12}{section*.11}%
+\contentsline {paragraph}{Attribute Framing nach Levin \& Gaeth (1988) und Dolgopolova (2021)}{12}{section*.12}%
+\contentsline {subsection}{Forschungsfrage}{13}{section*.13}%
+\contentsline {subsection}{Latente Konstrukte}{13}{section*.14}%
+\contentsline {subsection}{Hypothesenübersicht}{13}{section*.15}%
+\contentsline {subsubsection}{Ausformulierte Hypothesen}{13}{section*.16}%
+\contentsline {paragraph}{Haupthypothesen (Framing-Effekte)}{13}{section*.17}%
+\contentsline {paragraph}{AI-TAM Kernbeziehungen}{14}{section*.18}%
+\contentsline {paragraph}{TAM-Standardbeziehungen}{14}{section*.19}%
+\contentsline {paragraph}{Mediation}{15}{section*.20}%
+\contentsline {section}{Forschungsdesign}{15}{section*.21}%
+\contentsline {subsection}{Experimentelles Design}{15}{section*.22}%
+\contentsline {subsubsection}{Between-Subject Design}{15}{section*.23}%
+\contentsline {subsection}{Ablauf Experiment}{16}{section*.24}%
+\contentsline {subsubsection}{Pre-Interaktionsphase «digitaler Assistent»}{16}{section*.25}%
+\contentsline {subsubsection}{Interaktionsphase «digitaler Assistent»}{16}{section*.26}%
+\contentsline {subsubsection}{Post-Interaktionsphase «digitaler Assistent»}{17}{section*.27}%
+\contentsline {subsection}{Stimulus-Konzept}{17}{section*.28}%
+\contentsline {subsubsection}{Konkrete Stimulus-Beispiele}{17}{section*.29}%
+\contentsline {subsubsection}{Manipulationscheck Stimulus}{17}{section*.30}%
+\contentsline {subsection}{Methodentriangulation}{18}{section*.31}%
+\contentsline {subsubsection}{Online-Befragung als Rahmenstruktur}{18}{section*.32}%
+\contentsline {subsubsection}{Verhaltensbeobachtung durch System-Logging}{18}{section*.33}%
+\contentsline {subsubsection}{Experimentelle Manipulation im Feldkontext}{19}{section*.34}%
+\contentsline {subsubsection}{Methodenintegration}{19}{section*.35}%
+\contentsline {subsection}{Pretest-Analyse}{19}{section*.36}%
+\contentsline {subsubsection}{Reliabilitätsanalyse (Cronbach's Alpha)}{19}{section*.37}%
+\contentsline {subsubsection}{Manipulationscheck (t-test unabh. Stichproben)}{20}{section*.38}%
+\contentsline {subsection}{Hauptanalyse: Deskriptive Statistik}{20}{section*.39}%
+\contentsline {subsubsection}{Stichprobenbeschreibung und Gruppenvergleichbarkeit}{20}{section*.40}%
+\contentsline {subsubsection}{Skaleneigenschaften und Verteilungsanalysen}{20}{section*.41}%
+\contentsline {subsubsection}{Manipulationscheck}{21}{section*.42}%
+\contentsline {subsubsection}{Nutzungsverhalten und Systemvariablen}{21}{section*.43}%
+\contentsline {subsection}{Hauptanalyse: Strukturgleichungsmodellierung (SEM)}{21}{section*.44}%
+\contentsline {subsubsection}{Parameterschätzung und Modell-Fit}{22}{section*.45}%
+\contentsline {subsubsection}{Evaluation des Messmodells}{22}{section*.46}%
+\contentsline {subsubsection}{Strukturmodell und Hypothesentests}{23}{section*.47}%
+\contentsline {subsubsection}{Indirekte Effekte und Mediation (H9)}{23}{section*.48}%
+\contentsline {subsubsection}{Kontrolle für Störvariablen}{24}{section*.49}%
+\contentsline {subsection}{Abgrenzung des Forschungsdesigns}{24}{section*.50}%
+\contentsline {subsubsection}{Inhaltlich}{24}{section*.51}%
+\contentsline {subsubsection}{Methodisch}{24}{section*.52}%
+\contentsline {subsection}{Operationalisierung Konstrukte}{25}{section*.53}%
+\contentsline {subsection}{Stichprobe/Feldzugang}{25}{section*.54}%
+\contentsline {subsubsection}{Beschreibung Stichprobe}{25}{section*.55}%
+\contentsline {subsubsection}{Rekrutierung Stichprobe}{25}{section*.56}%
+\contentsline {subsubsection}{Rekrutierung Stichprobe Pre-Test}{26}{section*.57}%
+\contentsline {subsubsection}{Pre-Test: Durchführung und Analyse}{26}{section*.58}%
+\contentsline {subsection}{Kritische Fragen und Überlegungen}{26}{section*.59}%
+\contentsline {subsubsection}{Stimulus-Design}{26}{section*.60}%
+\contentsline {subsubsection}{Experiment Ablauf}{26}{section*.61}%
+\contentsline {subsubsection}{Pre-Test}{26}{section*.62}%
