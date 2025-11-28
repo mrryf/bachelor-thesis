@@ -1,19 +1,21 @@
-\documentclass[12pt,a4paper]{article}
+\documentclass[stu, 12pt, a4paper, donotrepeattitle]{apa7}
+\usepackage[ngerman]{babel}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
-\usepackage[ngerman]{babel}
+\usepackage{csquotes}
 \usepackage{graphicx}
 \usepackage{hyperref}
-\usepackage{geometry}
-\usepackage{csquotes}
-\usepackage{parskip}
 \usepackage{pifont} % For checkmarks and other symbols
 
-\geometry{a4paper, left=2.5cm, right=2.5cm, top=2.5cm, bottom=2.5cm}
+\addbibresource{bibliography.bib}
 
 \title{Forschungsdesign: Vertrauen in Künstliche Intelligenz}
+\shorttitle{Vertrauen in KI}
 \author{Fabian Ryf}
-\date{\today}
+\affiliation{University Name}
+\course{Course Name}
+\professor{Professor Name}
+\duedate{\today}
 
 \begin{document}
 
@@ -26,5 +28,7 @@
 \input{sections/01_introduction}
 \input{sections/02_theory}
 \input{sections/03_methodology}
+
+\printbibliography
 
 \end{document}
