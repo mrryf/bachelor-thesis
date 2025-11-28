@@ -355,6 +355,11 @@ INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/biblatex/lbx/german.lbx
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/biblatex/lbx/german.lbx
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/biblatex/lbx/german.lbx
 OUTPUT 03_methodology.bcf
+INPUT 03_methodology.bbl
+INPUT ./03_methodology.bbl
+INPUT ./03_methodology.bbl
+INPUT ./03_methodology.bbl
+INPUT 03_methodology.bbl
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/lm/ec-lmbx12.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/lm/ec-lmbxi10.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/lm/ts1lmr.fd

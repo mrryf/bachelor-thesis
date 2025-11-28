@@ -1,12 +1,12 @@
 # Fdb version 4
-["biber 02_theory"] 0 "02_theory.bcf" "02_theory.bbl" "02_theory" 0 0
-  "02_theory.bcf" 0 -1 0 "pdflatex"
-  "bibliography.bib" 0 -1 0 ""
+["biber 02_theory"] 1764362767.9335 "02_theory.bcf" "02_theory.bbl" "02_theory" 1764362772.73095 0
+  "02_theory.bcf" 1764362772.60315 136164 b00145cf159b4b6a3ee0e1c8fb84580a "pdflatex"
+  "bibliography.bib" 1764362753.94297 7720 e780959460ae934914e10b137fc6bacb ""
   (generated)
   "02_theory.bbl"
   "02_theory.blg"
   (rewritten before read)
-["pdflatex"] 1764361259.28759 "02_theory.tex" "02_theory.pdf" "02_theory" 1764361260.86708 0
+["pdflatex"] 1764362771.03971 "02_theory.tex" "02_theory.pdf" "02_theory" 1764362772.73134 0
   "../main.tex" 1764361019.19584 862 1ac31db6d6119db34dba405a2ae8782b ""
   "../resources/images/image1.jpeg" 1764347994.31713 85894 127ad2f957eb177bb18759b6673e6d88 ""
   "../resources/images/image2.jpeg" 1764347994.31815 125940 91cf5a592ca348d74b2dd09100d13fec ""
@@ -217,13 +217,13 @@
   "/usr/local/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1764347245 5467155 19efa205003f9ecad95fbbaa6ff24da1 ""
   "/usr/local/texlive/2025/texmf-var/web2c/pdftex/pdflatex.fmt" 1764347146 3345741 4676ea7f3e7a609a766b31b746a50cb9 ""
   "/usr/local/texlive/2025/texmf.cnf" 1741450484 577 418a7058ec8e006d8704f60ecd22c938 ""
-  "02_theory.aux" 1764361260.61752 8569 04cc70831be30fe034f8f544fbedbfed "pdflatex"
-  "02_theory.bbl" 0 -1 0 "biber 02_theory"
-  "02_theory.fff" 1764361260.59031 607 773d01d0b07596d9561b264e63f45ee9 "pdflatex"
-  "02_theory.out" 1764361260.6203 2034 2c9c358edb2280ae8ea83b21fd78eb62 "pdflatex"
-  "02_theory.run.xml" 1764361260.62255 2460 9672ba9d8c5f01f69fef78e8afa5c705 "pdflatex"
-  "02_theory.tex" 1764361113.85429 17004 f41a126bb7125551375e32f75ca3aca1 ""
-  "02_theory.ttt" 1764361260.50778 2509 d1a235c73e543d9f401d1680e8b344b8 "pdflatex"
+  "02_theory.aux" 1764362772.59947 8880 fb77e00e3f36e5e8e9506c15b1596fdb "pdflatex"
+  "02_theory.bbl" 1764362769.35041 27036 1fb8ead5ad3cab6e80d951c065c990d4 "biber 02_theory"
+  "02_theory.fff" 1764362772.5715 599 08e2e9f0f9b4db52a456c4913f999e0c "pdflatex"
+  "02_theory.out" 1764362772.60209 1959 04f843be1b7edc35fbb0f158875475fa "pdflatex"
+  "02_theory.run.xml" 1764362772.6039 2460 fa6f2be9233a6a7acd08a0d082e8dcb4 "pdflatex"
+  "02_theory.tex" 1764362669.96101 16693 fdcd7034945440608b8b7c1d4e12f9ff ""
+  "02_theory.ttt" 1764362772.38125 2406 aa8cb78f15eace8e014499573d0f8634 "pdflatex"
   (generated)
   "02_theory.aux"
   "02_theory.bcf"

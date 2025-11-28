@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.11.28)  28 NOV 2025 21:20
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.11.28)  28 NOV 2025 21:46
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1209,53 +1209,15 @@ Package biblatex Info: Automatic encoding selection.
 \openout6 = `02_theory.bcf'.
 
 Package biblatex Info: Trying to load bibliographic data...
-Package biblatex Info: ... file '02_theory.bbl' not found.
+Package biblatex Info: ... file '02_theory.bbl' found.
 
-No file 02_theory.bbl.
+(./02_theory.bbl)
 Package biblatex Info: Reference section=0 on input line 2.
 Package biblatex Info: Reference segment=0 on input line 2.
-
-LaTeX Warning: Citation 'davis_perceived_1989' on page 1 undefined on input lin
-e 6.
-
-
-LaTeX Warning: Citation 'baroni_ai-tam_2022' on page 1 undefined on input line 
-6.
-
-
-LaTeX Warning: Citation '' on page 1 undefined on input line 6.
-
-
-LaTeX Warning: Citation 'baroni_ai-tam_2022' on page 1 undefined on input line 
-6.
-
-
-LaTeX Warning: Citation 'druckman_evaluating_2001' on page 1 undefined on input
- line 8.
-
-
-LaTeX Warning: Citation 'freling_when_2014' on page 1 undefined on input line 8
-.
-
-
-LaTeX Warning: Citation 'davis_perceived_1989' on page 1 undefined on input lin
-e 10.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\parencite' on input line 10.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 10.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 10.
-
-
-LaTeX Warning: Citation 'ajzen_bayesian_1975' on page 1 undefined on input line
- 11.
 
 LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 1
 5.
@@ -1268,49 +1230,8 @@ ocal/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}
 
 {/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}]
 
-LaTeX Warning: Citation 'baroni_ai-tam_2022' on page 2 undefined on input line 
-21.
-
-
-LaTeX Warning: Citation '' on page 2 undefined on input line 21.
-
-
-LaTeX Warning: Citation 'baroni_ai-tam_2022' on page 2 undefined on input line 
-21.
-
-
-LaTeX Warning: Citation 'baroni_ai-tam_2022' on page 2 undefined on input line 
-23.
-
-
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\parencite' on input line 23.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 23.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 23.
-
-
-LaTeX Warning: Citation 'davis_perceived_1989' on page 2 undefined on input lin
-e 26.
-
-
-LaTeX Warning: Citation '' on page 2 undefined on input line 26.
-
-
-LaTeX Warning: Citation 'davis_perceived_1989' on page 2 undefined on input lin
-e 26.
-
-
-LaTeX Warning: Citation 'baroni_ai-tam_2022' on page 2 undefined on input line 
-29.
-
-
-LaTeX Warning: Citation '' on page 2 undefined on input line 29.
 
 
 
@@ -1319,69 +1240,14 @@ LaTeX Warning: Citation '' on page 2 undefined on input line 29.
 
  (02_theory.fff)
 
-LaTeX Warning: Citation 'baroni_ai-tam_2022' on page 3 undefined on input line 
-39.
-
-
-
 [3]
-
-LaTeX Warning: Citation 'tversky_framing_1986' on page 4 undefined on input lin
-e 44.
-
-
-LaTeX Warning: Citation 'freling_when_2014' on page 4 undefined on input line 4
-6.
-
-
-LaTeX Warning: Citation '' on page 4 undefined on input line 46.
-
-
-LaTeX Warning: Citation 'freling_when_2014' on page 4 undefined on input line 4
-6.
-
-
-LaTeX Warning: Citation 'dolgopolova_effect_2022' on page 4 undefined on input 
-line 49.
-
-
-LaTeX Warning: Citation '' on page 4 undefined on input line 49.
-
-
 
 [4]
 
-LaTeX Warning: Citation 'dolgopolova_effect_2022' on page 5 undefined on input 
-line 51.
-
-
-LaTeX Warning: Citation '' on page 5 undefined on input line 51.
-
-
-LaTeX Warning: Citation 'dolgopolova_effect_2022' on page 5 undefined on input 
-line 51.
-
-
-LaTeX Warning: Citation 'davis_perceived_1989' on page 5 undefined on input lin
-e 53.
-
-
-
 [5]
-
-LaTeX Warning: Citation 'baroni_ai-tam_2022' on page 6 undefined on input line 
-59.
-
-
-LaTeX Warning: Citation '' on page 6 undefined on input line 59.
-
-
-LaTeX Warning: Citation 'baroni_ai-tam_2022' on page 6 undefined on input line 
-59.
-
 \openout4 = `02_theory.ttt'.
 
-(02_theory.ttt)
+ (02_theory.ttt)
 
 [6] AED endfloat: Processing end Figures and Tables
 
@@ -1389,17 +1255,12 @@ LaTeX Warning: Citation 'baroni_ai-tam_2022' on page 6 undefined on input line
 ) (/usr/local/texlive/2025/texmf-dist/tex/latex/lm/omllmm.fd)
 (/usr/local/texlive/2025/texmf-dist/tex/latex/lm/omslmsy.fd)
 (/usr/local/texlive/2025/texmf-dist/tex/latex/lm/omxlmex.fd)
-
-Package tabularx Warning: X Columns too narrow (table too wide)
-(tabularx)                 on input line 18.
-
-
-Overfull \hbox (46.79048pt too wide) in paragraph at lines 18--18
+Overfull \hbox (34.79356pt too wide) in paragraph at lines 18--18
 []|\T1/lmr/bx/n/12 Definition| 
  []
 
 
-Overfull \hbox (39.16194pt too wide) in paragraph at lines 18--18
+Overfull \hbox (27.16502pt too wide) in paragraph at lines 18--18
 []|\T1/lmr/m/n/12 Vertrauen
  []
 
@@ -1409,22 +1270,22 @@ Underfull \hbox (badness 10000) in paragraph at lines 18--18
  []
 
 
-Overfull \hbox (3.26413pt too wide) in paragraph at lines 18--18
+Underfull \hbox (badness 10000) in paragraph at lines 18--18
 \T1/lmr/m/n/12 die
  []
 
 
-Overfull \hbox (3.26381pt too wide) in paragraph at lines 18--18
+Underfull \hbox (badness 10000) in paragraph at lines 18--18
 \T1/lmr/m/n/12 ge-
  []
 
 
-Overfull \hbox (3.91681pt too wide) in paragraph at lines 18--18
+Underfull \hbox (badness 10000) in paragraph at lines 18--18
 \T1/lmr/m/n/12 ne-
  []
 
 
-Overfull \hbox (9.79149pt too wide) in paragraph at lines 18--18
+Underfull \hbox (badness 10000) in paragraph at lines 18--18
 \T1/lmr/m/n/12 rier-
  []
 
@@ -1434,195 +1295,147 @@ Underfull \hbox (badness 10000) in paragraph at lines 18--18
  []
 
 
-Overfull \hbox (11.74576pt too wide) in paragraph at lines 18--18
+Underfull \hbox (badness 10000) in paragraph at lines 18--18
 \T1/lmr/m/n/12 Ant-
  []
 
 
-Overfull \hbox (11.4234pt too wide) in paragraph at lines 18--18
+Underfull \hbox (badness 10000) in paragraph at lines 18--18
 \T1/lmr/m/n/12 wort
  []
 
 
-Overfull \hbox (7.83412pt too wide) in paragraph at lines 18--18
+Underfull \hbox (badness 10000) in paragraph at lines 18--18
 \T1/lmr/m/n/12 und
  []
 
 
-Overfull \hbox (3.26413pt too wide) in paragraph at lines 18--18
+Underfull \hbox (badness 10000) in paragraph at lines 18--18
 \T1/lmr/m/n/12 die
  []
 
 
-Overfull \hbox (17.61685pt too wide) in paragraph at lines 18--18
+Overfull \hbox (5.61993pt too wide) in paragraph at lines 18--18
 \T1/lmr/m/n/12 LLM-
  []
 
 
-Overfull \hbox (25.03229pt too wide) in paragraph at lines 18--18
+Overfull \hbox (13.03537pt too wide) in paragraph at lines 18--18
 \T1/lmr/m/n/12 Lösung| 
  []
 
 
-LaTeX Warning: Citation 'baroni_ai-tam_2022' on page 8 undefined on input line 
-18.
-
-
-Overfull \hbox (88.18605pt too wide) in paragraph at lines 18--18
+Overfull \hbox (76.18913pt too wide) in paragraph at lines 18--18
 []|\T1/lmr/m/n/12 Verhaltensintention
  []
 
 
-Overfull \hbox (3.26413pt too wide) in paragraph at lines 18--18
+Underfull \hbox (badness 10000) in paragraph at lines 18--18
 \T1/lmr/m/n/12 die
  []
 
 
-Overfull \hbox (17.61685pt too wide) in paragraph at lines 18--18
+Overfull \hbox (5.61993pt too wide) in paragraph at lines 18--18
 \T1/lmr/m/n/12 LLM-
  []
 
 
-Overfull \hbox (25.03229pt too wide) in paragraph at lines 18--18
+Overfull \hbox (13.03537pt too wide) in paragraph at lines 18--18
 \T1/lmr/m/n/12 Lösung
  []
 
 
-Overfull \hbox (12.07216pt too wide) in paragraph at lines 18--18
-\T1/lmr/m/n/12 Nut-
+Underfull \hbox (badness 10000) in paragraph at lines 18--18
+\T1/lmr/m/n/12 zu
  []
 
 
-Overfull \hbox (5.22212pt too wide) in paragraph at lines 18--18
-\T1/lmr/m/n/12 zen| 
- []
-
-
-LaTeX Warning: Citation 'baroni_ai-tam_2022' on page 8 undefined on input line 
-18.
-
-
-LaTeX Warning: Citation 'davis_perceived_1989' on page 8 undefined on input lin
-e 18.
-
-
-Overfull \hbox (109.07614pt too wide) in paragraph at lines 18--18
+Overfull \hbox (97.07922pt too wide) in paragraph at lines 18--18
 []|\T1/lmr/m/n/12 Kollaborationsintention
  []
 
 
-Overfull \hbox (4.56947pt too wide) in paragraph at lines 18--18
+Underfull \hbox (badness 10000) in paragraph at lines 18--18
 \T1/lmr/m/n/12 zur
  []
 
 
-Overfull \hbox (1.95882pt too wide) in paragraph at lines 18--18
-\T1/lmr/m/n/12 di-
+Underfull \hbox (badness 10000) in paragraph at lines 18--18
+\T1/lmr/m/n/12 di-gi-
  []
 
 
-Overfull \hbox (1.30582pt too wide) in paragraph at lines 18--18
-\T1/lmr/m/n/12 gi-
- []
-
-
-Overfull \hbox (2.61116pt too wide) in paragraph at lines 18--18
+Underfull \hbox (badness 10000) in paragraph at lines 18--18
 \T1/lmr/m/n/12 ta-
  []
 
 
-Overfull \hbox (3.26413pt too wide) in paragraph at lines 18--18
+Underfull \hbox (badness 10000) in paragraph at lines 18--18
 \T1/lmr/m/n/12 len
  []
 
 
-Overfull \hbox (5.60951pt too wide) in paragraph at lines 18--18
+Underfull \hbox (badness 10000) in paragraph at lines 18--18
 \T1/lmr/m/n/12 As-
  []
 
 
-Overfull \hbox (4.70018pt too wide) in paragraph at lines 18--18
+Underfull \hbox (badness 10000) in paragraph at lines 18--18
 \T1/lmr/m/n/12 sis-
  []
 
 
-Overfull \hbox (9.79146pt too wide) in paragraph at lines 18--18
-\T1/lmr/m/n/12 tenz| 
- []
-
-
-LaTeX Warning: Citation 'baroni_ai-tam_2022' on page 8 undefined on input line 
-18.
-
-
-LaTeX Warning: Citation 'davis_perceived_1989' on page 8 undefined on input lin
-e 18.
-
-
-Overfull \hbox (76.37123pt too wide) in paragraph at lines 18--18
+Overfull \hbox (64.37431pt too wide) in paragraph at lines 18--18
 []|\T1/lmr/m/n/12 Wahrgenommene
  []
 
 
-Overfull \hbox (17.29414pt too wide) in paragraph at lines 18--18
+Overfull \hbox (5.29723pt too wide) in paragraph at lines 18--18
 \T1/lmr/m/n/12 Nütz-
  []
 
 
-Overfull \hbox (10.1184pt too wide) in paragraph at lines 18--18
+Underfull \hbox (badness 10000) in paragraph at lines 18--18
 \T1/lmr/m/n/12 lich-
  []
 
 
-Overfull \hbox (7.18059pt too wide) in paragraph at lines 18--18
+Underfull \hbox (badness 10000) in paragraph at lines 18--18
 \T1/lmr/m/n/12 keit
  []
 
 
-Overfull \hbox (4.56947pt too wide) in paragraph at lines 18--18
+Underfull \hbox (badness 10000) in paragraph at lines 18--18
 \T1/lmr/m/n/12 der
  []
 
 
-Overfull \hbox (3.26381pt too wide) in paragraph at lines 18--18
+Underfull \hbox (badness 10000) in paragraph at lines 18--18
 \T1/lmr/m/n/12 ge-
  []
 
 
-Overfull \hbox (3.91681pt too wide) in paragraph at lines 18--18
+Underfull \hbox (badness 10000) in paragraph at lines 18--18
 \T1/lmr/m/n/12 ne-
  []
 
 
-Overfull \hbox (9.79149pt too wide) in paragraph at lines 18--18
+Underfull \hbox (badness 10000) in paragraph at lines 18--18
 \T1/lmr/m/n/12 rier-
  []
 
 
-Overfull \hbox (4.56947pt too wide) in paragraph at lines 18--18
+Underfull \hbox (badness 10000) in paragraph at lines 18--18
 \T1/lmr/m/n/12 ten
  []
 
 
-Overfull \hbox (11.74576pt too wide) in paragraph at lines 18--18
+Underfull \hbox (badness 10000) in paragraph at lines 18--18
 \T1/lmr/m/n/12 Ant-
  []
 
 
-Overfull \hbox (11.4234pt too wide) in paragraph at lines 18--18
-\T1/lmr/m/n/12 wort| 
- []
-
-
-LaTeX Warning: Citation 'baroni_ai-tam_2022' on page 8 undefined on input line 
-18.
-
-
-LaTeX Warning: Citation 'davis_perceived_1989' on page 8 undefined on input lin
-e 18.
-
-
-Overfull \hbox (46.50874pt too wide) in paragraph at lines 18--18
+Overfull \hbox (34.51183pt too wide) in paragraph at lines 18--18
 []|\T1/lmr/m/n/12 Einfachheit
  []
 
@@ -1632,45 +1445,27 @@ Underfull \hbox (badness 10000) in paragraph at lines 18--18
  []
 
 
-Overfull \hbox (4.56947pt too wide) in paragraph at lines 18--18
+Underfull \hbox (badness 10000) in paragraph at lines 18--18
 \T1/lmr/m/n/12 der
  []
 
 
-Overfull \hbox (12.07216pt too wide) in paragraph at lines 18--18
-\T1/lmr/m/n/12 Nut-
- []
-
-
-Overfull \hbox (12.4031pt too wide) in paragraph at lines 18--18
-\T1/lmr/m/n/12 zung
- []
-
-
-Overfull \hbox (4.56947pt too wide) in paragraph at lines 18--18
+Underfull \hbox (badness 10000) in paragraph at lines 18--18
 \T1/lmr/m/n/12 der
  []
 
 
-Overfull \hbox (5.54082pt too wide) in paragraph at lines 18--18
+Underfull \hbox (badness 10000) in paragraph at lines 18--18
 \T1/lmr/m/n/12 KI-
  []
 
 
-Overfull \hbox (48.95491pt too wide) in paragraph at lines 18--18
+Overfull \hbox (36.958pt too wide) in paragraph at lines 18--18
 \T1/lmr/m/n/12 Applikation| 
  []
 
 
-LaTeX Warning: Citation 'baroni_ai-tam_2022' on page 8 undefined on input line 
-18.
-
-
-LaTeX Warning: Citation 'davis_perceived_1989' on page 8 undefined on input lin
-e 18.
-
-
-Overfull \hbox (51.5646pt too wide) in paragraph at lines 18--18
+Overfull \hbox (39.56769pt too wide) in paragraph at lines 18--18
 []|\T1/lmr/m/n/12 Vertrautheit
  []
 
@@ -1680,50 +1475,27 @@ Underfull \hbox (badness 10000) in paragraph at lines 18--18
  []
 
 
-Overfull \hbox (4.56947pt too wide) in paragraph at lines 18--18
+Underfull \hbox (badness 10000) in paragraph at lines 18--18
 \T1/lmr/m/n/12 der
  []
 
 
-Overfull \hbox (12.07216pt too wide) in paragraph at lines 18--18
-\T1/lmr/m/n/12 Nut-
- []
-
-
-Overfull \hbox (12.4031pt too wide) in paragraph at lines 18--18
-\T1/lmr/m/n/12 zung
- []
-
-
-Overfull \hbox (6.52824pt too wide) in paragraph at lines 18--18
+Underfull \hbox (badness 10000) in paragraph at lines 18--18
 \T1/lmr/m/n/12 von
  []
 
 
-Overfull \hbox (5.54082pt too wide) in paragraph at lines 18--18
+Underfull \hbox (badness 10000) in paragraph at lines 18--18
 \T1/lmr/m/n/12 KI-
  []
 
 
-Overfull \hbox (48.30545pt too wide) in paragraph at lines 18--18
+Overfull \hbox (36.30853pt too wide) in paragraph at lines 18--18
 \T1/lmr/m/n/12 Technologie| 
  []
 
 
-LaTeX Warning: Citation 'baroni_ai-tam_2022' on page 8 undefined on input line 
-18.
-
-
-LaTeX Warning: Citation 'davis_perceived_1989' on page 8 undefined on input lin
-e 18.
-
-
-Overfull \hbox (89.54332pt too wide) in alignment at lines 18--18
-[][][][] 
- []
-
-
-LaTeX Warning: Float too large for page by 730.06819pt on input line 19.
+LaTeX Warning: Float too large for page by 706.07071pt on input line 19.
 
 
 
@@ -1735,7 +1507,7 @@ LaTeX Warning: Float too large for page by 730.06819pt on input line 19.
 
 {/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}]
 (./02_theory.fff
-<../resources/images/image1.jpeg, id=98, 1370.11874pt x 558.085pt>
+<../resources/images/image1.jpeg, id=161, 1370.11874pt x 558.085pt>
 File: ../resources/images/image1.jpeg Graphic file (type jpg)
 <use ../resources/images/image1.jpeg>
 Package pdftex.def Info: ../resources/images/image1.jpeg  used on input line 5.
@@ -1743,15 +1515,10 @@ Package pdftex.def Info: ../resources/images/image1.jpeg  used on input line 5.
 (pdftex.def)             Requested size: 452.9679pt x 184.50073pt.
 
 
-LaTeX Warning: Citation 'baroni_ai-tam_2022' on page 10 undefined on input line
- 6.
-
-
-
 [10
 
  <../resources/images/image1.jpeg>]
-<../resources/images/image2.jpeg, id=104, 1378.14874pt x 973.6375pt>
+<../resources/images/image2.jpeg, id=169, 1378.14874pt x 973.6375pt>
 File: ../resources/images/image2.jpeg Graphic file (type jpg)
 <use ../resources/images/image2.jpeg>
 Package pdftex.def Info: ../resources/images/image2.jpeg  used on input line 15
@@ -1766,39 +1533,58 @@ Package pdftex.def Info: ../resources/images/image2.jpeg  used on input line 15
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
  ***********
-
-
-LaTeX Warning: There were undefined references.
-
 Package rerunfilecheck Info: File `02_theory.out' has not changed.
-(rerunfilecheck)             Checksum: 2C9C358EDB2280AE8EA83B21FD78EB62;2034.
-
-Package biblatex Warning: Please (re)run Biber on the file:
-(biblatex)                02_theory
-(biblatex)                and rerun LaTeX afterwards.
-
+(rerunfilecheck)             Checksum: 04F843BE1B7EDC35FBB0F158875475FA;1959.
 Package logreq Info: Writing requests to '02_theory.run.xml'.
 \openout1 = `02_theory.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 32757 strings out of 473190
- 627646 string characters out of 5715799
- 1545952 words of memory out of 5000000
- 55459 multiletter control sequences out of 15000+600000
+ 32837 strings out of 473190
+ 629696 string characters out of 5715799
+ 1545933 words of memory out of 5000000
+ 55530 multiletter control sequences out of 15000+600000
  602535 words of font info for 65 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
- 119i,12n,122p,1508b,7179s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/lo
-cal/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbxi10.pfb></usr/local/texli
-ve/2025/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2025/tex
-mf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2025/texmf-dist/fon
-ts/type1/public/lm/lmri12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/p
-ublic/lm/lmsy10.pfb>
-Output written on 02_theory.pdf (11 pages, 371140 bytes).
+ 119i,11n,122p,1502b,7179s stack positions out of 10000i,1000n,20000p,200000b,200000s
+
+pdfTeX warning (dest): name{cite.0@Dolgopolova2022} has been referenced but doe
+s not exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{cite.0@Tversky1986} has been referenced but does no
+t exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{cite.0@Ajzen1975} has been referenced but does not 
+exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{cite.0@Freling2014} has been referenced but does no
+t exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{cite.0@Druckman2001} has been referenced but does n
+ot exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{cite.0@Baroni2022} has been referenced but does not
+ exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{cite.0@Davis1987} has been referenced but does not 
+exist, replaced by a fixed one
+
+</usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/loca
+l/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbxi10.pfb></usr/local/texlive
+/2025/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2025/texmf
+-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2025/texmf-dist/fonts
+/type1/public/lm/lmri12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/pub
+lic/lm/lmsy10.pfb>
+Output written on 02_theory.pdf (11 pages, 373652 bytes).
 PDF statistics:
- 152 PDF objects out of 1000 (max. 8388607)
- 122 compressed objects within 2 object streams
- 33 named destinations out of 1000 (max. 500000)
+ 219 PDF objects out of 1000 (max. 8388607)
+ 167 compressed objects within 2 object streams
+ 40 named destinations out of 1000 (max. 500000)
  95 words of extra memory for PDF output out of 10000 (max. 10000000)
 

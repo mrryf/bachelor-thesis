@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.11.28)  28 NOV 2025 21:20
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.11.28)  28 NOV 2025 21:45
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1209,9 +1209,9 @@ Package biblatex Info: Automatic encoding selection.
 \openout6 = `00_abstract.bcf'.
 
 Package biblatex Info: Trying to load bibliographic data...
-Package biblatex Info: ... file '00_abstract.bbl' not found.
+Package biblatex Info: ... file '00_abstract.bbl' found.
 
-No file 00_abstract.bbl.
+(./00_abstract.bbl)
 Package biblatex Info: Reference section=0 on input line 2.
 Package biblatex Info: Reference segment=0 on input line 2.
 
@@ -1234,10 +1234,10 @@ Package logreq Info: Writing requests to '00_abstract.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 32326 strings out of 473190
- 618900 string characters out of 5715799
- 1544172 words of memory out of 5000000
- 55102 multiletter control sequences out of 15000+600000
+ 32329 strings out of 473190
+ 618960 string characters out of 5715799
+ 1544195 words of memory out of 5000000
+ 55103 multiletter control sequences out of 15000+600000
  565822 words of font info for 41 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
  119i,11n,122p,1188b,7179s stack positions out of 10000i,1000n,20000p,200000b,200000s

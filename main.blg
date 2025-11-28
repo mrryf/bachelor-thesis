@@ -1,30 +1,19 @@
 [0] Config.pm:308> INFO - This is Biber 2.20
 [0] Config.pm:311> INFO - Logfile is 'main.blg'
-[42] biber-darwin:340> INFO - === Fri Nov 28, 2025, 21:18:37
-[52] Biber.pm:420> INFO - Reading 'main.bcf'
-[113] Biber.pm:994> INFO - Found 10 citekeys in bib section 0
-[124] Biber.pm:4463> INFO - Processing section 0
-[130] Biber.pm:4654> INFO - Looking for bibtex file 'bibliography.bib' for section 0
-[131] bibtex.pm:1713> INFO - LaTeX decoding ...
-[144] bibtex.pm:1519> INFO - Found BibTeX data source 'bibliography.bib'
-[148] UCollate.pm:68> INFO - Overriding locale 'de-DE' defaults 'variable = shifted' with 'variable = non-ignorable'
-[148] UCollate.pm:68> INFO - Overriding locale 'de-DE' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[148] Biber.pm:4283> INFO - Sorting list 'apa/apasortcite//global/global/global' of type 'entry' with template 'apa' and locale 'de-DE'
-[148] Biber.pm:4289> INFO - No sort tailoring available for locale 'de-DE'
-[152] UCollate.pm:68> INFO - Overriding locale 'de-DE' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[152] UCollate.pm:68> INFO - Overriding locale 'de-DE' defaults 'variable = shifted' with 'variable = non-ignorable'
-[152] Biber.pm:4283> INFO - Sorting list 'apa/global//global/global/global' of type 'entry' with template 'apa' and locale 'de-DE'
-[152] Biber.pm:4289> INFO - No sort tailoring available for locale 'de-DE'
-[152] bbl.pm:676> INFO - Writing 'main.bbl' with encoding 'UTF-8'
-[152] bbl.pm:779> INFO - Output to main.bbl
-[152] Biber.pm:131> WARN - I didn't find a database entry for 'cunningham_how_2025' (section 0)
-[152] Biber.pm:131> WARN - I didn't find a database entry for 'davis_perceived_1989' (section 0)
-[152] Biber.pm:131> WARN - I didn't find a database entry for 'li_dimensions_2020' (section 0)
-[152] Biber.pm:131> WARN - I didn't find a database entry for 'baroni_ai-tam_2022' (section 0)
-[152] Biber.pm:131> WARN - I didn't find a database entry for 'druckman_evaluating_2001' (section 0)
-[152] Biber.pm:131> WARN - I didn't find a database entry for 'freling_when_2014' (section 0)
-[152] Biber.pm:131> WARN - I didn't find a database entry for 'ajzen_bayesian_1975' (section 0)
-[152] Biber.pm:131> WARN - I didn't find a database entry for 'tversky_framing_1986' (section 0)
-[152] Biber.pm:131> WARN - I didn't find a database entry for 'dolgopolova_effect_2022' (section 0)
-[152] Biber.pm:131> WARN - I didn't find a database entry for 'kim_communicating_2022' (section 0)
-[152] Biber.pm:133> INFO - WARNINGS: 10
+[44] biber-darwin:340> INFO - === Fri Nov 28, 2025, 21:44:54
+[56] Biber.pm:420> INFO - Reading 'main.bcf'
+[115] Biber.pm:994> INFO - Found 10 citekeys in bib section 0
+[130] Biber.pm:4463> INFO - Processing section 0
+[137] Biber.pm:4654> INFO - Looking for bibtex file 'bibliography.bib' for section 0
+[139] bibtex.pm:1713> INFO - LaTeX decoding ...
+[154] bibtex.pm:1519> INFO - Found BibTeX data source 'bibliography.bib'
+[215] UCollate.pm:68> INFO - Overriding locale 'de-DE' defaults 'variable = shifted' with 'variable = non-ignorable'
+[215] UCollate.pm:68> INFO - Overriding locale 'de-DE' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[215] Biber.pm:4283> INFO - Sorting list 'apa/apasortcite//global/global/global' of type 'entry' with template 'apa' and locale 'de-DE'
+[215] Biber.pm:4289> INFO - No sort tailoring available for locale 'de-DE'
+[233] UCollate.pm:68> INFO - Overriding locale 'de-DE' defaults 'variable = shifted' with 'variable = non-ignorable'
+[233] UCollate.pm:68> INFO - Overriding locale 'de-DE' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[233] Biber.pm:4283> INFO - Sorting list 'apa/global//global/global/global' of type 'entry' with template 'apa' and locale 'de-DE'
+[233] Biber.pm:4289> INFO - No sort tailoring available for locale 'de-DE'
+[239] bbl.pm:676> INFO - Writing 'main.bbl' with encoding 'UTF-8'
+[246] bbl.pm:779> INFO - Output to main.bbl
