@@ -61,7 +61,9 @@ def main():
                 success = False
 
     if not success:
-        sys.exit(1)
+        print("Warnings encountered: Some lists (TOC, LOF, LOT, or Bibliography) are missing or empty.")
+        # User requested to not fail the build, so we exit with 0.
+        sys.exit(0)
     
     print("All checks passed: TOC, LOF, LOT, and Bibliography are present and populated.")
 
