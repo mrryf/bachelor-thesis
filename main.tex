@@ -10,6 +10,8 @@
 \usepackage{booktabs}
 \usepackage[style=apa]{biblatex}
 
+\usepackage{subfiles} % Best loaded last in the preamble
+
 \addbibresource{bibliography.bib}
 
 \title{Forschungsdesign: Vertrauen in Künstliche Intelligenz}
@@ -24,13 +26,13 @@
 
 \maketitle
 
-\input{sections/00_abstract}
+\subfile{sections/00_abstract}
 \tableofcontents
 \newpage
 
-\input{sections/01_introduction}
-\input{sections/02_theory}
-\input{sections/03_methodology}
+\subfile{sections/01_introduction}
+\subfile{sections/02_theory}
+\subfile{sections/03_methodology}
 
 \printbibliography
 
