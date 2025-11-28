@@ -3,8 +3,8 @@ entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**04_ausgangslage.tex
-(./04_ausgangslage.tex
+**05_machbarkeit.tex
+(./05_machbarkeit.tex
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
 (/usr/local/texlive/2025/texmf-dist/tex/latex/subfiles/subfiles.cls
@@ -1076,8 +1076,8 @@ Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... found 'babel' package.
 Package csquotes Info: Adjusting default style.
 Package csquotes Info: Redefining alias 'default' -> 'ngerman'.
- (./04_ausgangslage.aux)
-\openout1 = `04_ausgangslage.aux'.
+ (./05_machbarkeit.aux)
+\openout1 = `05_machbarkeit.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 2.
 LaTeX Font Info:    ... okay on input line 2.
@@ -1156,9 +1156,9 @@ e
 ))
 Package hyperref Info: Link coloring OFF on input line 2.
 
-(./04_ausgangslage.out) (./04_ausgangslage.out)
+(./05_machbarkeit.out) (./05_machbarkeit.out)
 \@outlinefile=\write7
-\openout7 = `04_ausgangslage.out'.
+\openout7 = `05_machbarkeit.out'.
 
 
 (/usr/local/texlive/2025/texmf-dist/tex/latex/apa7/config/APA7ngerman.txt
@@ -1206,12 +1206,12 @@ File: german.lbx 2024/03/21 v3.20 biblatex localization (PK/MW)
 Package biblatex Info: Input encoding 'utf8' detected.
 Package biblatex Info: Automatic encoding selection.
 (biblatex)             Assuming data encoding 'utf8'.
-\openout6 = `04_ausgangslage.bcf'.
+\openout6 = `05_machbarkeit.bcf'.
 
 Package biblatex Info: Trying to load bibliographic data...
-Package biblatex Info: ... file '04_ausgangslage.bbl' found.
+Package biblatex Info: ... file '05_machbarkeit.bbl' found.
 
-(./04_ausgangslage.bbl)
+(./05_machbarkeit.bbl)
 Package biblatex Info: Reference section=0 on input line 2.
 Package biblatex Info: Reference segment=0 on input line 2.
  AED endfloat: Processing end Figures and Tables
@@ -1220,28 +1220,28 @@ Package biblatex Info: Reference segment=0 on input line 2.
 ocal/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}
 
 ]
-(./04_ausgangslage.aux)
+(./05_machbarkeit.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
  ***********
-Package rerunfilecheck Info: File `04_ausgangslage.out' has not changed.
-(rerunfilecheck)             Checksum: CDE1B508F759B91DC6CBCDF71EEF00E4;104.
-Package logreq Info: Writing requests to '04_ausgangslage.run.xml'.
-\openout1 = `04_ausgangslage.run.xml'.
+Package rerunfilecheck Info: File `05_machbarkeit.out' has not changed.
+(rerunfilecheck)             Checksum: BAB06ADE4BC710DEEBB8D1B0816D760C;99.
+Package logreq Info: Writing requests to '05_machbarkeit.run.xml'.
+\openout1 = `05_machbarkeit.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
  32332 strings out of 473190
- 619084 string characters out of 5715799
- 1537220 words of memory out of 5000000
+ 619058 string characters out of 5715799
+ 1537214 words of memory out of 5000000
  55107 multiletter control sequences out of 15000+600000
  565822 words of font info for 41 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
- 119i,11n,122p,1192b,7179s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 119i,11n,122p,1191b,7179s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/lo
 cal/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr12.pfb>
-Output written on 04_ausgangslage.pdf (1 page, 43036 bytes).
+Output written on 05_machbarkeit.pdf (1 page, 43294 bytes).
 PDF statistics:
  32 PDF objects out of 1000 (max. 8388607)
  24 compressed objects within 1 object stream

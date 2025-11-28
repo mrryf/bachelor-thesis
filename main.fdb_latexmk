@@ -1,12 +1,12 @@
 # Fdb version 4
-["biber main"] 1764362692.45457 "main.bcf" "main.bbl" "main" 1764364032.27329 0
+["biber main"] 1764362692.45457 "main.bcf" "main.bbl" "main" 1764364673.75173 0
   "bibliography.bib" 1764352171.00965 7720 e780959460ae934914e10b137fc6bacb ""
-  "main.bcf" 1764364032.13038 137569 f2051470e663ff1c976315b2394c1edd "pdflatex"
+  "main.bcf" 1764364673.57981 137569 f2051470e663ff1c976315b2394c1edd "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1764364030.03024 "main.tex" "main.pdf" "main" 1764364032.27369 2
+["pdflatex"] 1764364671.12418 "main.tex" "main.pdf" "main" 1764364673.75208 2
   "/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc" 1254269338 2375 baa924870cfb487815765f9094cf3728 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc" 1202520719 2405 5dcf2c1b967ee25cc46c58cd52244aed ""
   "/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc" 1202520719 2840 216e6e45ad352e2456e1149f28885bee ""
@@ -217,14 +217,14 @@
   "/usr/local/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1764347245 5467155 19efa205003f9ecad95fbbaa6ff24da1 ""
   "/usr/local/texlive/2025/texmf-var/web2c/pdftex/pdflatex.fmt" 1764347146 3345741 4676ea7f3e7a609a766b31b746a50cb9 ""
   "/usr/local/texlive/2025/texmf.cnf" 1741450484 577 418a7058ec8e006d8704f60ecd22c938 ""
-  "main.aux" 1764364032.12516 17487 4eb9c76460d98a6ee5a9aeed3075a30b "pdflatex"
+  "main.aux" 1764364673.57327 17583 06d660800bcb4161ff8359581b06737c "pdflatex"
   "main.bbl" 1764362694.37486 38018 aadc3bf297a50e9ad0f8f7ad1c67d97d "biber main"
-  "main.fff" 1764364032.07402 619 12857576fbbc806eb1d3bb2ce4d89151 "pdflatex"
-  "main.out" 1764364032.12908 10876 0381a31c9d5eb171846f194ad9b9f4c1 "pdflatex"
-  "main.run.xml" 1764364032.13113 2425 7f10c5c2573b0c79e2d6c904ff829c6a "pdflatex"
-  "main.tex" 1764364003.70657 897 73309702388933b500aeacb301af78f3 ""
-  "main.toc" 1764364032.1312 4930 15239a7c3a895dc03d5928b765555ea1 "pdflatex"
-  "main.ttt" 1764364031.87559 3262 f1a789246259ddf11a978dad346b0e3c "pdflatex"
+  "main.fff" 1764364673.4595 619 12857576fbbc806eb1d3bb2ce4d89151 "pdflatex"
+  "main.out" 1764364673.57841 10977 0e9666cadb6691382e33b5e9d1637060 "pdflatex"
+  "main.run.xml" 1764364673.58083 2425 7f10c5c2573b0c79e2d6c904ff829c6a "pdflatex"
+  "main.tex" 1764364643.58206 956 4581ca10d9fca0a5936ec725b7b25acb ""
+  "main.toc" 1764364673.58091 4985 b57c243a003920e1239fb77069d9070a "pdflatex"
+  "main.ttt" 1764364673.1732 3262 f1a789246259ddf11a978dad346b0e3c "pdflatex"
   "resources/images/ba_faryf_ai_tam.jpg" 1764362483.08657 381155 7a9245e17c642b1feb43a37f995e94bf ""
   "resources/images/ba_faryf_messmodell.jpg" 1764362505.92695 613743 8fe573d902f73be3f0a41cc8c0243dbb ""
   "sections/00_abstract.tex" 1764361027.95765 3339 d0b55fe7ea12d6687a1be9e0a5f8cc30 ""
@@ -232,6 +232,7 @@
   "sections/02_theory.tex" 1764363674.30006 16713 b1ac23c41a3f4fea4a255fe1aabc4043 ""
   "sections/03_methodology.tex" 1764362679.31496 21868 bb5005dd32a866165fa2bef63bda1470 ""
   "sections/04_ausgangslage.tex" 1764363996.95062 153 5ef4e59a625824136677fe99f8a12605 ""
+  "sections/05_machbarkeit.tex" 1764364625.46078 152 5db7cd86cb8475f823db2c06da1b81ef ""
   (generated)
   "main.aux"
   "main.bcf"
