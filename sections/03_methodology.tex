@@ -22,7 +22,20 @@ Das Experiment nutzt ein Between-Subjects-Design mit drei Experimentalgruppen, u
 
 Diese Designstruktur wird in der Literatur als Between-Subjects-Design mit Kovariate bezeichnet, wobei die kontinuierliche Variable als statistische Kontrollvariable dient \parencite{kim_communicating_2022}. Die Kombination eines kategorialen Faktors mit einer kontinuierlichen Variable ermöglicht die Untersuchung von Haupt- und Interaktionseffekten, während gleichzeitig die natürliche Varianz der KI-Performance kontrolliert wird
 
-% Tabelle 3: Experiment-Design, vorhandene Experimentalbedingungen
+\begin{table}[ht]
+    \centering
+    \caption{Experiment-Design, vorhandene Experimentalbedingungen}
+    \label{tab:experiment-design}
+    \begin{tabularx}{\textwidth}{l l X X}
+        \toprule
+        \textbf{Bedingung} & \textbf{Gruppe} & \textbf{Manipulation} & \textbf{Beispiel} \\
+        \midrule
+        Positive-Frame & Gruppe 1 & Score wird als Konfidenz/Zuverlässigkeit dargestellt & «Antwortsicherheit: 80\%» oder «Antwortsicherheit zu 80\% zuverlässig» \\
+        Negative-Frame & Gruppe 2 & Score wird als Unsicherheit/Fehlerwahrscheinlichkeit dargestellt & Antwortunsicherheit: 20\% oder «Diese Antwort hat eine Fehlerwahrscheinlichkeit von 20\%» \\
+        Kontrollgruppe & Gruppe 3 & Kein Score wird angezeigt (Status Quo) & - \\
+        \bottomrule
+    \end{tabularx}
+\end{table}
 
 \subsection{Ablauf Experiment}
 Das geplante Experiment ist in drei Phasen gegliedert: eine Phase vor, eine während und eine nach der Interaktion mit dem KI-Assistenten. In jeder dieser Phasen werden die benötigten Daten erhoben. Dies geschieht entweder durch direkte Nutzerbefragung mittels Bewertungsfragen oder durch automatische Berechnung und Speicherung im Hintergrund, wie es beispielsweise beim «Accuracy Score» der Fall ist.

@@ -26,7 +26,12 @@ Das von \textcite{davis_perceived_1989} entwickelte Technology Acceptance Model 
 \paragraph{Erweiterungen des TAM zum AI-TAM}
 \textcite{baroni_ai-tam_2022} erweiterten das TAM um drei zusätzliche Konstrukte: «Explainable AI Trust» (Vertrauen in KI) aus der Literatur zu «Explainable AI» (XAI), «Collaborative Intention» (Kollaborationsabsicht) zur Messung der Bereitschaft zur Teilnahme an «Human-in-the-Loop»-Mechanismen sowie die Vertrautheit mit der Technologie und dem Anwendungskontext. Vertrauenskonstrukt basiert auf der Arbeit von Hoffman et al. (Hoffman et al., 2019). Dabei misst «Explainable AI Trust» die Zuversicht in die Ergebnisse der KI. Die «Collaborative Intention» erfasst die Bereitschaft der Nutzer, aktiv zur Verbesserung der KI beizutragen, was ein kritischer Faktor für «Human-in-the-Loop»-Systeme ist. Dieses übt einen Einfluss auf Kernkonstrukte des TAM aus.
 
-% Abbildung 1: Erweitertes TAM-Modell: Artificial Intelligence-Technology Acceptance Model (Baroni et al., 2022)
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\textwidth]{resources/images/image1.jpeg}
+    \caption{Erweitertes TAM-Modell: Artificial Intelligence-Technology Acceptance Model \parencite{baroni_ai-tam_2022}}
+    \label{fig:ai-tam-model}
+\end{figure}
 
 \paragraph{Validierung durch die BumpOut-Studie \parencite{baroni_ai-tam_2022}}
 Das AI-TAM wurde mit der Anwendung «BumpOut» validiert, einer KI-gestützten App zur Schadensmeldung bei Autounfällen. Die Studie umfasste 400 Teilnehmende in zwei Crowdsourcing-Kampagnen unter unterschiedlichen experimentellen Bedingungen: einer fehlerfreien KI versus einer teilweise fehlerhaften KI. Die App analysiert dabei Schadensbilder automatisch, wobei die Nutzer die von der KI getroffenen Identifikationen bestätigen oder korrigieren können. Die Ergebnisse zeigten hohe Werte für die wahrgenommene Nützlichkeit und Benutzerfreundlichkeit, während die Funktionsfähigkeit der KI nur einen minimalen Einfluss hatte. Besonders bedeutsam war die starke Korrelation zwischen der Nutzungsabsicht («Behavioral Intention») und der Kollaborationsabsicht («Collaborative Intention»). Dies bestätigt, dass Nutzer, die bereit sind, die App zu verwenden, auch bereit sind, zur Verbesserung der KI beizutragen. Das AI-TAM eignet sich daher auch für die Untersuchung der Akzeptanz von Large Language Models (LLMs), da diese Systeme die gleichen kritischen Charakteristika aufweisen: probabilistische Ausgaben, inhärente Unsicherheit und die Notwendigkeit von Nutzervertrauen. LLMs werden zunehmend als kollaborative Partner wahrgenommen, deren Ergebnisse oft Nutzerfeedback erfordern. Insbesondere die XAI-Konstrukte sind hier relevant, da Nutzer nachvollziehen müssen, warum ein LLM eine bestimmte Antwort generiert.
@@ -51,10 +56,53 @@ Wie beeinflusst die Framingdarstellung von KI-Konfidenzwerten (positiv vs. negat
 \subsection{Latente Konstrukte}
 Die latenten Konstrukte werden mittels einer Online-Befragung vor, während und nach der Nutzung der KI-Assistenz erhoben. Die verwendeten Konstrukte stammen grossteils aus dem Technology Acceptance Model (TAM) von Davis sowie aus der Erweiterung dieses Modells durch \textcite{baroni_ai-tam_2022}. Diese Erweiterung ergänzt das bestehende TAM um KI-relevante Faktoren wie das Vertrauen in erklärbare KI («Explainable AI Trust», XAIT), die Kollaborationsabsicht («Collaborative Intention, CI») und die technologische Vorerfahrung («Familiarity with Technology», FAM-TEC») \parencite{baroni_ai-tam_2022}.
 
-% Tabelle 1: Identifizierte latente Konstrukte zum Einsatz von AI-TAM
+\begin{table}[ht]
+    \centering
+    \caption{Identifizierte latente Konstrukte zum Einsatz von AI-TAM}
+    \label{tab:latent-constructs}
+    \begin{tabularx}{\textwidth}{l l X l}
+        \toprule
+        \textbf{Abkürzung} & \textbf{Name} & \textbf{Definition} & \textbf{Quelle} \\
+        \midrule
+        XAIT & Explainable AI trust & Vertrauen in die generierte Antwort und die LLM-Lösung & \parencite{baroni_ai-tam_2022} \\
+        BI & Behavorial Intention & Verhaltensintention die LLM-Lösung zu Nutzen & \parencite{baroni_ai-tam_2022, davis_perceived_1989} \\
+        CI & Collaborative Intention & Kollaborationsintention zur digitalen Assistenz & \parencite{baroni_ai-tam_2022, davis_perceived_1989} \\
+        PUF & Perceived Usefulness & Wahrgenommene Nützlichkeit der generierten Antwort & \parencite{baroni_ai-tam_2022, davis_perceived_1989} \\
+        EOU & Ease of Use & Einfachheit in der Nutzung der KI-Applikation & \parencite{baroni_ai-tam_2022, davis_perceived_1989} \\
+        FAM-TEC & Familiarity with Technology & Vertrautheit in der Nutzung von KI-Technologie & \parencite{baroni_ai-tam_2022, davis_perceived_1989} \\
+        \bottomrule
+    \end{tabularx}
+\end{table}
 
 \subsection{Hypothesenübersicht}
-% Tabelle 2: Aufgelistete Hypothesen im Rahmen der Bachelor-Arbeit-Vorstudie
+\begin{table}[ht]
+    \centering
+    \caption{Aufgelistete Hypothesen im Rahmen der Bachelor-Arbeit-Vorstudie}
+    \label{tab:hypotheses}
+    \begin{tabularx}{\textwidth}{l X c l}
+        \toprule
+        \textbf{Hypothese} & \textbf{Pfad} & \textbf{Richtung} & \textbf{Theorie} \\
+        \midrule
+        H1a & Dummy\_Pos (Stimulus) $\to$ XAIT & + & Attribute Frame \\
+        H1b & Dummy\_Neg (Stimulus) $\to$ XAIT & - & Attribute Frame \\
+        H2 & XAIT $\to$ PUF & + & AI-TAM-Modell \\
+        H3 & XAIT $\to$ EOU & + & AI-TAM-Modell \\
+        H4 & PUF $\to$ BI & + & AI-TAM-Modell \\
+        H5 & EOU $\to$ BI & + & AI-TAM-Modell \\
+        H6 & EOU $\to$ PUF & + & AI-TAM-Modell \\
+        H7 & BI $\to$ CI & + & AI-TAM-Modell \\
+        H8 & FAMTEC $\to$ PUF & + & AI-TAM-Modell \\
+        \midrule
+        \multicolumn{4}{l}{\textbf{Kovariate}} \\
+        ACTS & ACTS $\to$ XAIT & kontrolliert & - \\
+        \midrule
+        \multicolumn{4}{l}{\textbf{Mediation}} \\
+        H9 & Framing $\to$ XAIT $\to$ (PUF, EOU) $\to$ BI & Indirekt & - \\
+        \bottomrule
+    \end{tabularx}
+    \par\medskip
+    \footnotesize{Anmerkung: Alle Pfade werden simultan im Strukturgleichungsmodell (SEM) geschätzt}
+\end{table}
 
 \subsubsection{Ausformulierte Hypothesen}
 
@@ -84,4 +132,9 @@ Die latenten Konstrukte werden mittels einer Online-Befragung vor, während und 
     \item H9: Der Effekt des Framings auf die Behavorial Intention wird durch Explainable AI Trust partiell oder vollständig mediiert. Bei niedrigen Explainable AI Trust-Werten ist der Unterschied zwischen positivem und negativem Framing grösser als bei hohen Explainable AI Trust-Werten.
 \end{itemize}
 
-% Abbildung 2: Strukturmodell für AI-TAM, teil des Strukturgleichungsmodell, inkl. Hypothesen, inkl. Stimulus
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\textwidth]{resources/images/image2.jpeg}
+    \caption{Strukturmodell für AI-TAM, Teil des Strukturgleichungsmodell, inkl. Hypothesen, inkl. Stimulus}
+    \label{fig:structure-model}
+\end{figure}
