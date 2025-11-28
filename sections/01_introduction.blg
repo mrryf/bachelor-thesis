@@ -1,0 +1,19 @@
+[0] Config.pm:308> INFO - This is Biber 2.20
+[0] Config.pm:311> INFO - Logfile is '01_introduction.blg'
+[41] biber-darwin:340> INFO - === Fri Nov 28, 2025, 21:46:02
+[50] Biber.pm:420> INFO - Reading '01_introduction.bcf'
+[107] Biber.pm:994> INFO - Found 4 citekeys in bib section 0
+[119] Biber.pm:4463> INFO - Processing section 0
+[125] Biber.pm:4654> INFO - Looking for bibtex file 'bibliography.bib' for section 0
+[127] bibtex.pm:1713> INFO - LaTeX decoding ...
+[140] bibtex.pm:1519> INFO - Found BibTeX data source 'bibliography.bib'
+[176] UCollate.pm:68> INFO - Overriding locale 'de-DE' defaults 'variable = shifted' with 'variable = non-ignorable'
+[176] UCollate.pm:68> INFO - Overriding locale 'de-DE' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[176] Biber.pm:4283> INFO - Sorting list 'apa/apasortcite//global/global/global' of type 'entry' with template 'apa' and locale 'de-DE'
+[176] Biber.pm:4289> INFO - No sort tailoring available for locale 'de-DE'
+[185] UCollate.pm:68> INFO - Overriding locale 'de-DE' defaults 'variable = shifted' with 'variable = non-ignorable'
+[185] UCollate.pm:68> INFO - Overriding locale 'de-DE' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[185] Biber.pm:4283> INFO - Sorting list 'apa/global//global/global/global' of type 'entry' with template 'apa' and locale 'de-DE'
+[185] Biber.pm:4289> INFO - No sort tailoring available for locale 'de-DE'
+[188] bbl.pm:676> INFO - Writing '01_introduction.bbl' with encoding 'UTF-8'
+[191] bbl.pm:779> INFO - Output to 01_introduction.bbl

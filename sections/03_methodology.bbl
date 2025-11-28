@@ -1,0 +1,253 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.3 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{apa/apasortcite//global/global/global}
+    \entry{Baroni2022}{article}{}{}
+      \name{author}{4}{}{%
+        {{un=0,uniquepart=base,hash=3efec66072649af7a315b347bf98dba6}{%
+           family={Baroni},
+           familyi={B\bibinitperiod},
+           given={I.},
+           giveni={I\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=05753bef26d29994237bb2eb56c9e1cd}{%
+           family={Calegari},
+           familyi={C\bibinitperiod},
+           given={G.\bibnamedelimi R.},
+           giveni={G\bibinitperiod\bibinitdelim R\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=27122d23eb594bbbfc4ddfbe857c4c74}{%
+           family={Scandolari},
+           familyi={S\bibinitperiod},
+           given={D.},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=5461dd2110f6f7f300561cd41b5cdfe7}{%
+           family={Celino},
+           familyi={C\bibinitperiod},
+           given={I.},
+           giveni={I\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{1ca0fc6e57761c9f40b267b402f383ef}
+      \strng{fullhash}{25a362a03ad6e7b4b3acb8be1a1aef9e}
+      \strng{fullhashraw}{25a362a03ad6e7b4b3acb8be1a1aef9e}
+      \strng{bibnamehash}{25a362a03ad6e7b4b3acb8be1a1aef9e}
+      \strng{authorbibnamehash}{25a362a03ad6e7b4b3acb8be1a1aef9e}
+      \strng{authornamehash}{1ca0fc6e57761c9f40b267b402f383ef}
+      \strng{authorfullhash}{25a362a03ad6e7b4b3acb8be1a1aef9e}
+      \strng{authorfullhashraw}{25a362a03ad6e7b4b3acb8be1a1aef9e}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Human Computation}
+      \field{number}{1}
+      \field{title}{AI-TAM: A model to investigate user acceptance and collaborative intention in human-in-the-loop AI applications}
+      \field{volume}{9}
+      \field{year}{2022}
+      \field{pages}{1\bibrangedash 21}
+      \range{pages}{21}
+      \verb{doi}
+      \verb 10.15346/hc.v9i1.134
+      \endverb
+    \endentry
+    \entry{Davis1987}{article}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=46dd2a34c88761c56b4e5b8206c2d771}{%
+           family={Davis},
+           familyi={D\bibinitperiod},
+           given={F.},
+           giveni={F\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{46dd2a34c88761c56b4e5b8206c2d771}
+      \strng{fullhash}{46dd2a34c88761c56b4e5b8206c2d771}
+      \strng{fullhashraw}{46dd2a34c88761c56b4e5b8206c2d771}
+      \strng{bibnamehash}{46dd2a34c88761c56b4e5b8206c2d771}
+      \strng{authorbibnamehash}{46dd2a34c88761c56b4e5b8206c2d771}
+      \strng{authornamehash}{46dd2a34c88761c56b4e5b8206c2d771}
+      \strng{authorfullhash}{46dd2a34c88761c56b4e5b8206c2d771}
+      \strng{authorfullhashraw}{46dd2a34c88761c56b4e5b8206c2d771}
+      \field{sortinit}{D}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{User acceptance of information systems: The technology acceptance model (TAM)}
+      \field{year}{1987}
+    \endentry
+    \entry{Kim2018}{article}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=eb49e08153f188c2f6bac46a1449d5de}{%
+           family={Kim},
+           familyi={K\bibinitperiod},
+           given={H.-Y.},
+           giveni={H\bibinithyphendelim Y\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{eb49e08153f188c2f6bac46a1449d5de}
+      \strng{fullhash}{eb49e08153f188c2f6bac46a1449d5de}
+      \strng{fullhashraw}{eb49e08153f188c2f6bac46a1449d5de}
+      \strng{bibnamehash}{eb49e08153f188c2f6bac46a1449d5de}
+      \strng{authorbibnamehash}{eb49e08153f188c2f6bac46a1449d5de}
+      \strng{authornamehash}{eb49e08153f188c2f6bac46a1449d5de}
+      \strng{authorfullhash}{eb49e08153f188c2f6bac46a1449d5de}
+      \strng{authorfullhashraw}{eb49e08153f188c2f6bac46a1449d5de}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Restorative Dentistry & Endodontics}
+      \field{number}{4}
+      \field{title}{Statistical notes for clinical researchers: Analysis of covariance (ANCOVA)}
+      \field{volume}{43}
+      \field{year}{2018}
+      \verb{doi}
+      \verb 10.5395/rde.2018.43.e43
+      \endverb
+    \endentry
+  \enddatalist
+  \datalist[entry]{apa/global//global/global/global}
+    \entry{Baroni2022}{article}{}{}
+      \name{author}{4}{}{%
+        {{un=0,uniquepart=base,hash=3efec66072649af7a315b347bf98dba6}{%
+           family={Baroni},
+           familyi={B\bibinitperiod},
+           given={I.},
+           giveni={I\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=05753bef26d29994237bb2eb56c9e1cd}{%
+           family={Calegari},
+           familyi={C\bibinitperiod},
+           given={G.\bibnamedelimi R.},
+           giveni={G\bibinitperiod\bibinitdelim R\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=27122d23eb594bbbfc4ddfbe857c4c74}{%
+           family={Scandolari},
+           familyi={S\bibinitperiod},
+           given={D.},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=5461dd2110f6f7f300561cd41b5cdfe7}{%
+           family={Celino},
+           familyi={C\bibinitperiod},
+           given={I.},
+           giveni={I\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{1ca0fc6e57761c9f40b267b402f383ef}
+      \strng{fullhash}{25a362a03ad6e7b4b3acb8be1a1aef9e}
+      \strng{fullhashraw}{25a362a03ad6e7b4b3acb8be1a1aef9e}
+      \strng{bibnamehash}{25a362a03ad6e7b4b3acb8be1a1aef9e}
+      \strng{authorbibnamehash}{25a362a03ad6e7b4b3acb8be1a1aef9e}
+      \strng{authornamehash}{1ca0fc6e57761c9f40b267b402f383ef}
+      \strng{authorfullhash}{25a362a03ad6e7b4b3acb8be1a1aef9e}
+      \strng{authorfullhashraw}{25a362a03ad6e7b4b3acb8be1a1aef9e}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Human Computation}
+      \field{number}{1}
+      \field{title}{AI-TAM: A model to investigate user acceptance and collaborative intention in human-in-the-loop AI applications}
+      \field{volume}{9}
+      \field{year}{2022}
+      \field{pages}{1\bibrangedash 21}
+      \range{pages}{21}
+      \verb{doi}
+      \verb 10.15346/hc.v9i1.134
+      \endverb
+    \endentry
+    \entry{Davis1987}{article}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=46dd2a34c88761c56b4e5b8206c2d771}{%
+           family={Davis},
+           familyi={D\bibinitperiod},
+           given={F.},
+           giveni={F\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{46dd2a34c88761c56b4e5b8206c2d771}
+      \strng{fullhash}{46dd2a34c88761c56b4e5b8206c2d771}
+      \strng{fullhashraw}{46dd2a34c88761c56b4e5b8206c2d771}
+      \strng{bibnamehash}{46dd2a34c88761c56b4e5b8206c2d771}
+      \strng{authorbibnamehash}{46dd2a34c88761c56b4e5b8206c2d771}
+      \strng{authornamehash}{46dd2a34c88761c56b4e5b8206c2d771}
+      \strng{authorfullhash}{46dd2a34c88761c56b4e5b8206c2d771}
+      \strng{authorfullhashraw}{46dd2a34c88761c56b4e5b8206c2d771}
+      \field{sortinit}{D}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{User acceptance of information systems: The technology acceptance model (TAM)}
+      \field{year}{1987}
+    \endentry
+    \entry{Kim2018}{article}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=eb49e08153f188c2f6bac46a1449d5de}{%
+           family={Kim},
+           familyi={K\bibinitperiod},
+           given={H.-Y.},
+           giveni={H\bibinithyphendelim Y\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{eb49e08153f188c2f6bac46a1449d5de}
+      \strng{fullhash}{eb49e08153f188c2f6bac46a1449d5de}
+      \strng{fullhashraw}{eb49e08153f188c2f6bac46a1449d5de}
+      \strng{bibnamehash}{eb49e08153f188c2f6bac46a1449d5de}
+      \strng{authorbibnamehash}{eb49e08153f188c2f6bac46a1449d5de}
+      \strng{authornamehash}{eb49e08153f188c2f6bac46a1449d5de}
+      \strng{authorfullhash}{eb49e08153f188c2f6bac46a1449d5de}
+      \strng{authorfullhashraw}{eb49e08153f188c2f6bac46a1449d5de}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Restorative Dentistry & Endodontics}
+      \field{number}{4}
+      \field{title}{Statistical notes for clinical researchers: Analysis of covariance (ANCOVA)}
+      \field{volume}{43}
+      \field{year}{2018}
+      \verb{doi}
+      \verb 10.5395/rde.2018.43.e43
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

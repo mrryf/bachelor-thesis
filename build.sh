@@ -25,6 +25,10 @@ latexmk -pdf -interaction=nonstopmode -file-line-error -synctex=1 main.tex
 
 # Build individual sections
 echo "Building individual sections..."
+
+# Copy bibliography to sections/ so subfiles can find it
+cp bibliography.bib sections/
+
 for file in sections/*.tex; do
     filename=$(basename "$file")
     echo "Building $filename..."
@@ -32,3 +36,6 @@ for file in sections/*.tex; do
     # We use -cd to change directory to the file's location, so ../main.tex is found.
     latexmk -pdf -cd -interaction=nonstopmode -file-line-error -synctex=1 "$file"
 done
+
+# Clean up copied bibliography
+rm sections/bibliography.bib

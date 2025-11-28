@@ -355,6 +355,11 @@ INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/biblatex/lbx/german.lbx
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/biblatex/lbx/german.lbx
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/biblatex/lbx/german.lbx
 OUTPUT 01_introduction.bcf
+INPUT 01_introduction.bbl
+INPUT ./01_introduction.bbl
+INPUT ./01_introduction.bbl
+INPUT ./01_introduction.bbl
+INPUT 01_introduction.bbl
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/lm/ec-lmbx12.tfm
 INPUT /usr/local/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc

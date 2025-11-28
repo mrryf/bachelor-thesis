@@ -8,12 +8,12 @@
         \toprule
         \textbf{Abkürzung} & \textbf{Name} & \textbf{Definition} & \textbf{Quelle} \\
         \midrule
-        XAIT & Explainable AI trust & Vertrauen in die generierte Antwort und die LLM-Lösung & \parencite{baroni_ai-tam_2022} \\
-        BI & Behavorial Intention & Verhaltensintention die LLM-Lösung zu Nutzen & \parencite{baroni_ai-tam_2022, davis_perceived_1989} \\
-        CI & Collaborative Intention & Kollaborationsintention zur digitalen Assistenz & \parencite{baroni_ai-tam_2022, davis_perceived_1989} \\
-        PUF & Perceived Usefulness & Wahrgenommene Nützlichkeit der generierten Antwort & \parencite{baroni_ai-tam_2022, davis_perceived_1989} \\
-        EOU & Ease of Use & Einfachheit in der Nutzung der KI-Applikation & \parencite{baroni_ai-tam_2022, davis_perceived_1989} \\
-        FAM-TEC & Familiarity with Technology & Vertrautheit in der Nutzung von KI-Technologie & \parencite{baroni_ai-tam_2022, davis_perceived_1989} \\
+        XAIT & Explainable AI trust & Vertrauen in die generierte Antwort und die LLM-Lösung & \parencite{Baroni2022} \\
+        BI & Behavorial Intention & Verhaltensintention die LLM-Lösung zu Nutzen & \parencite{Baroni2022, Davis1987} \\
+        CI & Collaborative Intention & Kollaborationsintention zur digitalen Assistenz & \parencite{Baroni2022, Davis1987} \\
+        PUF & Perceived Usefulness & Wahrgenommene Nützlichkeit der generierten Antwort & \parencite{Baroni2022, Davis1987} \\
+        EOU & Ease of Use & Einfachheit in der Nutzung der KI-Applikation & \parencite{Baroni2022, Davis1987} \\
+        FAM-TEC & Familiarity with Technology & Vertrautheit in der Nutzung von KI-Technologie & \parencite{Baroni2022, Davis1987} \\
         \bottomrule
     \end{tabularx}
 \end{table*}
