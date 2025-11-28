@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.11.28)  28 NOV 2025 22:47
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.11.28)  28 NOV 2025 22:52
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1337,10 +1337,20 @@ might try typing `S' now just to see what is salvageable.
 
 
 
-[27]) (./sections/11_abbildungen.tex
-No file main.lof.
+[27]) (./sections/11_abbildungen.tex (./main.lof
+Overfull \hbox (5.99812pt too wide) in paragraph at lines 2--2
+ [][] [][]\T1/lmr/m/n/12 Erweitertes TAM-Modell: Ar-ti-fi-ci-al Intelligence-Te
+chnology Ac-cep-tan-ce Mo- 
+ []
+
+)
 \tf@lof=\write9
 \openout9 = `main.lof'.
+
+) (./sections/12_tabellenverzeichnis.tex
+No file main.lot.
+\tf@lot=\write10
+\openout10 = `main.lot'.
 
 ) AED endfloat: Processing end Figures and Tables
 
@@ -1630,7 +1640,7 @@ Underfull \hbox (badness 1502) in paragraph at lines 68--68
 [31
 
 ] (./main.fff
-<resources/images/ba_faryf_ai_tam.jpg, id=530, 4773.835pt x 3375.61125pt>
+<resources/images/ba_faryf_ai_tam.jpg, id=539, 4773.835pt x 3375.61125pt>
 File: resources/images/ba_faryf_ai_tam.jpg Graphic file (type jpg)
 <use resources/images/ba_faryf_ai_tam.jpg>
 Package pdftex.def Info: resources/images/ba_faryf_ai_tam.jpg  used on input li
@@ -1641,7 +1651,7 @@ ne 5.
 [32
 
  <./resources/images/ba_faryf_ai_tam.jpg>]
-<resources/images/ba_faryf_messmodell.jpg, id=538, 4773.835pt x 3375.61125pt>
+<resources/images/ba_faryf_messmodell.jpg, id=545, 4773.835pt x 3375.61125pt>
 File: resources/images/ba_faryf_messmodell.jpg Graphic file (type jpg)
 <use resources/images/ba_faryf_messmodell.jpg>
 Package pdftex.def Info: resources/images/ba_faryf_messmodell.jpg  used on inpu
@@ -1667,25 +1677,28 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 33074 strings out of 473190
- 634114 string characters out of 5715799
+ 33091 strings out of 473190
+ 634530 string characters out of 5715799
  1548376 words of memory out of 5000000
- 55666 multiletter control sequences out of 15000+600000
+ 55675 multiletter control sequences out of 15000+600000
  602535 words of font info for 65 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
  99i,12n,105p,1526b,7179s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/lo
-cal/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbxi10.pfb></usr/local/texli
-ve/2025/texmf-dist/fonts/type1/public/lm/lmmi12.pfb></usr/local/texlive/2025/te
-xmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2025/texmf-dist/fo
-nts/type1/public/lm/lmr12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/p
-ublic/lm/lmri12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/l
-msy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/zapfding/uzdr.pfb
->
-Output written on main.pdf (33 pages, 1216655 bytes).
+
+pdfTeX warning (dest): name{figure.caption.70} has been referenced but does not
+ exist, replaced by a fixed one
+
+</usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/loca
+l/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbxi10.pfb></usr/local/texlive
+/2025/texmf-dist/fonts/type1/public/lm/lmmi12.pfb></usr/local/texlive/2025/texm
+f-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2025/texmf-dist/font
+s/type1/public/lm/lmr12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/pub
+lic/lm/lmri12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lms
+y10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/zapfding/uzdr.pfb>
+Output written on main.pdf (33 pages, 1217178 bytes).
 PDF statistics:
- 616 PDF objects out of 1000 (max. 8388607)
- 533 compressed objects within 6 object streams
- 115 named destinations out of 1000 (max. 500000)
+ 623 PDF objects out of 1000 (max. 8388607)
+ 540 compressed objects within 6 object streams
+ 117 named destinations out of 1000 (max. 500000)
  463 words of extra memory for PDF output out of 10000 (max. 10000000)
 
