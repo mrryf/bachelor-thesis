@@ -3,8 +3,8 @@ entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**03_methodology.tex
-(./03_methodology.tex
+**04_ausgangslage.tex
+(./04_ausgangslage.tex
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
 (/usr/local/texlive/2025/texmf-dist/tex/latex/subfiles/subfiles.cls
@@ -1076,8 +1076,8 @@ Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... found 'babel' package.
 Package csquotes Info: Adjusting default style.
 Package csquotes Info: Redefining alias 'default' -> 'ngerman'.
- (./03_methodology.aux)
-\openout1 = `03_methodology.aux'.
+ (./04_ausgangslage.aux)
+\openout1 = `04_ausgangslage.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 2.
 LaTeX Font Info:    ... okay on input line 2.
@@ -1156,9 +1156,9 @@ e
 ))
 Package hyperref Info: Link coloring OFF on input line 2.
 
-(./03_methodology.out) (./03_methodology.out)
+(./04_ausgangslage.out) (./04_ausgangslage.out)
 \@outlinefile=\write7
-\openout7 = `03_methodology.out'.
+\openout7 = `04_ausgangslage.out'.
 
 
 (/usr/local/texlive/2025/texmf-dist/tex/latex/apa7/config/APA7ngerman.txt
@@ -1206,159 +1206,45 @@ File: german.lbx 2024/03/21 v3.20 biblatex localization (PK/MW)
 Package biblatex Info: Input encoding 'utf8' detected.
 Package biblatex Info: Automatic encoding selection.
 (biblatex)             Assuming data encoding 'utf8'.
-\openout6 = `03_methodology.bcf'.
+\openout6 = `04_ausgangslage.bcf'.
 
 Package biblatex Info: Trying to load bibliographic data...
-Package biblatex Info: ... file '03_methodology.bbl' found.
+Package biblatex Info: ... file '04_ausgangslage.bbl' found.
 
-(./03_methodology.bbl)
+(./04_ausgangslage.bbl)
 Package biblatex Info: Reference section=0 on input line 2.
 Package biblatex Info: Reference segment=0 on input line 2.
-LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 1
-2.
-
-(/usr/local/texlive/2025/texmf-dist/tex/latex/lm/ts1lmr.fd
-File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
-\openout4 = `03_methodology.ttt'.
-
-
-(03_methodology.ttt)
+ AED endfloat: Processing end Figures and Tables
 
 [1{/usr/local/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/l
 ocal/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}
 
-{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}]
-
-[2]
-
-[3]
-
-[4]
-
-[5]
-
-[6]
-LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 1
-49.
- (/usr/local/texlive/2025/texmf-dist/tex/latex/lm/ot1lmr.fd
-File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
-LaTeX Font Info:    Trying to load font information for OML+lmm on input line 1
-49.
-
-(/usr/local/texlive/2025/texmf-dist/tex/latex/lm/omllmm.fd
-File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
-LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
-149.
-
-(/usr/local/texlive/2025/texmf-dist/tex/latex/lm/omslmsy.fd
-File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
-LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
-149.
-
-(/usr/local/texlive/2025/texmf-dist/tex/latex/lm/omxlmex.fd
-File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 149.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 149.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 149.
-
-
-[7{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/lo
-cal/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/local/texliv
-e/2025/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}]
-
-[8]
-
-[9]
-
-[10]
-
-[11] AED endfloat: Processing end Figures and Tables
-
-[12] (./03_methodology.ttt
-Underfull \hbox (badness 10000) in paragraph at lines 15--15
-[]|\T1/lmr/m/n/12 Score wird als Kon-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 15--15
-\T1/lmr/m/n/12 fi-denz/Zuverlässigkeit
- []
-
-
-Underfull \hbox (badness 1502) in paragraph at lines 15--15
-[]|\T1/lmr/m/n/12 ^^SAntwortsicherheit: 80%^^T
- []
-
-
-Underfull \hbox (badness 1231) in paragraph at lines 15--15
-[]|\T1/lmr/m/n/12 Score wird als Un-si-cher-
- []
-
-
-Overfull \hbox (12.29776pt too wide) in paragraph at lines 15--15
-\T1/lmr/m/n/12 heit/Fehlerwahrscheinlichkeit
- []
-
-
-Underfull \hbox (badness 1502) in paragraph at lines 15--15
-[]|\T1/lmr/m/n/12 Antwortunsicherheit: 20%
- []
-
-)
-
-[13
-
-
-] (./03_methodology.aux)
+]
+(./04_ausgangslage.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
  ***********
-Package rerunfilecheck Info: File `03_methodology.out' has not changed.
-(rerunfilecheck)             Checksum: 6CDF4B2C4FE84D998B15A638F7B8F46F;8635.
-Package logreq Info: Writing requests to '03_methodology.run.xml'.
-\openout1 = `03_methodology.run.xml'.
+Package rerunfilecheck Info: File `04_ausgangslage.out' has not changed.
+(rerunfilecheck)             Checksum: CDE1B508F759B91DC6CBCDF71EEF00E4;104.
+Package logreq Info: Writing requests to '04_ausgangslage.run.xml'.
+\openout1 = `04_ausgangslage.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 32824 strings out of 473190
- 628674 string characters out of 5715799
- 1546450 words of memory out of 5000000
- 55499 multiletter control sequences out of 15000+600000
- 599545 words of font info for 64 fonts, out of 8000000 for 9000
+ 32332 strings out of 473190
+ 619084 string characters out of 5715799
+ 1537220 words of memory out of 5000000
+ 55107 multiletter control sequences out of 15000+600000
+ 565822 words of font info for 41 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
- 119i,11n,122p,1191b,7179s stack positions out of 10000i,1000n,20000p,200000b,200000s
-
-pdfTeX warning (dest): name{cite.0@Baroni2022} has been referenced but does not
- exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{cite.0@Davis1987} has been referenced but does not 
-exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{cite.0@Kim2018} has been referenced but does not ex
-ist, replaced by a fixed one
-
-</usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/loca
-l/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbxi10.pfb></usr/local/texlive
-/2025/texmf-dist/fonts/type1/public/lm/lmmi12.pfb></usr/local/texlive/2025/texm
-f-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2025/texmf-dist/font
-s/type1/public/lm/lmri12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/pu
-blic/lm/lmsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/zapfding
-/uzdr.pfb>
-Output written on 03_methodology.pdf (13 pages, 145139 bytes).
+ 119i,11n,122p,1192b,7179s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/lo
+cal/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr12.pfb>
+Output written on 04_ausgangslage.pdf (1 page, 43036 bytes).
 PDF statistics:
- 303 PDF objects out of 1000 (max. 8388607)
- 269 compressed objects within 3 object streams
- 60 named destinations out of 1000 (max. 500000)
- 349 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 32 PDF objects out of 1000 (max. 8388607)
+ 24 compressed objects within 1 object stream
+ 3 named destinations out of 1000 (max. 500000)
+ 21 words of extra memory for PDF output out of 10000 (max. 10000000)
 
