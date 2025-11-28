@@ -2,8 +2,8 @@
 \contentsline {section}{Relevanz-Einordnung}{6}{section*.3}%
 \contentsline {section}{Theoretische Einbettung, Forschungsfrage, Hypothesen und Forschungsdesign}{8}{section*.4}%
 \contentsline {subsection}{Theoretische Einbettung}{8}{section*.5}%
-\contentsline {subsubsection}{Technology Acceptance Model \blx@tocontentsinit {0}\parencite {Davis1987}}{9}{section*.6}%
-\contentsline {subsubsection}{Artificial Intelligence-Technology Acceptance Model \blx@tocontentsinit {0}\parencite {Baroni2022}}{10}{section*.7}%
+\contentsline {subsubsection}{Technology Acceptance Model}{9}{section*.6}%
+\contentsline {subsubsection}{Artificial Intelligence-Technology Acceptance Model}{10}{section*.7}%
 \contentsline {paragraph}{Notwendigkeit der TAM-Erweiterung für KI-Systeme}{10}{section*.8}%
 \contentsline {paragraph}{Erweiterungen des TAM zum AI-TAM}{10}{section*.9}%
 \contentsline {paragraph}{Validierung durch die BumpOut-Studie \blx@tocontentsinit {0}\parencite {Baroni2022}}{10}{section*.10}%

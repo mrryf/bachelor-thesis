@@ -464,6 +464,9 @@ INPUT sections/12_tabellenverzeichnis.tex
 INPUT ./sections/12_tabellenverzeichnis.tex
 INPUT ./sections/12_tabellenverzeichnis.tex
 INPUT sections/12_tabellenverzeichnis.tex
+INPUT ./main.lot
+INPUT main.lot
+INPUT main.lot
 OUTPUT main.lot
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/lm/ec-lmr6.tfm
 INPUT ./main.ttt
