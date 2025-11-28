@@ -31,10 +31,20 @@ def sync_zotero():
     bib_path = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'bibliography.bib')
     
     with open(bib_path, 'w', encoding='utf-8') as f:
-        for item in items:
-            f.write(item)
-            
-    print(f"Successfully wrote {len(items)} items to {bib_path}")
+        # Check if items is a list (old behavior) or BibDatabase (new behavior)
+        if isinstance(items, list):
+            for item in items:
+                f.write(item)
+            print(f"Successfully wrote {len(items)} items to {bib_path}")
+        elif hasattr(items, 'entries'):
+             # It's a BibDatabase object
+            from bibtexparser.bwriter import BibTexWriter
+            writer = BibTexWriter()
+            f.write(writer.write(items))
+            print(f"Successfully wrote {len(items.entries)} items to {bib_path}")
+        else:
+            print(f"Unexpected type for items: {type(items)}")
+            sys.exit(1)
 
 if __name__ == "__main__":
     sync_zotero()
