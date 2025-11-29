@@ -1,13 +1,13 @@
 # Fdb version 4
-["biber 03_methodology"] 1764429589.01467 "03_methodology.bcf" "03_methodology.bbl" "03_methodology" 1764430152.55276 0
-  "03_methodology.bcf" 1764430152.43037 133517 4b63ef4688f24a40b198ac7ce18ed9dd "pdflatex"
-  "resources/bibliography.bib" 1764430148.01293 7721 36911ebfb0b8e6d2968b1161bc5595ed ""
+["biber sections/03_methodology"] 1764431549.89166 "sections/03_methodology.bcf" "sections/03_methodology.bbl" "sections/03_methodology" 1764431553.03552 0
+  "resources/bibliography.bib" 1764370262.53512 7721 36911ebfb0b8e6d2968b1161bc5595ed ""
+  "sections/03_methodology.bcf" 1764431552.93279 133517 4b63ef4688f24a40b198ac7ce18ed9dd "pdflatex"
   (generated)
-  "03_methodology.bbl"
-  "03_methodology.blg"
+  "sections/03_methodology.bbl"
+  "sections/03_methodology.blg"
   (rewritten before read)
-["pdflatex"] 1764430151.17439 "03_methodology.tex" "03_methodology.pdf" "03_methodology" 1764430152.55318 0
-  "../main.tex" 1764429571.0745 1130 1c80cab96aafac89807502af530b6893 ""
+["pdflatex"] 1764431551.74527 "/Users/mrryf/develop/python/data-analysis/projects/bachelor-thesis/sections/03_methodology.tex" "sections/03_methodology.pdf" "03_methodology" 1764431553.03589 0
+  "/Users/mrryf/develop/python/data-analysis/projects/bachelor-thesis/sections/03_methodology.tex" 1764431548.14791 22831 09dd11cb74efaee94c08a1eef2af2020 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc" 1254269338 2375 baa924870cfb487815765f9094cf3728 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc" 1202520719 2405 5dcf2c1b967ee25cc46c58cd52244aed ""
   "/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc" 1202520719 2840 216e6e45ad352e2456e1149f28885bee ""
@@ -225,16 +225,17 @@
   "/usr/local/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1764347245 5467155 19efa205003f9ecad95fbbaa6ff24da1 ""
   "/usr/local/texlive/2025/texmf-var/web2c/pdftex/pdflatex.fmt" 1764347146 3345741 4676ea7f3e7a609a766b31b746a50cb9 ""
   "/usr/local/texlive/2025/texmf.cnf" 1741450484 577 418a7058ec8e006d8704f60ecd22c938 ""
-  "03_methodology.aux" 1764430152.42692 6462 42c8df911fd53a2f44f44d6d9bca5645 "pdflatex"
-  "03_methodology.bbl" 1764429590.49484 10124 03c9170017bb2f0311ceca1347ece435 "biber 03_methodology"
-  "03_methodology.out" 1764430152.42919 8640 8fddb9e82d00388914a5f80f5dda2bb1 "pdflatex"
-  "03_methodology.run.xml" 1764430152.43121 2505 d6ff1a28088be416c88bcedf6192ef8b "pdflatex"
-  "03_methodology.tex" 1764430143.48884 22831 09dd11cb74efaee94c08a1eef2af2020 ""
+  "sections/../main.tex" 1764429571.0745 1130 1c80cab96aafac89807502af530b6893 ""
+  "sections/03_methodology.aux" 1764431552.92872 6462 42c8df911fd53a2f44f44d6d9bca5645 "pdflatex"
+  "sections/03_methodology.bbl" 1764431551.72291 10124 03c9170017bb2f0311ceca1347ece435 "biber sections/03_methodology"
+  "sections/03_methodology.out" 1764431552.93073 8640 8fddb9e82d00388914a5f80f5dda2bb1 "pdflatex"
+  "sections/03_methodology.run.xml" 1764431552.93365 2505 d6ff1a28088be416c88bcedf6192ef8b "pdflatex"
+  "sections/03_methodology.tex" 1764431548.14791 22831 09dd11cb74efaee94c08a1eef2af2020 ""
   (generated)
-  "03_methodology.aux"
-  "03_methodology.bcf"
-  "03_methodology.log"
-  "03_methodology.out"
-  "03_methodology.pdf"
-  "03_methodology.run.xml"
+  "sections/03_methodology.aux"
+  "sections/03_methodology.bcf"
+  "sections/03_methodology.log"
+  "sections/03_methodology.out"
+  "sections/03_methodology.pdf"
+  "sections/03_methodology.run.xml"
   (rewritten before read)
