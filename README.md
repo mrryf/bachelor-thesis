@@ -126,6 +126,8 @@ The bibliography is stored in `resources/bibliography.bib`. To sync the latest r
     python scripts/sync_zotero.py
     ```
 
+> **Note:** You must have read access to the specific Zotero libraries configured in the script. If you do not have access, the project includes a pre-generated `resources/bibliography.bib` file that you can use.
+
 ## Testing & Verification
 
 This project uses automated tests to ensure document integrity.
