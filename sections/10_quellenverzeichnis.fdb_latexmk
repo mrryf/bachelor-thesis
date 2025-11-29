@@ -1,12 +1,12 @@
 # Fdb version 4
-["biber 10_quellenverzeichnis"] 1764370590.05398 "10_quellenverzeichnis.bcf" "10_quellenverzeichnis.bbl" "10_quellenverzeichnis" 1764429597.33965 0
-  "10_quellenverzeichnis.bcf" 1764429597.24856 133729 fcf21c1b90173149dd46b40f9afc6f1f "pdflatex"
+["biber 10_quellenverzeichnis"] 1764370590.05398 "10_quellenverzeichnis.bcf" "10_quellenverzeichnis.bbl" "10_quellenverzeichnis" 1764432832.04326 0
+  "10_quellenverzeichnis.bcf" 1764432831.88588 133729 fcf21c1b90173149dd46b40f9afc6f1f "pdflatex"
   (generated)
   "10_quellenverzeichnis.bbl"
   "10_quellenverzeichnis.blg"
   (rewritten before read)
-["pdflatex"] 1764429596.11095 "10_quellenverzeichnis.tex" "10_quellenverzeichnis.pdf" "10_quellenverzeichnis" 1764429597.34012 0
-  "../main.tex" 1764429571.0745 1130 1c80cab96aafac89807502af530b6893 ""
+["pdflatex"] 1764432830.77954 "10_quellenverzeichnis.tex" "10_quellenverzeichnis.pdf" "10_quellenverzeichnis" 1764432832.04372 0
+  "../main.tex" 1764432808.46007 1164 099671b6e63f8da40933ad62ce4927a7 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc" 1254269338 2375 baa924870cfb487815765f9094cf3728 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/tfm/adobe/symbol/psyr.tfm" 1136768653 1408 5937f58aa508ea2cea4901c07d10f5fe ""
@@ -180,10 +180,10 @@
   "/usr/local/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1764347245 5467155 19efa205003f9ecad95fbbaa6ff24da1 ""
   "/usr/local/texlive/2025/texmf-var/web2c/pdftex/pdflatex.fmt" 1764347146 3345741 4676ea7f3e7a609a766b31b746a50cb9 ""
   "/usr/local/texlive/2025/texmf.cnf" 1741450484 577 418a7058ec8e006d8704f60ecd22c938 ""
-  "10_quellenverzeichnis.aux" 1764429597.24528 416 0a80dcf845459eb8ba6926b9be6db0de "pdflatex"
+  "10_quellenverzeichnis.aux" 1764432831.88282 416 0a80dcf845459eb8ba6926b9be6db0de "pdflatex"
   "10_quellenverzeichnis.bbl" 1764370591.49361 466 76d65a242ec496c9b4361af646ff12cb "biber 10_quellenverzeichnis"
-  "10_quellenverzeichnis.out" 1764429597.01081 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "10_quellenverzeichnis.run.xml" 1764429597.24972 2554 f28cee9fe451be805b419bf5317720ed "pdflatex"
+  "10_quellenverzeichnis.out" 1764432831.6429 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "10_quellenverzeichnis.run.xml" 1764432831.88691 2554 f28cee9fe451be805b419bf5317720ed "pdflatex"
   "10_quellenverzeichnis.tex" 1764370262.77667 150 030d411b94ad2def12c10f52dce736a9 ""
   (generated)
   "10_quellenverzeichnis.aux"
