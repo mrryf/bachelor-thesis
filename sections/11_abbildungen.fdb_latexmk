@@ -1,12 +1,12 @@
 # Fdb version 4
-["biber 11_abbildungen"] 1764370591.61334 "11_abbildungen.bcf" "11_abbildungen.bbl" "11_abbildungen" 1764370592.94541 0
-  "11_abbildungen.bcf" 1764370554.42494 133326 519abe7fecbc2b8ecb5c1b3a7801c1ee "pdflatex"
+["biber 11_abbildungen"] 1764370591.61334 "11_abbildungen.bcf" "11_abbildungen.bbl" "11_abbildungen" 1764429598.67416 0
+  "11_abbildungen.bcf" 1764429598.52181 133326 519abe7fecbc2b8ecb5c1b3a7801c1ee "pdflatex"
   (generated)
   "11_abbildungen.bbl"
   "11_abbildungen.blg"
   (rewritten before read)
-["pdflatex"] 1764370553.24365 "11_abbildungen.tex" "11_abbildungen.pdf" "11_abbildungen" 1764370592.94544 0
-  "../main.tex" 1764370483.73095 1102 4c5be0e1501adcc358a62cfd7b1888e5 ""
+["pdflatex"] 1764429597.43537 "11_abbildungen.tex" "11_abbildungen.pdf" "11_abbildungen" 1764429598.67452 0
+  "../main.tex" 1764429571.0745 1130 1c80cab96aafac89807502af530b6893 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc" 1254269338 2375 baa924870cfb487815765f9094cf3728 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/tfm/adobe/symbol/psyr.tfm" 1136768653 1408 5937f58aa508ea2cea4901c07d10f5fe ""
@@ -182,11 +182,11 @@
   "/usr/local/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1764347245 5467155 19efa205003f9ecad95fbbaa6ff24da1 ""
   "/usr/local/texlive/2025/texmf-var/web2c/pdftex/pdflatex.fmt" 1764347146 3345741 4676ea7f3e7a609a766b31b746a50cb9 ""
   "/usr/local/texlive/2025/texmf.cnf" 1741450484 577 418a7058ec8e006d8704f60ecd22c938 ""
-  "11_abbildungen.aux" 1764370554.42237 416 0a80dcf845459eb8ba6926b9be6db0de "pdflatex"
+  "11_abbildungen.aux" 1764429598.51856 416 0a80dcf845459eb8ba6926b9be6db0de "pdflatex"
   "11_abbildungen.bbl" 1764370592.92432 466 76d65a242ec496c9b4361af646ff12cb "biber 11_abbildungen"
-  "11_abbildungen.lof" 1764370554.42581 30 dd9a1bdf2f8dbad8adb0552ea4fb4223 "pdflatex"
-  "11_abbildungen.out" 1764370554.16824 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "11_abbildungen.run.xml" 1764370554.42574 2505 a09971c257767c12a12e91f4dd4d0c13 "pdflatex"
+  "11_abbildungen.lof" 1764429598.52277 30 dd9a1bdf2f8dbad8adb0552ea4fb4223 "pdflatex"
+  "11_abbildungen.out" 1764429598.28065 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "11_abbildungen.run.xml" 1764429598.52269 2505 a09971c257767c12a12e91f4dd4d0c13 "pdflatex"
   "11_abbildungen.tex" 1764366439.12482 85 0ffb816b8ae0ef6ac7d51b73546a80ea ""
   (generated)
   "11_abbildungen.aux"

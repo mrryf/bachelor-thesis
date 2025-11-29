@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.11.28)  28 NOV 2025 23:55
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.11.28)  29 NOV 2025 16:19
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1076,7 +1076,7 @@ Package: subfiles 2020/11/14 v2.2 Multi-file projects (package)
 
 
 Class apa7 Warning: Deprecated: see documentation for \authorsaffiliations on i
-nput line 20.
+nput line 21.
 
 \c@NumberOfAffiliations=\count473
 ))

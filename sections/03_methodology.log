@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.11.28)  28 NOV 2025 23:55
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.11.28)  29 NOV 2025 16:29
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1076,7 +1076,7 @@ Package: subfiles 2020/11/14 v2.2 Multi-file projects (package)
 
 
 Class apa7 Warning: Deprecated: see documentation for \authorsaffiliations on i
-nput line 20.
+nput line 21.
 
 \c@NumberOfAffiliations=\count473
 ))
@@ -1262,6 +1262,8 @@ Underfull \hbox (badness 1502) in paragraph at lines 39--39
 []|\T1/lmr/m/n/12 Antwortunsicherheit: 20%
  []
 
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10.95> on input line 60.
 
 
 [1{/usr/local/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/l
@@ -1299,19 +1301,19 @@ LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
  ***********
 Package rerunfilecheck Info: File `03_methodology.out' has not changed.
-(rerunfilecheck)             Checksum: F7180514A6BFE8CA2C3A0C38A2B0B93C;8636.
+(rerunfilecheck)             Checksum: 8FDDB9E82D00388914A5F80F5DDA2BB1;8640.
 Package logreq Info: Writing requests to '03_methodology.run.xml'.
 \openout1 = `03_methodology.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 32871 strings out of 473190
- 629459 string characters out of 5715799
- 1549909 words of memory out of 5000000
- 55546 multiletter control sequences out of 15000+600000
- 596557 words of font info for 63 fonts, out of 8000000 for 9000
+ 32900 strings out of 473190
+ 629965 string characters out of 5715799
+ 1552003 words of memory out of 5000000
+ 55567 multiletter control sequences out of 15000+600000
+ 614012 words of font info for 72 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
- 119i,11n,122p,1191b,7179s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 119i,12n,122p,1191b,7179s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
 pdfTeX warning (dest): name{cite.0@Baroni2022} has been referenced but does not
  exist, replaced by a fixed one
@@ -1327,14 +1329,15 @@ ist, replaced by a fixed one
 </usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/loca
 l/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbxi10.pfb></usr/local/texlive
 /2025/texmf-dist/fonts/type1/public/lm/lmmi12.pfb></usr/local/texlive/2025/texm
-f-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2025/texmf-dist/font
-s/type1/public/lm/lmri12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/pu
-blic/lm/lmsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/zapfding
-/uzdr.pfb>
-Output written on 03_methodology.pdf (13 pages, 145207 bytes).
+f-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2025/texmf-dist/font
+s/type1/public/lm/lmr12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/pub
+lic/lm/lmri10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr
+i12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></
+usr/local/texlive/2025/texmf-dist/fonts/type1/urw/zapfding/uzdr.pfb>
+Output written on 03_methodology.pdf (13 pages, 190467 bytes).
 PDF statistics:
- 303 PDF objects out of 1000 (max. 8388607)
- 269 compressed objects within 3 object streams
- 60 named destinations out of 1000 (max. 500000)
+ 316 PDF objects out of 1000 (max. 8388607)
+ 278 compressed objects within 3 object streams
+ 62 named destinations out of 1000 (max. 500000)
  349 words of extra memory for PDF output out of 10000 (max. 10000000)
 

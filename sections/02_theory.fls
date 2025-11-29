@@ -408,11 +408,11 @@ INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/lm/lmbsy10.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/lm/lmbsy10.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/lm/lmbsy7.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/lm/ec-lmr10.tfm
+INPUT ../resources/images/ba_faryf_messmodell.jpg
+INPUT ../resources/images/ba_faryf_messmodell.jpg
+INPUT ../resources/images/ba_faryf_messmodell.jpg
+INPUT ../resources/images/ba_faryf_messmodell.jpg
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc
-INPUT ../resources/images/ba_faryf_messmodell.jpg
-INPUT ../resources/images/ba_faryf_messmodell.jpg
-INPUT ../resources/images/ba_faryf_messmodell.jpg
-INPUT ../resources/images/ba_faryf_messmodell.jpg
 INPUT 02_theory.aux
 INPUT ./02_theory.out
 INPUT ./02_theory.out

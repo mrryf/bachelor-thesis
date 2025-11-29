@@ -400,6 +400,15 @@ INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/lm/lmmib7.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/lm/lmbsy10.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/lm/lmbsy10.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/lm/lmbsy7.tfm
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/lm/ec-lmr10.tfm
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/lm/rm-lmr10.tfm
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/lm/lmmi10.tfm
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/lm/lmsy10.tfm
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/lm/rm-lmbx10.tfm
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/lm/lmmib10.tfm
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/lm/lmbsy10.tfm
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/lm/ec-lmr8.tfm
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/lm/ec-lmri10.tfm
 INPUT /usr/local/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc
@@ -414,7 +423,9 @@ OUTPUT 03_methodology.run.xml
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbx12.pfb
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbxi10.pfb
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi12.pfb
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr10.pfb
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr12.pfb
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmri10.pfb
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmri12.pfb
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmsy10.pfb
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/type1/urw/zapfding/uzdr.pfb
