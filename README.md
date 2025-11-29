@@ -1,6 +1,43 @@
 # Bachelor Thesis: Trust in Artificial Intelligence
 
-This repository contains the LaTeX source code and associated resources for the Bachelor Thesis on "Trust in Artificial Intelligence" (Vertrauen in Künstliche Intelligenz). The thesis investigates the impact of accuracy framing on user trust in AI systems using the AI-TAM model.
+![Build Status](https://github.com/mrryf/bachelor-thesis/actions/workflows/latex-build.yml/badge.svg)
+![Python](https://img.shields.io/badge/python-3.x-blue.svg)
+![LaTeX](https://img.shields.io/badge/latex-TeX%20Live-green.svg)
+![License](https://img.shields.io/badge/license-All%20Rights%20Reserved-blue.svg)
+
+This repository contains the LaTeX source code and associated resources for the Bachelor Thesis on **"Trust in Artificial Intelligence"** (Vertrauen in Künstliche Intelligenz). The thesis investigates the impact of accuracy framing on user trust in AI systems using the AI-TAM model.
+
+## Table of Contents
+- [Quick Start](#quick-start)
+- [Project Overview](#project-overview)
+- [Tech Stack](#tech-stack)
+- [Prerequisites](#prerequisites)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Testing & Verification](#testing--verification)
+- [Continuous Integration](#continuous-integration-ci)
+- [Project Structure](#project-structure)
+- [Contributing](#contributing)
+- [License](#license)
+- [Contact](#contact)
+
+## Quick Start
+
+Get up and running in seconds:
+
+```bash
+# 1. Clone the repo
+git clone https://github.com/mrryf/bachelor-thesis.git
+cd bachelor-thesis
+
+# 2. Install dependencies
+pip install -r requirements.txt
+
+# 3. Build the thesis
+./scripts/build.sh
+```
+
+The compiled PDF will be available at `main.pdf`.
 
 ## Project Overview
 
@@ -11,6 +48,13 @@ The document is structured using the `subfiles` package, allowing for individual
 - **Automated Build System**: Custom shell scripts and GitHub Actions for continuous integration.
 - **Bibliography Management**: Integrated with Zotero via `pyzotero` for automated bibliography updates.
 - **Quality Assurance**: Automated checks for Table of Contents (TOC), List of Figures (LOF), and List of Tables (LOT) integrity.
+
+## Tech Stack
+
+- **Language**: LaTeX, Python 3
+- **Build System**: `latexmk`, GitHub Actions
+- **Bibliography**: BibTeX, Zotero API
+- **Testing**: `unittest` (Python)
 
 ## Prerequisites
 
@@ -138,7 +182,20 @@ bachelor-thesis/
 └── .github/                # CI/CD configuration
 ```
 
+## Contributing
+
+Contributions are welcome! Please follow these steps:
+1.  Fork the repository.
+2.  Create a new branch (`git checkout -b feature/YourFeature`).
+3.  Commit your changes (`git commit -m 'Add some feature'`).
+4.  Push to the branch (`git push origin feature/YourFeature`).
+5.  Open a Pull Request.
+
 ## License
 
 Copyright (c) 2025 mrryf. All Rights Reserved.
 See [LICENSE](LICENSE) for details.
+
+## Contact
+
+Created by [mrryf](https://github.com/mrryf).
