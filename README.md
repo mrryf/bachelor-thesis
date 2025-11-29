@@ -133,9 +133,15 @@ The bibliography is stored in `resources/bibliography.bib`. To sync the latest r
 This project uses automated tests to ensure document integrity.
 
 **Run Structure Tests:**
-Verifies that the LaTeX structure is valid and citations match the bibliography.
+Verifies that the LaTeX structure is valid (e.g., APA7 class).
 ```bash
 python tests/test_structure.py
+```
+
+**Run Citation Tests:**
+Verifies that all citations in the text match the bibliography.
+```bash
+python tests/test_citations.py
 ```
 
 **Run Formal Guidelines Tests:**
