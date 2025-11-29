@@ -1,12 +1,12 @@
 # Fdb version 4
-["biber main"] 1764369196.43467 "main.bcf" "main.bbl" "main" 1764369204.0213 0
-  "bibliography.bib" 1764367885.8617 7721 36911ebfb0b8e6d2968b1161bc5595ed ""
-  "main.bcf" 1764369203.89499 137567 f71625742822cfdb344496bfbbbe7c01 "pdflatex"
+["biber main"] 1764370525.54923 "main.bcf" "main.bbl" "main" 1764370529.77024 0
+  "main.bcf" 1764370529.59032 137577 79f67a99bc5a497ec65cb19052b7e187 "pdflatex"
+  "resources/bibliography.bib" 1764370262.53512 7721 36911ebfb0b8e6d2968b1161bc5595ed ""
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1764369202.14017 "main.tex" "main.pdf" "main" 1764369204.02167 0
+["pdflatex"] 1764370527.63822 "main.tex" "main.pdf" "main" 1764370529.7707 0
   "/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc" 1254269338 2375 baa924870cfb487815765f9094cf3728 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc" 1202520719 2405 5dcf2c1b967ee25cc46c58cd52244aed ""
   "/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc" 1202520719 2840 216e6e45ad352e2456e1149f28885bee ""
@@ -217,23 +217,23 @@
   "/usr/local/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1764347245 5467155 19efa205003f9ecad95fbbaa6ff24da1 ""
   "/usr/local/texlive/2025/texmf-var/web2c/pdftex/pdflatex.fmt" 1764347146 3345741 4676ea7f3e7a609a766b31b746a50cb9 ""
   "/usr/local/texlive/2025/texmf.cnf" 1741450484 577 418a7058ec8e006d8704f60ecd22c938 ""
-  "main.aux" 1764369203.89005 17524 4c1d4ccc4bef7d2db4ef773aeca1ef1e "pdflatex"
-  "main.bbl" 1764369198.24028 38020 40587755ce818d9d7b179d6f514dbcdd "biber main"
-  "main.lof" 1764369203.89625 407 71faefa42e57ef1bb41a65bfea828bf5 "pdflatex"
-  "main.lot" 1764369203.8963 436 0f3e33197e4f0b508c66f8b6e6d42b30 "pdflatex"
-  "main.out" 1764369203.89363 10957 9bdcc04144bb885a74a838a2d0c8fa22 "pdflatex"
-  "main.run.xml" 1764369203.89606 2425 7f10c5c2573b0c79e2d6c904ff829c6a "pdflatex"
-  "main.tex" 1764368603.79186 1092 a1c58203d74a181c2d1983c1f5382993 ""
-  "main.toc" 1764369203.89618 4945 72042df8a9dd60bcc28851e16e3f4270 "pdflatex"
+  "main.aux" 1764370529.5849 17524 4c1d4ccc4bef7d2db4ef773aeca1ef1e "pdflatex"
+  "main.bbl" 1764370527.61616 38020 40587755ce818d9d7b179d6f514dbcdd "biber main"
+  "main.lof" 1764370529.59124 407 71faefa42e57ef1bb41a65bfea828bf5 "pdflatex"
+  "main.lot" 1764370529.59128 436 0f3e33197e4f0b508c66f8b6e6d42b30 "pdflatex"
+  "main.out" 1764370529.58911 10957 9bdcc04144bb885a74a838a2d0c8fa22 "pdflatex"
+  "main.run.xml" 1764370529.59112 2435 37c0d06c1613564c772fe1e17dbb350a "pdflatex"
+  "main.tex" 1764370483.73095 1102 4c5be0e1501adcc358a62cfd7b1888e5 ""
+  "main.toc" 1764370529.5912 4945 72042df8a9dd60bcc28851e16e3f4270 "pdflatex"
   "resources/images/ba_faryf_ai_tam.jpg" 1764362483.08657 381155 7a9245e17c642b1feb43a37f995e94bf ""
   "resources/images/ba_faryf_messmodell.jpg" 1764362505.92695 613743 8fe573d902f73be3f0a41cc8c0243dbb ""
   "sections/00_abstract.tex" 1764361027.95765 3339 d0b55fe7ea12d6687a1be9e0a5f8cc30 ""
   "sections/01_introduction.tex" 1764362003.12294 5905 d10fbcb11576d8fd86d4a11679cb3036 ""
-  "sections/02_theory.tex" 1764369006.88397 16866 51750a56647313fadb1febd4108ed0e5 ""
+  "sections/02_theory.tex" 1764370262.65871 16866 51750a56647313fadb1febd4108ed0e5 ""
   "sections/03_methodology.tex" 1764362679.31496 21868 bb5005dd32a866165fa2bef63bda1470 ""
   "sections/04_ausgangslage.tex" 1764363996.95062 153 5ef4e59a625824136677fe99f8a12605 ""
   "sections/05_machbarkeit.tex" 1764364625.46078 152 5db7cd86cb8475f823db2c06da1b81ef ""
-  "sections/10_quellenverzeichnis.tex" 1764368089.42108 150 030d411b94ad2def12c10f52dce736a9 ""
+  "sections/10_quellenverzeichnis.tex" 1764370262.77667 150 030d411b94ad2def12c10f52dce736a9 ""
   "sections/11_abbildungen.tex" 1764366439.12482 85 0ffb816b8ae0ef6ac7d51b73546a80ea ""
   "sections/12_tabellenverzeichnis.tex" 1764366716.45328 84 f7b1924843a8913033d033601ac1b1a4 ""
   (generated)

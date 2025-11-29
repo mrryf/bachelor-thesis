@@ -1,13 +1,14 @@
 # Fdb version 4
-["biber 03_methodology"] 1764367900.80881 "03_methodology.bcf" "03_methodology.bbl" "03_methodology" 1764368649.24231 0
+["biber 03_methodology"] 1764367900.80881 "03_methodology.bcf" "03_methodology.bbl" "03_methodology" 1764370543.3329 0
   "03_methodology.bcf" 1764368649.12417 133507 37f8f206a6026079de91cf5a576a5f0b "pdflatex"
-  "bibliography.bib" 1764368635.83253 7721 36911ebfb0b8e6d2968b1161bc5595ed ""
+  "bibliography.bib" 1764370529.7822 7721 36911ebfb0b8e6d2968b1161bc5595ed ""
+  "resources/bibliography.bib" 0 -1 0 ""
   (generated)
   "03_methodology.bbl"
   "03_methodology.blg"
   (rewritten before read)
-["pdflatex"] 1764368647.87396 "03_methodology.tex" "03_methodology.pdf" "03_methodology" 1764368649.24269 0
-  "../main.tex" 1764368603.79186 1092 a1c58203d74a181c2d1983c1f5382993 ""
+["pdflatex"] 1764370541.80836 "03_methodology.tex" "03_methodology.pdf" "03_methodology" 1764370543.33331 0
+  "../main.tex" 1764370483.73095 1102 4c5be0e1501adcc358a62cfd7b1888e5 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc" 1254269338 2375 baa924870cfb487815765f9094cf3728 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc" 1202520719 2405 5dcf2c1b967ee25cc46c58cd52244aed ""
   "/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc" 1202520719 2840 216e6e45ad352e2456e1149f28885bee ""
@@ -217,10 +218,10 @@
   "/usr/local/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1764347245 5467155 19efa205003f9ecad95fbbaa6ff24da1 ""
   "/usr/local/texlive/2025/texmf-var/web2c/pdftex/pdflatex.fmt" 1764347146 3345741 4676ea7f3e7a609a766b31b746a50cb9 ""
   "/usr/local/texlive/2025/texmf.cnf" 1741450484 577 418a7058ec8e006d8704f60ecd22c938 ""
-  "03_methodology.aux" 1764368649.12026 6147 f86dd06972ebb122373d23d69736099a "pdflatex"
-  "03_methodology.bbl" 1764367902.18826 10124 03c9170017bb2f0311ceca1347ece435 "biber 03_methodology"
-  "03_methodology.out" 1764368649.12277 8636 f7180514a6bfe8ca2c3a0c38a2b0b93c "pdflatex"
-  "03_methodology.run.xml" 1764368649.12513 2495 2e4b2c4dd52d3375b9ebb859bf5bb5bb "pdflatex"
+  "03_methodology.aux" 1764370543.08878 6147 f86dd06972ebb122373d23d69736099a "pdflatex"
+  "03_methodology.bbl" 1764370262.6615 10124 03c9170017bb2f0311ceca1347ece435 "biber 03_methodology"
+  "03_methodology.out" 1764370543.09055 8636 f7180514a6bfe8ca2c3a0c38a2b0b93c "pdflatex"
+  "03_methodology.run.xml" 1764370543.09233 2505 d6ff1a28088be416c88bcedf6192ef8b "pdflatex"
   "03_methodology.tex" 1764362679.31496 21868 bb5005dd32a866165fa2bef63bda1470 ""
   (generated)
   "03_methodology.aux"

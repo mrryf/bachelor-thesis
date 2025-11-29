@@ -83,7 +83,7 @@
       <file>05_machbarkeit.bcf</file>
     </requires>
     <requires type="editable">
-      <file>bibliography.bib</file>
+      <file>resources/bibliography.bib</file>
     </requires>
   </external>
 </requests>
