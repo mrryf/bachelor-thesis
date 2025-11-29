@@ -26,10 +26,10 @@ To build this project locally, you need the following tools installed:
 ### Python Environment
 Required for build scripts and tests.
 - Python 3.x
-- Dependencies: `pytest`, `bibtexparser`, `pyzotero`
+- Dependencies: `bibtexparser`
 
 ```bash
-pip install pytest bibtexparser pyzotero
+pip install -r requirements.txt
 ```
 
 ### Fonts
@@ -45,7 +45,7 @@ pip install pytest bibtexparser pyzotero
 
 2.  **Install Python dependencies:**
     ```bash
-    pip install -r requirements.txt # If available, otherwise install manually as above
+    pip install -r requirements.txt
     ```
 
 ## Usage
@@ -72,7 +72,7 @@ latexmk -pdf 01_introduction.tex
 ### Bibliography Management
 The bibliography is stored in `resources/bibliography.bib`. To sync the latest references from Zotero:
 
-1.  Set your Zotero API credentials:
+1.  Set your Zotero API credentials (optional, script will prompt if missing):
     ```bash
     export ZOTERO_API_KEY="your_api_key"
     export ZOTERO_USER_ID="your_user_id"
@@ -90,6 +90,12 @@ This project uses automated tests to ensure document integrity.
 Verifies that the LaTeX structure is valid and citations match the bibliography.
 ```bash
 python tests/test_structure.py
+```
+
+**Run Formal Guidelines Tests:**
+Verifies that all required sections and chapters are present.
+```bash
+python tests/test_formal_guidelines.py
 ```
 
 **Verify Lists (TOC, LOF, LOT):**
@@ -127,10 +133,12 @@ bachelor-thesis/
 │   ├── check_toc.py
 │   └── sync_zotero.py
 ├── tests/                  # Automated tests
-│   └── test_structure.py
+│   ├── test_structure.py
+│   └── test_formal_guidelines.py
 └── .github/                # CI/CD configuration
 ```
 
 ## License
 
-[Insert License Here, e.g., MIT, CC-BY, or All Rights Reserved]
+Copyright (c) 2025 mrryf. All Rights Reserved.
+See [LICENSE](LICENSE) for details.
