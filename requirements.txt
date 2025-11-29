@@ -1,0 +1,4 @@
+pytest
+bibtexparser
+pyzotero
+requests
