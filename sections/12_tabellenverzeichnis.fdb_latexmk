@@ -1,12 +1,12 @@
 # Fdb version 4
-["biber 12_tabellenverzeichnis"] 1764370593.04268 "12_tabellenverzeichnis.bcf" "12_tabellenverzeichnis.bbl" "12_tabellenverzeichnis" 1764432834.68171 0
-  "12_tabellenverzeichnis.bcf" 1764432834.58641 133326 519abe7fecbc2b8ecb5c1b3a7801c1ee "pdflatex"
+["biber 12_tabellenverzeichnis"] 1764370593.04268 "12_tabellenverzeichnis.bcf" "12_tabellenverzeichnis.bbl" "12_tabellenverzeichnis" 1764435794.24658 0
+  "12_tabellenverzeichnis.bcf" 1764435794.1472 133326 519abe7fecbc2b8ecb5c1b3a7801c1ee "pdflatex"
   (generated)
   "12_tabellenverzeichnis.bbl"
   "12_tabellenverzeichnis.blg"
   (rewritten before read)
-["pdflatex"] 1764432833.46007 "12_tabellenverzeichnis.tex" "12_tabellenverzeichnis.pdf" "12_tabellenverzeichnis" 1764432834.6821 0
-  "../main.tex" 1764432808.46007 1164 099671b6e63f8da40933ad62ce4927a7 ""
+["pdflatex"] 1764435793.01744 "12_tabellenverzeichnis.tex" "12_tabellenverzeichnis.pdf" "12_tabellenverzeichnis" 1764435794.24695 0
+  "../main.tex" 1764435752.66033 1276 4047947859619356bcd9a5341e66614e ""
   "/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc" 1254269338 2375 baa924870cfb487815765f9094cf3728 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/tfm/adobe/symbol/psyr.tfm" 1136768653 1408 5937f58aa508ea2cea4901c07d10f5fe ""
@@ -182,11 +182,11 @@
   "/usr/local/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1764347245 5467155 19efa205003f9ecad95fbbaa6ff24da1 ""
   "/usr/local/texlive/2025/texmf-var/web2c/pdftex/pdflatex.fmt" 1764347146 3345741 4676ea7f3e7a609a766b31b746a50cb9 ""
   "/usr/local/texlive/2025/texmf.cnf" 1741450484 577 418a7058ec8e006d8704f60ecd22c938 ""
-  "12_tabellenverzeichnis.aux" 1764432834.58329 416 0a80dcf845459eb8ba6926b9be6db0de "pdflatex"
+  "12_tabellenverzeichnis.aux" 1764435794.1443 416 0a80dcf845459eb8ba6926b9be6db0de "pdflatex"
   "12_tabellenverzeichnis.bbl" 1764370594.40135 466 76d65a242ec496c9b4361af646ff12cb "biber 12_tabellenverzeichnis"
-  "12_tabellenverzeichnis.lot" 1764432834.58725 30 dd9a1bdf2f8dbad8adb0552ea4fb4223 "pdflatex"
-  "12_tabellenverzeichnis.out" 1764432834.34255 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "12_tabellenverzeichnis.run.xml" 1764432834.58716 2561 c84a513acb195dcafa34c754e11b9ab1 "pdflatex"
+  "12_tabellenverzeichnis.lot" 1764435794.14841 30 dd9a1bdf2f8dbad8adb0552ea4fb4223 "pdflatex"
+  "12_tabellenverzeichnis.out" 1764435793.90708 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "12_tabellenverzeichnis.run.xml" 1764435794.14828 2561 c84a513acb195dcafa34c754e11b9ab1 "pdflatex"
   "12_tabellenverzeichnis.tex" 1764366716.45328 84 f7b1924843a8913033d033601ac1b1a4 ""
   (generated)
   "12_tabellenverzeichnis.aux"
