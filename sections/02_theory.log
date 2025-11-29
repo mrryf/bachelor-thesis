@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.11.28)  28 NOV 2025 23:55
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.11.28)  29 NOV 2025 16:19
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1076,7 +1076,7 @@ Package: subfiles 2020/11/14 v2.2 Multi-file projects (package)
 
 
 Class apa7 Warning: Deprecated: see documentation for \authorsaffiliations on i
-nput line 20.
+nput line 21.
 
 \c@NumberOfAffiliations=\count473
 ))
@@ -1247,71 +1247,272 @@ Package pdftex.def Info: ../resources/images/ba_faryf_ai_tam.jpg  used on input
 
 [4]
 
-[5]
-LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 6
-5.
- (/usr/local/texlive/2025/texmf-dist/tex/latex/lm/ot1lmr.fd
-File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
-LaTeX Font Info:    Trying to load font information for OML+lmm on input line 6
-5.
-
-(/usr/local/texlive/2025/texmf-dist/tex/latex/lm/omllmm.fd
-File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
-LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
-65.
-
-(/usr/local/texlive/2025/texmf-dist/tex/latex/lm/omslmsy.fd
-File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
-LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
-65.
-
-(/usr/local/texlive/2025/texmf-dist/tex/latex/lm/omxlmex.fd
-File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 65.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 65.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 65.
-
-Underfull \hbox (badness 10000) in paragraph at lines 70--70
-[]|\T1/lmr/m/n/12 Verhaltensintention die LLM-
+[5] (/usr/local/texlive/2025/texmf-dist/tex/latex/lm/ot1lmr.fd)
+(/usr/local/texlive/2025/texmf-dist/tex/latex/lm/omllmm.fd)
+(/usr/local/texlive/2025/texmf-dist/tex/latex/lm/omslmsy.fd)
+(/usr/local/texlive/2025/texmf-dist/tex/latex/lm/omxlmex.fd)
+Overfull \hbox (34.79356pt too wide) in paragraph at lines 76--76
+[]|\T1/lmr/bx/n/12 Definition| 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 72--72
-[]|\T1/lmr/m/n/12 Wahrgenommene Nütz-lich-keit
+Overfull \hbox (27.16502pt too wide) in paragraph at lines 76--76
+[]|\T1/lmr/m/n/12 Vertrauen
  []
 
 
-Overfull \hbox (146.96977pt too wide) in paragraph at lines 65--77
- [][] 
+Underfull \hbox (badness 10000) in paragraph at lines 76--76
+\T1/lmr/m/n/12 in
  []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 76--76
+\T1/lmr/m/n/12 die
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 76--76
+\T1/lmr/m/n/12 ge-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 76--76
+\T1/lmr/m/n/12 ne-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 76--76
+\T1/lmr/m/n/12 rier-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 76--76
+\T1/lmr/m/n/12 te
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 76--76
+\T1/lmr/m/n/12 Ant-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 76--76
+\T1/lmr/m/n/12 wort
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 76--76
+\T1/lmr/m/n/12 und
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 76--76
+\T1/lmr/m/n/12 die
+ []
+
+
+Overfull \hbox (5.61993pt too wide) in paragraph at lines 76--76
+\T1/lmr/m/n/12 LLM-
+ []
+
+
+Overfull \hbox (13.03537pt too wide) in paragraph at lines 76--76
+\T1/lmr/m/n/12 Lösung| 
+ []
+
+
+Overfull \hbox (76.18913pt too wide) in paragraph at lines 76--76
+[]|\T1/lmr/m/n/12 Verhaltensintention
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 76--76
+\T1/lmr/m/n/12 die
+ []
+
+
+Overfull \hbox (5.61993pt too wide) in paragraph at lines 76--76
+\T1/lmr/m/n/12 LLM-
+ []
+
+
+Overfull \hbox (13.03537pt too wide) in paragraph at lines 76--76
+\T1/lmr/m/n/12 Lösung
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 76--76
+\T1/lmr/m/n/12 zu
+ []
+
+
+Overfull \hbox (97.07922pt too wide) in paragraph at lines 76--76
+[]|\T1/lmr/m/n/12 Kollaborationsintention
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 76--76
+\T1/lmr/m/n/12 zur
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 76--76
+\T1/lmr/m/n/12 di-gi-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 76--76
+\T1/lmr/m/n/12 ta-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 76--76
+\T1/lmr/m/n/12 len
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 76--76
+\T1/lmr/m/n/12 As-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 76--76
+\T1/lmr/m/n/12 sis-
+ []
+
+
+Overfull \hbox (64.37431pt too wide) in paragraph at lines 76--76
+[]|\T1/lmr/m/n/12 Wahrgenommene
+ []
+
+
+Overfull \hbox (5.29723pt too wide) in paragraph at lines 76--76
+\T1/lmr/m/n/12 Nütz-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 76--76
+\T1/lmr/m/n/12 lich-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 76--76
+\T1/lmr/m/n/12 keit
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 76--76
+\T1/lmr/m/n/12 der
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 76--76
+\T1/lmr/m/n/12 ge-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 76--76
+\T1/lmr/m/n/12 ne-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 76--76
+\T1/lmr/m/n/12 rier-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 76--76
+\T1/lmr/m/n/12 ten
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 76--76
+\T1/lmr/m/n/12 Ant-
+ []
+
+
+Overfull \hbox (34.51183pt too wide) in paragraph at lines 76--76
+[]|\T1/lmr/m/n/12 Einfachheit
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 76--76
+\T1/lmr/m/n/12 in
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 76--76
+\T1/lmr/m/n/12 der
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 76--76
+\T1/lmr/m/n/12 der
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 76--76
+\T1/lmr/m/n/12 KI-
+ []
+
+
+Overfull \hbox (36.958pt too wide) in paragraph at lines 76--76
+\T1/lmr/m/n/12 Applikation| 
+ []
+
+
+Overfull \hbox (39.56769pt too wide) in paragraph at lines 76--76
+[]|\T1/lmr/m/n/12 Vertrautheit
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 76--76
+\T1/lmr/m/n/12 in
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 76--76
+\T1/lmr/m/n/12 der
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 76--76
+\T1/lmr/m/n/12 von
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 76--76
+\T1/lmr/m/n/12 KI-
+ []
+
+
+Overfull \hbox (36.30853pt too wide) in paragraph at lines 76--76
+\T1/lmr/m/n/12 Technologie| 
+ []
+
+
+LaTeX Warning: Float too large for page by 706.07071pt on input line 77.
 
 
 
 [6]
 
 [7]
-
-[8{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}]
-<../resources/images/ba_faryf_messmodell.jpg, id=137, 4773.835pt x 3375.61125pt
+<../resources/images/ba_faryf_messmodell.jpg, id=151, 4773.835pt x 3375.61125pt
 >
 File: ../resources/images/ba_faryf_messmodell.jpg Graphic file (type jpg)
 <use ../resources/images/ba_faryf_messmodell.jpg>
 Package pdftex.def Info: ../resources/images/ba_faryf_messmodell.jpg  used on i
 nput line 139.
 (pdftex.def)             Requested size: 452.93631pt x 320.27434pt.
+ AED endfloat: Processing end Figures and Tables
 
-AED endfloat: Processing end Figures and Tables
+[8 <../resources/images/ba_faryf_messmodell.jpg>]
 
 [9]
 
-[10 <../resources/images/ba_faryf_messmodell.jpg>] (./02_theory.aux)
+[10{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}]
+(./02_theory.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
@@ -1323,10 +1524,10 @@ Package logreq Info: Writing requests to '02_theory.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 32878 strings out of 473190
- 630618 string characters out of 5715799
- 1551392 words of memory out of 5000000
- 55575 multiletter control sequences out of 15000+600000
+ 32876 strings out of 473190
+ 630560 string characters out of 5715799
+ 1553392 words of memory out of 5000000
+ 55573 multiletter control sequences out of 15000+600000
  599547 words of font info for 64 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
  119i,12n,122p,1502b,7179s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1364,9 +1565,9 @@ l/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbxi10.pfb></usr/local/texlive
 -dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2025/texmf-dist/fonts
 /type1/public/lm/lmri12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/pub
 lic/lm/lmsy10.pfb>
-Output written on 02_theory.pdf (10 pages, 1156514 bytes).
+Output written on 02_theory.pdf (10 pages, 1156442 bytes).
 PDF statistics:
- 193 PDF objects out of 1000 (max. 8388607)
+ 215 PDF objects out of 1000 (max. 8388607)
  164 compressed objects within 2 object streams
  39 named destinations out of 1000 (max. 500000)
  95 words of extra memory for PDF output out of 10000 (max. 10000000)
