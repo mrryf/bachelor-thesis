@@ -1,4 +1,6 @@
 {
+    "terminal.integrated.fontFamily": "MesloLGS Nerd Font Mono",
+    "terminal.integrated.fontSize": 13,
     "latex-workshop.view.pdf.viewer": "tab",
     "[latex]": {
         "editor.wordWrap": "on",
