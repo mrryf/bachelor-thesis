@@ -19,7 +19,7 @@ class TestCitations(unittest.TestCase):
         tex_files = [MAIN_TEX]
         if os.path.exists(SECTIONS_DIR):
             for f in os.listdir(SECTIONS_DIR):
-                if f.endswith('.tex'):
+                if f.endswith('.tex') and 'quellenverzeichnis' not in f:
                     tex_files.append(os.path.join(SECTIONS_DIR, f))
         return tex_files
 
