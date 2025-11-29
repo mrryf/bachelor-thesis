@@ -83,7 +83,7 @@
       <file>04_ausgangslage.bcf</file>
     </requires>
     <requires type="editable">
-      <file>bibliography.bib</file>
+      <file>resources/bibliography.bib</file>
     </requires>
   </external>
 </requests>

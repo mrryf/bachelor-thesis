@@ -83,7 +83,7 @@
       <file>00_abstract.bcf</file>
     </requires>
     <requires type="editable">
-      <file>bibliography.bib</file>
+      <file>resources/bibliography.bib</file>
     </requires>
   </external>
 </requests>

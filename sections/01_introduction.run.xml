@@ -83,7 +83,7 @@
       <file>01_introduction.bcf</file>
     </requires>
     <requires type="editable">
-      <file>bibliography.bib</file>
+      <file>resources/bibliography.bib</file>
     </requires>
   </external>
 </requests>

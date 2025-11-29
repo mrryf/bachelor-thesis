@@ -6,7 +6,7 @@ import bibtexparser
 PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECTIONS_DIR = os.path.join(PROJECT_ROOT, 'sections')
 MAIN_TEX = os.path.join(PROJECT_ROOT, 'main.tex')
-BIB_FILE = os.path.join(PROJECT_ROOT, 'bibliography.bib')
+BIB_FILE = os.path.join(PROJECT_ROOT, 'resources', 'bibliography.bib')
 
 def get_tex_files():
     tex_files = [MAIN_TEX]

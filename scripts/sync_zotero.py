@@ -28,7 +28,7 @@ def sync_zotero():
         return
 
     # Write to bibliography.bib
-    bib_path = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'bibliography.bib')
+    bib_path = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'resources', 'bibliography.bib')
     
     with open(bib_path, 'w', encoding='utf-8') as f:
         # Check if items is a list (old behavior) or BibDatabase (new behavior)

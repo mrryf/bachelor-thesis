@@ -19,6 +19,9 @@ if ! command -v pdflatex &> /dev/null; then
     exit 1
 fi
 
+# Ensure we are in the project root
+cd "$(dirname "$0")/.."
+
 # Build the main document
 echo "Building main.tex..."
 latexmk -pdf -interaction=nonstopmode -file-line-error -synctex=1 main.tex
@@ -26,8 +29,9 @@ latexmk -pdf -interaction=nonstopmode -file-line-error -synctex=1 main.tex
 # Build individual sections
 echo "Building individual sections..."
 
-# Copy bibliography to sections/ so subfiles can find it
-cp bibliography.bib sections/
+# Copy bibliography to sections/resources/ so subfiles can find it matching the path in main.tex
+mkdir -p sections/resources
+cp resources/bibliography.bib sections/resources/bibliography.bib
 
 for file in sections/*.tex; do
     filename=$(basename "$file")
@@ -38,4 +42,4 @@ for file in sections/*.tex; do
 done
 
 # Clean up copied bibliography
-rm sections/bibliography.bib
+rm -rf sections/resources
