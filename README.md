@@ -34,17 +34,21 @@ cd bachelor-thesis
 pip install -r requirements.txt
 
 # 3. Build the thesis
-./scripts/build.sh
+./scripts/build.sh prestudy
 ```
 
-The compiled PDF will be available at `main.pdf`.
+The compiled PDF will be available at `prestudy/main.pdf`.
 
 ## Project Overview
 
-The document is structured using the `subfiles` package, allowing for individual compilation of sections. The main document is `main.tex`, which integrates all sections located in the `sections/` directory.
+The repository is divided into two main components:
+- **Prestudy (`prestudy/`)**: Contains the current work for the Vorstudie.
+- **Thesis (`thesis/`)**: Reserved for the main bachelor thesis work.
+
+The document is structured using the `subfiles` package. The main document for the prestudy is `prestudy/main.tex`.
 
 ### Key Features
-- **Modular Structure**: Each section (Introduction, Theory, Methodology, etc.) is a separate file in `sections/`.
+- **Modular Structure**: Each section is a separate file in `prestudy/sections/`.
 - **Automated Build System**: Custom shell scripts and GitHub Actions for continuous integration.
 - **Bibliography Management**: Integrated with Zotero via `pyzotero` for automated bibliography updates.
 - **Quality Assurance**: Automated checks for Table of Contents (TOC), List of Figures (LOF), and List of Tables (LOT) integrity.
@@ -97,24 +101,25 @@ pip install -r requirements.txt
 ### Building the Thesis
 You can build the entire thesis or individual sections using the provided build script.
 
-**Build everything (Main + Sections):**
+**Build everything (Prestudy):**
 ```bash
-./scripts/build.sh
+./scripts/build.sh prestudy
 ```
 
-**Build Main Document Only:**
+**Build Main Document Only (Manual):**
 ```bash
+cd prestudy
 latexmk -pdf main.tex
 ```
 
 **Build a Specific Section:**
 ```bash
-cd sections
+cd prestudy/sections
 latexmk -pdf 01_introduction.tex
 ```
 
 ### Bibliography Management
-The bibliography is stored in `resources/bibliography.bib`. To sync the latest references from Zotero:
+The bibliography is stored in `prestudy/resources/bibliography.bib`. To sync the latest references from Zotero:
 
 1.  Set your Zotero API credentials (optional, script will prompt if missing):
     ```bash
@@ -126,7 +131,7 @@ The bibliography is stored in `resources/bibliography.bib`. To sync the latest r
     python scripts/sync_zotero.py
     ```
 
-> **Note:** You must have read access to the specific Zotero libraries configured in the script. If you do not have access, the project includes a pre-generated `resources/bibliography.bib` file that you can use.
+> **Note:** You must have read access to the specific Zotero libraries configured in the script. If you do not have access, the project includes a pre-generated `prestudy/resources/bibliography.bib` file that you can use.
 
 ## Testing & Verification
 
@@ -170,16 +175,18 @@ This repository uses GitHub Actions to automatically build and verify the thesis
 
 ```
 bachelor-thesis/
-├── main.tex                # Main LaTeX entry point
-├── sections/               # Individual thesis chapters
-│   ├── 00_abstract.tex
-│   ├── 01_introduction.tex
-│   └── ...
-├── resources/              # Assets and bibliography
-│   ├── bibliography.bib
-│   ├── images/
-│   ├── docs/
-│   └── design/
+├── prestudy/               # Current Prestudy Work
+│   ├── main.tex            # Main LaTeX entry point
+│   ├── sections/           # Individual chapters
+│   │   ├── 00_abstract.tex
+│   │   ├── 01_introduction.tex
+│   │   └── ...
+│   └── resources/          # Assets and bibliography
+│       ├── bibliography.bib
+│       ├── images/
+│       ├── docs/
+│       └── design/
+├── thesis/                 # Future Thesis Work
 ├── scripts/                # Build and utility scripts
 │   ├── build.sh
 │   ├── check_toc.py
