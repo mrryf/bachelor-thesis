@@ -138,77 +138,7 @@ Die Integration der verschiedenen Datenquellen erfolgt auf Analyseebene: Die exp
     \item Moderation/Mediation: Die Interaktion zwischen experimenteller Manipulation und natürlicher Variation kann analysiert werden
 \end{itemize}
 
-\subsection{Pretest-Analyse}
-\subsubsection{Reliabilitätsanalyse (Cronbach's Alpha)}
-Die Reliabilität aller verwendeten Skalen wird mittels Cronbach's Alpha überprüft. Für jedes Konstrukt wird die interne Konsistenz berechnet: AI Output Trust, Perceived Usefulness, Perceived Ease of Use, Behavioral Intention und Collaborative Intention. Bei unzureichender Reliabilität werden Item-Total-Korrelationen analysiert, um problematische Items zu identifizieren. Items mit ungenügender Trennschärfe werden überarbeitet oder eliminiert. Zusätzlich wird die Veränderung des Alpha-Werts bei Itemausschluss berechnet (Alpha if item deleted), um die optimale Itemkombination zu bestimmen.
 
-\subsubsection{Manipulationscheck (t-test unabh. Stichproben)}
-Die Wirksamkeit der experimentellen Manipulation wird durch ein t-test für unabhängige Stichproben überprüft. Die Antworten auf die Manipulationscheck-Fragen werden nach Experimentalgruppen aufgeschlüsselt analysiert. Bei der Positiv-Frame-Gruppe wird erwartet, dass Teilnehmende «Konfidenz/Sicherheit» als Darstellungsform angeben, bei der Negativ-Frame-Gruppe «Unsicherheit/Fehlerwahrscheinlichkeit». Zusätzlich wird mittels einfaktorieller ANOVA getestet, ob sich die wahrgenommene Vertrauenswürdigkeit zwischen den Gruppen bereits im Pretest signifikant unterscheidet. Falls die Manipulation zu schwach ist (< 80\% Erkennungsrate), werden Anpassungen am Stimulus vorgenommen.
-
-\subsection{Hauptanalyse: Deskriptive Statistik}
-\subsubsection{Stichprobenbeschreibung und Gruppenvergleichbarkeit}
-Die deskriptive Analyse beginnt mit der Charakterisierung der Stichprobe. Für alle demografischen Variablen (Alter, Geschlecht, Bildung) werden Häufigkeiten, Mittelwerte und Standardabweichungen berichtet, sowohl für die Gesamtstichprobe als auch getrennt nach Experimentalgruppen. Die Vergleichbarkeit der randomisierten Gruppen wird mittels unabhängigem t-test und einfaktorieller ANOVAs (kontinuierliche Variablen) überprüft. Signifikante Unterschiede würden auf Randomisierungsprobleme hinweisen und müssten in späteren Analysen als Kovariaten berücksichtigt werden. Zusätzlich werden die Verteilungen der AI-Vorerfahrung und Nutzungserfahrung zwischen den Gruppen verglichen (potenzielle Konfundierungsvariablen).
-
-\subsubsection{Skaleneigenschaften und Verteilungsanalysen}
-Für alle erhobenen Konstrukte werden Mittelwerte, Standardabweichungen, Schiefe berichtet und mittels Histogrammen visualisiert. Q-Q-Plots visualisieren Abweichungen von der Normalverteilung. Die finale Reliabilität der Skalen wird erneut mit Cronbach's Alpha bestimmt und mit den Pretest-Werten verglichen. Interkorrelationen zwischen allen Konstrukten werden in einer Korrelationsmatrix dargestellt, um erste Hinweise auf Zusammenhänge zu erhalten und Multikollinearität zu identifizieren. Die deskriptiven Statistiken der Trust-Ratings während der Interaktion werden separat für jede Alva-Antwort berichtet, um mögliche Veränderungen über die Interaktionen hinweg zu identifizieren.
-
-\subsubsection{Manipulationscheck}
-Mittels einfaktorieller ANOVA wird getestet, ob sich die wahrgenommene Vertrauenswürdigkeit zwischen den Gruppen signifikant unterscheidet.
-
-\subsubsection{Nutzungsverhalten und Systemvariablen}
-Die während der LLM-Interaktion automatisch erfassten Variablen werden deskriptiv ausgewertet. Die durchschnittliche Anzahl der Interaktionen pro Person und Gruppe wird berichtet, ebenso die Verteilung der tatsächlichen Accuracy Scores. Die Session-Dauer wird analysiert, um Hinweise auf Engagement oder Frustration zu erhalten. Die Komplexität der gestellten Fragen wird kategorisiert (einfach/mittel/komplex) und deren Verteilung zwischen den Gruppen verglichen. Diese Variablen dienen später als Kontrollvariablen in den Hauptanalysen und ermöglichen es, die ökologische Validität der Ergebnisse zu bewerten.
-
-\subsection{Hauptanalyse: Strukturgleichungsmodellierung (SEM)}
-Das verwendete AI-TAM-Modell wird mittels Strukturgleiungsmodell (SEM) analysiert (Bollen, 1989). Die Methode ermöglicht die simultane Schätzung aller Hypothesen (H1–H9) und berücksichtigt dabei die angenommenen Abhängigkeiten zwischen den Konstrukten.
-
-Das Modell umfasst zwei Komponenten: Das Messmodell spezifiziert die Beziehungen zwischen latenten Konstrukten und ihren manifesten Indikatoren. Das Strukturmodell (Abbildung 2) bildet die theoretischen Pfade zwischen den Konstrukten ab. Als exogene Variablen fungieren die Framing-Manipulation (kodiert durch zwei Dummy-Variablen: Dummy\_Pos = 1 für positives Framing, 0 sonst; Dummy\_Neg = 1 für negatives Framing, 0 sonst; mit der Kontrollgruppe ohne Score-Anzeige als Referenzkategorie), der Accuracy Score (ACTS) sowie die Vertrautheit mit Technologie (FAM-TEC). Als endogene latente Variablen werden AI Output Trust (XAIT), Perceived Usefulness (PUF), Perceived Ease of Use (EOU), Behavioral Intention (BI) und Collaborative Intention (CI) spezifiziert. Tabelle 2 zeigt die Zuordnung der Hypothesen zu den entsprechenden Modellpfaden.
-
-% Abbildung 3: Messmodell für AI-TAM
-
-\subsubsection{Parameterschätzung und Modell-Fit}
-Die Parameterschätzung erfolgt mittels Maximum-Likelihood-Verfahren (Bollen, 1989; Kano et al., 1997). Zur Beurteilung des Modellfits werden mehrere Fit-Indizes herangezogen:
-
-\begin{itemize}
-    \item Comparative Fit Index (CFI): Cutoff $\ge .95$ für sehr guten, $\ge .90$ für akzeptablen Fit (Bentler, 1990)
-    \item Tucker-Lewis Index (TLI): Cutoff $\ge .95$ für sehr guten, $\ge .90$ für akzeptablen Fit (Tucker \& Lewis, 1973)
-    \item Root Mean Square Error of Approximation (RMSEA): Cutoff $\le .06$ für sehr guten, $\le .08$ für akzeptablen Fit (Browne \& Cudeck, 1992; Hu \& Bentler, 1999; Steiger \& Lind, 1980)
-    \item Standardized Root Mean Square Residual (SRMR): Cutoff $\le .08$ (Bentler, 1995; Jöreskog \& Sörbom, 1981)
-\end{itemize}
-
-\subsubsection{Evaluation des Messmodells}
-Zunächst wird das Messmodell mittels konfirmatorischer Faktorenanalyse (CFA) geprüft. Dabei werden die fünf latenten Konstrukte (XAIT, PUF, EOU, BI, CI) ohne strukturelle Pfade analysiert, jedoch mit freien Kovarianzen zwischen allen Konstrukten. Dieses zweistufige Vorgehen (Anderson \& Gerbing, 1988) ermöglicht die separate Evaluation der Messqualität, bevor die theoretischen Hypothesen im Strukturmodell getestet werden. Dazu werden drei Kriterien betrachtet.
-
-\begin{itemize}
-    \item Faktorladungen: Items mit standardisierten Ladungen < .60 werden für eine theoriegeleitete Modellmodifikation in Betracht gezogen (Gäde et al., 2020)
-    \item Reliabilität: Für jedes Konstrukt wird Cronbach's Alpha berechnet ($\alpha \ge .80$ als akzeptabel; (Nunnally \& Bernstein, 1994))
-    \item Validität: Die Korrelationen zwischen den latenten Konstrukten sollten hoch sein (< .85)
-\end{itemize}
-
-\subsubsection{Strukturmodell und Hypothesentests}
-Nach Bestätigung des Messmodells wird das vollständige Strukturmodell geschätzt. Die strukturellen Pfade testen die Hypothesen H2–H8 (AI-TAM- und TAM-Standardbeziehungen) sowie H1a und H1b (Framing-Effekte auf XAIT). Alle Pfade werden simultan geschätzt, wodurch die gegenseitigen Abhängigkeiten zwischen den endogenen Variablen berücksichtigt werden. Für jede endogene Variable wird R² berichtet, welches den durch die Prädiktoren erklärten Varianzanteil angibt. Die Signifikanz der Pfadkoeffizienten wird mittels z-Test geprüft ($\alpha = .05$, zweiseitig).
-
-\subsubsection{Indirekte Effekte und Mediation (H9)}
-Die Mediationshypothese (H9) besagt, dass der Effekt des Framings auf «Behavioral Intention» durch «Explainable AI Trust» und die nachgelagerten TAM-Konstrukte vermittelt wird. Im vorliegenden Modell existieren multiple indirekte Pfade von Framing zu BI:
-
-\begin{itemize}
-    \item Via PUF: Framing $\to$ XAIT $\to$ PUF $\to$ BI
-    \item Via EOU: Framing $\to$ XAIT $\to$ EOU $\to$ BI
-    \item Via EOU und PUF (seriell): Framing $\to$ XAIT $\to$ EOU $\to$ PUF $\to$ BI
-\end{itemize}
-
-Diese indirekten Effekte werden simultan im SEM berechnet. Die Signifikanz wird mittels Bias-Corrected Bootstrap-Verfahren mit 5000 Ziehungen und 95\%-Konfidenzintervallen getestet. Separate Effekte werden für beide Framing-Bedingungen (Dummy\_Pos, Dummy\_Neg) relativ zur Kontrollgruppe berechnet.
-
-Berichtet werden:
-\begin{itemize}
-    \item Die spezifischen indirekten Effekte über jeden einzelnen Mediationspfad
-    \item Der totale indirekte Effekt (Summe aller indirekten Pfade)
-    \item Der totale Effekt (Summe aus direktem und indirektem Effekt, sofern ein direkter Pfad Framing $\to$ BI spezifiziert wird)
-\end{itemize}
-
-Eine vollständige Mediation liegt vor, wenn kein signifikanter direkter Effekt von Framing auf BI besteht; eine partielle Mediation liegt vor, wenn zusätzlich zu den indirekten Effekten ein signifikanter direkter Effekt verbleibt (Baron \& Kenny, 1986).
-
-\subsubsection{Kontrolle für Störvariablen}
-Demografische Variablen (Alter, Geschlecht, Bildungsabschlusswerden als Kovariaten im Modell berücksichtigt.
 
 \subsection{Abgrenzung des Forschungsdesigns}
 Die vorliegende Studie fokussiert auf die valenzorientierte Darstellung von KI-Leistungsmetriken (Attribute Framing) und deren Einfluss auf Vertrauen und Technologie-akzeptanz im Kontext des AI-TAM-Modells.
