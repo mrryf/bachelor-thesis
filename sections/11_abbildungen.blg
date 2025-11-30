@@ -1,9 +1,0 @@
-[0] Config.pm:308> INFO - This is Biber 2.20
-[0] Config.pm:311> INFO - Logfile is '11_abbildungen.blg'
-[38] biber-darwin:340> INFO - === Fr Nov 28, 2025, 23:56:32
-[47] Biber.pm:420> INFO - Reading '11_abbildungen.bcf'
-[108] Biber.pm:994> INFO - Found 0 citekeys in bib section 0
-[149] bbl.pm:676> INFO - Writing '11_abbildungen.bbl' with encoding 'UTF-8'
-[150] bbl.pm:779> INFO - Output to 11_abbildungen.bbl
-[151] Biber.pm:131> WARN - The file '11_abbildungen.bcf' does not contain any citations!
-[151] Biber.pm:133> INFO - WARNINGS: 1
