@@ -60,6 +60,18 @@ jobs:
       - name: Run Formal Guidelines Tests
         run: python tests/test_formal_guidelines.py
 
+  test_formatting:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up Git repository
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+      - name: Run Formatting Tests
+        run: python tests/test_formatting_rules.py
+
   test_bibliography_counts:
     runs-on: ubuntu-latest
     continue-on-error: true
