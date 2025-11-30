@@ -8,9 +8,9 @@ except ImportError:
     HAS_BIBTEXPARSER = False
 
 PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-SECTIONS_DIR = os.path.join(PROJECT_ROOT, 'sections')
-MAIN_TEX = os.path.join(PROJECT_ROOT, 'main.tex')
-BIB_FILE = os.path.join(PROJECT_ROOT, 'resources', 'bibliography.bib')
+SECTIONS_DIR = os.path.join(PROJECT_ROOT, 'prestudy', 'sections')
+MAIN_TEX = os.path.join(PROJECT_ROOT, 'prestudy', 'main.tex')
+BIB_FILE = os.path.join(PROJECT_ROOT, 'prestudy', 'resources', 'bibliography.bib')
 SHORT_BIB_TEX = os.path.join(SECTIONS_DIR, '10a_quellenverzeichnis_short.tex')
 FULL_BIB_TEX = os.path.join(SECTIONS_DIR, '10b_quellenverzeichnis_full.tex')
 

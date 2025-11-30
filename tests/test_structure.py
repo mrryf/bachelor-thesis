@@ -2,7 +2,7 @@ import os
 import unittest
 
 PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-MAIN_TEX = os.path.join(PROJECT_ROOT, 'main.tex')
+MAIN_TEX = os.path.join(PROJECT_ROOT, 'prestudy', 'main.tex')
 
 class TestStructure(unittest.TestCase):
 

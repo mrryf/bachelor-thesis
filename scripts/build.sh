@@ -1,45 +1,39 @@
 #!/bin/bash
-# Build script for local LaTeX installation
 
-# Attempt to fix PATH using path_helper
-eval "$(/usr/libexec/path_helper)"
+# Default target is "prestudy"
+TARGET_DIR="${1:-prestudy}"
 
-# Explicitly add MacTeX path
-export PATH="/usr/local/texlive/2025/bin/universal-darwin:$PATH"
-
-# Check if pdflatex is installed
-if ! command -v pdflatex &> /dev/null; then
-    echo "Error: pdflatex could not be found."
-    echo ""
-    echo "It seems MacTeX was downloaded but not fully installed."
-    echo "Please run the installer manually:"
-    echo "open /opt/homebrew/Caskroom/mactex/2025.0308/mactex-20250308.pkg"
-    echo ""
-    echo "After installing, restart your terminal and try again."
-    exit 1
+if [ ! -d "$TARGET_DIR" ]; then
+  echo "Error: Directory '$TARGET_DIR' does not exist."
+  echo "Usage: ./scripts/build.sh [directory]"
+  exit 1
 fi
 
-# Ensure we are in the project root
-cd "$(dirname "$0")/.."
+echo "Building project in: $TARGET_DIR"
 
-# Build the main document
-echo "Building main.tex..."
-latexmk -pdf -interaction=nonstopmode -file-line-error -synctex=1 main.tex
+# Save current directory
+START_DIR=$(pwd)
 
-# Build individual sections
-echo "Building individual sections..."
+cd "$TARGET_DIR" || exit
 
-# Copy bibliography to sections/resources/ so subfiles can find it matching the path in main.tex
-mkdir -p sections/resources
-cp resources/bibliography.bib sections/resources/bibliography.bib
+# Clean up previous build artifacts
+latexmk -c
 
-for file in sections/*.tex; do
-    filename=$(basename "$file")
-    echo "Building $filename..."
-    # Compile the section file. latexmk will handle the dependencies.
-    # We use -cd to change directory to the file's location, so ../main.tex is found.
-    latexmk -pdf -cd -interaction=nonstopmode -file-line-error -synctex=1 "$file"
-done
+# Build the PDF
+# -pdf: generate PDF
+# -interaction=nonstopmode: don't stop on errors
+# -file-line-error: show file and line number for errors
+latexmk -pdf -interaction=nonstopmode -file-line-error main.tex
 
-# Clean up copied bibliography
-rm -rf sections/resources
+# Check if build was successful
+if [ $? -eq 0 ]; then
+    echo "Build successful! PDF is located at $TARGET_DIR/main.pdf"
+    # Return to start directory
+    cd "$START_DIR"
+    exit 0
+else
+    echo "Build failed. Check log files for details."
+    # Return to start directory
+    cd "$START_DIR"
+    exit 1
+fi
