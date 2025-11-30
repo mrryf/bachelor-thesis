@@ -117,7 +117,7 @@ jobs:
         run: python scripts/sync_zotero.py
 
       - name: Build LaTeX Document
-        run: ./scripts/build.sh prestudyeng/latex-action@v3 main.tex
+        run: ./scripts/build.sh prestudy
           
       - name: Verify TOC, LOF, LOT, and Bibliography
         run: python scripts/check_toc.py
