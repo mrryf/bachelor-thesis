@@ -117,7 +117,10 @@ jobs:
         run: python scripts/sync_zotero.py
 
       - name: Build LaTeX Document
-        run: ./scripts/build.sh prestudy
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: main.tex
+          working_directory: prestudy
           
       - name: Verify TOC, LOF, LOT, and Bibliography
         run: python scripts/check_toc.py
