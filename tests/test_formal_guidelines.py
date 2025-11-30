@@ -15,7 +15,7 @@ class TestFormalGuidelines(unittest.TestCase):
     """
     
     def test_required_chapters_exist(self):
-        sections_dir = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'sections')
+        sections_dir = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'prestudy', 'sections')
         
         # List of mandatory files (must exist)
         mandatory_files = [

@@ -116,10 +116,8 @@ jobs:
           ZOTERO_USER_ID: ${{ secrets.ZOTERO_USER_ID }}
         run: python scripts/sync_zotero.py
 
-      - name: Compile LaTeX document
-        uses: xu-cheng/latex-action@v3
-        with:
-          root_file: main.tex
+      - name: Build LaTeX Document
+        run: ./scripts/build.sh prestudyeng/latex-action@v3 main.tex
           
       - name: Verify TOC, LOF, LOT, and Bibliography
         run: python scripts/check_toc.py
