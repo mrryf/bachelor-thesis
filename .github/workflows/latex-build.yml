@@ -129,7 +129,9 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: PDF
-          path: main.pdf
+          path: |
+            main.pdf
+            main_required.pdf
 
       - name: Create Release
         uses: softprops/action-gh-release@v1
@@ -137,4 +139,6 @@ jobs:
         with:
           tag_name: build-${{ github.run_number }}
           name: ${{ github.event.head_commit.message }}
-          files: main.pdf
+          files: |
+            main.pdf
+            main_required.pdf
