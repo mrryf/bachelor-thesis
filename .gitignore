@@ -19,6 +19,18 @@
 *.nav
 *.snm
 *.vrb
+*.pdf
+!main.pdf
+sections/*.pdf
+sections/*.log
+sections/*.aux
+sections/*.out
+sections/*.fdb_latexmk
+sections/*.fls
+sections/*.synctex.gz
+sections/*.bbl
+sections/*.bcf
+sections/*.blg
 
 # Python
 __pycache__/
