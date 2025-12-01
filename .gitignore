@@ -30,7 +30,7 @@ credentials.json
 !main.pdf
 !prestudy/main.pdf
 !prestudy/main_required.pdf
-!content/prestudy/resources/design/**/*.pdf
+!content/resources/design/**/*.pdf
 sections/*.pdf
 sections/*.log
 sections/*.aux
