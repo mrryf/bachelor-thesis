@@ -1,6 +1,6 @@
 import os
 import sys
-import re
+
 
 def check_file_content(filepath, description):
     """Checks if a file exists and is not empty."""

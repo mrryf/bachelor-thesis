@@ -12,7 +12,7 @@ class TestFormattingRules(unittest.TestCase):
         Test that \tableofcontents is preceded by \newpage.
         """
         # Normalize whitespace to handle potential newlines/spaces
-        normalized_content = " ".join(self.content.split())
+
         
         # Check for the pattern. Note: This is a simple check; regex could be more robust but this suffices for "security".
         # We look for \newpage followed closely by \tableofcontents
