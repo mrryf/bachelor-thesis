@@ -16,6 +16,9 @@ START_DIR=$(pwd)
 
 cd "$TARGET_DIR" || exit
 
+# Set TEXINPUTS to include the shared lib directory
+export TEXINPUTS=../lib//:
+
 # Clean up previous build artifacts
 latexmk -c
 

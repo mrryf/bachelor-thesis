@@ -150,6 +150,8 @@ jobs:
           latexmk_use_lualatex: false
           latexmk_shell_escape: false
           args: "-pdf -file-line-error -interaction=nonstopmode"
+        env:
+          TEXINPUTS: "../lib//:"
 
       - name: Check for PDF
         run: |
