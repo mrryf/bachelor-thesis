@@ -92,7 +92,6 @@ jobs:
 
   test_bibliography_counts:
     runs-on: ubuntu-latest
-    continue-on-error: true
     steps:
       - name: Set up Git repository
         uses: actions/checkout@v4
