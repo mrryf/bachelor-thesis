@@ -3,7 +3,7 @@ import os
 
 class TestFormattingRules(unittest.TestCase):
     def setUp(self):
-        self.main_tex_path = os.path.abspath("prestudy/main.tex")
+        self.main_tex_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'content', 'prestudy', 'main.tex')
         with open(self.main_tex_path, "r", encoding="utf-8") as f:
             self.content = f.read()
 

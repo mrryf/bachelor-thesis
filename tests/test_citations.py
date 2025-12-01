@@ -10,9 +10,9 @@ except ImportError:
 
 PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-# SECTIONS_DIR = os.path.join(PROJECT_ROOT, 'sections')
+SECTIONS_DIR = os.path.join(PROJECT_ROOT, 'content', 'prestudy', 'sections')
 # MAIN_TEX = os.path.join(PROJECT_ROOT, 'main.tex')
-# BIB_FILE = os.path.join(PROJECT_ROOT, 'resources', 'bibliography.bib')
+BIB_FILE = os.path.join(PROJECT_ROOT, 'content', 'prestudy', 'resources', 'bibliography.bib')
 
 class TestCitations(unittest.TestCase):
 
