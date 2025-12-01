@@ -28,7 +28,12 @@ def check_file_content(filepath, description):
     return True
 
 def main():
-    base_dir = os.getcwd()
+    if len(sys.argv) > 1:
+        base_dir = sys.argv[1]
+    else:
+        base_dir = os.getcwd()
+    
+    print(f"Checking for LaTeX artifacts in: {base_dir}")
     # Assuming build artifacts are in the same directory or sections/
     # The build script runs latexmk in root, so artifacts should be in root or sections/ depending on compilation.
     # We are checking the MAIN document's TOCs.

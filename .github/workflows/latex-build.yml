@@ -159,7 +159,7 @@ jobs:
           fi
 
       - name: Verify TOC, LOF, LOT, and Bibliography
-        run: python scripts/check_toc.py
+        run: python scripts/check_toc.py content/prestudy
 
       - name: Upload PDF Artifact
         uses: actions/upload-artifact@v4
