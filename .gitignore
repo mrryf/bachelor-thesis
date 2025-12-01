@@ -1,4 +1,11 @@
+# Secrets and Environment Variables
 .env
+.env.*
+*.key
+*.pem
+*.cert
+secrets/
+credentials.json
 
 # LaTeX Build Artifacts
 *.aux
