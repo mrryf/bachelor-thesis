@@ -33,22 +33,22 @@ cd bachelor-thesis
 # 2. Install dependencies
 pip install -r requirements.txt
 
-# 3. Build the thesis
-./scripts/build.sh prestudy
+# 3. Build the Prestudy
+./scripts/build.sh content/prestudy
 ```
 
-The compiled PDF will be available at `prestudy/main.pdf`.
+The compiled PDF will be available at `content/prestudy/main.pdf`.
 
 ## Project Overview
 
-The repository is divided into two main components:
-- **Prestudy (`prestudy/`)**: Contains the current work for the Vorstudie.
-- **Thesis (`thesis/`)**: Reserved for the main bachelor thesis work.
+The repository is divided into two main components within the `content/` directory:
+- **Prestudy (`content/prestudy/`)**: Contains the current work for the Vorstudie.
+- **Thesis (`content/thesis/`)**: Reserved for the main bachelor thesis work.
 
-The document is structured using the `subfiles` package. The main document for the prestudy is `prestudy/main.tex`.
+The document is structured using the `subfiles` package. The main document for the prestudy is `content/prestudy/main.tex`.
 
 ### Key Features
-- **Modular Structure**: Each section is a separate file in `prestudy/sections/`.
+- **Modular Structure**: Each section is a separate file in `content/prestudy/sections/`.
 - **Automated Build System**: Custom shell scripts and GitHub Actions for continuous integration.
 - **Bibliography Management**: Integrated with Zotero via `pyzotero` for automated bibliography updates.
 - **Quality Assurance**: Automated checks for Table of Contents (TOC), List of Figures (LOF), and List of Tables (LOT) integrity.
@@ -102,23 +102,23 @@ You can build the entire thesis or individual sections using the provided build 
 
 **Build everything (Prestudy):**
 ```bash
-./scripts/build.sh prestudy
+./scripts/build.sh content/prestudy
 ```
 
 **Build Main Document Only (Manual):**
 ```bash
-cd prestudy
+cd content/prestudy
 latexmk -pdf main.tex
 ```
 
 **Build a Specific Section:**
 ```bash
-cd prestudy/sections
+cd content/prestudy/sections
 latexmk -pdf 01_introduction.tex
 ```
 
 ### Bibliography Management
-The bibliography is stored in `prestudy/resources/bibliography.bib`. To sync the latest references from Zotero:
+The bibliography is stored in `content/prestudy/resources/bibliography.bib`. To sync the latest references from Zotero:
 
 1.  Set your Zotero API credentials (optional, script will prompt if missing):
     ```bash
@@ -130,7 +130,7 @@ The bibliography is stored in `prestudy/resources/bibliography.bib`. To sync the
     python scripts/sync_zotero.py
     ```
 
-> **Note:** You must have read access to the specific Zotero libraries configured in the script. If you do not have access, the project includes a pre-generated `prestudy/resources/bibliography.bib` file that you can use.
+> **Note:** You must have read access to the specific Zotero libraries configured in the script. If you do not have access, the project includes a pre-generated `content/prestudy/resources/bibliography.bib` file that you can use.
 
 ## Testing & Verification
 
@@ -166,33 +166,43 @@ This repository uses GitHub Actions to automatically build and verify the thesis
 
 - **Workflow**: `.github/workflows/latex-build.yml`
 - **Jobs**:
-    - `test_structure`: Runs unit tests and bibliography checks.
-    - `build_latex`: Compiles the PDF and verifies document lists.
+    - `lint_python`: Checks Python code style using Ruff.
+    - `test_structure`: Runs unit tests to verify LaTeX structure.
+    - `test_citations`: Verifies that citations match the bibliography.
+    - `test_formal_guidelines`: Checks for required sections and chapters.
+    - `test_formatting`: Validates formatting rules.
+    - `test_bibliography_counts`: Checks bibliography entry counts.
+    - `build_latex`: Compiles the PDF and verifies document lists (TOC, LOF, LOT).
 - **Artifacts**: The compiled `main.pdf` is uploaded as an artifact for each successful build.
 
 ## Project Structure
 
 ```
 bachelor-thesis/
-├── prestudy/               # Current Prestudy Work
-│   ├── main.tex            # Main LaTeX entry point
-│   ├── sections/           # Individual chapters
-│   │   ├── 00_abstract.tex
-│   │   ├── 01_introduction.tex
-│   │   └── ...
-│   └── resources/          # Assets and bibliography
-│       ├── bibliography.bib
-│       ├── images/
-│       ├── docs/
-│       └── design/
-├── thesis/                 # Future Thesis Work
+├── content/
+│   ├── prestudy/           # Current Prestudy Work
+│   │   ├── main.tex        # Main LaTeX entry point
+│   │   ├── sections/       # Individual chapters
+│   │   │   ├── 00_abstract.tex
+│   │   │   ├── 01_introduction.tex
+│   │   │   └── ...
+│   │   └── resources/      # Assets and bibliography
+│   │       ├── bibliography.bib
+│   │       ├── images/
+│   │       ├── docs/
+│   │       └── design/
+│   ├── thesis/             # Future Thesis Work
+│   └── operationisation-constructs/
+├── lib/                    # Shared libraries/modules
+│   └── apa7/               # Custom APA7 class files
 ├── scripts/                # Build and utility scripts
 │   ├── build.sh
 │   ├── check_toc.py
 │   └── sync_zotero.py
 ├── tests/                  # Automated tests
 │   ├── test_structure.py
-│   └── test_formal_guidelines.py
+│   ├── test_formal_guidelines.py
+│   └── ...
 └── .github/                # CI/CD configuration
 ```
 
