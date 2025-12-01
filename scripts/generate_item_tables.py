@@ -116,7 +116,7 @@ def escape_latex(text):
 if __name__ == "__main__":
     # Paths are relative to project root usually
     PROJECT_ROOT = os.getcwd()
-    CSV_PATH = os.path.join(PROJECT_ROOT, "content", "thesis", "survey", "construct_items", "items.csv")
-    OUTPUT_DIR = os.path.join(PROJECT_ROOT, "content", "thesis", "survey", "construct_items", "generated")
+    CSV_PATH = os.path.join(PROJECT_ROOT, "content", "resources", "data", "items.csv")
+    OUTPUT_DIR = os.path.join(PROJECT_ROOT, "content", "resources", "tables")
     
     generate_latex_tables(CSV_PATH, OUTPUT_DIR)
