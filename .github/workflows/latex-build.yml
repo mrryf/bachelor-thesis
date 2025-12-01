@@ -139,18 +139,8 @@ jobs:
 #        run: python scripts/check_readme_update.py
 #        continue-on-error: true # Non-blocking for now, can be made strict later
 
-      - name: Compile LaTeX Document
-        uses: xu-cheng/latex-action@v3
-        with:
-          root_file: |
-            main.tex
-            main_required.tex
-          working_directory: content/prestudy
-          latexmk_use_lualatex: false
-          latexmk_shell_escape: false
-          args: "-pdf -file-line-error -interaction=nonstopmode"
-        env:
-          TEXINPUTS: "../lib//:"
+      - name: Build LaTeX Documents
+        run: ./scripts/build.sh --all
 
       - name: Check for PDF
         run: |
