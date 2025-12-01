@@ -80,8 +80,7 @@ Required for build scripts and tests.
 pip install -r requirements.txt
 ```
 
-### Fonts
-- **Nerd Fonts**: Recommended for terminal icons (e.g., `MesloLGS NF`).
+
 
 ## Installation
 

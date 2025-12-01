@@ -7,14 +7,14 @@ except ImportError:
     HAS_BIBTEXPARSER = False
 
 PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-SECTIONS_DIR = os.path.join(PROJECT_ROOT, 'sections')
+SECTIONS_DIR = os.path.join(PROJECT_ROOT, 'content', 'prestudy', 'sections')
 MAIN_TEX = os.path.join(PROJECT_ROOT, 'main.tex')
-BIB_FILE = os.path.join(PROJECT_ROOT, 'resources', 'bibliography.bib')
+BIB_FILE = os.path.join(PROJECT_ROOT, 'content', 'prestudy', 'resources', 'bibliography.bib')
 
 def get_tex_files():
     tex_files = [MAIN_TEX]
     if os.path.exists(SECTIONS_DIR):
-        for f in os.listdir(SECTIONS_DIR):
+        for f in os.path.listdir(SECTIONS_DIR):
             if f.endswith('.tex'):
                 tex_files.append(os.path.join(SECTIONS_DIR, f))
     return tex_files

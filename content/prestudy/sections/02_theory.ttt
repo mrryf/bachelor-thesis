@@ -1,0 +1,51 @@
+\begin{table*}[hbt]
+\ifnextchar[{\eatarg}{}
+[ht]
+    \centering
+    \caption{Identifizierte latente Konstrukte zum Einsatz von AI-TAM}
+    \label{tab:latent-constructs}
+    \begin{tabularx}{\textwidth}{l l X l}
+        \toprule
+        \textbf{Abkürzung} & \textbf{Name} & \textbf{Definition} & \textbf{Quelle} \\
+        \midrule
+        XAIT & Explainable AI trust & Vertrauen in die generierte Antwort und die LLM-Lösung & \parencite{Baroni2022} \\
+        BI & Behavorial Intention & Verhaltensintention die LLM-Lösung zu Nutzen & \parencite{Baroni2022, Davis1987} \\
+        CI & Collaborative Intention & Kollaborationsintention zur digitalen Assistenz & \parencite{Baroni2022, Davis1987} \\
+        PUF & Perceived Usefulness & Wahrgenommene Nützlichkeit der generierten Antwort & \parencite{Baroni2022, Davis1987} \\
+        EOU & Ease of Use & Einfachheit in der Nutzung der KI-Applikation & \parencite{Baroni2022, Davis1987} \\
+        FAM-TEC & Familiarity with Technology & Vertrautheit in der Nutzung von KI-Technologie & \parencite{Baroni2022, Davis1987} \\
+        \bottomrule
+    \end{tabularx}
+\end{table*}
+\efloatseparator
+ 
+\begin{table*}[hbt]
+\ifnextchar[{\eatarg}{}
+[ht]
+    \centering
+    \caption{Aufgelistete Hypothesen im Rahmen der Bachelor-Arbeit-Vorstudie}
+    \label{tab:hypotheses}
+    \begin{tabularx}{\textwidth}{l X c l}
+        \toprule
+        \textbf{Hypothese} & \textbf{Pfad} & \textbf{Richtung} & \textbf{Theorie} \\
+        \midrule
+        H1a & Dummy\_Pos (Stimulus) $\to$ XAIT & + & Attribute Frame \\
+        H1b & Dummy\_Neg (Stimulus) $\to$ XAIT & - & Attribute Frame \\
+        H2 & XAIT $\to$ PUF & + & AI-TAM-Modell \\
+        H3 & XAIT $\to$ EOU & + & AI-TAM-Modell \\
+        H4 & PUF $\to$ BI & + & AI-TAM-Modell \\
+        H5 & EOU $\to$ BI & + & AI-TAM-Modell \\
+        H6 & EOU $\to$ PUF & + & AI-TAM-Modell \\
+        H7 & BI $\to$ CI & + & AI-TAM-Modell \\
+        H8 & FAMTEC $\to$ PUF & + & AI-TAM-Modell \\
+        \midrule
+        \multicolumn{4}{l}{\textbf{Kovariate}} \\
+        ACTS & ACTS $\to$ XAIT & kontrolliert & - \\
+        \midrule
+        \multicolumn{4}{l}{\textbf{Mediation}} \\
+        H9 & Framing $\to$ XAIT $\to$ (PUF, EOU) $\to$ BI & Indirekt & - \\
+        \bottomrule
+    \end{tabularx}
+    \par\medskip
+    \footnotesize{Anmerkung: Alle Pfade werden simultan im Strukturgleichungsmodell (SEM) geschätzt}
+\end{table*}

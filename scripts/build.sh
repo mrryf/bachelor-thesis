@@ -14,7 +14,7 @@ echo "Building project in: $TARGET_DIR"
 # Save current directory
 START_DIR=$(pwd)
 
-cd "$TARGET_DIR" || exit
+# cd "$TARGET_DIR" || exit # Do not change directory, use paths relative to root
 
 # Clean up previous build artifacts
 latexmk -c
@@ -26,22 +26,33 @@ FILES_TO_BUILD=("main.tex")
 if [ -f "main_required.tex" ]; then
     FILES_TO_BUILD+=("main_required.tex")
 fi
+# if [ -f "main_required.tex" ]; then
+#     FILES_TO_BUILD+=("main_required.tex")
+# fi # This block is no longer needed
 
-for file in "${FILES_TO_BUILD[@]}"; do
-    echo "Building $file..."
-    # Build the PDF
-    # -pdf: generate PDF
-    # -interaction=nonstopmode: don't stop on errors
-    # -file-line-error: show file and line number for errors
-    latexmk -pdf -interaction=nonstopmode -file-line-error "$file"
+# Build the main document
+echo "Building $TARGET_DIR/main.tex..."
+latexmk -pdf -interaction=nonstopmode -file-line-error -outdir="$TARGET_DIR" "$TARGET_DIR/main.tex"
+
+if [ $? -ne 0 ]; then
+    echo "Error building $TARGET_DIR/main.tex"
+    # Return to start directory before exiting
+    cd "$START_DIR"
+    exit 1
+fi
+
+# Build the required document if it exists
+if [ -f "$TARGET_DIR/main_required.tex" ]; then
+    echo "Building $TARGET_DIR/main_required.tex..."
+    latexmk -pdf -interaction=nonstopmode -file-line-error -outdir="$TARGET_DIR" "$TARGET_DIR/main_required.tex"
     
     if [ $? -ne 0 ]; then
-        echo "Error building $file"
+        echo "Error building $TARGET_DIR/main_required.tex"
         # Return to start directory before exiting
         cd "$START_DIR"
         exit 1
     fi
-done
+fi
 
 echo "Build successful! PDFs are located in $TARGET_DIR"
 # Return to start directory

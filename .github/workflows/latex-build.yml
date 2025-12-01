@@ -116,29 +116,47 @@ jobs:
           ZOTERO_USER_ID: ${{ secrets.ZOTERO_USER_ID }}
         run: python scripts/sync_zotero.py
 
-      - name: Build LaTeX Document
+#      - name: Check Documentation Update
+#        run: python scripts/check_readme_update.py
+#        continue-on-error: true # Non-blocking for now, can be made strict later
+
+      - name: Compile LaTeX Document
         uses: xu-cheng/latex-action@v3
         with:
-          root_file: main.tex
-          working_directory: prestudy
-          
+          root_file: |
+            main.tex
+            main_required.tex
+          working_directory: content/prestudy
+          latexmk_use_lualatex: false
+          latexmk_shell_escape: false
+          args: "-pdf -file-line-error -interaction=nonstopmode"
+
+      - name: Check for PDF
+        run: |
+          if [ ! -f content/prestudy/main.pdf ]; then
+            echo "PDF not found!"
+            exit 1
+          fi
+
       - name: Verify TOC, LOF, LOT, and Bibliography
         run: python scripts/check_toc.py
 
-      - name: Upload PDF artifact
+      - name: Upload PDF Artifact
         uses: actions/upload-artifact@v4
         with:
           name: PDF
           path: |
-            main.pdf
-            main_required.pdf
+            content/prestudy/main.pdf
+            content/prestudy/main_required.pdf
 
       - name: Create Release
-        uses: softprops/action-gh-release@v1
         if: github.ref == 'refs/heads/main'
+        uses: softprops/action-gh-release@v1
         with:
           tag_name: build-${{ github.run_number }}
           name: ${{ github.event.head_commit.message }}
           files: |
-            main.pdf
-            main_required.pdf
+            content/prestudy/main.pdf
+            content/prestudy/main_required.pdf
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

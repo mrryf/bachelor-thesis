@@ -1,0 +1,143 @@
+\documentclass[../main.tex]{subfiles}
+\begin{document}
+\section{Theoretische Einbettung, Forschungsfrage, Hypothesen und Forschungsdesign}
+
+\subsection{Theoretische Einbettung}
+Modelltheoretisch knüpft die vorliegende Arbeit an frühere Studien in den Bereichen Vertrauen in künstliche Intelligenz/technologische Veränderungen, wahrgenommene Nützlichkeit sowie Benutzerfreundlichkeit und die daraus abgeleitete Nutzungsabsicht an. Als theoretische Grundlage dient zunächst das Technology Acceptance Model (TAM) von Fred Davis aus dem Jahr 1987, welches die Rahmenbedingungen zur Analyse von Adoptionsprozessen neuer Technologien schafft \parencite{davis_perceived_1989}. Den zweiten Baustein liefert die Erweiterung des TAM-Modells durch \textcite{baroni_ai-tam_2022}. Diese ergänzt das Modell um zusätzliche Faktoren wie das Vertrauen in KI-gestützte Assistenten und bildet diese im Artificial Intelligence Technology Acceptance Model (AI-TAM) ab \parencite{baroni_ai-tam_2022}.
+
+Zuletzt wird der Framing-Effekt theoretisch beleuchtet, da dieser für die gewählte Stimulus-Wahl relevant ist. Konkret wird dabei die Form des Attribute-Framing-Effekts betrachtet \parencite{druckman_evaluating_2001, freling_when_2014}.
+
+\subsubsection[Technology Acceptance Model]{Technology Acceptance Model \parencite{davis_perceived_1989}}
+Das TAM wurde entwickelt, um die mangelnde Nutzerakzeptanz von Informationssystemen zu adressieren, die als Haupthindernis für den Erfolg neuer Technologien identifiziert wurde. Davis untersuchte 112 Angestellte und Manager eines grossen nordamerikanischen Unternehmens, die zwei unterschiedliche Softwaresysteme nutzten - ein elektronisches Mailsystem und einen Texteditor. Das Modell basiert auf der Attitude-Paradigm aus der Psychologie, speziell auf Fishbein und Ajzens Theory of Reasoned Action \parencite{fishbein_belief_1975}. TAM besagt, dass die tatsächliche Systemnutzung durch die Verhaltensintention bestimmt wird, welche von der Einstellung zur Nutzung abhängt.
+
+Diese Einstellung wird durch zwei zentrale Konstrukte geprägt:
+\begin{itemize}
+    \item Perceived Usefulness – «the degree to which an individual believes that using a particular system would enhance his or her job performance» – und
+    \item Perceived Ease of Use – «the degree to which an individual believes that using a particular system would be free of physical and mental effort».
+\end{itemize}
+
+Die Studie zeigte, dass Perceived Usefulness etwa 50\% einflussreicher auf die Nutzung war als Ease of Use, wobei das Modell 36\% der Varianz in der tatsächlichen Nutzung erklären konnte.
+
+Während TAM erfolgreich die Akzeptanz traditioneller Informationssysteme erklärt, erweist es sich für KI-basierte Systeme als unzureichend. KI-Systeme unterscheiden sich durch ihre probabilistische Natur und inhärente Unsicherheit - Eigenschaften, die Vertrauen zu einem Faktor machen, der im ursprünglichen TAM nicht berücksichtigt wird. Zudem werden KI-Systeme nicht nur als Werkzeuge, sondern oft auch als kollaborative Partner wahrgenommen, was neue Dimensionen der Mensch-Maschine-Interaktion eröffnet. Diese Lücke adressieren \textcite{baroni_ai-tam_2022} mit ihrer Erweiterung des TAM-Modells \parencite{baroni_ai-tam_2022}.
+
+\subsubsection[Artificial Intelligence-Technology Acceptance Model]{Artificial Intelligence-Technology Acceptance Model \parencite{baroni_ai-tam_2022}}
+
+\paragraph{Notwendigkeit der TAM-Erweiterung für KI-Systeme}
+Das von \textcite{davis_perceived_1989} entwickelte Technology Acceptance Model (TAM, \parencite{davis_perceived_1989}) basiert auf der Theory of Reasoned Action und erklärt Technologieakzeptanz durch die Faktoren der wahrgenommenen Nützlichkeit (Perceived Usefulness) und der wahrgenommenen Benutzerfreundlichkeit (Perceived Ease of Use). Während das TAM die Adoption traditioneller Informationssysteme bereits untersucht hat, erweist es sich für KI-basierte Systeme als unzureichend. Der Grund dafür liegt in den Unterschieden von KI-Systemen: Ihre probabilistische Natur, die Unsicherheit und ihre Wahrnehmung als kollaborative Partner anstelle reiner Werkzeuge. Diese Eigenschaften machen Vertrauen zu einem Faktor, der im ursprünglichen TAM nicht abgebildet wird. Darüber hinaus erfordern «Human-in-the-Loop»-Ansätze, dass Nutzer aktiv zur Verbesserung der KI beitragen – eine Dimension der Kollaboration, die das klassische Modell ebenfalls nicht berücksichtigt.
+
+\paragraph{Erweiterungen des TAM zum AI-TAM}
+\textcite{baroni_ai-tam_2022} erweiterten das TAM um drei zusätzliche Konstrukte: «Explainable AI Trust» (Vertrauen in KI) aus der Literatur zu «Explainable AI» (XAI), «Collaborative Intention» (Kollaborationsabsicht) zur Messung der Bereitschaft zur Teilnahme an «Human-in-the-Loop»-Mechanismen sowie die Vertrautheit mit der Technologie und dem Anwendungskontext. Vertrauenskonstrukt basiert auf der Arbeit von Hoffman et al. (Hoffman et al., 2019). Dabei misst «Explainable AI Trust» die Zuversicht in die Ergebnisse der KI. Die «Collaborative Intention» erfasst die Bereitschaft der Nutzer, aktiv zur Verbesserung der KI beizutragen, was ein kritischer Faktor für «Human-in-the-Loop»-Systeme ist. Dieses übt einen Einfluss auf Kernkonstrukte des TAM aus.
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\textwidth, height=0.8\textheight, keepaspectratio]{resources/images/ba_faryf_ai_tam.jpg}
+    \caption{Erweitertes TAM-Modell: Artificial Intelligence-Technology Acceptance Model \parencite{baroni_ai-tam_2022}}
+    \label{fig:ai-tam-model}
+\end{figure}
+
+\paragraph{Validierung durch die BumpOut-Studie \parencite{baroni_ai-tam_2022}}
+Das AI-TAM wurde mit der Anwendung «BumpOut» validiert, einer KI-gestützten App zur Schadensmeldung bei Autounfällen. Die Studie umfasste 400 Teilnehmende in zwei Crowdsourcing-Kampagnen unter unterschiedlichen experimentellen Bedingungen: einer fehlerfreien KI versus einer teilweise fehlerhaften KI. Die App analysiert dabei Schadensbilder automatisch, wobei die Nutzer die von der KI getroffenen Identifikationen bestätigen oder korrigieren können. Die Ergebnisse zeigten hohe Werte für die wahrgenommene Nützlichkeit und Benutzerfreundlichkeit, während die Funktionsfähigkeit der KI nur einen minimalen Einfluss hatte. Besonders bedeutsam war die starke Korrelation zwischen der Nutzungsabsicht («Behavioral Intention») und der Kollaborationsabsicht («Collaborative Intention»). Dies bestätigt, dass Nutzer, die bereit sind, die App zu verwenden, auch bereit sind, zur Verbesserung der KI beizutragen. Das AI-TAM eignet sich daher auch für die Untersuchung der Akzeptanz von Large Language Models (LLMs), da diese Systeme die gleichen kritischen Charakteristika aufweisen: probabilistische Ausgaben, inhärente Unsicherheit und die Notwendigkeit von Nutzervertrauen. LLMs werden zunehmend als kollaborative Partner wahrgenommen, deren Ergebnisse oft Nutzerfeedback erfordern. Insbesondere die XAI-Konstrukte sind hier relevant, da Nutzer nachvollziehen müssen, warum ein LLM eine bestimmte Antwort generiert.
+
+Die Verbindung des AI-TAM mit dem Konzept des Attribute Framings eröffnet neue Forschungsperspektiven. Framing-Effekte könnten insbesondere das XAIT-Konstrukt beeinflussen. So dürfte die Präsentation von KI-Fähigkeiten als Gewinn («95 \% Genauigkeit») im Vergleich zu einer Darstellung als Unsicherheit («5 \% Fehlerrate») das Vertrauen in die KI («Explainable AI Trust») direkt verändern. Gemäss dem AI-TAM-Modell beeinflusst dieser Faktor wiederum die Nutzungsabsicht («Behavioral Intention»). Für Experimente mit Large Language Models (LLMs) bedeutet dies, dass die Art der Leistungsdarstellung, beispielsweise durch das Attribute Framing der Modellfähigkeiten, die Nutzerakzeptanz beeinflussen könnte. Das AI-TAM bietet hierbei den methodischen Rahmen, um diese Effekte auf den relevanten Dimensionen präzise zu messen.
+
+\subsubsection{Framing-Effekt}
+Der Framing-Effekt, erstmals von Kahneman und Tversky in ihrer Prospect Theory beschrieben, zeigt, dass Entscheidungen davon beeinflusst werden, wie Informationen präsentiert werden \parencite{tversky_framing_1986}. Der Framing-Effekt zeigt unter anderem, wie identische Szenarien zu unterschiedlichen Präferenzen führen, je nachdem ob sie in Gewinn- oder Verlustbegriffen formuliert werden. Während sich die frühe Forschung auf riskante Entscheidungen konzentrierte, erweiterte sich das Konzept auf verschiedene Framing-Typen wie Risky Choice Framing, Goal Framing und Attribute Framing.
+
+Zusätzlich untersuchte \textcite{freling_when_2014} in ihrer Meta-Analyse 107 Studien zum Attribute Framing und entwickelten dabei eine theoretische Integration mittels Construal Level Theory (CLT). Ihre zentrale Erkenntnis: Die Effektivität von Attribute Framing hängt von der Kongruenz zwischen dem Abstraktionsniveau (Construal Level) des Frames und der psychologischen Distanz des Bewertenden zum geframten Event ab \parencite{freling_when_2014}.
+
+\paragraph{Attribute Framing nach Levin \& Gaeth (1988) und \textcite{dolgopolova_effect_2022}}
+Attribute Framing unterscheidet sich von anderen Framing-Typen, da hier ein einzelnes Attribut in äquivalenten aber unterschiedlich valenten Begriffen beschrieben wird. Levin und Gaeth demonstrierten dies mit Hackfleisch, das entweder als «75\% mager» oder «25\% fett» beschrieben wurde (Levin \& Gaeth, 1988). Der Attribute Framing-Effekt manifestiert sich in einer valenz-konsistenten Verschiebung: Positive Frames führen zu günstigeren Bewertungen als negative. Ihre Studie zeigte zudem, dass direkte Produkterfahrung den Framing-Effekt abschwächt - ein Befund, der durch ein Averaging-Modell erklärt wird, bei dem zusätzliche Informationsquellen den relativen Einfluss einzelner Frames reduzieren.
+
+\textcite{dolgopolova_effect_2022} spezifisch auf Lebensmittelentscheidungen und fanden Effekte für Einstellungen versus Intentionen. Während Gain-Frames signifikant positivere Einstellungen erzeugten, war der Effekt auf Kaufintentionen nahe null und nicht signifikant. Mehrere Moderatoren wurden identifiziert: Gain-Frames, Interaktionsterme, spezifische Produkte und Studentenstichproben beeinflussten signifikant die Ergebnisse. Diese Befunde unterstreichen die Komplexität des Attribute Framing bei Lebensmitteln, wo zeitliche Diskontierung und die Verzögerung zwischen Konsum und Gesundheitskonsequenzen eine Rolle spielen \parencite{dolgopolova_effect_2022}.
+
+Der Attribute Framing-Effekt ist für die Untersuchung der KI-Akzeptanz relevant, da KI-Systeme durch ihre Fähigkeiten (Gain-Frame: «95\% Genauigkeit») oder Limitationen (Loss-Frame: «5\% Fehlerrate») charakterisiert werden können. Im Kontext des erweiterten TAM-Modells \parencite{davis_perceived_1989} könnte Attribute Framing die Wahrnehmung von Perceived Usefulness und Vertrauen in KI beeinflussen. Die Präsentation von KI-Funktionen als Gewinne («erhöht Produktivität um 30\%») versus Verluste («30\% manuelle Arbeit bleibt erforderlich») könnte unterschiedliche Akzeptanzmuster erzeugen.
+
+\subsection{Forschungsfrage}
+Wie beeinflusst die Framingdarstellung von KI-Konfidenzwerten (positiv vs. negativ) das Vertrauen in KI-generierte Antworten und die daraus resultierende Technologieakzeptanz in LLM-basierten Assistenzsystemen?
+
+\subsection{Latente Konstrukte}
+Die latenten Konstrukte werden mittels einer Online-Befragung vor, während und nach der Nutzung der KI-Assistenz erhoben. Die verwendeten Konstrukte stammen grossteils aus dem Technology Acceptance Model (TAM) von Davis sowie aus der Erweiterung dieses Modells durch \textcite{baroni_ai-tam_2022}. Diese Erweiterung ergänzt das bestehende TAM um KI-relevante Faktoren wie das Vertrauen in erklärbare KI («Explainable AI Trust», XAIT), die Kollaborationsabsicht («Collaborative Intention, CI») und die technologische Vorerfahrung («Familiarity with Technology», FAM-TEC») \parencite{baroni_ai-tam_2022}.
+
+\begin{table}[ht]
+    \centering
+    \caption{Identifizierte latente Konstrukte zum Einsatz von AI-TAM}
+    \label{tab:latent-constructs}
+    \begin{tabularx}{\textwidth}{l p{4cm} X p{4cm}}
+        \toprule
+        \textbf{Abkürzung} & \textbf{Name} & \textbf{Definition} & \textbf{Quelle} \\
+        \midrule
+        XAIT & Explainable AI trust & Vertrauen in die generierte Antwort und die LLM-Lösung & \parencite{baroni_ai-tam_2022} \\
+        BI & Behavorial Intention & Verhaltensintention die LLM-Lösung zu Nutzen & \parencite{baroni_ai-tam_2022, davis_perceived_1989} \\
+        CI & Collaborative Intention & Kollaborationsintention zur digitalen Assistenz & \parencite{baroni_ai-tam_2022, davis_perceived_1989} \\
+        PUF & Perceived Usefulness & Wahrgenommene Nützlichkeit der generierten Antwort & \parencite{baroni_ai-tam_2022, davis_perceived_1989} \\
+        EOU & Ease of Use & Einfachheit in der Nutzung der KI-Applikation & \parencite{baroni_ai-tam_2022, davis_perceived_1989} \\
+        FAM-TEC & Familiarity with Technology & Vertrautheit in der Nutzung von KI-Technologie & \parencite{baroni_ai-tam_2022, davis_perceived_1989} \\
+        \bottomrule
+    \end{tabularx}
+\end{table}
+
+\subsection{Hypothesenübersicht}
+\begin{table}[ht]
+    \centering
+    \caption{Aufgelistete Hypothesen im Rahmen der Bachelor-Arbeit-Vorstudie}
+    \label{tab:hypotheses}
+    \begin{tabularx}{\textwidth}{l X c l}
+        \toprule
+        \textbf{Hypothese} & \textbf{Pfad} & \textbf{Richtung} & \textbf{Theorie} \\
+        \midrule
+        H1a & Dummy\_Pos (Stimulus) $\to$ XAIT & + & Attribute Frame \\
+        H1b & Dummy\_Neg (Stimulus) $\to$ XAIT & - & Attribute Frame \\
+        H2 & XAIT $\to$ PUF & + & AI-TAM-Modell \\
+        H3 & XAIT $\to$ EOU & + & AI-TAM-Modell \\
+        H4 & PUF $\to$ BI & + & AI-TAM-Modell \\
+        H5 & EOU $\to$ BI & + & AI-TAM-Modell \\
+        H6 & EOU $\to$ PUF & + & AI-TAM-Modell \\
+        H7 & BI $\to$ CI & + & AI-TAM-Modell \\
+        H8 & FAMTEC $\to$ PUF & + & AI-TAM-Modell \\
+        \midrule
+        \multicolumn{4}{l}{\textbf{Kovariate}} \\
+        ACTS & ACTS $\to$ XAIT & kontrolliert & - \\
+        \midrule
+        \multicolumn{4}{l}{\textbf{Mediation}} \\
+        H9 & Framing $\to$ XAIT $\to$ (PUF, EOU) $\to$ BI & Indirekt & - \\
+        \bottomrule
+    \end{tabularx}
+    \par\medskip
+    \footnotesize{Anmerkung: Alle Pfade werden simultan im Strukturgleichungsmodell (SEM) geschätzt}
+\end{table}
+
+\subsubsection{Ausformulierte Hypothesen}
+
+\paragraph{Haupthypothesen (Framing-Effekte)}
+\begin{itemize}
+    \item H1a: Die positive Darstellung des Accuracy Scores (z.B. «Diese Antwort ist zu 80\% korrekt») führt zu einem höheren AI Output Trust als die Kontrollbedingung ohne Score-Anzeige.
+    \item H1b: Die negative Darstellung des Accuracy Scores (z.B. «Diese Antwort hat eine 20\% Fehlerwahrscheinlichkeit») führt zu einem niedrigeren AI Output Trust als die Kontrollbedingung ohne Score-Anzeige.
+\end{itemize}
+
+\paragraph{AI-TAM Kernbeziehungen}
+\begin{itemize}
+    \item H2: AI Output Trust hat einen positiven Einfluss auf die Perceived Usefulness. Nutzer, die den AI-Ausgaben vertrauen, bewerten das System als nützlicher für ihre Aufgaben.
+    \item H3: AI Output Trust hat einen positiven Einfluss auf die Perceived Ease of Use. Vertrauen in die AI-Ausgaben reduziert die wahrgenommene kognitive Belastung bei der Systemnutzung.
+\end{itemize}
+
+\paragraph{TAM-Standardbeziehungen}
+\begin{itemize}
+    \item H4: Die Perceived Usefulness hat einen positiven Einfluss auf die Behavioral Intention. Je nützlicher Nutzer Alva einschätzen, desto höher ist ihre Absicht, das System zukünftig zu nutzen.
+    \item H5: Die Perceived Ease of Use hat einen positiven Einfluss auf die Behavioral Intention. Eine als einfach wahrgenommene Nutzung erhöht die Intention zur zukünftigen Systemnutzung.
+    \item H6: Die Perceived Ease of Use hat einen positiven Einfluss auf die Perceived Usefulness. Systeme, die einfach zu nutzen sind, werden als nützlicher wahrgenommen.
+    \item H7: Die Behavioral Intention hat einen positiven Einfluss auf die Collaborative Intention. Nutzer, die beabsichtigen Alva zu nutzen, zeigen auch eine höhere Bereitschaft zur kollaborativen Zusammenarbeit mit dem AI-System.
+    \item H8: Familiarity with Technology hat einen positiven Einfluss auf die Perceived Usefulness. Nutzer, die mit KI-Technologie vertraut sind, schätzen die Nützlichkeit der digitalen Assistenz höher ein.
+\end{itemize}
+
+\paragraph{Mediation}
+\begin{itemize}
+    \item H9: Der Effekt des Framings auf die Behavorial Intention wird durch Explainable AI Trust partiell oder vollständig mediiert. Bei niedrigen Explainable AI Trust-Werten ist der Unterschied zwischen positivem und negativem Framing grösser als bei hohen Explainable AI Trust-Werten.
+\end{itemize}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\textwidth, height=0.8\textheight, keepaspectratio]{resources/images/ba_faryf_messmodell.jpg}
+    \caption{Strukturmodell für AI-TAM, Teil des Strukturgleichungsmodell, inkl. Hypothesen, inkl. Stimulus}
+    \label{fig:structure-model}
+\end{figure}
+\end{document}

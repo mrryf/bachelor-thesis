@@ -1,0 +1,265 @@
+\documentclass[../main.tex]{subfiles}
+\begin{document}
+\section{Forschungsdesign}
+Das Experiment untersucht den Einfluss von Accuracy-Framing auf die Technologieakzeptanz von KI-Systemen, basierend auf dem AI-TAM-Modell. In einem 3x2 Between-Subjects-Design wird die Darstellung von Konfidenzwerten (positiver Frame vs. negativer Frame) bei variierenden Accuracy-Scores (hoch, mittel, niedrig) manipuliert. Die experimentelle Manipulation erfolgt während der realen Interaktion mit einem KI-Assistenten.
+
+\subsection{Experimentelles Design}
+
+\subsubsection{Between-Subject Design}
+Das Experiment nutzt ein Between-Subjects-Design mit drei Experimentalgruppen, um den Einfluss des Accuracy-Framings auf das Vertrauen in KI-Systeme zu untersuchen.
+
+\begin{itemize}
+    \item Unabhängige Variable: Das Accuracy-Framing mit zwei Ausprägungen
+    \begin{itemize}
+        \item Positiver Frame: Gain-Darstellung (positive «Zuversicht»)
+        \item Negative Frame: Loss-Darstellung (negative «Zuversicht»)
+    \end{itemize}
+    \item Unabhängige Variable: Das Accuracy-Framing mit drei Stufen:
+    \begin{itemize}
+        \item Hoch
+        \item Mittel
+        \item Niederig
+    \end{itemize}
+\end{itemize}
+
+Diese Designstruktur wird in der Literatur als Between-Subjects-Design mit Kovariate bezeichnet, wobei die kontinuierliche Variable als statistische Kontrollvariable dient \parencite{kim_communicating_2022}. Die Kombination eines kategorialen Faktors mit einer kontinuierlichen Variable ermöglicht die Untersuchung von Haupt- und Interaktionseffekten, während gleichzeitig die natürliche Varianz der KI-Performance kontrolliert wird
+
+\begin{table}[ht]
+    \centering
+    \caption{Experiment-Design, vorhandene Experimentalbedingungen}
+    \label{tab:experiment-design}
+    \begin{tabularx}{\textwidth}{l l X X}
+        \toprule
+        \textbf{Bedingung} & \textbf{Gruppe} & \textbf{Manipulation} & \textbf{Beispiel} \\
+        \midrule
+        Positive-Frame & Gruppe 1 & Score wird als Konfidenz/Zuverlässigkeit dargestellt & «Antwortsicherheit: 80\%» oder «Antwortsicherheit zu 80\% zuverlässig» \\
+        Negative-Frame & Gruppe 2 & Score wird als Unsicherheit/Fehlerwahrscheinlichkeit dargestellt & Antwortunsicherheit: 20\% oder «Diese Antwort hat eine Fehlerwahrscheinlichkeit von 20\%» \\
+        Kontrollgruppe & Gruppe 3 & Kein Score wird angezeigt (Status Quo) & - \\
+        \bottomrule
+    \end{tabularx}
+\end{table}
+
+\begin{table}[ht]
+    \centering
+    \begin{threeparttable}
+        \caption{Experimentelles 3x2 Design: Manipulation von Framing und Accuracy}
+        \label{tab:experiment-design-3x2}
+        \begin{tabularx}{\textwidth}{l X X}
+            \toprule
+             & \multicolumn{2}{c}{\textbf{Framing (Unabhängige Variable 1)}} \\
+            \cmidrule(lr){2-3}
+            \textbf{Accuracy (UV 2)} & \textbf{Positiver Frame} & \textbf{Negativer Frame} \\
+            \midrule
+            \textbf{Hoch} & Sicherheit: Hoch & Unsicherheit: Tief \\
+            \textbf{Mittel} & Sicherheit: Mittel & Unsicherheit: Mittel \\
+            \textbf{Niedrig} & Sicherheit: Tief & Unsicherheit: Hoch \\
+            \bottomrule
+        \end{tabularx}
+        \begin{tablenotes}
+            \small
+            \item \textit{Anmerkung.} Die Kontrollgruppe (kein Score) ist in diesem 3x2 Design nicht abgebildet.
+        \end{tablenotes}
+    \end{threeparttable}
+\end{table}
+
+\subsection{Ablauf Experiment}
+Das geplante Experiment ist in drei Phasen gegliedert: eine Phase vor, eine während und eine nach der Interaktion mit dem KI-Assistenten. In jeder dieser Phasen werden die benötigten Daten erhoben. Dies geschieht entweder durch direkte Nutzerbefragung mittels Bewertungsfragen oder durch automatische Berechnung und Speicherung im Hintergrund, wie es beispielsweise beim «Accuracy Score» der Fall ist.
+
+Da die initiale Befragung bereits stattfindet, bevor die Teilnehmenden mit dem System interagieren, wird diese bewusst kurz gehalten. Ziel ist es, die Abbruchrate zu minimieren und eine hohe Abschlussrate des gesamten Experiments zu fördern.
+
+\subsubsection{Pre-Interaktionsphase «digitaler Assistent»}
+\begin{itemize}
+    \item Einführung \& Einwilligung
+    \item Erhebung «FAM-TEC»-Konstrukt
+\end{itemize}
+
+\subsubsection{Interaktionsphase «digitaler Assistent»}
+\begin{itemize}
+    \item Anzahl Interaktionen
+    \item Tatsächlicher Accuracy-Score von Antworten
+    \item Dauer der Sitzungen
+    \item Anonymisierte, qualitative Inhalte wie Prompts und Antworten
+    \item Bewertung («Rating»)
+    \item LLM-Einschätzung («Faithfulness Score»)
+\end{itemize}
+
+\subsubsection{Post-Interaktionsphase «digitaler Assistent»}
+\begin{itemize}
+    \item Erhebung «AI-TAM-Konstrukte»
+    \item Erhebung «XAIT»-Konstrukt
+    \item Erhebung «TAM-Konstrukte»
+    \item Erhebung «PUF»-Konstrukt, Teil 2
+    \item Erhebung «EOU»-Konstrukt
+    \item Erhebung «BI»-Konstrukt
+    \item Erhebung «CI»-Konstrukt
+    \item Erhebung soziodemografischer Daten (Kontrollvariabeln)
+    \begin{itemize}
+        \item Alter
+        \item Geschlecht
+        \item Höchster Bildungsabschluss
+    \end{itemize}
+\end{itemize}
+
+\subsection{Stimulus-Konzept}
+Der Stimulus besteht aus der visuellen und textlichen Darstellung des AI-Accuracy Scores direkt nach jeder LLM-Antwort. Die Manipulation erfolgt in Echtzeit während der natürlichen Interaktion mit dem digitalen Assistenten.
+
+% Tabelle 4: Spezifikation Stimuli
+
+\begin{figure}[htbp]
+    \centering
+    \begin{subfigure}[b]{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{design/ba_fryf_stimulus_design/sicherheit_hoch.pdf}
+        \caption{Positiver Frame / Hohe Sicherheit}
+        \label{fig:stimulus-pos-high}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{design/ba_fryf_stimulus_design/unsicherheit_tief.pdf}
+        \caption{Negativer Frame / Hohe Sicherheit}
+        \label{fig:stimulus-neg-high}
+    \end{subfigure}
+    
+    \vspace{1cm}
+    
+    \begin{subfigure}[b]{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{design/ba_fryf_stimulus_design/sicherheit_mittel.pdf}
+        \caption{Positiver Frame / Mittlere Sicherheit}
+        \label{fig:stimulus-pos-mid}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{design/ba_fryf_stimulus_design/unsicherheit_mittel.pdf}
+        \caption{Negativer Frame / Mittlere Sicherheit}
+        \label{fig:stimulus-neg-mid}
+    \end{subfigure}
+    
+    \vspace{1cm}
+    
+    \begin{subfigure}[b]{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{design/ba_fryf_stimulus_design/sicherheit_tief.pdf}
+        \caption{Positiver Frame / Niedrige Sicherheit}
+        \label{fig:stimulus-pos-low}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{design/ba_fryf_stimulus_design/unsicherheit_hoch.pdf}
+        \caption{Negativer Frame / Niedrige Sicherheit}
+        \label{fig:stimulus-neg-low}
+    \end{subfigure}
+    
+    \caption{Übersicht der Stimulus-Designs für das 3x2 Experiment}
+    \label{fig:stimulus-overview}
+\end{figure}
+
+\subsubsection{Konkrete Stimulus-Beispiele}
+% Beispiel 1, 2, 3
+
+\subsubsection{Manipulationscheck Stimulus}
+Als Manipulationscheck werden die Probanden post-experimentell gefragt, ob und in welcher Form ihnen Informationen zur Zuverlässigkeit der Antworten angezeigt wurden, um sicherzustellen, dass die experimentelle Manipulation wahrgenommen wurde.
+
+\subsection{Methodentriangulation}
+Das vorliegende Forschungsdesign kombiniert verschiedene Methoden in einer Methodentriangulation, um die Forschungsfrage nach dem Einfluss von KI-Transparenz auf Vertrauen zu beantworten.
+
+Die Triangulation erfolgt auf drei Ebenen:
+\begin{itemize}
+    \item experimentelle Manipulation des Accuracy Framings als Between-Subject-Design gewährleistet die interne Validität durch randomisierte Zuweisung.
+    \item Die natürliche Beobachtung während der tatsächlichen LLM-Nutzung erhöht die ökologische Validität, da Nutzer eigene Fragen in realistischen Anwendungskontexten stellen.
+    \item Die standardisierte Befragung mittels validierter Skalen aus dem AI-TAM-Modell ermöglicht die reliable Messung latenter Konstrukte.
+\end{itemize}
+
+\subsubsection{Online-Befragung als Rahmenstruktur}
+Die gesamte Datenerhebung erfolgt über eine webbasierte Plattform, die Pre-Interaction-Messungen (demografische Daten, AI-Vorerfahrung), Post-Interaction-Messungen (AI-TAM-Konstrukte) und die experimentelle Randomisierung steuert. Die Verwendung etablierter Skalen aus dem TAM \parencite{davis_perceived_1989} und AI-TAM \parencite{baroni_ai-tam_2022} gewährleistet die Vergleichbarkeit mit bestehender Forschung. Die standardisierten Items werden auf 5-stufigen Likert-Skalen gemessen.
+
+\subsubsection{Verhaltensbeobachtung durch System-Logging}
+Während der Interaktion mit dem digitalen Assistenten werden automatisiert Verhaltensdaten erfasst: Anzahl der Interaktionen, Session-Dauer(, Fragentypen). Diese Messung liefert weitere Verhaltensindikatoren. Der tatsächliche Accuracy Score wird vom LLM-System für jede Antwort berechnet und protokolliert, wodurch eine kontinuierliche, objektive Performanz-Metrik entsteht, die als Kovariate in die Analysen eingeht.
+
+\subsubsection{Experimentelle Manipulation im Feldkontext}
+Die Framing-Manipulation wird während der natürlichen Nutzung implementiert. Diese Einbettung des Experiments in den realen Anwendungskontext entspricht einem natürlichen Experiment das externe bei ausreichender interner Validität bietet.
+
+\subsubsection{Methodenintegration}
+Die Integration der verschiedenen Datenquellen erfolgt auf Analyseebene: Die experimentelle Gruppenzugehörigkeit (Framing) wird mit den Befragungsdaten (Trust, TAM-Konstrukte) und den Systemdaten (Accuracy Score) in einem gemeinsamen Datensatz zusammengeführt. Diese Triangulation ermöglicht:
+\begin{itemize}
+    \item Konvergenz-Validierung: Trust-Ratings während der Interaktion (Single-Item) werden mit Post-Interaction Trust-Skalen (Multi-Item) korreliert
+    \item Komplementäre Erkenntnisse: Subjektive Wahrnehmungen (Befragung) werden mit objektiven Metriken (System-Logs) kontrastiert
+    \item Moderation/Mediation: Die Interaktion zwischen experimenteller Manipulation und natürlicher Variation kann analysiert werden
+\end{itemize}
+
+
+
+\subsection{Abgrenzung des Forschungsdesigns}
+Die vorliegende Studie fokussiert auf die valenzorientierte Darstellung von KI-Leistungsmetriken (Attribute Framing) und deren Einfluss auf Vertrauen und Technologie-akzeptanz im Kontext des AI-TAM-Modells.
+
+\subsubsection{Inhaltlich}
+\begin{itemize}
+    \item Andere Framing-Typen: Die Studie beschränkt sich auf Attribute Framing und untersucht nicht Risky Choice Framing oder Goal Framing.
+    \item Langzeiteffekte (keine Längsschnittstudie): Gemessen wird die Nutzungsabsicht (Behavioral Intention), nicht die tatsächliche Systemnutzung über längere Zeiträume. Der Intention-Behavior-Gap wird nicht untersucht.
+    \item Alternative Transparenzmechanismen: Neben der Score-Darstellung existieren weitere Transparenzmöglichkeiten (Erklärungen, Quellenangaben, Visualisierungen), die nicht Gegenstand dieser Arbeit sind.
+    \item Kontextübergreifende Generalisierung: Die Untersuchung findet im Verwaltungskontext statt. Ob die Ergebnisse auf medizinische, kreative oder andere Anwendungsbereiche übertragbar sind, bleibt offen.
+\end{itemize}
+
+\subsubsection{Methodisch}
+\begin{itemize}
+    \item Between-Subjects-Design: Jede Person erfährt nur eine Framing-Bedingung. Intraindividuelle Vergleiche sind nicht möglich.
+    \item Quantitative Fokussierung: Die Studie nutzt standardisierte Skalen, verzichtet jedoch auf qualitative Vertiefungen wie Interviews zur Exploration der zugrunde liegenden kognitiven Prozesse.
+    \item Natürliche Variation des Accuracy Scores: Der tatsächliche Score wird nicht experimentell manipuliert, sondern variiert basierend auf den Nutzeranfragen. Er dient als Kovariate, nicht als unabhängige Variable.
+\end{itemize}
+
+\subsection{Operationalisierung Konstrukte}
+Die Operationalisierung der Konstrukte erfolgt in Form von Bewertungsfragen mit einer 5-Punkt Likert-Skalenbewertung. Die Befragung wird mittels Onlinebefragung vor- während- und nach der Verwendung der LLM-Lösung durchgeführt. Die Likert-Skalen sind so skaliert, dass 1 jeweils die negativste Bewertung des jeweiligen Items darstellt und 5 die positivste Bewertung. Eine Item-Batterie beinhaltet zwischen ein bis sechs Items, welche das gewünschte Konstrukt erfassen sollen. Einzelne Item-Batterien beinhalten negativformulierte Items als Kontrollfragen.
+
+Das Operationalisierungsverfahren ist theoriegeleitet, da ein Grossteil der bestehenden Items aus vorherigen Studien (Baroni et al., 2022; Davis, 1987) teilweise übernommen werden kann. Die Items aus den verschiedenen Item-Batterien (latente Konstrukte) müssen jedoch für den geplanten Anwendungsfall überarbeitet und übersetzt werden. Dies betrifft sämtliche definierten Konstrukte des definierten AI-TAM-Modells (Baroni et al., 2022).
+
+% Tabelle 5: Vorhandene Item-Batterien aus AI-TAM-Studie (Baroni et al., 2022)
+
+\subsection{Stichprobe/Feldzugang}
+\subsubsection{Beschreibung Stichprobe}
+Die Stichprobe ist als Gelegenheitsstichprobe zu bezeichnen, da nur potenziell Benutzer mit dem digitalen Assistenten interagieren, welche bereits wissen, dass es diesen gibt. Einschlusskriterien für die zu erhebende Stichprobe sind wie folgt ausgelegt.
+
+% Tabelle 6: Feldzugang/Stichprobenzusammensetzung, Einschlusskriterien
+
+\subsubsection{Rekrutierung Stichprobe}
+Die Rekrutierung der Proband*innen geschieht direkt auf der Plattform, wo der digitale Assistent integriert ist. Die Rekrutierung der Benutzer*innen findet somit ausschliesslich digital statt. Wenn sich Benutzer*innen entscheiden mit der digitalen Assistenz auf der Plattform zu interagieren, werden Benutzer*innen nach Akzeptieren der Bestimmungen einer Experimentalbedingung zugewiesen.
+
+\subsubsection{Rekrutierung Stichprobe Pre-Test}
+
+\subsubsection{Pre-Test: Durchführung und Analyse}
+
+\subsection{Kritische Fragen und Überlegungen}
+\subsubsection{Stimulus-Design}
+\begin{itemize}
+    \item Stimuli unterscheiden sich in drei Dimensionen gleichzeitig: Text (Konfidenz/Unsicherheit), Farbe (grün/orange-rot) UND Icon (\ding{51}/\ding{43})
+    \item Manipulationscheck ausreichend bei prominenter Platzierung im Assistenten-Interface?
+\end{itemize}
+
+\subsubsection{Experiment Ablauf}
+\begin{itemize}
+    \item Es gibt mehrere Möglichkeitendie Proband*innen in das Experiment zu holen
+    \begin{itemize}
+        \item Footer
+        \item Button
+        \item Suchresultate
+    \end{itemize}
+    \item Soll das Onboarding zum Experiment vor der errsten LLM-Interkation geschehen oder nachher?
+    \begin{itemize}
+        \item Sprich, ich (Proband*in) kann zuerst eine Frage an den digitalen Assistenten richten, danach Onboarding zum Experiment
+        \item JA/NEIN
+    \end{itemize}
+\end{itemize}
+
+\subsubsection{Pre-Test}
+\begin{itemize}
+    \item Framing muss auch irgendwie gepretestet werden
+    \item Wie sieht die Experimentalbedingung aus im Pre-Test
+    \begin{itemize}
+        \item Hoch / Mittel / Tief
+        \item Verschiedene Sicherheitslevel
+        \item Alles unter 50\% ist tief
+    \end{itemize}
+\end{itemize}
+\end{document}

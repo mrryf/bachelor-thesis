@@ -1,0 +1,18 @@
+\begin{figure*}[hbt]
+\ifnextchar[{\eatarg}{}
+[ht]
+    \centering
+    \includegraphics[width=\textwidth, height=0.8\textheight, keepaspectratio]{resources/images/ba_faryf_ai_tam.jpg}
+    \caption{Erweitertes TAM-Modell: Artificial Intelligence-Technology Acceptance Model \parencite{Baroni2022}}
+    \label{fig:ai-tam-model}
+\end{figure*}
+\efloatseparator
+ 
+\begin{figure*}[hbt]
+\ifnextchar[{\eatarg}{}
+[ht]
+    \centering
+    \includegraphics[width=\textwidth, height=0.8\textheight, keepaspectratio]{resources/images/ba_faryf_messmodell.jpg}
+    \caption{Strukturmodell für AI-TAM, Teil des Strukturgleichungsmodell, inkl. Hypothesen, inkl. Stimulus}
+    \label{fig:structure-model}
+\end{figure*}
