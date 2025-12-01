@@ -55,7 +55,8 @@ def sync_zotero():
 
     # Write to bibliography.bib
 
-    bib_path = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'content', 'prestudy', 'resources', 'bibliography.bib')
+    # Define the output file path
+    bib_path = os.path.join('content', 'resources', 'bibliography.bib')
     
     with open(bib_path, 'w', encoding='utf-8') as f:
         for item in all_items:

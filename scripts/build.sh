@@ -14,7 +14,7 @@ echo "Building project in: $TARGET_DIR"
 # Save current directory
 START_DIR=$(pwd)
 
-# cd "$TARGET_DIR" || exit # Do not change directory, use paths relative to root
+cd "$TARGET_DIR" || exit
 
 # Clean up previous build artifacts
 latexmk -c
@@ -31,23 +31,23 @@ fi
 # fi # This block is no longer needed
 
 # Build the main document
-echo "Building $TARGET_DIR/main.tex..."
-latexmk -pdf -interaction=nonstopmode -file-line-error -outdir="$TARGET_DIR" "$TARGET_DIR/main.tex"
+echo "Building main.tex in $TARGET_DIR..."
+latexmk -pdf -interaction=nonstopmode -file-line-error -outdir=. main.tex
 
 if [ $? -ne 0 ]; then
-    echo "Error building $TARGET_DIR/main.tex"
+    echo "Error building main.tex"
     # Return to start directory before exiting
     cd "$START_DIR"
     exit 1
 fi
 
 # Build the required document if it exists
-if [ -f "$TARGET_DIR/main_required.tex" ]; then
-    echo "Building $TARGET_DIR/main_required.tex..."
-    latexmk -pdf -interaction=nonstopmode -file-line-error -outdir="$TARGET_DIR" "$TARGET_DIR/main_required.tex"
+if [ -f "main_required.tex" ]; then
+    echo "Building main_required.tex in $TARGET_DIR..."
+    latexmk -pdf -interaction=nonstopmode -file-line-error -outdir=. main_required.tex
     
     if [ $? -ne 0 ]; then
-        echo "Error building $TARGET_DIR/main_required.tex"
+        echo "Error building main_required.tex"
         # Return to start directory before exiting
         cd "$START_DIR"
         exit 1
