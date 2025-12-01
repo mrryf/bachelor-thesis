@@ -12,17 +12,17 @@ PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECTIONS_DIR = os.path.join(PROJECT_ROOT, 'content', 'prestudy', 'sections')
 # MAIN_TEX = os.path.join(PROJECT_ROOT, 'main.tex')
-BIB_FILE = os.path.join(PROJECT_ROOT, 'content', 'prestudy', 'resources', 'bibliography.bib')
+BIB_FILE = os.path.join(PROJECT_ROOT, 'content', 'resources', 'bibliography.bib')
 
 class TestCitations(unittest.TestCase):
 
     def setUp(self):
         self.tex_files = []
-        for root, dirs, files in os.walk("prestudy"):
+        for root, dirs, files in os.walk(os.path.join("content", "prestudy")):
             for file in files:
                 if file.endswith(".tex"):
                     self.tex_files.append(os.path.join(root, file))
-        self.bib_file = "prestudy/resources/bibliography.bib"
+        self.bib_file = os.path.join("content", "resources", "bibliography.bib")
 
     # def get_tex_files(self):
     #     tex_files = [MAIN_TEX]

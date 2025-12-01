@@ -10,7 +10,7 @@ except ImportError:
 PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECTIONS_DIR = os.path.join(PROJECT_ROOT, 'content', 'prestudy', 'sections')
 MAIN_TEX = os.path.join(PROJECT_ROOT, 'content', 'prestudy', 'main.tex')
-BIB_FILE = os.path.join(PROJECT_ROOT, 'content', 'prestudy', 'resources', 'bibliography.bib')
+BIB_FILE = os.path.join(PROJECT_ROOT, 'content', 'resources', 'bibliography.bib')
 SHORT_BIB_TEX = os.path.join(SECTIONS_DIR, '10a_quellenverzeichnis_short.tex')
 FULL_BIB_TEX = os.path.join(SECTIONS_DIR, '10b_quellenverzeichnis_full.tex')
 
