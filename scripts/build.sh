@@ -19,6 +19,10 @@ cd "$TARGET_DIR" || exit
 # Set TEXINPUTS to include the shared lib directory
 export TEXINPUTS=../lib//:
 
+# Generate survey item tables
+echo "Generating survey item tables..."
+python3 ../scripts/generate_item_tables.py
+
 # Clean up previous build artifacts
 latexmk -c
 
