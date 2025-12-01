@@ -129,6 +129,11 @@ jobs:
           python -m pip install --upgrade pip
           pip install bibtexparser pyzotero
 
+      - name: Install LaTeX
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y texlive-full latexmk
+
       - name: Sync Zotero References
         env:
           ZOTERO_API_KEY: ${{ secrets.ZOTERO_API_KEY }}
