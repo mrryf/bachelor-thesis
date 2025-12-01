@@ -205,6 +205,9 @@ Contributions are welcome! Please follow these steps:
 4.  Push to the branch (`git push origin feature/YourFeature`).
 5.  Open a Pull Request.
 
+## Security
+This project takes security seriously. Please see our [Security Policy](SECURITY.md) for details on reporting vulnerabilities and supported versions.
+
 ## License
 
 Copyright (c) 2025 mrryf. All Rights Reserved.
