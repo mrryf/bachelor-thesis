@@ -181,9 +181,10 @@ This repository uses GitHub Actions to automatically build and verify the thesis
 bachelor-thesis/
 ├── content/
 │   ├── prestudy/           # Current Prestudy Work
-│   │   ├── main.tex        # Main LaTeX entry point
+│   │   ├── main.tex        # Main LaTeX entry point (full version with abstract)
+│   │   ├── main_required.tex  # Streamlined version (no abstract, only required sections)
 │   │   ├── sections/       # Individual chapters
-│   │   │   ├── 00_abstract.tex
+│   │   │   ├── 00_abstract.tex  # (Only in main.tex)
 │   │   │   ├── 01_introduction.tex
 │   │   │   └── ...
 │   │   └── resources/      # Assets and bibliography
