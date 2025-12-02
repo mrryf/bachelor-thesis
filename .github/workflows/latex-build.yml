@@ -138,25 +138,20 @@ jobs:
       - name: Generate Survey Item Tables
         run: python scripts/generate_item_tables.py
 
-      - name: Build Prestudy Main PDF
-        uses: xu-cheng/latex-action@v3
-        with:
-          root_file: content/prestudy/main.tex
-          working_directory: ./
-          latexmk_use_lualatex: false
-          latexmk_use_xelatex: false
-          latexmk_shell_escape: false
-          args: -pdf -interaction=nonstopmode -file-line-error
+      - name: Install LaTeX (minimal packages)
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y \
+            texlive-latex-base \
+            texlive-latex-extra \
+            texlive-bibtex-extra \
+            texlive-fonts-recommended \
+            texlive-lang-german \
+            biber \
+            latexmk
 
-      - name: Build Prestudy Required PDF
-        uses: xu-cheng/latex-action@v3
-        with:
-          root_file: content/prestudy/main_required.tex
-          working_directory: ./
-          latexmk_use_lualatex: false
-          latexmk_use_xelatex: false
-          latexmk_shell_escape: false
-          args: -pdf -interaction=nonstopmode -file-line-error
+      - name: Build LaTeX Documents
+        run: ./scripts/build.sh --prestudy
 
       - name: Check for PDF
         run: |
