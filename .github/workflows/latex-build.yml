@@ -129,23 +129,34 @@ jobs:
           python -m pip install --upgrade pip
           pip install bibtexparser pyzotero
 
-      - name: Install LaTeX
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y texlive-full latexmk
-
       - name: Sync Zotero References
         env:
           ZOTERO_API_KEY: ${{ secrets.ZOTERO_API_KEY }}
           ZOTERO_USER_ID: ${{ secrets.ZOTERO_USER_ID }}
         run: python scripts/sync_zotero.py
 
-#      - name: Check Documentation Update
-#        run: python scripts/check_readme_update.py
-#        continue-on-error: true # Non-blocking for now, can be made strict later
+      - name: Generate Survey Item Tables
+        run: python scripts/generate_item_tables.py
 
-      - name: Build LaTeX Documents
-        run: ./scripts/build.sh --all
+      - name: Build Prestudy Main PDF
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: content/prestudy/main.tex
+          working_directory: ./
+          latexmk_use_lualatex: false
+          latexmk_use_xelatex: false
+          latexmk_shell_escape: false
+          args: -pdf -interaction=nonstopmode -file-line-error
+
+      - name: Build Prestudy Required PDF
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: content/prestudy/main_required.tex
+          working_directory: ./
+          latexmk_use_lualatex: false
+          latexmk_use_xelatex: false
+          latexmk_shell_escape: false
+          args: -pdf -interaction=nonstopmode -file-line-error
 
       - name: Check for PDF
         run: |
