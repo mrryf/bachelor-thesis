@@ -147,6 +147,7 @@ jobs:
             texlive-bibtex-extra \
             texlive-fonts-recommended \
             texlive-lang-german \
+            texlive-publishers \
             biber \
             latexmk
 
