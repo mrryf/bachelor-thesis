@@ -92,6 +92,37 @@ build_target() {
         fi
     done
 
+    # Build individual sections if they exist
+    if [ -d "sections" ]; then
+        echo "Building sections in $target_name..."
+        
+        # Create temporary symlink for bibliography access
+        # subfiles sees ../resources/bibliography.bib relative to sections/
+        # so we need content/prestudy/resources to exist and point to content/resources
+        if [ ! -d "resources" ]; then
+            ln -s ../resources resources
+            CREATED_SYMLINK=true
+        else
+            CREATED_SYMLINK=false
+        fi
+
+        cd sections || exit 1
+        
+        # Compile each .tex file in sections
+        for section_file in *.tex; do
+            [ -e "$section_file" ] || continue
+            echo "Building section: $section_file..."
+            latexmk -pdf -interaction=nonstopmode -file-line-error -outdir=. "$section_file"
+        done
+        
+        cd ..
+        
+        # Cleanup symlink if we created it
+        if [ "$CREATED_SYMLINK" = true ]; then
+            rm resources
+        fi
+    fi
+
     echo "Build of $target_name successful! PDFs are located in $target_dir"
     cd "$START_DIR"
     return 0
