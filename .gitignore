@@ -22,6 +22,7 @@ credentials.json
 *.blg
 *.run.xml
 *-blx.bib
+*-SAVE-ERROR
 *.dvi
 *.nav
 *.snm
@@ -56,3 +57,7 @@ ENV/
 # IDE
 .vscode/
 .idea/
+
+# MkDocs
+site/
+.mkdocs_cache/
