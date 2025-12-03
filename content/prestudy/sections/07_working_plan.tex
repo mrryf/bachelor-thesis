@@ -1,6 +1,52 @@
 \documentclass[../main.tex]{subfiles}
 \begin{document}
-\section{Working Plan}
-% Add your content here
+\begin{landscape}
+\section{Arbeitsplan}
 
+Der folgende Arbeitsplan zeigt die zeitliche Planung der Vorstudie.
+
+\begin{figure}[h!]
+    \centering
+    \resizebox{\linewidth}{!}{ % Fit to landscape width
+    \begin{ganttchart}[
+        hgrid,
+        vgrid={*1{dotted, black!20}},
+        x unit=0.4cm, % Squeezed timeline to give more space to labels
+        y unit chart=1.5cm, 
+        time slot format=isodate,
+        calendar week text={\currentweek},
+        % APA Style: Clean, professional, grayscale/muted
+        bar/.append style={fill=black!60, draw=none},
+        bar height=0.7,
+        bar label font=\Large\bfseries, % Bigger and bold labels
+        group/.append style={draw=black, fill=black!80},
+        group label font=\Large\bfseries, % Bigger group labels
+        group right shift=0,
+        group top shift=0.6,
+        group height=.3,
+        group peaks width={0.2},
+        milestone/.append style={fill=black, draw=none},
+        milestone height=0.5,
+        milestone label font=\Large\itshape % Bigger milestone labels
+    ]{2025-09-01}{2025-12-14}
+    \gantttitlecalendar{year, month=name, week} \\
+    
+    % Vorstudie
+    \ganttgroup{Vorstudie (KW 36 - 49, 2025)}{2025-09-01}{2025-12-07} \\
+    \ganttbar{Themeneingabe}{2025-09-01}{2025-09-28} \\ % KW 36-39
+    \ganttbar{Vorbereitung Vorstudiengespräch}{2025-09-29}{2025-10-05} \\ % KW 40
+    \ganttbar{Durchführung Vorstudiengespräch}{2025-10-06}{2025-10-12} \\ % KW 41
+    \ganttbar{Zoom Call Vorstudie/BA}{2025-11-10}{2025-11-16} \\ % KW 46
+    \ganttbar{Zoom Call Methodisches Vorgehen}{2025-11-17}{2025-11-23} \\ % KW 47
+    \ganttbar{Literaturecherche}{2025-11-17}{2025-12-07} \\ % KW 47-49
+    \ganttbar{Verfassen der Vorstudie}{2025-11-24}{2025-12-07} \\ % KW 48-49
+    \ganttmilestone{Abgabe der Vorstudie}{2025-12-05} 
+
+    \end{ganttchart}
+    }
+    \vspace{0.5cm} % Fix caption overlap
+    \caption{Gantt-Chart Arbeitsplan}
+    \label{fig:gantt_chart}
+\end{figure}
+\end{landscape}
 \end{document}
