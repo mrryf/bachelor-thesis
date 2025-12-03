@@ -1,0 +1,81 @@
+\documentclass[../main.tex]{subfiles}
+\begin{document}
+\begin{landscape}
+\section{Arbeitsplan}
+
+\begin{figure}[h!]
+    \centering
+    \resizebox{\linewidth}{!}{ % Fit to landscape width
+    \begin{ganttchart}[
+        hgrid,
+        vgrid={*1{dotted, black!20}},
+        x unit=0.15cm, % Compressed for 6 months
+        y unit chart=0.8cm, % Reduced from 1.5cm to fit on one page
+        time slot format=isodate,
+        % APA Style: Clean, professional, grayscale/muted
+        bar/.append style={fill=black!60, draw=none},
+        bar height=0.6,
+        bar label font=\normalsize\bfseries, 
+        group/.append style={draw=black, fill=black!80},
+        group label font=\normalsize\bfseries, 
+        group right shift=0,
+        group top shift=0.6,
+        group height=.3,
+        group peaks width={0.2},
+        milestone/.append style={fill=black, draw=none},
+        milestone height=0.4,
+        milestone label font=\normalsize\itshape 
+    ]{2025-12-15}{2026-05-31}
+    \gantttitlecalendar{year, month=name} \\
+    
+    % Thesis Tasks
+    \ganttgroup{Bachelorarbeit (Dez 2025 - Mai 2026)}{2025-12-15}{2026-05-30} \\
+    
+    % 1. Operationalisierung
+    \ganttbar{Operationalisierung Konstrukte}{2025-12-15}{2025-12-31} 
+    \ganttmilestone[inline]{}{2025-12-31} \\
+    
+    % 2. Konzept Pretest (Mitte Dez - 1/4 Jan)
+    \ganttbar{Konzept Pretest}{2025-12-15}{2026-01-07} \\
+    
+    % 3. Design Experiment-Fragebogen (Mitte - Ende Jan)
+    \ganttbar{Design Experiment-Fragebogen}{2026-01-15}{2026-01-31} \\
+    
+    % 4. Durchführung Pretest (Mitte Jan - 1/4 Feb)
+    \ganttbar{Durchführung Pretest}{2026-01-15}{2026-02-07} \\
+    
+    % 5. Auswertung Pretest & Report (Mitte Feb - Ende Feb)
+    \ganttbar{Auswertung Pretest \& Report}{2026-02-15}{2026-02-28} \\
+    
+    % 6. Anpassungen Fragebogen (3/4 Feb - Ende Feb)
+    \ganttbar{Anpassungen Design}{2026-02-21}{2026-02-28} \\
+    
+    % 7. Testing Alva (3/4 Feb - Ende Feb)
+    \ganttbar{Testing Experiment-Lösung Alva}{2026-02-21}{2026-02-28} \\
+    
+    % 8. Durchführung Alva-Experiment (Anfang März - Mitte April)
+    \ganttbar{Durchführung Alva-Experiment}{2026-03-01}{2026-04-15} \\
+    
+    % 9. Abschluss Experiment
+    \ganttmilestone{Abschluss Experiment}{2026-04-16} \\
+    
+    % 10. Datenauswertung (Mitte April - Ende April [assumed])
+    \ganttbar{Datenauswertung}{2026-04-16}{2026-04-30} \\
+    
+    % 11. Finaler Report (Mitte April - Mitte Mai)
+    \ganttbar{Finaler Report \& BA}{2026-04-15}{2026-05-15} \\
+    
+    % 12. Lektorat (Mitte Mai - Ende Mai)
+    \ganttbar{Lektorat, Formatierung}{2026-05-15}{2026-05-30} \\
+    
+    % 13. Abgabe
+    \ganttmilestone{Abgabe Bachelorarbeit}{2026-05-30} 
+
+    \end{ganttchart}
+    }
+    \vspace{0.5cm} % Fix caption overlap
+    \caption{Gantt-Chart Arbeitsplan}
+    \label{fig:gantt_chart}
+\end{figure}
+\end{landscape}
+\end{document}
