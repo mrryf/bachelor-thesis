@@ -1,8 +1,9 @@
 bibtexparser
 ruff
 pyzotero
-mkdocs==1.5.3
-mkdocs-material==9.5.3
-mkdocstrings[python]==0.24.0
-mkdocs-gen-files==0.5.0
-mkdocs-literate-nav==0.6.1
+mkdocs>=1.5.3
+mkdocs-material>=9.5.13
+mkdocstrings[python]>=0.24.1
+mkdocs-autorefs>=1.0.1
+mkdocs-gen-files>=0.5.0
+mkdocs-literate-nav>=0.6.1
