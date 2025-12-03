@@ -1,6 +1,50 @@
-\documentclass{article}
+\documentclass[stu, 12pt, a4paper, donotrepeattitle, floatsintext]{apa7}
+\usepackage[ngerman]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{csquotes}
 \usepackage{graphicx}
 \graphicspath{{../resources/images/}{../resources/}}
+\usepackage{hyperref}
+\usepackage{pifont}
+\usepackage{tabularx}
+\usepackage{threeparttable}
+\usepackage{booktabs}
+\usepackage[ngerman]{translator}
+\usepackage{pgfgantt}
+\usepackage{pdflscape}
+\usepackage[style=apa,sortcites=true,sorting=nyt,backend=biber]{biblatex}
+\DeclareLanguageMapping{ngerman}{ngerman-apa}
+
+\usepackage{subcaption}
+\usepackage{subfiles}
+
+\addbibresource{../resources/bibliography.bib}
+
+\title{Bachelorarbeit}
+\shorttitle{}
+\author{Fabian Ryf}
+\affiliation{{Hochschule Luzern, Wirtschaft} \\ HSLU-W}
+\course{BSc Business Psychology (BP)}
+\professor{Dr. Andreas Hüsser}
+\duedate{2026}
+
 \begin{document}
-Hello Thesis!
+\newcommand{\isMain}{1}
+\pagenumbering{gobble}
+\maketitle
+
+\newpage
+\setcounter{tocdepth}{3}
+\tableofcontents
+\newpage
+
+\pagenumbering{arabic}
+\setcounter{page}{1}
+
+\subfile{sections/thesis_working_plan}
+
+\newpage
+\printbibliography
+
 \end{document}
