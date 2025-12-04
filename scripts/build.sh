@@ -102,21 +102,10 @@ build_target() {
         fi
     done
 
-    # Build individual sections if they exist
-    if [ -d "sections" ]; then
-        echo "Building sections in $target_name..."
-        
-        cd sections || exit 1
-        
-        # Compile each .tex file in sections
-        for section_file in *.tex; do
-            [ -e "$section_file" ] || continue
-            echo "Building section: $section_file..."
-            latexmk -pdf -interaction=nonstopmode -file-line-error -outdir=. "$section_file"
-        done
-        
-        cd ..
-    fi
+    # Note: Individual section PDFs are NOT built separately.
+    # Sections are included in main.pdf via subfiles package.
+    # Building sections standalone causes citation issues because
+    # biber can't find bibliography.bib from the sections/ subdirectory.
 
     echo "Build of $target_name successful! PDFs are located in $target_dir"
     cd "$START_DIR"
