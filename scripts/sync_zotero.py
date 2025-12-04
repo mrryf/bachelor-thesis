@@ -2,6 +2,27 @@ import os
 import sys
 import subprocess
 import getpass
+import re
+
+def deduplicate_bibtex(bibtex_content):
+    """Remove duplicate entries from bibtex content, keeping the first occurrence."""
+    # Pattern to match bibtex entries
+    entry_pattern = re.compile(r'(@\w+\{([^,]+),.*?\n\})', re.DOTALL)
+    
+    seen_keys = set()
+    deduplicated_entries = []
+    
+    for match in entry_pattern.finditer(bibtex_content):
+        full_entry = match.group(1)
+        entry_key = match.group(2).strip()
+        
+        if entry_key not in seen_keys:
+            seen_keys.add(entry_key)
+            deduplicated_entries.append(full_entry)
+        else:
+            print(f"  Skipping duplicate entry: {entry_key}")
+    
+    return '\n\n'.join(deduplicated_entries)
 
 def sync_zotero():
     # Load .env if present
@@ -62,15 +83,19 @@ def sync_zotero():
         print("No items found in any collection.")
         return
 
+    # Combine all items and deduplicate
+    combined_bibtex = '\n'.join(all_items)
+    print("Deduplicating bibliography entries...")
+    deduplicated_bibtex = deduplicate_bibtex(combined_bibtex)
+
     # Write to bibliography.bib
     # Define the output file path
     bib_path = os.path.join('content', 'resources', 'bibliography.bib')
     local_bib_path = os.path.join('content', 'resources', 'local.bib')
     
     with open(bib_path, 'w', encoding='utf-8') as f:
-        for item in all_items:
-            f.write(item)
-            f.write("\n")
+        f.write(deduplicated_bibtex)
+        f.write("\n")
             
         # Append local bibliography if it exists
         if os.path.exists(local_bib_path):
@@ -84,3 +109,4 @@ def sync_zotero():
 
 if __name__ == "__main__":
     sync_zotero()
+
