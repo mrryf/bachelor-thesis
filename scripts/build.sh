@@ -72,6 +72,12 @@ build_target() {
     # Clean up previous build artifacts
     latexmk -c
     
+    # Clean up section artifacts to ensure fresh builds
+    if [ -d "sections" ]; then
+        echo "Cleaning section artifacts..."
+        rm -f sections/*.aux sections/*.bcf sections/*.bbl sections/*.blg sections/*.log sections/*.run.xml sections/*.toc sections/*.out sections/*.fdb_latexmk sections/*.fls
+    fi
+    
     # Clear Biber cache to avoid corruption issues
     echo "Clearing Biber cache..."
     rm -rf $(biber --cache)
