@@ -19,19 +19,8 @@
 \usepackage[style=apa,sortcites=true,sorting=nyt,backend=biber]{biblatex}
 \DeclareLanguageMapping{ngerman}{ngerman-apa}
 
-% Numbered sections while preserving APA7 styling
-\usepackage{titlesec}
-\setcounter{secnumdepth}{4} % Number sections down to paragraph level
-
-% APA7-style formatting with numbers
-\titleformat{\section}
-  {\normalfont\bfseries\centering}{\thesection}{1em}{}
-\titleformat{\subsection}
-  {\normalfont\bfseries}{\thesubsection}{1em}{}
-\titleformat{\subsubsection}
-  {\normalfont\bfseries\itshape}{\thesubsubsection}{1em}{}
-\titleformat{\paragraph}[runin]
-  {\normalfont\bfseries}{\theparagraph}{1em}{}[.]
+% Enable numbered sections (apa7-native, no titlesec needed)
+\setcounter{secnumdepth}{4}
 
 \usepackage{subcaption}
 \usepackage{subfiles} % Best loaded last in the preamble
