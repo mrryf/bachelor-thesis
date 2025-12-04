@@ -1,0 +1,15 @@
+\documentclass[../main_required.tex]{subfiles}
+\begin{document}
+
+% Manually add numbered section
+\section{Abbildungsverzeichnis}
+
+% Redefine listfigurename to empty to suppress the internal heading of \listoffigures
+% (This depends on how apa7/latex implements it, but often works to avoid double heading)
+\begingroup
+\renewcommand{\listfigurename}{}
+\vspace*{-2em} % Pull it up a bit if there's a gap
+\listoffigures
+\endgroup
+
+\end{document}

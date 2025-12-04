@@ -1,0 +1,10 @@
+\documentclass[../main_required.tex]{subfiles}
+\begin{document}
+\ifdefined\isMain
+\else
+  \phantom{.}
+\fi
+
+% Use bibnumbered to get a numbered section (e.g. 5.0 Quellenverzeichnis)
+\printbibliography[title={Quellenverzeichnis}, heading=bibnumbered]
+\end{document}
