@@ -4,6 +4,15 @@ import subprocess
 import getpass
 
 def sync_zotero():
+    # Load .env if present
+    if os.path.exists('.env'):
+        with open('.env', 'r') as f:
+            for line in f:
+                line = line.strip()
+                if line and not line.startswith('#') and '=' in line:
+                    key, value = line.split('=', 1)
+                    os.environ[key] = value.strip()
+
     api_key = os.environ.get('ZOTERO_API_KEY', '').strip()
     user_id = os.environ.get('ZOTERO_USER_ID', '').strip()
     
