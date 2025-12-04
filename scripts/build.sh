@@ -44,9 +44,10 @@ fi
 # Save current directory
 START_DIR=$(pwd)
 
-# Set TEXINPUTS to include the shared lib directory
+# Set TEXINPUTS to include the shared lib directory and resources
 # Use absolute paths to be safe regardless of where latexmk is run
-export TEXINPUTS="$START_DIR/content/lib//:"
+# We include content/resources/images recursively (//) so \includegraphics finds images
+export TEXINPUTS="$START_DIR/content/lib//:$START_DIR/content/resources//:$START_DIR/content/resources/images//:"
 export BIBINPUTS="$START_DIR/content/resources//:"
 
 # Generate survey item tables (Global step)
