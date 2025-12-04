@@ -45,10 +45,9 @@ fi
 START_DIR=$(pwd)
 
 # Set TEXINPUTS to include the shared lib directory
-# We need absolute path or relative to where we run latexmk
-# Since we change dir, let's use absolute path for safety or keep relative ../lib
-# The original script used ../lib//: which works if we are in content/prestudy
-export TEXINPUTS=../lib//:
+# Use absolute paths to be safe regardless of where latexmk is run
+export TEXINPUTS="$START_DIR/content/lib//:"
+export BIBINPUTS="$START_DIR/content/resources//:"
 
 # Generate survey item tables (Global step)
 echo "Generating survey item tables..."
@@ -72,6 +71,10 @@ build_target() {
 
     # Clean up previous build artifacts
     latexmk -c
+    
+    # Clear Biber cache to avoid corruption issues
+    echo "Clearing Biber cache..."
+    rm -rf $(biber --cache)
 
     # Define files to build
     FILES_TO_BUILD=("main.tex")
@@ -96,16 +99,6 @@ build_target() {
     if [ -d "sections" ]; then
         echo "Building sections in $target_name..."
         
-        # Create temporary symlink for bibliography access
-        # subfiles sees ../resources/bibliography.bib relative to sections/
-        # so we need content/prestudy/resources to exist and point to content/resources
-        if [ ! -d "resources" ]; then
-            ln -s ../resources resources
-            CREATED_SYMLINK=true
-        else
-            CREATED_SYMLINK=false
-        fi
-
         cd sections || exit 1
         
         # Compile each .tex file in sections
@@ -116,11 +109,6 @@ build_target() {
         done
         
         cd ..
-        
-        # Cleanup symlink if we created it
-        if [ "$CREATED_SYMLINK" = true ]; then
-            rm resources
-        fi
     fi
 
     echo "Build of $target_name successful! PDFs are located in $target_dir"
