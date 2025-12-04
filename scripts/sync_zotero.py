@@ -63,14 +63,22 @@ def sync_zotero():
         return
 
     # Write to bibliography.bib
-
     # Define the output file path
     bib_path = os.path.join('content', 'resources', 'bibliography.bib')
+    local_bib_path = os.path.join('content', 'resources', 'local.bib')
     
     with open(bib_path, 'w', encoding='utf-8') as f:
         for item in all_items:
             f.write(item)
             f.write("\n")
+            
+        # Append local bibliography if it exists
+        if os.path.exists(local_bib_path):
+            print(f"Appending local citations from {local_bib_path}...")
+            with open(local_bib_path, 'r', encoding='utf-8') as local_f:
+                f.write("\n% Local Citations\n")
+                f.write(local_f.read())
+                f.write("\n")
             
     print(f"Successfully wrote bibliography to {bib_path}")
 
