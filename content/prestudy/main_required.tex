@@ -19,6 +19,20 @@
 \usepackage[style=apa,sortcites=true,sorting=nyt,backend=biber]{biblatex}
 \DeclareLanguageMapping{ngerman}{ngerman-apa}
 
+% Numbered sections while preserving APA7 styling
+\usepackage{titlesec}
+\setcounter{secnumdepth}{4} % Number sections down to paragraph level
+
+% APA7-style formatting with numbers
+\titleformat{\section}
+  {\normalfont\bfseries\centering}{\thesection}{1em}{}
+\titleformat{\subsection}
+  {\normalfont\bfseries}{\thesubsection}{1em}{}
+\titleformat{\subsubsection}
+  {\normalfont\bfseries\itshape}{\thesubsubsection}{1em}{}
+\titleformat{\paragraph}[runin]
+  {\normalfont\bfseries}{\theparagraph}{1em}{}[.]
+
 \usepackage{subcaption}
 \usepackage{subfiles} % Best loaded last in the preamble
 
@@ -51,14 +65,42 @@
 \pagenumbering{arabic}
 \setcounter{page}{1}
 
-% Required Sections for Prestudy
-\subfile{sections/04_ausgangslage}
-\subfile{sections/02_theory}
-\subfile{sections/03_methodology}
-\subfile{sections/06_zielsetzung}
-\subfile{sections/07_working_plan}
-\subfile{sections/09_reflection_work}
+% ============================================
+% SECTION 1: Einleitung
+%   1.1 Ausgangslage
+%   1.2 Zielsetzung
+%   1.3 Machbarkeit
+%   1.4 Arbeitsplan
+% ============================================
+\subfile{sections_required/01_einleitung}
 
+% ============================================
+% SECTION 2: Theoretische Einbettung
+%   (with subsections from 02_theory)
+% ============================================
+\subfile{sections/02_theory}
+
+% ============================================
+% SECTION 3: Forschungsdesign  
+%   (with subsections from 03_methodology)
+% ============================================
+\subfile{sections/03_methodology}
+
+% ============================================
+% SECTION 4: Selbstreflexion und Ausblick
+%   4.1 Selbstreflexion
+%   4.2 Weiteres Vorgehen
+% ============================================
+\subfile{sections_required/04_selbstreflexion}
+
+% ============================================
+% SECTION 5: Quellenverzeichnis, kommentiert
+% ============================================
+\subfile{sections/08_commented_review}
+
+% ============================================
+% Appendices: Verzeichnisse
+% ============================================
 \newpage
 \subfile{sections/10a_quellenverzeichnis_short}
 \subfile{sections/11_abbildungen}
