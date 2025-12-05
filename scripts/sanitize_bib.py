@@ -1,5 +1,4 @@
 
-import os
 
 file_path = 'content/resources/bibliography.bib'
 
