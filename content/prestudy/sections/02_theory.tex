@@ -5,12 +5,9 @@
 Modelltheoretisch knüpft die vorliegende Arbeit an frühere Studien in den Bereichen Vertrauen in künstliche Intelligenz/technologische Veränderungen, wahrgenommene Nützlichkeit sowie Benutzerfreundlichkeit und die daraus abgeleitete Nutzungsabsicht an. Als theoretische Grundlage dient zunächst das Technology Acceptance Model, welches die Rahmenbedingungen zur Analyse von Adoptionsprozessen neuer Technologien schafft \parencite{davis_perceived_1989}. Den zweiten Baustein liefert die Erweiterung des TAM-Modells durch \textcite{baroni_ai-tam_2022}. Diese ergänzt das Modell um zusätzliche Faktoren wie das Vertrauen in KI-gestützte Assistenten und bildet diese im Artificial Intelligence Technology Acceptance Model (AI-TAM) ab \parencite{baroni_ai-tam_2022}. Zuletzt wird der Framing-Effekt theoretisch beleuchtet, da dieser für die gewählte Stimulus-Wahl relevant ist. Konkret wird dabei die Form des Attribute-Framing-Effekts betrachtet \parencite{druckman_evaluating_2001, freling_when_2014}.
 
 \subsubsection[Technology Acceptance Model]{Technology Acceptance Model \parencite{davis_perceived_1989}}
-Das TAM wurde entwickelt, um die mangelnde Nutzerakzeptanz von Informationssystemen zu adressieren, die als Haupthindernis für den Erfolg neuer Technologien identifiziert wurde. Davis untersuchte 112 Angestellte und Manager eines grossen nordamerikanischen Unternehmens, die zwei unterschiedliche Softwaresysteme nutzten - ein elektronisches Mailsystem und einen Texteditor. Das Modell basiert auf der Attitude-Paradigm aus der Psychologie, speziell auf Fishbein und Ajzens Theory of Reasoned Action \parencite{fishbein_belief_1975}. TAM besagt, dass die tatsächliche Systemnutzung durch die Verhaltensintention bestimmt wird, welche von der Einstellung zur Nutzung abhängt.
+Das TAM wurde entwickelt, um die mangelnde Nutzerakzeptanz von Informationssystemen zu adressieren, die als Haupthindernis für den Erfolg neuer Technologien identifiziert wurde. Davis untersuchte 112 Angestellte und Manager eines grossen nordamerikanischen Unternehmens, die zwei unterschiedliche Softwaresysteme nutzten - ein elektronisches Mailsystem und einen Texteditor. Das Modell basiert auf der Attitude-Paradigm aus der Psychologie, speziell auf Fishbein und Ajzens Theory of Reasoned Action \parencite{fishbein_belief_1975}. TAM besagt, dass die tatsächliche Systemnutzung durch die Verhaltensintention bestimmt wird, welche von der Einstellung zur Nutzung abhängt. Diese Einstellung wird durch zwei zentrale Konstrukte geprägt: Perceived Usefulness, definiert als «the degree to which an individual believes that using a particular system would enhance his or her job performance», sowie Perceived Ease of Use, verstanden als «the degree to which an individual believes that using a particular system would be free of physical and mental effort».
 
-Diese Einstellung wird durch zwei zentrale Konstrukte geprägt: Perceived Usefulness, definiert als «the degree to which an individual believes that using a particular system would enhance his or her job performance», sowie Perceived Ease of Use, verstanden als «the degree to which an individual believes that using a particular system would be free of physical and mental effort». Die Studie zeigte, dass Perceived Usefulness etwa 50\% einflussreicher auf die Nutzung war als Ease of Use, wobei das Modell 36\% der Varianz in der tatsächlichen Nutzung erklären konnte.
-
-
-
+\newpage
 \paragraph{Erweiterungen des TAM zum AI-TAM}
 \textcite{baroni_ai-tam_2022} erweiterten das TAM um drei zusätzliche Konstrukte: «Explainable AI Trust» (Vertrauen in KI) aus der Literatur zu «Explainable AI» (XAI), «Collaborative Intention» (Kollaborationsabsicht) zur Messung der Bereitschaft zur Teilnahme an «Human-in-the-Loop»-Mechanismen sowie die Vertrautheit mit der Technologie und dem Anwendungskontext. Das im AI-TAM verwendete Vertrauenskonstrukt entstammt der Forschung von \textcite{hoffman_metrics_2019} und erfasst, inwieweit Nutzer den Ergebnissen eines KI-Systems vertrauen. Ergänzend misst die Kollaborationsabsicht die Bereitschaft, aktiv an der Weiterentwicklung der KI mitzuwirken.
 
@@ -58,67 +55,19 @@ Die latenten Konstrukte werden mittels einer Online-Befragung nach der Nutzung d
     \end{tabularx}
 \end{table}
 
+\newpage
 \subsection{Hypothesenübersicht}
-\begin{table}[ht]
-    \centering
-    \caption{Aufgelistete Hypothesen im Rahmen der Bachelor-Arbeit-Vorstudie}
-    \label{tab:hypotheses}
-    \begin{tabularx}{\textwidth}{l X c l}
-        \toprule
-        \textbf{Hypothese} & \textbf{Pfad} & \textbf{Richtung} & \textbf{Theorie} \\
-        \midrule
-        H1a & Dummy\_Pos (Stimulus) $\to$ XAIT & + & Attribute Frame \\
-        H1b & Dummy\_Neg (Stimulus) $\to$ XAIT & - & Attribute Frame \\
-        H2 & XAIT $\to$ PUF & + & AI-TAM-Modell \\
-        H3 & XAIT $\to$ EOU & + & AI-TAM-Modell \\
-        H4 & PUF $\to$ BI & + & AI-TAM-Modell \\
-        H5 & EOU $\to$ BI & + & AI-TAM-Modell \\
-        H6 & EOU $\to$ PUF & + & AI-TAM-Modell \\
-        H7 & BI $\to$ CI & + & AI-TAM-Modell \\
-        H8 & FAMTEC $\to$ PUF & + & AI-TAM-Modell \\
-        \midrule
-        \multicolumn{4}{l}{\textbf{Kovariate}} \\
-        ACTS & ACTS $\to$ XAIT & kontrolliert & - \\
-        \midrule
-        \multicolumn{4}{l}{\textbf{Mediation}} \\
-        H9 & Framing $\to$ XAIT $\to$ (PUF, EOU) $\to$ BI & Indirekt & - \\
-        \bottomrule
-    \end{tabularx}
-    \par\medskip
-    \footnotesize{Anmerkung: Alle Pfade werden simultan im Strukturgleichungsmodell (SEM) geschätzt}
-\end{table}
 
-% Using tabularx in longtable mode (via ltablex) for multi-page support
-\begin{tabularx}{\textwidth}{l l >{\RaggedRight\arraybackslash}X}
-    \caption{Ausformulierte Hypothesen} \label{tab:hypotheses-detailed} \\
-    \toprule
-    \textbf{Bereich} & \textbf{Nr.} & \textbf{Hypothese} \\
-    \midrule
-    \endfirsthead
-    
-    \multicolumn{3}{c}{\textit{Fortsetzung von vorheriger Seite}} \\
-    \toprule
-    \textbf{Bereich} & \textbf{Nr.} & \textbf{Hypothese} \\
-    \midrule
-    \endhead
-    
-    \midrule
-    \multicolumn{3}{r}{\textit{Fortsetzung auf nächster Seite}} \\
-    \endfoot
-    
-    \bottomrule
-    \endlastfoot
-    
-    Framing & H1a & Die Darstellung als Sicherheit (positiver Frame) führt zu einem höheren Vertrauen in künstliche Intelligenz als die Kontrollbedingung ohne Konfidenz-Darstellung. \\
-    & H1b & Die Darstellung als Unsicherheit (negativer Frame) führt zu einem niedrigeren Vertrauen in künstliche Intelligenz als die Kontrollbedingung ohne Konfidenz-Darstellung. \\
-    \midrule
-    AI-TAM & H2 & Vertrauen in künstliche Intelligenz hat einen positiven Einfluss auf die wahrgenommene Nützlichkeit (PUF). \\
-    & H3 & Vertrauen in künstliche Intelligenz hat einen positiven Einfluss auf die wahrgenommene Einfachheit in der Nutzung (EOU). \\
-    \midrule
-    TAM & H4 & Die wahrgenommene Nützlichkeit (PUF) hat einen positiven Einfluss auf die Nutzungsintention. \\
-    & H5 & Die wahrgenommene Einfachheit in der Nutzung (EOU) hat einen positiven Einfluss auf die Nutzungsintention. \\
-    & H6 & Die wahrgenommene Einfachheit in der Nutzung (EOU) hat einen positiven Einfluss auf die wahrgenommene Nützlichkeit (PUF). \\
-    & H7 & Die Nutzungsintention hat einen positiven Einfluss auf die Kollaborationsintention. \\
-\end{tabularx}
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.75\textwidth, keepaspectratio]{ba_faryf_hypothesen_design.jpg}
+    \caption{Hypothesenmodell}
+    \label{fig:hypotheses-design}
+    \vspace{-1em}
+\end{figure}
+
+
+
+\input{../../resources/tables/05_hypothesen_liste.tex}
 
 \end{document}

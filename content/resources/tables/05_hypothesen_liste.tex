@@ -1,0 +1,30 @@
+\begin{table}[H]
+    \centering
+    \small
+    \vspace{-1em}
+    \caption{Aufgelistete Hypothesen im Rahmen der Bachelor-Arbeit-Vorstudie}
+    \label{tab:hypotheses}
+    \begin{tabularx}{\textwidth}{l X c l}
+        \toprule
+        \textbf{Hypothese} & \textbf{Pfad} & \textbf{Richtung} & \textbf{Theorie} \\
+        \midrule
+        H1a & Dummy\_Pos (Stimulus) $\to$ XAIT & + & Attribute Frame \\
+        H1b & Dummy\_Neg (Stimulus) $\to$ XAIT & - & Attribute Frame \\
+        H2 & XAIT $\to$ PUF & + & AI-TAM-Modell \\
+        H3 & XAIT $\to$ EOU & + & AI-TAM-Modell \\
+        H4 & PUF $\to$ BI & + & AI-TAM-Modell \\
+        H5 & EOU $\to$ BI & + & AI-TAM-Modell \\
+        H6 & EOU $\to$ PUF & + & AI-TAM-Modell \\
+        H7 & BI $\to$ CI & + & AI-TAM-Modell \\
+        H8 & FAMTEC $\to$ PUF & + & AI-TAM-Modell \\
+        \midrule
+        \multicolumn{4}{l}{\textbf{Kovariate}} \\
+        ACTS & ACTS $\to$ XAIT & kontrolliert & - \\
+        \midrule
+        \multicolumn{4}{l}{\textbf{Mediation}} \\
+        H9 & Framing $\to$ XAIT $\to$ (PUF, EOU) $\to$ BI & Indirekt & - \\
+        \bottomrule
+    \end{tabularx}
+    \par\medskip
+    \footnotesize{Anmerkung: Alle Pfade werden simultan im Strukturgleichungsmodell (SEM) geschätzt}
+\end{table}
