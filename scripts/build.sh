@@ -54,6 +54,10 @@ export BIBINPUTS="$START_DIR/content/resources//:"
 echo "Generating survey item tables..."
 python3 scripts/generate_item_tables.py
 
+# Sanitize bibliography (remove hidden Unicode characters)
+echo "Sanitizing bibliography..."
+python3 scripts/sanitize_bib.py
+
 # Function to build a target
 build_target() {
     local target_dir=$1
