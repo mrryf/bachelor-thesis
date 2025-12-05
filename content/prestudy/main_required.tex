@@ -41,8 +41,8 @@
 \begin{document}
 \newcommand{\isMain}{1}
 
-% Suppress page numbering for front matter
-\pagenumbering{gobble}
+% Start page numbering from the title page
+\pagenumbering{arabic}
 
 \maketitle
 
@@ -50,9 +50,7 @@
 \tableofcontents
 \newpage
 
-% Start page numbering from Introduction
-\pagenumbering{arabic}
-\setcounter{page}{1}
+% Content continues with existing page count (no reset)
 
 % ============================================
 % SECTION 1: Einleitung
@@ -70,7 +68,12 @@
 \subfile{sections/02_theory}
 
 % ============================================
-% SECTION 3: Forschungsdesign  
+% SECTION 3: Forschungsfrage
+% ============================================
+\subfile{sections_required/02_forschungsfrage}
+
+% ============================================
+% SECTION 4: Forschungsdesign  
 %   (with subsections from 03_methodology)
 % ============================================
 \subfile{sections/03_methodology}

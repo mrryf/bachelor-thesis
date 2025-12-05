@@ -2,6 +2,7 @@
     "terminal.integrated.fontFamily": "MesloLGS Nerd Font Mono",
     "terminal.integrated.fontSize": 13,
     "latex-workshop.view.pdf.viewer": "tab",
+    "latex-workshop.latex.autoBuild.run": "never",
     "[latex]": {
         "editor.wordWrap": "on",
         "editor.formatOnSave": false

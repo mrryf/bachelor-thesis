@@ -45,74 +45,25 @@ Das Untersuchungsdesign entspricht einem 3x2 faktoriellen Between-Subjects-Desig
     \end{threeparttable}
 \end{table}
 
-\subsection{Ablauf Experiment}
-Das geplante Experiment findet in drei Phasen statt. In der ersten Phase werden die Nutzenden über das Experiment informiert und können sich für oder gegen eine Teilnahme entscheiden. In Phase 2 steht die Interaktion mit dem Chatbot Alva im Zentrum. In Phase 3 werden die Nutzenden aufgefordert, die dazugehörige Umfrage auszufüllen und das Experiment abzuschliessen. Es werden keine Daten im Vorfeld (Phase 1) oder während der Interaktion (Phase 2) erhoben, um die Abbruchrate zu minimieren und eine hohe Abschlussrate zu fördern.
-
 \subsection{Stimulus-Konzept}
-Der Stimulus besteht aus der visuellen und textlichen Darstellung des AI-Accuracy Scores direkt nach jeder LLM-Antwort. Die Manipulation erfolgt in Echtzeit während der natürlichen Interaktion mit dem digitalen Assistenten.
+Der Stimulus besteht aus der visuellen und textlichen Darstellung einer Sicherheits- bzw. Unsicherheitsanzeige, die direkt nach jeder LLM-Antwort entsprechend der zugewiesenen Stimulusgruppe eingeblendet wird. Die Manipulation erfolgt in Echtzeit während der natürlichen Interaktion mit dem digitalen Assistenten.
+
+Das Stimulus-Design setzt sich aus zwei Dimensionen zusammen. Die erste Dimension betrifft die Valenz der Darstellung: Die Anzeige wird entweder positiv als „Sicherheit" oder negativ als „Unsicherheit" gerahmt. Die zweite Dimension umfasst die Ausprägungsstufe, wobei die angezeigte Sicherheit bzw. Unsicherheit in drei Stufen variiert – hoch, mittel und niedrig. Aus der Kombination dieser beiden Dimensionen ergibt sich ein 2×3-Design mit insgesamt sechs unterschiedlichen Stimulus-Bedingungen, die jeweils eine spezifische visuelle und textliche Gestaltung aufweisen.
 
 % Tabelle 4: Spezifikation Stimuli
 
-\begin{figure}[htbp]
-    \centering
-    \begin{subfigure}[b]{0.45\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{design/ba_fryf_stimulus_design/sicherheit_hoch.pdf}
-        \caption{Stimulus: Sicherheit hoch}
-        \label{fig:stimulus_sicherheit_hoch}
-    \end{subfigure}
-    \hfill
-    \begin{subfigure}[b]{0.48\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{design/ba_fryf_stimulus_design/unsicherheit_tief.pdf}
-        \caption{Stimulus: Unsicherheit tief}
-        \label{fig:stimulus_unsicherheit_tief}
-    \end{subfigure}
-    \caption{Stimulus-Design: Hohe Sicherheit vs. Tiefe Unsicherheit}
-    \label{fig:stimulus_design_hoch_tief}
-\end{figure}
-
-\begin{figure}[h!]
-    \centering
-    \begin{subfigure}[b]{0.48\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{design/ba_fryf_stimulus_design/sicherheit_mittel.pdf}
-        \caption{Stimulus: Sicherheit mittel}
-        \label{fig:stimulus_sicherheit_mittel}
-    \end{subfigure}
-    \hfill
-    \begin{subfigure}[b]{0.48\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{design/ba_fryf_stimulus_design/unsicherheit_mittel.pdf}
-        \caption{Stimulus: Unsicherheit mittel}
-        \label{fig:stimulus_unsicherheit_mittel}
-    \end{subfigure}
-    \caption{Stimulus-Design: Mittlere Sicherheit vs. Mittlere Unsicherheit}
-    \label{fig:stimulus_design_mittel}
-\end{figure}
-
-\begin{figure}[h!]
-    \centering
-    \begin{subfigure}[b]{0.48\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{design/ba_fryf_stimulus_design/sicherheit_tief.pdf}
-        \caption{Stimulus: Sicherheit tief}
-        \label{fig:stimulus_sicherheit_tief}
-    \end{subfigure}
-    \hfill
-    \begin{subfigure}[b]{0.48\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{design/ba_fryf_stimulus_design/unsicherheit_hoch.pdf}
-        \caption{Negativer Frame / Niedrige Sicherheit}
-        \label{fig:stimulus-neg-low}
-    \end{subfigure}
-    
-    \caption{Übersicht der Stimulus-Designs für das 3x2 Experiment}
-    \label{fig:stimulus-overview}
-\end{figure}
-
 \subsubsection{Manipulationscheck Stimulus}
 Als Manipulationscheck werden die Probanden post-experimentell gefragt, ob und in welcher Form ihnen Informationen zur Zuverlässigkeit der Antworten angezeigt wurden, um sicherzustellen, dass die experimentelle Manipulation wahrgenommen wurde.
+
+\subsection{Ablauf Experiment}
+Das geplante Experiment findet in drei Phasen statt. In der ersten Phase werden die Nutzenden über das Experiment informiert und können sich für oder gegen eine Teilnahme entscheiden. In Phase 2 steht die Interaktion mit dem Chatbot Alva im Zentrum. In Phase 3 werden die Nutzenden aufgefordert, die dazugehörige Umfrage auszufüllen und das Experiment abzuschliessen. Es werden keine Daten im Vorfeld (Phase 1) oder während der Interaktion (Phase 2) erhoben, um die Abbruchrate zu minimieren und eine hohe Abschlussrate zu fördern.
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\textwidth, keepaspectratio]{ba_faryf_ablauf_experiment.jpg}
+    \caption{Ablauf des Experiments in drei Phasen}
+    \label{fig:ablauf-experiment}
+\end{figure}
 
 \subsection{Methodentriangulation}
 Das vorliegende Forschungsdesign kombiniert verschiedene Methoden in einer Methodentriangulation, um die Forschungsfrage nach dem Einfluss von KI-Transparenz auf Vertrauen zu beantworten.
