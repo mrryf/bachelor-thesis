@@ -44,6 +44,10 @@ class TestFormattingRules(unittest.TestCase):
              bib_include = r"\subfile{sections/10b_quellenverzeichnis_full}"
              bib_index = self.content.find(bib_include)
              
+        if bib_index == -1:
+             bib_include = r"\subfile{sections_required/10_quellenverzeichnis}"
+             bib_index = self.content.find(bib_include)
+             
         self.assertNotEqual(bib_index, -1, "Bibliography inclusion not found in main.tex")
         
         # Search backwards from Bib inclusion for \newpage
