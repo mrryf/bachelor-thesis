@@ -102,6 +102,10 @@ jobs:
         working-directory: ./webapp
         run: npm ci
 
+      - name: Sync SvelteKit types
+        working-directory: ./webapp
+        run: npx svelte-kit sync
+
       - name: Check Svelte & TypeScript
         working-directory: ./webapp
         run: npx svelte-check --threshold warning
