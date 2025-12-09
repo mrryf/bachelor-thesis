@@ -50,14 +50,28 @@ __pycache__/
 .venv/
 venv/
 ENV/
+.pytest_cache/
+.coverage
+.ruff_cache/
+htmlcov/
+*.cover
 
 # macOS
 .DS_Store
+.AppleDouble
+.LSOverride
+._*
 
 # IDE
 .vscode/
 .idea/
+*.swp
 
 # MkDocs
 site/
 .mkdocs_cache/
+
+# Section PDFs (built via subfiles, not standalone)
+content/*/sections/*.pdf
+content/*/sections/*.synctex.gz
+!content/resources/**/*.pdf
