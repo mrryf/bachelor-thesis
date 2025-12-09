@@ -1,0 +1,18 @@
+# Development and Build Dependencies
+# Core dependencies for building and testing the thesis
+
+# Bibliography parsing
+bibtexparser==1.4.1
+
+# Zotero API integration
+pyzotero==1.5.18
+
+# Code quality
+ruff==0.8.4
+
+# Testing
+pytest==8.0.0
+pytest-cov==6.0.0
+
+# Documentation (from requirements.txt)
+-r requirements.txt
