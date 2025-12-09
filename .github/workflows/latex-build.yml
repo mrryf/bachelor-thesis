@@ -137,7 +137,7 @@ jobs:
           path: |
             /usr/share/texlive
             /usr/share/texmf
-          key: texlive-${{ runner.os }}-2025
+          key: texlive-${{ runner.os }}-2025-v2
           restore-keys: |
             texlive-${{ runner.os }}-
 
