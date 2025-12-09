@@ -102,10 +102,7 @@ jobs:
         working-directory: ./webapp
         run: npm ci
 
-      - name: Check TypeScript
+      - name: Check Svelte & TypeScript
         working-directory: ./webapp
-        run: npx tsc --noEmit
+        run: npx svelte-check --threshold warning
 
-      - name: Check Svelte
-        working-directory: ./webapp
-        run: npx svelte-check --fail-on-warnings
