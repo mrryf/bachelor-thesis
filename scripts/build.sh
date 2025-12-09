@@ -51,8 +51,12 @@ export TEXINPUTS="$START_DIR/content/lib//:$START_DIR/content/resources//:$START
 export BIBINPUTS="$START_DIR/content/resources//:"
 
 # Generate survey item tables (Global step)
-echo "Generating survey item tables..."
-python3 scripts/generate_item_tables.py
+if [ "$SKIP_GEN_TABLES" != "true" ]; then
+    echo "Generating survey item tables..."
+    python3 scripts/generate_item_tables.py
+else
+    echo "Skipping survey item table generation (SKIP_GEN_TABLES=true)"
+fi
 
 # Sanitize bibliography (remove hidden Unicode characters)
 echo "Sanitizing bibliography..."

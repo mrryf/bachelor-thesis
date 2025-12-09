@@ -145,34 +145,19 @@ jobs:
       - name: Generate Survey Item Tables
         run: python scripts/generate_item_tables.py
 
-      - name: Cache LaTeX packages
-        uses: actions/cache@v4
-        with:
-          path: |
-            /usr/share/texlive
-            /usr/share/texmf
-          key: texlive-${{ runner.os }}-2025-v2
-          restore-keys: |
-            texlive-${{ runner.os }}-
-
-      - name: Install LaTeX (minimal packages)
-        timeout-minutes: 15
+      - name: Build LaTeX Document (Docker)
         run: |
-          # Switch from Azure mirror to Main Ubuntu mirror to avoid timeouts
-          sudo sed -i 's/azure.archive.ubuntu.com/archive.ubuntu.com/g' /etc/apt/sources.list
-          sudo apt-get update
-          sudo apt-get install -y -o Acquire::Retries=3 -o Acquire::http::Timeout=60 \
-            texlive-latex-base \
-            texlive-latex-extra \
-            texlive-bibtex-extra \
-            texlive-fonts-recommended \
-            texlive-lang-german \
-            texlive-publishers \
-            biber \
-            latexmk
+          # Run build using a pre-built Docker image with full TeX Live
+          # using the main Ubuntu mirror fix is no longer needed since we skip install entirely
+          docker run --rm \
+            -v ${{ github.workspace }}:/workspace \
+            -w /workspace \
+            -e SKIP_GEN_TABLES=true \
+            ghcr.io/xu-cheng/texlive-full:latest \
+            bash -c "./scripts/build.sh --prestudy"
 
-      - name: Build LaTeX Documents
-        run: ./scripts/build.sh --prestudy
+          # Fix permissions (Docker usually runs as root)
+          sudo chown -R $USER:$USER content/prestudy
 
       - name: Check for PDF
         run: |
