@@ -1,59 +1,63 @@
 <script lang="ts">
-	// This will be populated with content data
+	import { Button } from "$lib/components/ui/button";
+	import { Card, CardContent } from "$lib/components/ui/card";
+	import { navItems } from "$lib/data/content";
+	import { ArrowRight } from "lucide-svelte";
 </script>
 
-<div class="container mx-auto px-4 py-8 max-w-4xl">
-	<header class="mb-12">
-		<h1 class="text-4xl font-bold mb-4">
+<svelte:head>
+	<title>Vertrauen in Künstliche Intelligenz - Vorstudie</title>
+</svelte:head>
+
+<div class="container mx-auto px-4 py-12 max-w-4xl">
+	<header class="mb-16 text-center">
+		<h1 class="text-5xl font-bold mb-6">
 			Vertrauen in Künstliche Intelligenz
 		</h1>
-		<p class="text-xl text-muted-foreground">
-			Wie Framing das Vertrauen in LLM-basierte Applikationen und Antworten beeinflusst
+		<p class="text-2xl text-muted-foreground mb-4">
+			Wie Framing das Vertrauen in LLM-basierte Applikationen und
+			Antworten beeinflusst
 		</p>
-		<p class="text-sm text-muted-foreground mt-2">
-			Vorstudie Bachelorarbeit | Fabian Ryf | HSLU-W
-		</p>
+		<div class="text-sm text-muted-foreground space-y-1">
+			<p>Vorstudie Bachelorarbeit</p>
+			<p>Fabian Ryf | HSLU-W</p>
+			<p>
+				BSc Business Psychology (BP) | Markt- und Konsumentenpsychologie
+			</p>
+			<p>Betreuer: Dr. Andreas Hüsser</p>
+		</div>
 	</header>
 
-	<main class="prose prose-slate dark:prose-invert max-w-none">
-		<section id="einleitung" class="mb-16">
-			<h2>1. Einleitung</h2>
-			<p>
-				Mit der Veröffentlichung von ChatGPT von OpenAI im Jahr 2022 wurde eine technologische
-				Wende eingeleitet. Bereits heute vereinfachen und verändern LLM-basierte Applikationen wie
-				ChatGPT von OpenAI, Claude von Anthropic und Gemini von Google viele Tätigkeiten des
-				(Arbeits-)Lebens.
-			</p>
-			<p class="text-sm text-muted-foreground italic">
-				[Content wird aus LaTeX-Dateien extrahiert...]
-			</p>
-		</section>
+	<div class="grid gap-6 md:grid-cols-2 mb-12">
+		{#each navItems as item}
+			<a href={item.href}>
+				<Card
+					class="hover:shadow-lg transition-shadow cursor-pointer h-full"
+				>
+					<CardContent class="p-6">
+						<div class="flex items-start justify-between">
+							<div>
+								<div
+									class="text-3xl font-bold text-primary mb-2"
+								>
+									{item.number}
+								</div>
+								<h2 class="text-xl font-semibold mb-2">
+									{item.title}
+								</h2>
+							</div>
+							<ArrowRight class="h-5 w-5 text-muted-foreground" />
+						</div>
+					</CardContent>
+				</Card>
+			</a>
+		{/each}
+	</div>
 
-		<section id="theory" class="mb-16">
-			<h2>2. Theoretische Einbettung</h2>
-			<p class="text-sm text-muted-foreground italic">
-				[Theoretischer Rahmen wird hier eingefügt...]
-			</p>
-		</section>
-
-		<section id="forschungsfrage" class="mb-16">
-			<h2>3. Forschungsfrage</h2>
-			<p class="text-sm text-muted-foreground italic">
-				[Forschungsfrage wird hier eingefügt...]
-			</p>
-		</section>
-
-		<section id="methodology" class="mb-16">
-			<h2>4. Forschungsdesign</h2>
-			<p class="text-sm text-muted-foreground italic">
-				[Methodologie wird hier eingefügt...]
-			</p>
-		</section>
-	</main>
-
-	<footer class="mt-16 pt-8 border-t text-center text-sm text-muted-foreground">
+	<footer
+		class="mt-16 pt-8 border-t text-center text-sm text-muted-foreground"
+	>
 		<p>Hochschule Luzern, Wirtschaft (HSLU-W)</p>
-		<p>BSc Business Psychology (BP) | Markt- und Konsumentenpsychologie</p>
-		<p>Betreuer: Dr. Andreas Hüsser</p>
+		<p class="mt-2">Abgabedatum: 05.12.2025</p>
 	</footer>
 </div>
