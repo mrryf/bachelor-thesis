@@ -24,6 +24,8 @@
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
     Permissions-Policy = "camera=(), microphone=(), geolocation=()"
+    # Prevent search engine indexing (applies to ALL deploys including production)
+    X-Robots-Tag = "noindex, nofollow"
 
 # Cache static assets
 [[headers]]
