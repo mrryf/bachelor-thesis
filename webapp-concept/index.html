@@ -1,0 +1,2541 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Automated documentation for thesis build scripts and testing framework">
+      
+      
+      
+        <link rel="canonical" href="https://mrryf.github.io/bachelor-thesis/webapp-concept/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>Thesis Web Application - Concept Document - Bachelor Thesis - Code Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.618322db.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/_mkdocstrings.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#thesis-web-application-concept-document" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Bachelor Thesis - Code Documentation" class="md-header__button md-logo" aria-label="Bachelor Thesis - Code Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Bachelor Thesis - Code Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Thesis Web Application - Concept Document
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/mrryf/bachelor-thesis" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    mrryf/bachelor-thesis
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../getting-started/installation/" class="md-tabs__link">
+          
+  
+  
+  Getting Started
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../scripts/build/" class="md-tabs__link">
+          
+  
+  
+  Scripts
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../api/scripts/" class="md-tabs__link">
+          
+  
+  
+  API Reference
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../workflows/ci-cd/" class="md-tabs__link">
+          
+  
+  
+  Workflows
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../contributing/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Contributing
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Bachelor Thesis - Code Documentation" class="md-nav__button md-logo" aria-label="Bachelor Thesis - Code Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Bachelor Thesis - Code Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/mrryf/bachelor-thesis" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    mrryf/bachelor-thesis
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Getting Started
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../getting-started/installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../getting-started/building/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Building
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../getting-started/testing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Testing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Scripts
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Scripts
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scripts/build/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Build System
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scripts/generators/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Table Generators
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scripts/verification/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Verification Tools
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API Reference
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    API Reference
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/scripts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Scripts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/tests/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Workflows
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Workflows
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../workflows/ci-cd/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CI/CD Pipeline
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contributing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contributing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#project-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Project Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-technical-architecture-stack" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Technical Architecture &amp; Stack
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Technical Architecture &amp; Stack">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#recommended-approach-single-page-application-spa" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recommended Approach: Single Page Application (SPA)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tech-stack" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tech Stack
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tech Stack">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#core-technologies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Core Technologies
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#optional-enhancements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Optional Enhancements
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#build-tools-optional-for-production" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Build Tools (Optional for Production)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#architecture-pattern" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Architecture Pattern
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Flow
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-ux-considerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. UX Considerations
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. UX Considerations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#design-principles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Design Principles
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Design Principles">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-progressive-disclosure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Progressive Disclosure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-narrative-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Narrative Flow
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-visual-hierarchy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Visual Hierarchy
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-accessibility" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Accessibility
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-engagement-patterns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Engagement Patterns
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#user-journeys" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        User Journeys
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="User Journeys">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#journey-1-academic-reviewer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Journey 1: Academic Reviewer
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#journey-2-casual-learner" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Journey 2: Casual Learner
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#journey-3-researcher" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Journey 3: Researcher
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interaction-patterns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Interaction Patterns
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Components
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Components">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#core-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Core Components
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Core Components">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-navigation-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 Navigation Components
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-content-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 Content Components
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-interactive-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3 Interactive Components
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34-data-visualization-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.4 Data Visualization Components
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#35-utility-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.5 Utility Components
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-information-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Information Architecture
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Information Architecture">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#site-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Site Structure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#content-hierarchy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Content Hierarchy
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Content Hierarchy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#level-1-main-sections" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Level 1: Main Sections
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#level-2-subsections-example-theory" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Level 2: Subsections (Example: Theory)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#level-3-content-blocks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Level 3: Content Blocks
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#navigation-patterns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Navigation Patterns
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Navigation Patterns">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#primary-navigation-header" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Primary Navigation (Header)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#secondary-navigation-sidebar-desktop" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Secondary Navigation (Sidebar - Desktop)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mobile-navigation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mobile Navigation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#content-organization-principles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Content Organization Principles
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-visual-design-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Visual Design System
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Visual Design System">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#color-palette" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Color Palette
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Color Palette">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#primary-colors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Primary Colors
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#semantic-colors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Semantic Colors
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dark-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dark Mode
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#typography" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Typography
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spacing-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Spacing System
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#component-styles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Component Styles
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Component Styles">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cards" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cards
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#buttons" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Buttons
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-key-features-functionality" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Key Features &amp; Functionality
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Key Features &amp; Functionality">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#must-have-features-mvp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Must-Have Features (MVP)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#should-have-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Should-Have Features
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nice-to-have-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Nice-to-Have Features
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-content-mapping-latex-web" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Content Mapping (LaTeX → Web)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Content Mapping (LaTeX → Web)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#section-mapping" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Section Mapping
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#content-extraction-strategy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Content Extraction Strategy
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-implementation-phases" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Implementation Phases
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. Implementation Phases">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#phase-1-foundation-week-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 1: Foundation (Week 1)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-2-content-week-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 2: Content (Week 2)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-3-interactivity-week-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 3: Interactivity (Week 3)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-4-polish-week-4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 4: Polish (Week 4)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-technical-considerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Technical Considerations
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9. Technical Considerations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#performance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Performance
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#seo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SEO
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#browser-support" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Browser Support
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hosting-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hosting Options
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-next-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. Next Steps
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10. Next Steps">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#immediate-actions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Immediate Actions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#questions-to-resolve" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Questions to Resolve
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appendix-inspiration-references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Appendix: Inspiration &amp; References
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Appendix: Inspiration &amp; References">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#design-inspiration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Design Inspiration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#technical-references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Technical References
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="thesis-web-application-concept-document">Thesis Web Application - Concept Document</h1>
+<h2 id="project-overview">Project Overview</h2>
+<p><strong>Title:</strong> Trust in Artificial Intelligence - How Framing Influences Trust in LLM-based Applications</p>
+<p><strong>Purpose:</strong> Create an interactive web application to present the prestudy research on how confidence value framing (positive vs. negative) affects user trust in AI assistants, using the AI-TAM (Artificial Intelligence Technology Acceptance Model) framework.</p>
+<p><strong>Target Audience:</strong> 
+- Academic reviewers and thesis evaluators
+- Research community interested in AI trust and technology acceptance
+- Practitioners in UX/AI design
+- General audience interested in AI psychology</p>
+<hr />
+<h2 id="1-technical-architecture-stack">1. Technical Architecture &amp; Stack</h2>
+<h3 id="recommended-approach-single-page-application-spa">Recommended Approach: <strong>Single Page Application (SPA)</strong></h3>
+<p>Given the content is primarily educational/presentational with interactive elements, a modern SPA is ideal.</p>
+<h3 id="tech-stack">Tech Stack</h3>
+<h4 id="core-technologies">Core Technologies</h4>
+<ul>
+<li><strong>HTML5</strong> - Semantic structure</li>
+<li><strong>CSS3</strong> - Modern styling with CSS Grid/Flexbox</li>
+<li><strong>Vanilla JavaScript (ES6+)</strong> - Interactive components, no framework overhead needed</li>
+</ul>
+<h4 id="optional-enhancements">Optional Enhancements</h4>
+<ul>
+<li><strong>Chart.js / D3.js</strong> - For data visualizations (AI-TAM model, hypothesis diagrams)</li>
+<li><strong>AOS (Animate On Scroll)</strong> - Smooth scroll animations</li>
+<li><strong>Prism.js</strong> - Code syntax highlighting if needed</li>
+<li><strong>MathJax</strong> - LaTeX formula rendering</li>
+</ul>
+<h4 id="build-tools-optional-for-production">Build Tools (Optional for Production)</h4>
+<ul>
+<li><strong>Vite</strong> - Fast development server and bundling</li>
+<li><strong>PostCSS</strong> - CSS processing and optimization</li>
+</ul>
+<h3 id="architecture-pattern">Architecture Pattern</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>webapp/
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>├── index.html              # Main entry point
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>├── assets/
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>│   ├── css/
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>│   │   ├── main.css        # Core styles
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>│   │   ├── components.css  # Reusable components
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>│   │   └── themes.css      # Color schemes, dark mode
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>│   ├── js/
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>│   │   ├── app.js          # Main application logic
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>│   │   ├── navigation.js   # Routing/navigation
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>│   │   ├── visualizations.js # Charts and diagrams
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>│   │   └── interactions.js # Interactive experiments
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>│   ├── images/             # Figures from thesis
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>│   └── data/
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>│       └── content.json    # Structured content data
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>└── components/
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>    ├── hero.html           # Landing section
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>    ├── theory.html         # Theoretical framework
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>    ├── methodology.html    # Research design
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>    └── experiment.html     # Interactive experiment demo
+</code></pre></div>
+<h3 id="data-flow">Data Flow</h3>
+<ol>
+<li><strong>Content Source:</strong> LaTeX files → Structured JSON</li>
+<li><strong>Rendering:</strong> JavaScript dynamically loads and renders content</li>
+<li><strong>Interactivity:</strong> Event-driven updates to DOM</li>
+<li><strong>State Management:</strong> Simple object-based state (no Redux needed)</li>
+</ol>
+<hr />
+<h2 id="2-ux-considerations">2. UX Considerations</h2>
+<h3 id="design-principles">Design Principles</h3>
+<h4 id="1-progressive-disclosure">1. <strong>Progressive Disclosure</strong></h4>
+<ul>
+<li>Start with high-level overview</li>
+<li>Allow users to dive deeper into sections</li>
+<li>Collapsible sections for detailed content</li>
+<li>"Read More" patterns for lengthy theoretical sections</li>
+</ul>
+<h4 id="2-narrative-flow">2. <strong>Narrative Flow</strong></h4>
+<p>Follow the thesis structure as a story:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>Introduction → Problem → Theory → Methodology → Experiment → Findings → Reflection
+</code></pre></div></p>
+<h4 id="3-visual-hierarchy">3. <strong>Visual Hierarchy</strong></h4>
+<ul>
+<li><strong>Primary:</strong> Key findings, main hypotheses</li>
+<li><strong>Secondary:</strong> Supporting theory, methodology details</li>
+<li><strong>Tertiary:</strong> References, footnotes, technical details</li>
+</ul>
+<h4 id="4-accessibility">4. <strong>Accessibility</strong></h4>
+<ul>
+<li>WCAG 2.1 AA compliance</li>
+<li>Keyboard navigation</li>
+<li>Screen reader friendly</li>
+<li>High contrast mode option</li>
+<li>Responsive text sizing</li>
+</ul>
+<h4 id="5-engagement-patterns">5. <strong>Engagement Patterns</strong></h4>
+<ul>
+<li><strong>Interactive Experiment Demo:</strong> Let users experience the framing effect</li>
+<li><strong>Model Visualization:</strong> Interactive AI-TAM model diagram</li>
+<li><strong>Hypothesis Explorer:</strong> Click through hypotheses with visual connections</li>
+<li><strong>Timeline:</strong> Gantt chart as interactive timeline</li>
+</ul>
+<h3 id="user-journeys">User Journeys</h3>
+<h4 id="journey-1-academic-reviewer">Journey 1: Academic Reviewer</h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>Landing → Abstract → Jump to Methodology → Review Hypotheses → Check References
+</code></pre></div>
+<h4 id="journey-2-casual-learner">Journey 2: Casual Learner</h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>Landing → What is AI Trust? → See Interactive Demo → Explore Theory → Learn More
+</code></pre></div>
+<h4 id="journey-3-researcher">Journey 3: Researcher</h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>Landing → Methodology → Experimental Design → Download Data/Materials → Citations
+</code></pre></div>
+<h3 id="interaction-patterns">Interaction Patterns</h3>
+<ol>
+<li><strong>Sticky Navigation</strong> - Always accessible section menu</li>
+<li><strong>Scroll Progress Indicator</strong> - Show reading progress</li>
+<li><strong>Smooth Scrolling</strong> - Between sections</li>
+<li><strong>Tooltips</strong> - For technical terms (glossary integration)</li>
+<li><strong>Modal Overlays</strong> - For detailed figures and tables</li>
+<li><strong>Lazy Loading</strong> - Images and heavy content</li>
+</ol>
+<hr />
+<h2 id="3-components">3. Components</h2>
+<h3 id="core-components">Core Components</h3>
+<h4 id="31-navigation-components">3.1 Navigation Components</h4>
+<p><strong>Primary Navigation</strong>
+- Fixed header with section links
+- Hamburger menu for mobile
+- Progress indicator
+- Dark/light mode toggle</p>
+<p><strong>Secondary Navigation</strong>
+- Floating table of contents (desktop)
+- "Back to top" button
+- Previous/Next section buttons</p>
+<h4 id="32-content-components">3.2 Content Components</h4>
+<p><strong>Hero Section</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>- Title: &quot;Trust in Artificial Intelligence&quot;
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>- Subtitle: Framing effect visualization
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>- CTA: &quot;Explore the Research&quot; / &quot;Try the Demo&quot;
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>- Background: Animated gradient or AI-themed visual
+</code></pre></div></p>
+<p><strong>Section Container</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>- Section header with icon
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>- Collapsible subsections
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>- Citation tooltips
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>- Figure/table integration
+</code></pre></div></p>
+<p><strong>Theory Card</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>- Model name (e.g., &quot;TAM&quot;, &quot;AI-TAM&quot;)
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>- Visual representation
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>- Key constructs
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>- Expandable details
+</code></pre></div></p>
+<p><strong>Hypothesis Card</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>- Hypothesis number and statement
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>- Visual connection to model
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>- Expected outcome
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>- Related literature
+</code></pre></div></p>
+<h4 id="33-interactive-components">3.3 Interactive Components</h4>
+<p><strong>Framing Experiment Demo</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>Interactive component where users:
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>1. See a chatbot interface (Alva simulation)
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>2. Ask a question
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>3. Receive answer with confidence indicator
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>4. Experience different frames (positive/negative)
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>5. Rate their trust level
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>6. See how framing affected their perception
+</code></pre></div></p>
+<p><strong>AI-TAM Model Visualizer</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>- Interactive node diagram
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>- Click nodes to see construct definitions
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>- Highlight paths between constructs
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>- Show hypothesis connections
+</code></pre></div></p>
+<p><strong>Confidence Frame Comparator</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>Side-by-side comparison:
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>- &quot;Confidence: 80%&quot; vs &quot;Uncertainty: 20%&quot;
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>- Visual styling differences
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>- User perception survey
+</code></pre></div></p>
+<h4 id="34-data-visualization-components">3.4 Data Visualization Components</h4>
+<p><strong>Gantt Chart (Timeline)</strong>
+- Interactive project timeline
+- Milestone markers
+- Zoom and pan functionality</p>
+<p><strong>Hypothesis Network</strong>
+- Graph visualization of hypothesis relationships
+- Filter by construct
+- Show/hide connections</p>
+<p><strong>Statistical Diagrams</strong>
+- Experimental design (3x2 factorial)
+- Group allocation visualization</p>
+<h4 id="35-utility-components">3.5 Utility Components</h4>
+<p><strong>Citation Tooltip</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>Hover over citation → Show:
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>- Author, Year
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>- Title
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>- Quick preview
+<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>- Link to full reference
+</code></pre></div></p>
+<p><strong>Glossary Popup</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>Click term → Modal with:
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>- Definition
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>- Related concepts
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>- Usage in context
+</code></pre></div></p>
+<p><strong>Figure Lightbox</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>Click figure → Full-screen view with:
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>- High-resolution image
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>- Caption
+<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>- Download option
+<a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a>- Navigation between figures
+</code></pre></div></p>
+<p><strong>Download Center</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>- PDF version of prestudy
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>- Supplementary materials
+<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>- Data files (if applicable)
+<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>- Citation export (BibTeX, RIS)
+</code></pre></div></p>
+<hr />
+<h2 id="4-information-architecture">4. Information Architecture</h2>
+<h3 id="site-structure">Site Structure</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>┌─────────────────────────────────────────┐
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>│           LANDING / HOME                │
+<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>│  - Hero with key message                │
+<a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a>│  - Quick navigation cards               │
+<a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a>│  - Interactive demo teaser              │
+<a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a>└─────────────────────────────────────────┘
+<a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a>                    │
+<a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a>        ┌───────────┼───────────┐
+<a id="__codelineno-16-9" name="__codelineno-16-9" href="#__codelineno-16-9"></a>        │           │           │
+<a id="__codelineno-16-10" name="__codelineno-16-10" href="#__codelineno-16-10"></a>        ▼           ▼           ▼
+<a id="__codelineno-16-11" name="__codelineno-16-11" href="#__codelineno-16-11"></a>    ┌───────┐  ┌────────┐  ┌──────────┐
+<a id="__codelineno-16-12" name="__codelineno-16-12" href="#__codelineno-16-12"></a>    │ INTRO │  │ THEORY │  │ RESEARCH │
+<a id="__codelineno-16-13" name="__codelineno-16-13" href="#__codelineno-16-13"></a>    └───────┘  └────────┘  └──────────┘
+<a id="__codelineno-16-14" name="__codelineno-16-14" href="#__codelineno-16-14"></a>        │           │           │
+<a id="__codelineno-16-15" name="__codelineno-16-15" href="#__codelineno-16-15"></a>        ▼           ▼           ▼
+<a id="__codelineno-16-16" name="__codelineno-16-16" href="#__codelineno-16-16"></a>   ┌─────────────────────────────────┐
+<a id="__codelineno-16-17" name="__codelineno-16-17" href="#__codelineno-16-17"></a>   │  1. Ausgangslage (Context)      │
+<a id="__codelineno-16-18" name="__codelineno-16-18" href="#__codelineno-16-18"></a>   │  2. Zielsetzung (Objectives)    │
+<a id="__codelineno-16-19" name="__codelineno-16-19" href="#__codelineno-16-19"></a>   │  3. Machbarkeit (Feasibility)   │
+<a id="__codelineno-16-20" name="__codelineno-16-20" href="#__codelineno-16-20"></a>   │  4. Arbeitsplan (Timeline)      │
+<a id="__codelineno-16-21" name="__codelineno-16-21" href="#__codelineno-16-21"></a>   └─────────────────────────────────┘
+<a id="__codelineno-16-22" name="__codelineno-16-22" href="#__codelineno-16-22"></a>                    │
+<a id="__codelineno-16-23" name="__codelineno-16-23" href="#__codelineno-16-23"></a>                    ▼
+<a id="__codelineno-16-24" name="__codelineno-16-24" href="#__codelineno-16-24"></a>   ┌─────────────────────────────────┐
+<a id="__codelineno-16-25" name="__codelineno-16-25" href="#__codelineno-16-25"></a>   │  1. TAM Model                   │
+<a id="__codelineno-16-26" name="__codelineno-16-26" href="#__codelineno-16-26"></a>   │  2. AI-TAM Extension            │
+<a id="__codelineno-16-27" name="__codelineno-16-27" href="#__codelineno-16-27"></a>   │  3. Framing Effect              │
+<a id="__codelineno-16-28" name="__codelineno-16-28" href="#__codelineno-16-28"></a>   │  4. Attribute Framing           │
+<a id="__codelineno-16-29" name="__codelineno-16-29" href="#__codelineno-16-29"></a>   │  5. Hypotheses                  │
+<a id="__codelineno-16-30" name="__codelineno-16-30" href="#__codelineno-16-30"></a>   └─────────────────────────────────┘
+<a id="__codelineno-16-31" name="__codelineno-16-31" href="#__codelineno-16-31"></a>                    │
+<a id="__codelineno-16-32" name="__codelineno-16-32" href="#__codelineno-16-32"></a>                    ▼
+<a id="__codelineno-16-33" name="__codelineno-16-33" href="#__codelineno-16-33"></a>   ┌─────────────────────────────────┐
+<a id="__codelineno-16-34" name="__codelineno-16-34" href="#__codelineno-16-34"></a>   │  1. Experimental Design         │
+<a id="__codelineno-16-35" name="__codelineno-16-35" href="#__codelineno-16-35"></a>   │  2. Stimulus Concept            │
+<a id="__codelineno-16-36" name="__codelineno-16-36" href="#__codelineno-16-36"></a>   │  3. Methodology                 │
+<a id="__codelineno-16-37" name="__codelineno-16-37" href="#__codelineno-16-37"></a>   │  4. Experiment Flow             │
+<a id="__codelineno-16-38" name="__codelineno-16-38" href="#__codelineno-16-38"></a>   └─────────────────────────────────┘
+<a id="__codelineno-16-39" name="__codelineno-16-39" href="#__codelineno-16-39"></a>                    │
+<a id="__codelineno-16-40" name="__codelineno-16-40" href="#__codelineno-16-40"></a>        ┌───────────┼───────────┐
+<a id="__codelineno-16-41" name="__codelineno-16-41" href="#__codelineno-16-41"></a>        ▼           ▼           ▼
+<a id="__codelineno-16-42" name="__codelineno-16-42" href="#__codelineno-16-42"></a>   ┌─────────┐ ┌─────────┐ ┌─────────┐
+<a id="__codelineno-16-43" name="__codelineno-16-43" href="#__codelineno-16-43"></a>   │ DEMO    │ │REFLECT  │ │RESOURCES│
+<a id="__codelineno-16-44" name="__codelineno-16-44" href="#__codelineno-16-44"></a>   │         │ │         │ │         │
+<a id="__codelineno-16-45" name="__codelineno-16-45" href="#__codelineno-16-45"></a>   └─────────┘ └─────────┘ └─────────┘
+</code></pre></div>
+<h3 id="content-hierarchy">Content Hierarchy</h3>
+<h4 id="level-1-main-sections">Level 1: Main Sections</h4>
+<ol>
+<li><strong>Home</strong> - Overview and introduction</li>
+<li><strong>Introduction</strong> - Context, objectives, feasibility</li>
+<li><strong>Theory</strong> - Theoretical framework</li>
+<li><strong>Methodology</strong> - Research design</li>
+<li><strong>Interactive Demo</strong> - Experience the experiment</li>
+<li><strong>Reflection</strong> - Self-reflection and outlook</li>
+<li><strong>Resources</strong> - References, downloads, glossary</li>
+</ol>
+<h4 id="level-2-subsections-example-theory">Level 2: Subsections (Example: Theory)</h4>
+<ul>
+<li>Technology Acceptance Model (TAM)</li>
+<li>Core constructs</li>
+<li>Original research</li>
+<li>AI-TAM Extension</li>
+<li>Additional constructs</li>
+<li>Model visualization</li>
+<li>Framing Effect</li>
+<li>Prospect theory</li>
+<li>Attribute framing</li>
+<li>Hypotheses</li>
+<li>H1-H8 with visual connections</li>
+</ul>
+<h4 id="level-3-content-blocks">Level 3: Content Blocks</h4>
+<ul>
+<li>Text paragraphs</li>
+<li>Figures with captions</li>
+<li>Tables</li>
+<li>Citations</li>
+<li>Definitions</li>
+</ul>
+<h3 id="navigation-patterns">Navigation Patterns</h3>
+<h4 id="primary-navigation-header">Primary Navigation (Header)</h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>[Logo] Home | Introduction | Theory | Methodology | Demo | Resources
+<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>                                                    [Dark Mode] [Language]
+</code></pre></div>
+<h4 id="secondary-navigation-sidebar-desktop">Secondary Navigation (Sidebar - Desktop)</h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>Table of Contents
+<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>├─ 1. Introduction
+<a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a>│  ├─ 1.1 Context
+<a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a>│  ├─ 1.2 Objectives
+<a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a>│  └─ 1.3 Feasibility
+<a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a>├─ 2. Theory
+<a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a>│  ├─ 2.1 TAM
+<a id="__codelineno-18-8" name="__codelineno-18-8" href="#__codelineno-18-8"></a>│  ├─ 2.2 AI-TAM
+<a id="__codelineno-18-9" name="__codelineno-18-9" href="#__codelineno-18-9"></a>│  └─ 2.3 Framing
+<a id="__codelineno-18-10" name="__codelineno-18-10" href="#__codelineno-18-10"></a>└─ 3. Methodology
+<a id="__codelineno-18-11" name="__codelineno-18-11" href="#__codelineno-18-11"></a>   └─ ...
+</code></pre></div>
+<h4 id="mobile-navigation">Mobile Navigation</h4>
+<ul>
+<li>Hamburger menu</li>
+<li>Bottom navigation bar for key sections</li>
+<li>Swipe gestures between sections</li>
+</ul>
+<h3 id="content-organization-principles">Content Organization Principles</h3>
+<ol>
+<li><strong>Chunking:</strong> Break long sections into digestible subsections</li>
+<li><strong>Labeling:</strong> Clear, descriptive headings</li>
+<li><strong>Consistency:</strong> Same structure for similar content types</li>
+<li><strong>Wayfinding:</strong> Breadcrumbs, progress indicators, "you are here" markers</li>
+<li><strong>Search:</strong> Quick search functionality for terms and concepts</li>
+</ol>
+<hr />
+<h2 id="5-visual-design-system">5. Visual Design System</h2>
+<h3 id="color-palette">Color Palette</h3>
+<h4 id="primary-colors">Primary Colors</h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="nt">--primary-blue</span><span class="o">:</span><span class="w"> </span><span class="p">#</span><span class="nn">2563eb</span><span class="o">;</span><span class="w">      </span><span class="c">/* Trust, technology */</span>
+<a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="nt">--primary-dark</span><span class="o">:</span><span class="w"> </span><span class="p">#</span><span class="nn">1e293b</span><span class="o">;</span><span class="w">      </span><span class="c">/* Text, headers */</span>
+<a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a><span class="nt">--primary-light</span><span class="o">:</span><span class="w"> </span><span class="p">#</span><span class="nn">f1f5f9</span><span class="o">;</span><span class="w">     </span><span class="c">/* Backgrounds */</span>
+</code></pre></div>
+<h4 id="semantic-colors">Semantic Colors</h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="nt">--positive-frame</span><span class="o">:</span><span class="w"> </span><span class="p">#</span><span class="nn">10b981</span><span class="o">;</span><span class="w">    </span><span class="c">/* Green - confidence/certainty */</span>
+<a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a><span class="nt">--negative-frame</span><span class="o">:</span><span class="w"> </span><span class="p">#</span><span class="nn">ef4444</span><span class="o">;</span><span class="w">    </span><span class="c">/* Red - uncertainty/error */</span>
+<a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a><span class="nt">--neutral</span><span class="o">:</span><span class="w"> </span><span class="p">#</span><span class="nn">64748b</span><span class="o">;</span><span class="w">           </span><span class="c">/* Gray - control group */</span>
+<a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a><span class="nt">--accent</span><span class="o">:</span><span class="w"> </span><span class="p">#</span><span class="nn">8b5cf6</span><span class="o">;</span><span class="w">            </span><span class="c">/* Purple - interactive elements */</span>
+</code></pre></div>
+<h4 id="dark-mode">Dark Mode</h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="nt">--dark-bg</span><span class="o">:</span><span class="w"> </span><span class="p">#</span><span class="nn">0f172a</span><span class="o">;</span>
+<a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a><span class="nt">--dark-surface</span><span class="o">:</span><span class="w"> </span><span class="p">#</span><span class="nn">1e293b</span><span class="o">;</span>
+<a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a><span class="nt">--dark-text</span><span class="o">:</span><span class="w"> </span><span class="p">#</span><span class="nn">e2e8f0</span><span class="o">;</span>
+</code></pre></div>
+<h3 id="typography">Typography</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="c">/* Headings */</span>
+<a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a><span class="nt">--font-heading</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Inter&#39;</span><span class="o">,</span><span class="w"> </span><span class="s1">&#39;Segoe UI&#39;</span><span class="o">,</span><span class="w"> </span><span class="nt">sans-serif</span><span class="o">;</span>
+<a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a><span class="nt">--h1-size</span><span class="o">:</span><span class="w"> </span><span class="nt">3</span><span class="p">.</span><span class="nc">5rem</span><span class="o">;</span><span class="w">   </span><span class="c">/* Hero titles */</span>
+<a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a><span class="nt">--h2-size</span><span class="o">:</span><span class="w"> </span><span class="nt">2</span><span class="p">.</span><span class="nc">5rem</span><span class="o">;</span><span class="w">   </span><span class="c">/* Section headers */</span>
+<a id="__codelineno-22-5" name="__codelineno-22-5" href="#__codelineno-22-5"></a><span class="nt">--h3-size</span><span class="o">:</span><span class="w"> </span><span class="nt">1</span><span class="p">.</span><span class="nc">75rem</span><span class="o">;</span><span class="w">  </span><span class="c">/* Subsections */</span>
+<a id="__codelineno-22-6" name="__codelineno-22-6" href="#__codelineno-22-6"></a>
+<a id="__codelineno-22-7" name="__codelineno-22-7" href="#__codelineno-22-7"></a><span class="c">/* Body */</span>
+<a id="__codelineno-22-8" name="__codelineno-22-8" href="#__codelineno-22-8"></a><span class="nt">--font-body</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Inter&#39;</span><span class="o">,</span><span class="w"> </span><span class="s1">&#39;Segoe UI&#39;</span><span class="o">,</span><span class="w"> </span><span class="nt">sans-serif</span><span class="o">;</span>
+<a id="__codelineno-22-9" name="__codelineno-22-9" href="#__codelineno-22-9"></a><span class="nt">--body-size</span><span class="o">:</span><span class="w"> </span><span class="nt">1</span><span class="p">.</span><span class="nc">125rem</span><span class="o">;</span>
+<a id="__codelineno-22-10" name="__codelineno-22-10" href="#__codelineno-22-10"></a><span class="nt">--line-height</span><span class="o">:</span><span class="w"> </span><span class="nt">1</span><span class="p">.</span><span class="nc">75</span><span class="o">;</span>
+<a id="__codelineno-22-11" name="__codelineno-22-11" href="#__codelineno-22-11"></a>
+<a id="__codelineno-22-12" name="__codelineno-22-12" href="#__codelineno-22-12"></a><span class="c">/* Code/Technical */</span>
+<a id="__codelineno-22-13" name="__codelineno-22-13" href="#__codelineno-22-13"></a><span class="nt">--font-mono</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;JetBrains Mono&#39;</span><span class="o">,</span><span class="w"> </span><span class="s1">&#39;Courier New&#39;</span><span class="o">,</span><span class="w"> </span><span class="nt">monospace</span><span class="o">;</span>
+</code></pre></div>
+<h3 id="spacing-system">Spacing System</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="nt">--space-xs</span><span class="o">:</span><span class="w"> </span><span class="nt">0</span><span class="p">.</span><span class="nc">5rem</span><span class="o">;</span><span class="w">   </span><span class="c">/* 8px */</span>
+<a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a><span class="nt">--space-sm</span><span class="o">:</span><span class="w"> </span><span class="nt">1rem</span><span class="o">;</span><span class="w">     </span><span class="c">/* 16px */</span>
+<a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a><span class="nt">--space-md</span><span class="o">:</span><span class="w"> </span><span class="nt">1</span><span class="p">.</span><span class="nc">5rem</span><span class="o">;</span><span class="w">   </span><span class="c">/* 24px */</span>
+<a id="__codelineno-23-4" name="__codelineno-23-4" href="#__codelineno-23-4"></a><span class="nt">--space-lg</span><span class="o">:</span><span class="w"> </span><span class="nt">2</span><span class="p">.</span><span class="nc">5rem</span><span class="o">;</span><span class="w">   </span><span class="c">/* 40px */</span>
+<a id="__codelineno-23-5" name="__codelineno-23-5" href="#__codelineno-23-5"></a><span class="nt">--space-xl</span><span class="o">:</span><span class="w"> </span><span class="nt">4rem</span><span class="o">;</span><span class="w">     </span><span class="c">/* 64px */</span>
+</code></pre></div>
+<h3 id="component-styles">Component Styles</h3>
+<h4 id="cards">Cards</h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="p">.</span><span class="nc">card</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a><span class="w">  </span><span class="k">background</span><span class="p">:</span><span class="w"> </span><span class="kc">white</span><span class="p">;</span>
+<a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a><span class="w">  </span><span class="k">border-radius</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="kt">px</span><span class="p">;</span>
+<a id="__codelineno-24-4" name="__codelineno-24-4" href="#__codelineno-24-4"></a><span class="w">  </span><span class="k">box-shadow</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">4</span><span class="kt">px</span><span class="w"> </span><span class="mi">6</span><span class="kt">px</span><span class="w"> </span><span class="nb">rgba</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mf">0.1</span><span class="p">);</span>
+<a id="__codelineno-24-5" name="__codelineno-24-5" href="#__codelineno-24-5"></a><span class="w">  </span><span class="k">padding</span><span class="p">:</span><span class="w"> </span><span class="nf">var</span><span class="p">(</span><span class="nv">--space-lg</span><span class="p">);</span>
+<a id="__codelineno-24-6" name="__codelineno-24-6" href="#__codelineno-24-6"></a><span class="w">  </span><span class="k">transition</span><span class="p">:</span><span class="w"> </span><span class="k">transform</span><span class="w"> </span><span class="mf">0.2</span><span class="kt">s</span><span class="p">,</span><span class="w"> </span><span class="k">box-shadow</span><span class="w"> </span><span class="mf">0.2</span><span class="kt">s</span><span class="p">;</span>
+<a id="__codelineno-24-7" name="__codelineno-24-7" href="#__codelineno-24-7"></a><span class="p">}</span>
+<a id="__codelineno-24-8" name="__codelineno-24-8" href="#__codelineno-24-8"></a>
+<a id="__codelineno-24-9" name="__codelineno-24-9" href="#__codelineno-24-9"></a><span class="p">.</span><span class="nc">card</span><span class="p">:</span><span class="nd">hover</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-24-10" name="__codelineno-24-10" href="#__codelineno-24-10"></a><span class="w">  </span><span class="k">transform</span><span class="p">:</span><span class="w"> </span><span class="nb">translateY</span><span class="p">(</span><span class="mi">-4</span><span class="kt">px</span><span class="p">);</span>
+<a id="__codelineno-24-11" name="__codelineno-24-11" href="#__codelineno-24-11"></a><span class="w">  </span><span class="k">box-shadow</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">12</span><span class="kt">px</span><span class="w"> </span><span class="mi">24</span><span class="kt">px</span><span class="w"> </span><span class="nb">rgba</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mf">0.15</span><span class="p">);</span>
+<a id="__codelineno-24-12" name="__codelineno-24-12" href="#__codelineno-24-12"></a><span class="p">}</span>
+</code></pre></div>
+<h4 id="buttons">Buttons</h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="p">.</span><span class="nc">btn-primary</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a><span class="w">  </span><span class="k">background</span><span class="p">:</span><span class="w"> </span><span class="nf">var</span><span class="p">(</span><span class="nv">--primary-blue</span><span class="p">);</span>
+<a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a><span class="w">  </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="kc">white</span><span class="p">;</span>
+<a id="__codelineno-25-4" name="__codelineno-25-4" href="#__codelineno-25-4"></a><span class="w">  </span><span class="k">padding</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="kt">px</span><span class="w"> </span><span class="mi">32</span><span class="kt">px</span><span class="p">;</span>
+<a id="__codelineno-25-5" name="__codelineno-25-5" href="#__codelineno-25-5"></a><span class="w">  </span><span class="k">border-radius</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="kt">px</span><span class="p">;</span>
+<a id="__codelineno-25-6" name="__codelineno-25-6" href="#__codelineno-25-6"></a><span class="w">  </span><span class="k">font-weight</span><span class="p">:</span><span class="w"> </span><span class="mi">600</span><span class="p">;</span>
+<a id="__codelineno-25-7" name="__codelineno-25-7" href="#__codelineno-25-7"></a><span class="w">  </span><span class="k">transition</span><span class="p">:</span><span class="w"> </span><span class="kc">all</span><span class="w"> </span><span class="mf">0.2</span><span class="kt">s</span><span class="p">;</span>
+<a id="__codelineno-25-8" name="__codelineno-25-8" href="#__codelineno-25-8"></a><span class="p">}</span>
+<a id="__codelineno-25-9" name="__codelineno-25-9" href="#__codelineno-25-9"></a>
+<a id="__codelineno-25-10" name="__codelineno-25-10" href="#__codelineno-25-10"></a><span class="p">.</span><span class="nc">btn-primary</span><span class="p">:</span><span class="nd">hover</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-25-11" name="__codelineno-25-11" href="#__codelineno-25-11"></a><span class="w">  </span><span class="k">background</span><span class="p">:</span><span class="w"> </span><span class="mh">#1d4ed8</span><span class="p">;</span>
+<a id="__codelineno-25-12" name="__codelineno-25-12" href="#__codelineno-25-12"></a><span class="w">  </span><span class="k">transform</span><span class="p">:</span><span class="w"> </span><span class="nb">scale</span><span class="p">(</span><span class="mf">1.05</span><span class="p">);</span>
+<a id="__codelineno-25-13" name="__codelineno-25-13" href="#__codelineno-25-13"></a><span class="p">}</span>
+</code></pre></div>
+<hr />
+<h2 id="6-key-features-functionality">6. Key Features &amp; Functionality</h2>
+<h3 id="must-have-features-mvp">Must-Have Features (MVP)</h3>
+<ol>
+<li><strong>Responsive Design</strong> - Mobile, tablet, desktop</li>
+<li><strong>Section Navigation</strong> - Smooth scrolling between sections</li>
+<li><strong>Content Presentation</strong> - All prestudy content formatted</li>
+<li><strong>Figure Display</strong> - All images/diagrams with captions</li>
+<li><strong>Citation System</strong> - Clickable references</li>
+<li><strong>Dark Mode</strong> - Toggle between themes</li>
+</ol>
+<h3 id="should-have-features">Should-Have Features</h3>
+<ol>
+<li><strong>Interactive AI-TAM Model</strong> - Clickable diagram</li>
+<li><strong>Framing Demo</strong> - Simple experiment simulation</li>
+<li><strong>Glossary</strong> - Term definitions</li>
+<li><strong>Download Center</strong> - PDF and materials</li>
+<li><strong>Search</strong> - Find content quickly</li>
+<li><strong>Progress Tracking</strong> - Reading progress indicator</li>
+</ol>
+<h3 id="nice-to-have-features">Nice-to-Have Features</h3>
+<ol>
+<li><strong>Animated Transitions</strong> - Smooth page animations</li>
+<li><strong>3D Visualizations</strong> - Advanced model representations</li>
+<li><strong>Multi-language</strong> - German/English toggle</li>
+<li><strong>Annotations</strong> - User can highlight and note</li>
+<li><strong>Share Functionality</strong> - Share specific sections</li>
+<li><strong>Print Optimization</strong> - Print-friendly version</li>
+</ol>
+<hr />
+<h2 id="7-content-mapping-latex-web">7. Content Mapping (LaTeX → Web)</h2>
+<h3 id="section-mapping">Section Mapping</h3>
+<table>
+<thead>
+<tr>
+<th>LaTeX Section</th>
+<th>Web Section</th>
+<th>Component Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>01_einleitung.tex</code></td>
+<td>Introduction</td>
+<td>Multi-subsection page</td>
+</tr>
+<tr>
+<td><code>02_theory.tex</code></td>
+<td>Theoretical Framework</td>
+<td>Interactive model page</td>
+</tr>
+<tr>
+<td><code>03_methodology.tex</code></td>
+<td>Research Design</td>
+<td>Diagram-heavy page</td>
+</tr>
+<tr>
+<td><code>02_forschungsfrage.tex</code></td>
+<td>Research Question</td>
+<td>Highlight card</td>
+</tr>
+<tr>
+<td><code>04_selbstreflexion.tex</code></td>
+<td>Reflection</td>
+<td>Text page</td>
+</tr>
+<tr>
+<td>Figures</td>
+<td>Gallery + Lightbox</td>
+<td>Image component</td>
+</tr>
+<tr>
+<td>Tables</td>
+<td>Responsive tables</td>
+<td>Table component</td>
+</tr>
+<tr>
+<td>Bibliography</td>
+<td>References</td>
+<td>Searchable list</td>
+</tr>
+</tbody>
+</table>
+<h3 id="content-extraction-strategy">Content Extraction Strategy</h3>
+<ol>
+<li><strong>Manual Extraction:</strong> Copy key content from .tex files</li>
+<li><strong>Structure as JSON:</strong> Create <code>content.json</code> with structured data</li>
+<li><strong>Asset Migration:</strong> Move images to <code>/assets/images/</code></li>
+<li><strong>Citation Database:</strong> Extract bibliography to JSON</li>
+<li><strong>Dynamic Rendering:</strong> JavaScript renders content from JSON</li>
+</ol>
+<hr />
+<h2 id="8-implementation-phases">8. Implementation Phases</h2>
+<h3 id="phase-1-foundation-week-1">Phase 1: Foundation (Week 1)</h3>
+<ul>
+<li>[ ] Set up project structure</li>
+<li>[ ] Create HTML skeleton</li>
+<li>[ ] Implement CSS design system</li>
+<li>[ ] Build navigation components</li>
+<li>[ ] Set up responsive grid</li>
+</ul>
+<h3 id="phase-2-content-week-2">Phase 2: Content (Week 2)</h3>
+<ul>
+<li>[ ] Extract content from LaTeX</li>
+<li>[ ] Structure content as JSON</li>
+<li>[ ] Implement content rendering</li>
+<li>[ ] Add all figures and tables</li>
+<li>[ ] Implement citation system</li>
+</ul>
+<h3 id="phase-3-interactivity-week-3">Phase 3: Interactivity (Week 3)</h3>
+<ul>
+<li>[ ] Build AI-TAM interactive model</li>
+<li>[ ] Create framing experiment demo</li>
+<li>[ ] Add glossary functionality</li>
+<li>[ ] Implement search</li>
+<li>[ ] Add animations</li>
+</ul>
+<h3 id="phase-4-polish-week-4">Phase 4: Polish (Week 4)</h3>
+<ul>
+<li>[ ] Optimize performance</li>
+<li>[ ] Cross-browser testing</li>
+<li>[ ] Accessibility audit</li>
+<li>[ ] Mobile optimization</li>
+<li>[ ] Deploy to hosting</li>
+</ul>
+<hr />
+<h2 id="9-technical-considerations">9. Technical Considerations</h2>
+<h3 id="performance">Performance</h3>
+<ul>
+<li>Lazy load images</li>
+<li>Minify CSS/JS</li>
+<li>Use CDN for libraries</li>
+<li>Implement service worker for offline access</li>
+<li>Optimize images (WebP format)</li>
+</ul>
+<h3 id="seo">SEO</h3>
+<ul>
+<li>Semantic HTML5</li>
+<li>Meta tags for each section</li>
+<li>Open Graph tags</li>
+<li>Structured data (Schema.org)</li>
+<li>Sitemap</li>
+</ul>
+<h3 id="browser-support">Browser Support</h3>
+<ul>
+<li>Modern browsers (last 2 versions)</li>
+<li>Progressive enhancement</li>
+<li>Graceful degradation for older browsers</li>
+</ul>
+<h3 id="hosting-options">Hosting Options</h3>
+<ul>
+<li><strong>GitHub Pages</strong> - Free, simple</li>
+<li><strong>Netlify</strong> - Free tier, CI/CD</li>
+<li><strong>Vercel</strong> - Free tier, optimized</li>
+<li><strong>University Server</strong> - If available</li>
+</ul>
+<hr />
+<h2 id="10-next-steps">10. Next Steps</h2>
+<h3 id="immediate-actions">Immediate Actions</h3>
+<ol>
+<li><strong>Review &amp; Approve Concept</strong> - Get feedback on this document</li>
+<li><strong>Choose Tech Stack</strong> - Vanilla JS vs. Vite build</li>
+<li><strong>Create Wireframes</strong> - Sketch key pages</li>
+<li><strong>Set Up Repository</strong> - Initialize project structure</li>
+<li><strong>Extract First Section</strong> - Start with introduction</li>
+</ol>
+<h3 id="questions-to-resolve">Questions to Resolve</h3>
+<ul>
+<li>[ ] Should we include actual experiment functionality or just simulation?</li>
+<li>[ ] Language: German only, English only, or bilingual?</li>
+<li>[ ] Target deployment date?</li>
+<li>[ ] Any specific university requirements for thesis websites?</li>
+<li>[ ] Should we integrate with existing thesis repository?</li>
+</ul>
+<hr />
+<h2 id="appendix-inspiration-references">Appendix: Inspiration &amp; References</h2>
+<h3 id="design-inspiration">Design Inspiration</h3>
+<ul>
+<li><strong>Distill.pub</strong> - Interactive research articles</li>
+<li><strong>Observable</strong> - Data visualization narratives</li>
+<li><strong>Stripe Docs</strong> - Clean, modern documentation</li>
+<li><strong>Linear</strong> - Smooth animations and interactions</li>
+</ul>
+<h3 id="technical-references">Technical References</h3>
+<ul>
+<li><strong>Chart.js</strong> - https://www.chartjs.org/</li>
+<li><strong>AOS</strong> - https://michalsnik.github.io/aos/</li>
+<li><strong>Prism.js</strong> - https://prismjs.com/</li>
+<li><strong>MathJax</strong> - https://www.mathjax.org/</li>
+</ul>
+<hr />
+<p><strong>Document Version:</strong> 1.0<br />
+<strong>Created:</strong> 2025-12-09<br />
+<strong>Author:</strong> AI Assistant (Antigravity)<br />
+<strong>Status:</strong> Draft for Review</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "navigation.top", "search.suggest", "search.highlight", "content.code.copy", "content.code.annotate"], "search": "../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+    
+  </body>
+</html>
