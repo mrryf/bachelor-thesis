@@ -142,9 +142,10 @@ jobs:
             texlive-${{ runner.os }}-
 
       - name: Install LaTeX (minimal packages)
+        timeout-minutes: 15
         run: |
           sudo apt-get update
-          sudo apt-get install -y \
+          sudo apt-get install -y -o Acquire::Retries=3 -o Acquire::http::Timeout=60 \
             texlive-latex-base \
             texlive-latex-extra \
             texlive-bibtex-extra \
