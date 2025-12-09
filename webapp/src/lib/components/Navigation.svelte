@@ -6,11 +6,11 @@
 
     let mobileMenuOpen = $state(false);
 
+    // Close mobile menu when route changes
     $effect(() => {
-        // Close mobile menu on navigation
-        page.subscribe(() => {
-            mobileMenuOpen = false;
-        });
+        // Access page store to create reactive dependency
+        $page;
+        mobileMenuOpen = false;
     });
 </script>
 
