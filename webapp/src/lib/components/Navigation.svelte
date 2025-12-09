@@ -1,16 +1,25 @@
 <script lang="ts">
-    import { navItems } from "$lib/data/content";
+    import { navItems, githubUrl } from "$lib/data/content";
     import { page } from "$app/stores";
     import { Button } from "$lib/components/ui/button";
-    import { Separator } from "$lib/components/ui/separator";
+    import { Github, Menu, X } from "lucide-svelte";
 
-    $: currentPath = $page.url.pathname;
+    let mobileMenuOpen = $state(false);
+
+    $effect(() => {
+        // Close mobile menu on navigation
+        page.subscribe(() => {
+            mobileMenuOpen = false;
+        });
+    });
 </script>
 
-<nav class="border-b bg-background sticky top-0 z-50">
+<nav
+    class="border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 sticky top-0 z-50"
+>
     <div class="container mx-auto px-4">
         <div class="flex h-16 items-center justify-between">
-            <!-- Logo/Title -->
+            <!-- Logo/Home -->
             <a
                 href="/"
                 class="flex items-center space-x-2 hover:opacity-80 transition-opacity"
@@ -23,57 +32,70 @@
                 {#each navItems as item}
                     <a href={item.href}>
                         <Button
-                            variant={currentPath === item.href
+                            variant={$page.url.pathname === item.href
                                 ? "default"
                                 : "ghost"}
                             size="sm"
-                            class="text-sm"
                         >
-                            <span class="font-medium mr-1">{item.number}.</span>
                             {item.title}
                         </Button>
                     </a>
                 {/each}
+
+                <!-- GitHub Link -->
+                <a href={githubUrl} target="_blank" rel="noopener noreferrer">
+                    <Button variant="ghost" size="sm" class="gap-2">
+                        <Github class="h-4 w-4" />
+                        <span class="sr-only">GitHub</span>
+                    </Button>
+                </a>
             </div>
 
             <!-- Mobile Menu Button -->
-            <div class="md:hidden">
-                <Button variant="ghost" size="sm">
-                    <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                    >
-                        <line x1="4" x2="20" y1="12" y2="12" />
-                        <line x1="4" x2="20" y1="6" y2="6" />
-                        <line x1="4" x2="20" y1="18" y2="18" />
-                    </svg>
-                </Button>
-            </div>
+            <button
+                class="md:hidden p-2 hover:bg-accent rounded-md transition-colors"
+                onclick={() => (mobileMenuOpen = !mobileMenuOpen)}
+            >
+                {#if mobileMenuOpen}
+                    <X class="h-6 w-6" />
+                {:else}
+                    <Menu class="h-6 w-6" />
+                {/if}
+            </button>
         </div>
 
         <!-- Mobile Navigation -->
-        <div class="md:hidden pb-4 space-y-1">
-            {#each navItems as item}
-                <a href={item.href} class="block">
+        {#if mobileMenuOpen}
+            <div class="md:hidden pb-4 space-y-1 border-t pt-4">
+                {#each navItems as item}
+                    <a href={item.href} class="block">
+                        <Button
+                            variant={$page.url.pathname === item.href
+                                ? "default"
+                                : "ghost"}
+                            size="sm"
+                            class="w-full justify-start"
+                        >
+                            {item.title}
+                        </Button>
+                    </a>
+                {/each}
+                <a
+                    href={githubUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="block"
+                >
                     <Button
-                        variant={currentPath === item.href
-                            ? "default"
-                            : "ghost"}
+                        variant="ghost"
                         size="sm"
-                        class="w-full justify-start text-sm"
+                        class="w-full justify-start gap-2"
                     >
-                        <span class="font-medium mr-1">{item.number}.</span>
-                        {item.title}
+                        <Github class="h-4 w-4" />
+                        GitHub
                     </Button>
                 </a>
-            {/each}
-        </div>
+            </div>
+        {/if}
     </div>
 </nav>
