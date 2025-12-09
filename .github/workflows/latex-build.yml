@@ -3,8 +3,22 @@ name: Build LaTeX Document
 on:
   push:
     branches: [ "main", "master", "github-action-toc-check" ]
+    paths:
+      - 'content/**'
+      - 'scripts/**'
+      - 'tests/**'
+      - 'Makefile'
+      - 'requirements*.txt'
+      - '.github/workflows/latex-build.yml'
   pull_request:
     branches: [ "main", "master" ]
+    paths:
+      - 'content/**'
+      - 'scripts/**'
+      - 'tests/**'
+      - 'Makefile'
+      - 'requirements*.txt'
+      - '.github/workflows/latex-build.yml'
 
 jobs:
   lint_python:
@@ -144,6 +158,8 @@ jobs:
       - name: Install LaTeX (minimal packages)
         timeout-minutes: 15
         run: |
+          # Switch from Azure mirror to Main Ubuntu mirror to avoid timeouts
+          sudo sed -i 's/azure.archive.ubuntu.com/archive.ubuntu.com/g' /etc/apt/sources.list
           sudo apt-get update
           sudo apt-get install -y -o Acquire::Retries=3 -o Acquire::http::Timeout=60 \
             texlive-latex-base \
