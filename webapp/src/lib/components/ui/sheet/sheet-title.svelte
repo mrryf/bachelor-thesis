@@ -6,13 +6,13 @@
 	let {
 		ref = $bindable(null),
 		class: className,
-		level = "h2",
+		level = 2,
 		children,
 		...restProps
 	}: {
 		ref?: HTMLHeadingElement | null;
 		class?: string;
-		level?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
+		level?: 1 | 2 | 3 | 4 | 5 | 6;
 		children?: Snippet;
 	} = $props();
 </script>

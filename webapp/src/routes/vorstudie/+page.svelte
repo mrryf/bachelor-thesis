@@ -55,8 +55,10 @@
                 const rect = target.getBoundingClientRect();
                 glossaryTooltipX = rect.left;
                 glossaryTooltipY = rect.bottom;
-                glossaryTooltipTerm = target.getAttribute("data-glossary-term") || "";
-                glossaryTooltipDefinition = target.getAttribute("data-glossary-definition") || "";
+                glossaryTooltipTerm =
+                    target.getAttribute("data-glossary-term") || "";
+                glossaryTooltipDefinition =
+                    target.getAttribute("data-glossary-definition") || "";
                 glossaryTooltipVisible = true;
             } else if (target.classList.contains("citation-ref")) {
                 const rect = target.getBoundingClientRect();
@@ -95,9 +97,10 @@
         const scrolled = window.scrollY;
 
         // Prevent division by zero
-        scrollProgress = documentHeight > 0
-            ? Math.min((scrolled / documentHeight) * 100, 100)
-            : 0;
+        scrollProgress =
+            documentHeight > 0
+                ? Math.min((scrolled / documentHeight) * 100, 100)
+                : 0;
     }
 
     // Throttle scroll handler to improve performance (max once per 100ms)
@@ -115,13 +118,15 @@
                         activeSection = entry.target.id;
 
                         // Track reading progress
-                        const section = sections.find((s) => s.id === entry.target.id);
+                        const section = sections.find(
+                            (s) => s.id === entry.target.id,
+                        );
                         if (section) {
                             readingProgress.update(
                                 "/vorstudie",
                                 section.id,
                                 `${section.number}. ${section.title}`,
-                                scrollProgress
+                                scrollProgress,
                             );
                         }
                     }
@@ -130,7 +135,7 @@
             {
                 rootMargin: "-100px 0px -80% 0px",
                 threshold: 0,
-            }
+            },
         );
 
         // Observe all sections
@@ -171,7 +176,9 @@
                 <Progress
                     value={scrollProgress}
                     class="h-1"
-                    aria-label="Lesefortschritt: {Math.round(scrollProgress)} Prozent"
+                    aria-label="Lesefortschritt: {Math.round(
+                        scrollProgress,
+                    )} Prozent"
                 />
                 <p class="text-xs text-muted-foreground mt-1 text-center">
                     {Math.round(scrollProgress)}% gelesen
@@ -199,7 +206,7 @@
                             <span
                                 class="flex items-center gap-1 text-xs opacity-70"
                                 aria-label="{calculateReadingTime(
-                                    section.wordCount
+                                    section.wordCount,
                                 )} Minuten Lesezeit"
                             >
                                 <Clock class="h-3 w-3" aria-hidden="true" />
@@ -245,7 +252,9 @@
                 <p>
                     Dieses Dokument nutzt moderne Web-Technologien für eine
                     verbesserte Leseerfahrung. Fahren Sie mit der Maus über
-                    <span class="font-semibold text-primary">hervorgehobene Begriffe</span>
+                    <span class="font-semibold text-primary"
+                        >hervorgehobene Begriffe</span
+                    >
                     für sofortige Definitionen.
                 </p>
             </Callout>
@@ -294,17 +303,17 @@
                 <SectionNav
                     prevSection={index > 0
                         ? {
-                                id: sections[index - 1].id,
-                                number: sections[index - 1].number,
-                                title: sections[index - 1].title,
-                            }
+                              id: sections[index - 1].id,
+                              number: sections[index - 1].number,
+                              title: sections[index - 1].title,
+                          }
                         : null}
                     nextSection={index < sections.length - 1
                         ? {
-                                id: sections[index + 1].id,
-                                number: sections[index + 1].number,
-                                title: sections[index + 1].title,
-                            }
+                              id: sections[index + 1].id,
+                              number: sections[index + 1].number,
+                              title: sections[index + 1].title,
+                          }
                         : null}
                 />
             </section>
@@ -313,15 +322,18 @@
 
     <!-- Mobile TOC Floating Action Button -->
     <Sheet.Root bind:open={tocSheetOpen}>
-        <Sheet.Trigger asChild>
-            <Button
-                variant="default"
-                size="icon"
-                class="fixed bottom-6 right-6 z-40 h-14 w-14 rounded-full shadow-lg lg:hidden"
-                aria-label="Open table of contents"
-            >
-                <List class="h-6 w-6" />
-            </Button>
+        <Sheet.Trigger>
+            {#snippet child({ props })}
+                <Button
+                    variant="default"
+                    size="icon"
+                    class="fixed bottom-6 right-6 z-40 h-14 w-14 rounded-full shadow-lg lg:hidden"
+                    aria-label="Open table of contents"
+                    {...props}
+                >
+                    <List class="h-6 w-6" />
+                </Button>
+            {/snippet}
         </Sheet.Trigger>
 
         <Sheet.Content side="bottom" class="h-[80vh] overflow-y-auto">
@@ -356,7 +368,7 @@
                             <span
                                 class="flex items-center gap-1 text-xs opacity-70"
                                 aria-label="{calculateReadingTime(
-                                    section.wordCount
+                                    section.wordCount,
                                 )} Minuten Lesezeit"
                             >
                                 <Clock class="h-3 w-3" aria-hidden="true" />
@@ -367,7 +379,9 @@
 
                     <!-- Subsections in mobile TOC -->
                     {#if section.subsections && section.subsections.length > 0}
-                        <div class="ml-4 space-y-1 border-l-2 border-muted pl-4">
+                        <div
+                            class="ml-4 space-y-1 border-l-2 border-muted pl-4"
+                        >
                             {#each section.subsections as subsection, i}
                                 <a
                                     href="#{subsection.id}"

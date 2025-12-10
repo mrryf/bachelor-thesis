@@ -59,9 +59,13 @@
 		class="fixed inset-0 z-50 flex items-center justify-center bg-black/90"
 		transition:fade={{ duration: 200 }}
 		onclick={handleClose}
+		onkeydown={(e) => {
+			if (e.key === "Escape") handleClose();
+		}}
 		role="dialog"
 		aria-modal="true"
 		aria-label="Image lightbox"
+		tabindex={-1}
 	>
 		<!-- Controls -->
 		<div class="absolute top-4 right-4 flex gap-2 z-10">
@@ -118,7 +122,9 @@
 		</div>
 
 		<!-- Zoom level indicator -->
-		<div class="absolute top-4 left-4 bg-white/10 text-white px-3 py-1 rounded-md text-sm">
+		<div
+			class="absolute top-4 left-4 bg-white/10 text-white px-3 py-1 rounded-md text-sm"
+		>
 			{Math.round(zoomLevel * 100)}%
 		</div>
 
@@ -126,6 +132,8 @@
 		<div
 			class="max-w-[90vw] max-h-[90vh] overflow-auto p-4"
 			onclick={(e) => e.stopPropagation()}
+			onkeydown={(e) => e.stopPropagation()}
+			role="presentation"
 		>
 			<img
 				{src}
@@ -142,6 +150,9 @@
 			<div
 				class="absolute bottom-4 left-1/2 -translate-x-1/2 bg-white/10 backdrop-blur-sm text-white px-4 py-2 rounded-lg max-w-2xl text-center text-sm"
 				onclick={(e) => e.stopPropagation()}
+				onkeydown={(e) => e.stopPropagation()}
+				role="button"
+				tabindex={0}
 			>
 				{caption}
 			</div>

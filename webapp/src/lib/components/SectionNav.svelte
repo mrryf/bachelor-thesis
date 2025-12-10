@@ -7,8 +7,16 @@
 		prevSection,
 		nextSection,
 	}: {
-		prevSection?: { id: string; number: number; title: string } | null;
-		nextSection?: { id: string; number: number; title: string } | null;
+		prevSection?: {
+			id: string;
+			number: number | string;
+			title: string;
+		} | null;
+		nextSection?: {
+			id: string;
+			number: number | string;
+			title: string;
+		} | null;
 	} = $props();
 </script>
 

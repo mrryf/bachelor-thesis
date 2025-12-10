@@ -20,7 +20,9 @@
 	let copiedFormat = $state<string | null>(null);
 
 	// Get current URL if not provided
-	const citationUrl = $derived(url || (typeof window !== "undefined" ? window.location.href : ""));
+	const citationUrl = $derived(
+		url || (typeof window !== "undefined" ? window.location.href : ""),
+	);
 
 	// Citation formats
 	const citations = $derived({
@@ -50,18 +52,21 @@
 </script>
 
 <Sheet.Root bind:open={citationSheetOpen}>
-	<Sheet.Trigger asChild>
-		<Button variant="outline" size="sm" class="gap-2">
-			<Quote class="h-4 w-4" />
-			Zitieren
-		</Button>
+	<Sheet.Trigger>
+		{#snippet child({ props })}
+			<Button variant="outline" size="sm" class="gap-2" {...props}>
+				<Quote class="h-4 w-4" />
+				Zitieren
+			</Button>
+		{/snippet}
 	</Sheet.Trigger>
 
 	<Sheet.Content side="bottom" class="h-[70vh] overflow-y-auto">
 		<Sheet.Header class="mb-6">
 			<Sheet.Title>Diese Arbeit zitieren</Sheet.Title>
 			<Sheet.Description>
-				Wählen Sie ein Zitationsformat und kopieren Sie es in Ihre Zwischenablage
+				Wählen Sie ein Zitationsformat und kopieren Sie es in Ihre
+				Zwischenablage
 			</Sheet.Description>
 		</Sheet.Header>
 
@@ -71,7 +76,9 @@
 					<CardContent class="p-4">
 						<div class="flex items-start justify-between gap-4">
 							<div class="flex-1 min-w-0">
-								<h3 class="font-semibold text-sm mb-2">{format}</h3>
+								<h3 class="font-semibold text-sm mb-2">
+									{format}
+								</h3>
 								<p
 									class="text-sm text-muted-foreground whitespace-pre-wrap break-words font-mono text-xs"
 								>
@@ -82,7 +89,10 @@
 								variant="ghost"
 								size="icon"
 								class="flex-shrink-0"
-								onclick={() => copyCitation(format as keyof typeof citations)}
+								onclick={() =>
+									copyCitation(
+										format as keyof typeof citations,
+									)}
 								aria-label={`${format} Zitation kopieren`}
 							>
 								{#if copiedFormat === format}
@@ -99,8 +109,8 @@
 
 		<div class="mt-6 text-xs text-muted-foreground">
 			<p>
-				Hinweis: Bitte überprüfen Sie das Format entsprechend den Richtlinien
-				Ihrer Institution.
+				Hinweis: Bitte überprüfen Sie das Format entsprechend den
+				Richtlinien Ihrer Institution.
 			</p>
 		</div>
 	</Sheet.Content>
