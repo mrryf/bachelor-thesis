@@ -40,12 +40,21 @@
             {#each figures as figure, i}
                 <Card
                     class="overflow-hidden hover:shadow-lg transition-shadow cursor-pointer group"
-                    onclick={() => openLightbox(figure.src, figure.alt, `Abbildung ${i + 1}: ${figure.caption}`)}
+                    onclick={() =>
+                        openLightbox(
+                            figure.src,
+                            figure.alt,
+                            `Abbildung ${i + 1}: ${figure.caption}`,
+                        )}
                     role="button"
-                    tabindex="0"
+                    tabindex={0}
                     onkeydown={(e) => {
                         if (e.key === "Enter" || e.key === " ") {
-                            openLightbox(figure.src, figure.alt, `Abbildung ${i + 1}: ${figure.caption}`);
+                            openLightbox(
+                                figure.src,
+                                figure.alt,
+                                `Abbildung ${i + 1}: ${figure.caption}`,
+                            );
                         }
                     }}
                 >

@@ -173,13 +173,13 @@
     // Derived state for highlighting
     const highlightedPath = $derived.by(() => {
         const element = lockedElement || hoveredElement;
-        if (!element || !('source' in element)) return null;
+        if (!element || !("source" in element)) return null;
 
         const edge = element as Edge;
         return {
             source: edge.source,
             target: edge.target,
-            edgeId: edge.id
+            edgeId: edge.id,
         };
     });
 
@@ -236,7 +236,10 @@
         }
     }
 
-    const displayedElement = $derived(lockedElement || hoveredElement);
+    const displayedElement = $derived(lockedElement || hoveredElement) as
+        | Node
+        | Edge
+        | null;
 
     // Helper to find node by id
     const getNode = (id: string): Node | undefined =>
@@ -294,10 +297,15 @@
     }
 </script>
 
+<!-- svelte-ignore a11y_no_static_element_interactions -->
 <div
     class="relative w-full overflow-hidden p-6 bg-background border rounded-lg shadow-sm transition-shadow hover:shadow-md"
     onmousemove={handleMouseMove}
     onclick={handleClickOutside}
+    onkeydown={(e) => {
+        if (e.key === "Escape") handleClickOutside();
+    }}
+    tabindex={0}
     role="application"
     aria-label="Interactive hypothesis diagram showing relationships between variables. Click edges or nodes to lock tooltips."
 >
@@ -330,7 +338,12 @@
                 />
             </marker>
             <filter id="shadow">
-                <feDropShadow dx="0" dy="1" stdDeviation="2" flood-opacity="0.1" />
+                <feDropShadow
+                    dx="0"
+                    dy="1"
+                    stdDeviation="2"
+                    flood-opacity="0.1"
+                />
             </filter>
         </defs>
 
@@ -408,7 +421,9 @@
 
         <!-- Draw Nodes -->
         {#each nodes as node}
-            {@const isHighlighted = highlightedPath?.source === node.id || highlightedPath?.target === node.id}
+            {@const isHighlighted =
+                highlightedPath?.source === node.id ||
+                highlightedPath?.target === node.id}
             {@const isLocked = lockedElement === node}
             <g
                 class="cursor-pointer group"
@@ -472,12 +487,15 @@
             class:pointer-events-none={!isLocked}
             class:border-border={!isLocked}
             class:border-primary={isLocked}
-            style="left: {mouseX + TOOLTIP_OFFSET}px; top: {mouseY + TOOLTIP_OFFSET}px;"
+            style="left: {mouseX + TOOLTIP_OFFSET}px; top: {mouseY +
+                TOOLTIP_OFFSET}px;"
         >
             <div class="font-bold mb-1.5 text-primary flex items-center gap-2">
                 {displayedElement.label}
                 {#if isLocked}
-                    <span class="text-xs font-normal opacity-70">(angepinnt)</span>
+                    <span class="text-xs font-normal opacity-70"
+                        >(angepinnt)</span
+                    >
                 {/if}
             </div>
             <div class="text-muted-foreground leading-relaxed">

@@ -7,7 +7,7 @@
 		children,
 		...restProps
 	}: {
-		child?: Snippet;
+		child?: Snippet<[any]>;
 		children?: Snippet;
 	} = $props();
 </script>

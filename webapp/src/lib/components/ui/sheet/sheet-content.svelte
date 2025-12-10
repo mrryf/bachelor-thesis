@@ -35,18 +35,16 @@
 
 <SheetPrimitive.Portal>
 	<SheetPrimitive.Overlay
-		transition={fade}
-		transitionConfig={{ duration: 150 }}
+		{...{ transition: fade, transitionConfig: { duration: 150 } } as any}
 		class="fixed inset-0 z-50 bg-background/80 backdrop-blur-sm"
 	/>
 	<SheetPrimitive.Content
 		bind:ref
-		transition={fly}
-		transitionConfig={transitions[side]}
+		{...{ transition: fly, transitionConfig: transitions[side] } as any}
 		class={cn(
 			"fixed z-50 gap-4 bg-background p-6 shadow-lg",
 			sideClasses[side],
-			className
+			className,
 		)}
 		{...restProps}
 	>

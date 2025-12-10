@@ -6,13 +6,15 @@
 
 	// Find the glossary entry for this term
 	const glossaryEntry = $derived(
-		glossaryTerms.find((entry) => entry.term === term)
+		glossaryTerms.find((entry) => entry.term === term),
 	);
 
 	// If term not found in glossary, just render plain text
-	if (!glossaryEntry) {
-		console.warn(`Glossary term "${term}" not found in glossary data`);
-	}
+	$effect(() => {
+		if (!glossaryEntry) {
+			console.warn(`Glossary term "${term}" not found in glossary data`);
+		}
+	});
 </script>
 
 {#if glossaryEntry}
