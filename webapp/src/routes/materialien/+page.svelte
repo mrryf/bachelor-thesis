@@ -2,7 +2,20 @@
     import { figures } from "$lib/data/content";
     import { Card, CardContent } from "$lib/components/ui/card";
     import { Separator } from "$lib/components/ui/separator";
+    import Lightbox from "$lib/components/Lightbox.svelte";
     import { Image, Table, BookOpen } from "lucide-svelte";
+
+    let lightboxOpen = $state(false);
+    let lightboxSrc = $state("");
+    let lightboxAlt = $state("");
+    let lightboxCaption = $state("");
+
+    function openLightbox(src: string, alt: string, caption: string) {
+        lightboxSrc = src;
+        lightboxAlt = alt;
+        lightboxCaption = caption;
+        lightboxOpen = true;
+    }
 </script>
 
 <svelte:head>
@@ -25,12 +38,33 @@
         </div>
         <div class="grid gap-6 md:grid-cols-2">
             {#each figures as figure, i}
-                <Card class="overflow-hidden hover:shadow-lg transition-shadow">
-                    <img
-                        src={figure.src}
-                        alt={figure.alt}
-                        class="w-full aspect-video object-cover"
-                    />
+                <Card
+                    class="overflow-hidden hover:shadow-lg transition-shadow cursor-pointer group"
+                    onclick={() => openLightbox(figure.src, figure.alt, `Abbildung ${i + 1}: ${figure.caption}`)}
+                    role="button"
+                    tabindex="0"
+                    onkeydown={(e) => {
+                        if (e.key === "Enter" || e.key === " ") {
+                            openLightbox(figure.src, figure.alt, `Abbildung ${i + 1}: ${figure.caption}`);
+                        }
+                    }}
+                >
+                    <div class="relative overflow-hidden">
+                        <img
+                            src={figure.src}
+                            alt={figure.alt}
+                            class="w-full aspect-video object-cover transition-transform group-hover:scale-105"
+                        />
+                        <div
+                            class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center"
+                        >
+                            <div
+                                class="opacity-0 group-hover:opacity-100 transition-opacity bg-white/90 rounded-full p-3"
+                            >
+                                <Image class="h-6 w-6 text-primary" />
+                            </div>
+                        </div>
+                    </div>
                     <CardContent class="py-4">
                         <p class="text-sm font-medium">Abbildung {i + 1}</p>
                         <p class="text-sm text-muted-foreground">
@@ -40,6 +74,14 @@
                 </Card>
             {/each}
         </div>
+
+        <!-- Lightbox -->
+        <Lightbox
+            bind:open={lightboxOpen}
+            src={lightboxSrc}
+            alt={lightboxAlt}
+            caption={lightboxCaption}
+        />
     </section>
 
     <Separator class="my-12" />

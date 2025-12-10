@@ -6,6 +6,7 @@
 		CardHeader,
 		CardTitle,
 	} from "$lib/components/ui/card";
+	import ContinueReading from "$lib/components/ContinueReading.svelte";
 	import { navItems, githubUrl } from "$lib/data/content";
 	import {
 		ArrowRight,
@@ -99,6 +100,11 @@
 	<!-- Quick Links Grid -->
 	<section class="bg-muted/50 py-16 px-4">
 		<div class="container mx-auto max-w-6xl">
+			<!-- Continue Reading Card -->
+			<div class="mb-8 max-w-md mx-auto">
+				<ContinueReading />
+			</div>
+
 			<h2 class="text-2xl font-semibold mb-8 text-center">
 				Inhalte erkunden
 			</h2>
@@ -106,7 +112,7 @@
 				{#each pageCards as card}
 					<a href={card.href} class="group">
 						<Card
-							class="h-full hover:shadow-lg transition-all duration-200 hover:border-primary/50"
+							class="h-full hover-lift hover:border-primary/50"
 						>
 							<CardHeader
 								class="flex flex-row items-center gap-4"
