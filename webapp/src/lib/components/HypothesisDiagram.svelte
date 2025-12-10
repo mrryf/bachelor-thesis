@@ -166,16 +166,32 @@
     ];
 
     let hoveredElement: Node | Edge | null = $state(null);
+    let lockedElement: Node | Edge | null = $state(null);
     let mouseX = $state(0);
     let mouseY = $state(0);
 
+    // Derived state for highlighting
+    const highlightedPath = $derived.by(() => {
+        const element = lockedElement || hoveredElement;
+        if (!element || !('source' in element)) return null;
+
+        const edge = element as Edge;
+        return {
+            source: edge.source,
+            target: edge.target,
+            edgeId: edge.id
+        };
+    });
+
     function handleMouseOver(event: MouseEvent, element: Node | Edge): void {
-        hoveredElement = element;
-        updateMousePosition(event);
+        if (!lockedElement) {
+            hoveredElement = element;
+            updateMousePosition(event);
+        }
     }
 
     function handleMouseMove(event: MouseEvent): void {
-        if (hoveredElement) {
+        if (hoveredElement && !lockedElement) {
             updateMousePosition(event);
         }
     }
@@ -186,22 +202,41 @@
     }
 
     function handleMouseOut(): void {
-        hoveredElement = null;
+        if (!lockedElement) {
+            hoveredElement = null;
+        }
+    }
+
+    function handleClick(event: MouseEvent, element: Node | Edge): void {
+        event.stopPropagation();
+        if (lockedElement === element) {
+            lockedElement = null;
+        } else {
+            lockedElement = element;
+            updateMousePosition(event);
+        }
+    }
+
+    function handleClickOutside(): void {
+        lockedElement = null;
     }
 
     function handleKeyDown(event: KeyboardEvent, element: Node | Edge): void {
         if (event.key === "Enter" || event.key === " ") {
             event.preventDefault();
-            const syntheticEvent = {
-                clientX: mouseX || 0,
-                clientY: mouseY || 0,
-            } as MouseEvent;
-            hoveredElement = hoveredElement === element ? null : element;
+            if (lockedElement === element) {
+                lockedElement = null;
+            } else {
+                lockedElement = element;
+            }
         }
         if (event.key === "Escape") {
+            lockedElement = null;
             hoveredElement = null;
         }
     }
+
+    const displayedElement = $derived(lockedElement || hoveredElement);
 
     // Helper to find node by id
     const getNode = (id: string): Node | undefined =>
@@ -262,8 +297,9 @@
 <div
     class="relative w-full overflow-hidden p-6 bg-background border rounded-lg shadow-sm transition-shadow hover:shadow-md"
     onmousemove={handleMouseMove}
+    onclick={handleClickOutside}
     role="application"
-    aria-label="Interactive hypothesis diagram showing relationships between variables"
+    aria-label="Interactive hypothesis diagram showing relationships between variables. Click edges or nodes to lock tooltips."
 >
     <svg
         viewBox="0 0 950 500"
@@ -301,14 +337,18 @@
         <!-- Draw Edges -->
         {#each edges as edge}
             {@const labelPos = getLabelPos(edge)}
+            {@const isHighlighted = highlightedPath?.edgeId === edge.id}
+            {@const isLocked = lockedElement === edge}
             <g
                 class="cursor-pointer group transition-opacity duration-200"
                 onmouseenter={(e) => handleMouseOver(e, edge)}
                 onmouseleave={handleMouseOut}
+                onclick={(e) => handleClick(e, edge)}
                 onkeydown={(e) => handleKeyDown(e, edge)}
                 role="button"
                 tabindex="0"
                 aria-label="Hypothesis {edge.label}: {edge.description}"
+                aria-pressed={isLocked}
             >
                 <!-- Invisible wide path for easier hovering -->
                 <path
@@ -322,10 +362,14 @@
                     d={getPath(edge)}
                     fill="none"
                     stroke="currentColor"
-                    stroke-width={EDGE_WIDTH}
+                    stroke-width={isHighlighted ? EDGE_WIDTH * 2 : EDGE_WIDTH}
                     marker-end="url(#arrowhead)"
-                    class="text-muted-foreground/40 group-hover:text-primary group-focus:text-primary transition-all duration-200"
-                    style="stroke-dasharray: {hoveredElement === edge ? '0' : ''};"
+                    class:text-muted-foreground={!isHighlighted}
+                    class:opacity-40={!isHighlighted}
+                    class:text-primary={isHighlighted}
+                    class:opacity-100={isHighlighted}
+                    class="transition-all duration-200"
+                    style="stroke-dasharray: {isHighlighted ? '0' : ''};"
                 />
                 <!-- Label Background -->
                 <rect
@@ -364,14 +408,18 @@
 
         <!-- Draw Nodes -->
         {#each nodes as node}
+            {@const isHighlighted = highlightedPath?.source === node.id || highlightedPath?.target === node.id}
+            {@const isLocked = lockedElement === node}
             <g
                 class="cursor-pointer group"
                 onmouseenter={(e) => handleMouseOver(e, node)}
                 onmouseleave={handleMouseOut}
+                onclick={(e) => handleClick(e, node)}
                 onkeydown={(e) => handleKeyDown(e, node)}
                 role="button"
                 tabindex="0"
                 aria-label="{node.label}: {node.description}"
+                aria-pressed={isLocked}
             >
                 <!-- Node Shadow -->
                 <rect
@@ -392,7 +440,12 @@
                     height={NODE_HEIGHT}
                     rx={NODE_RADIUS}
                     fill="currentColor"
-                    class="text-card stroke-border stroke-[2.5] group-hover:stroke-primary group-focus:stroke-primary group-hover:stroke-[3] transition-all duration-200"
+                    class="text-card transition-all duration-200"
+                    class:stroke-border={!isHighlighted}
+                    class:stroke-primary={isHighlighted}
+                    class:!stroke-primary={isLocked}
+                    class:stroke-[2.5]={!isHighlighted}
+                    class:stroke-[4]={isHighlighted}
                     filter="url(#shadow)"
                 />
                 <!-- Node Text -->
@@ -400,7 +453,9 @@
                     x={node.x + NODE_WIDTH / 2}
                     y={node.y + NODE_HEIGHT / 2 + 5}
                     text-anchor="middle"
-                    class="text-sm font-semibold fill-foreground group-hover:fill-primary group-focus:fill-primary transition-colors duration-200 pointer-events-none select-none"
+                    class="text-sm font-semibold transition-colors duration-200 pointer-events-none select-none"
+                    class:fill-foreground={!isHighlighted}
+                    class:fill-primary={isHighlighted}
                 >
                     {node.label}
                 </text>
@@ -409,18 +464,30 @@
     </svg>
 
     <!-- Tooltip -->
-    {#if hoveredElement}
+    {#if displayedElement}
+        {@const isLocked = lockedElement === displayedElement}
         <div
             transition:fade={{ duration: 150 }}
-            class="fixed z-50 px-4 py-3 text-sm rounded-lg shadow-xl bg-popover text-popover-foreground border-2 border-border pointer-events-none max-w-sm backdrop-blur-sm"
+            class="fixed z-50 px-4 py-3 text-sm rounded-lg shadow-xl bg-popover text-popover-foreground border-2 max-w-sm backdrop-blur-sm"
+            class:pointer-events-none={!isLocked}
+            class:border-border={!isLocked}
+            class:border-primary={isLocked}
             style="left: {mouseX + TOOLTIP_OFFSET}px; top: {mouseY + TOOLTIP_OFFSET}px;"
         >
-            <div class="font-bold mb-1.5 text-primary">
-                {hoveredElement.label}
+            <div class="font-bold mb-1.5 text-primary flex items-center gap-2">
+                {displayedElement.label}
+                {#if isLocked}
+                    <span class="text-xs font-normal opacity-70">(angepinnt)</span>
+                {/if}
             </div>
             <div class="text-muted-foreground leading-relaxed">
-                {hoveredElement.description}
+                {displayedElement.description}
             </div>
+            {#if isLocked}
+                <div class="text-xs text-muted-foreground mt-2 italic">
+                    Klicken Sie erneut oder drücken Sie ESC zum Schließen
+                </div>
+            {/if}
         </div>
     {/if}
 </div>
