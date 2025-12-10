@@ -22,7 +22,7 @@
             <!-- Logo/Home -->
             <a
                 href="/"
-                class="flex items-center space-x-2 hover:opacity-80 transition-opacity"
+                class="flex items-center space-x-2 hover:text-primary transition-colors duration-200"
             >
                 <span class="font-bold text-lg">Vertrauen in KI</span>
             </a>
@@ -53,8 +53,9 @@
 
             <!-- Mobile Menu Button -->
             <button
-                class="md:hidden p-2 hover:bg-accent rounded-md transition-colors"
+                class="md:hidden p-2 hover:bg-accent rounded-md transition-all duration-200 active:scale-95"
                 onclick={() => (mobileMenuOpen = !mobileMenuOpen)}
+                aria-label={mobileMenuOpen ? "Menü schließen" : "Menü öffnen"}
             >
                 {#if mobileMenuOpen}
                     <X class="h-6 w-6" />
