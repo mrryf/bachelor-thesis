@@ -25,6 +25,7 @@
     "autoprefixer": "^10.4.16",
     "bits-ui": "^1.8.0",
     "clsx": "^2.1.1",
+    "isomorphic-dompurify": "^2.34.0",
     "jsdom": "^24.0.0",
     "postcss": "^8.4.32",
     "svelte": "^5.0.0",

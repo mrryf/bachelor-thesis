@@ -11,23 +11,63 @@
         CardTitle,
     } from "$lib/components/ui/card";
     import { Separator } from "$lib/components/ui/separator";
+    import { Progress } from "$lib/components/ui/progress";
     import ReadingTime from "$lib/components/ReadingTime.svelte";
     import { Clock, List } from "lucide-svelte";
+    import { throttle, sanitizeHtml } from "$lib/utils";
 
     const readingTime = calculateReadingTime(totalWordCount);
 
     let activeSection = $state("");
+    let scrollProgress = $state(0);
 
-    function handleScroll() {
-        const sectionElements = document.querySelectorAll("section[id]");
-        for (const section of sectionElements) {
-            const rect = section.getBoundingClientRect();
-            if (rect.top <= 100 && rect.bottom > 100) {
-                activeSection = section.id;
-                break;
-            }
-        }
+    /**
+     * Calculates scroll progress with safety guard against division by zero
+     */
+    function updateScrollProgress() {
+        const documentHeight =
+            document.documentElement.scrollHeight -
+            document.documentElement.clientHeight;
+        const scrolled = window.scrollY;
+
+        // Prevent division by zero
+        scrollProgress = documentHeight > 0
+            ? Math.min((scrolled / documentHeight) * 100, 100)
+            : 0;
     }
+
+    // Throttle scroll handler to improve performance (max once per 100ms)
+    const handleScroll = throttle(updateScrollProgress, 100);
+
+    /**
+     * Sets up Intersection Observer for efficient active section detection
+     */
+    $effect(() => {
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        activeSection = entry.target.id;
+                    }
+                });
+            },
+            {
+                rootMargin: "-100px 0px -80% 0px",
+                threshold: 0,
+            }
+        );
+
+        // Observe all sections
+        const sectionElements = document.querySelectorAll("section[id]");
+        sectionElements.forEach((section) => {
+            observer.observe(section);
+        });
+
+        // Cleanup on unmount
+        return () => {
+            observer.disconnect();
+        };
+    });
 </script>
 
 <svelte:head>
@@ -38,15 +78,33 @@
 
 <div class="flex">
     <!-- Sticky Table of Contents (Desktop) -->
-    <aside class="hidden lg:block w-64 shrink-0">
+    <aside
+        class="hidden lg:block w-64 shrink-0"
+        aria-label="Inhaltsverzeichnis"
+    >
         <div class="sticky top-20 p-4">
             <div
                 class="flex items-center gap-2 mb-4 text-sm text-muted-foreground"
             >
-                <List class="h-4 w-4" />
+                <List class="h-4 w-4" aria-hidden="true" />
                 <span class="font-medium">Inhaltsverzeichnis</span>
             </div>
-            <nav class="space-y-1">
+
+            <!-- Scroll Progress Bar -->
+            <div class="mb-4">
+                <Progress
+                    value={scrollProgress}
+                    class="h-1"
+                    aria-label="Lesefortschritt: {Math.round(scrollProgress)} Prozent"
+                />
+                <p class="text-xs text-muted-foreground mt-1 text-center">
+                    {Math.round(scrollProgress)}% gelesen
+                </p>
+            </div>
+
+            <Separator class="mb-4" />
+
+            <nav class="space-y-1" aria-label="Abschnitte">
                 {#each sections as section}
                     <a
                         href="#{section.id}"
@@ -54,16 +112,27 @@
                         section.id
                             ? 'bg-primary text-primary-foreground'
                             : 'text-muted-foreground hover:text-foreground hover:bg-muted'}"
+                        aria-current={activeSection === section.id
+                            ? "location"
+                            : undefined}
                     >
-                        {section.number}. {section.title}
+                        <div class="flex items-center justify-between gap-2">
+                            <span>
+                                {section.number}. {section.title}
+                            </span>
+                            <span
+                                class="flex items-center gap-1 text-xs opacity-70"
+                                aria-label="{calculateReadingTime(
+                                    section.wordCount
+                                )} Minuten Lesezeit"
+                            >
+                                <Clock class="h-3 w-3" aria-hidden="true" />
+                                {calculateReadingTime(section.wordCount)}
+                            </span>
+                        </div>
                     </a>
                 {/each}
             </nav>
-            <Separator class="my-4" />
-            <div class="flex items-center gap-2 text-sm text-muted-foreground">
-                <Clock class="h-4 w-4" />
-                <span>{readingTime} min Lesezeit</span>
-            </div>
         </div>
     </aside>
 
@@ -75,9 +144,12 @@
                 Vertrauen in Künstliche Intelligenz: Wie Framing das Vertrauen
                 in LLM-basierte Applikationen beeinflusst
             </p>
-            <div class="flex items-center gap-4 text-sm text-muted-foreground">
+            <div
+                class="flex items-center gap-4 text-sm text-muted-foreground"
+                aria-label="Dokumentinformationen"
+            >
                 <ReadingTime minutes={readingTime} />
-                <span>•</span>
+                <span aria-hidden="true">•</span>
                 <span>{totalWordCount.toLocaleString()} Wörter</span>
             </div>
         </header>
@@ -92,7 +164,7 @@
                 <div
                     class="prose prose-slate dark:prose-invert max-w-none mb-8"
                 >
-                    {@html section.content}
+                    {@html sanitizeHtml(section.content)}
                 </div>
 
                 {#if section.subsections && section.subsections.length > 0}
@@ -109,7 +181,7 @@
                                     <div
                                         class="prose prose-slate dark:prose-invert max-w-none"
                                     >
-                                        {@html subsection.content}
+                                        {@html sanitizeHtml(subsection.content)}
                                     </div>
                                 </CardContent>
                             </Card>
