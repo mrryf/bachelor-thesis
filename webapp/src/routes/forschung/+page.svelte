@@ -30,6 +30,12 @@
         { id: "H6", path: "PEOU → BI", direction: "+", basis: "TAM" },
         { id: "H7", path: "PU → CI", direction: "+", basis: "AI-TAM" },
         { id: "H8", path: "BI → CI", direction: "+", basis: "AI-TAM" },
+        {
+            id: "H9",
+            path: "FAMTEC → PU",
+            direction: "+",
+            basis: "TAM Extension",
+        },
     ];
 </script>
 
