@@ -1,0 +1,1245 @@
+[
+  {
+    "id": "google_inc_google_2025",
+    "authors": [
+      "Google Inc."
+    ],
+    "year": 2025,
+    "title": "Google",
+    "type": "web",
+    "journal": "Google Gemini",
+    "url": "https://gemini.google.com"
+  },
+  {
+    "id": "anthropic_anthropic_2025",
+    "authors": [
+      "Anthropic"
+    ],
+    "year": 2025,
+    "title": "Anthropic Claude",
+    "type": "web",
+    "journal": "Claude.ai",
+    "url": "https://claude.ai/"
+  },
+  {
+    "id": "openai_openai_2025",
+    "authors": [
+      "OpenAI"
+    ],
+    "year": 2025,
+    "title": "OpenAI",
+    "type": "web",
+    "journal": "OpenAI",
+    "url": "https://openai.com/"
+  },
+  {
+    "id": "kanton_basel-stadt_alva_2025",
+    "authors": [
+      "Kanton Basel-Stadt"
+    ],
+    "year": 2025,
+    "title": "Alva Chatbot",
+    "type": "web",
+    "journal": "Kanton Basel-Stadt",
+    "url": "https://www.bs.ch/alva"
+  },
+  {
+    "id": "kelle_integration_2008",
+    "authors": [
+      "Kelle, Udo"
+    ],
+    "year": 2008,
+    "title": "Die Integration",
+    "type": "book",
+    "doi": "10.1007/978-3-531-91174-8",
+    "url": "http://link.springer.com/10.1007/978-3-531-91174-8",
+    "publisher": "VS Verlag für Sozialwissenschaften"
+  },
+  {
+    "id": "noauthor_website_2024",
+    "authors": [
+      "Unknown"
+    ],
+    "year": 2024,
+    "title": "Website Kanton",
+    "type": "web",
+    "journal": "Kanton Basel-Stadt",
+    "url": "https://www.bs.ch/"
+  },
+  {
+    "id": "liip_ag_swiss_2025",
+    "authors": [
+      "Liip AG"
+    ],
+    "year": 2025,
+    "title": "Swiss Web",
+    "type": "web",
+    "journal": "Homepage Liip AG",
+    "url": "https://www.liip.ch/en"
+  },
+  {
+    "id": "zhai_effects_2024",
+    "authors": [
+      "Zhai, Chunpeng",
+      "Wibowo, Santoso",
+      "Li, Lily D."
+    ],
+    "year": 2024,
+    "title": "The effects of over-reliance on AI",
+    "type": "article",
+    "journal": "Smart Learning Environments",
+    "volume": "11",
+    "issue": "1",
+    "pages": "28",
+    "doi": "10.1186/s40561-024-00316-7",
+    "url": "https://doi.org/10.1186/s40561-024-00316-7"
+  },
+  {
+    "id": "noauthor_evaluating_nodate",
+    "authors": [
+      "Unknown"
+    ],
+    "year": 0,
+    "title": "Evaluating Human",
+    "type": "web",
+    "url": "https://arxiv.org/html/2407.19098v1"
+  },
+  {
+    "id": "cao_understanding_2021",
+    "authors": [
+      "Cao, Guangming",
+      "Duan, Yanqing",
+      "Edwards, John S.",
+      "Dwivedi, Yogesh K."
+    ],
+    "year": 2021,
+    "title": "Understanding managers’ attitudes and behavioral intentions towards using artificial intelligence for organizational decision-making",
+    "type": "article",
+    "journal": "Technovation",
+    "volume": "106",
+    "pages": "102312",
+    "doi": "10.1016/j.technovation.2021.102312",
+    "url": "https://www.sciencedirect.com/science/article/pii/S0166497221000936"
+  },
+  {
+    "id": "gillath_attachment_2021",
+    "authors": [
+      "Gillath, Omri",
+      "Ai, Ting",
+      "Branicky, Michael S.",
+      "Keshmiri, Shawn",
+      "Davison, Robert B.",
+      "Spaulding, Ryan"
+    ],
+    "year": 2021,
+    "title": "Attachment and trust in artificial intelligence",
+    "type": "article",
+    "journal": "Computers in Human Behavior",
+    "volume": "115",
+    "pages": "106607",
+    "doi": "10.1016/j.chb.2020.106607",
+    "url": "https://www.sciencedirect.com/science/article/pii/S074756322030354X"
+  },
+  {
+    "id": "wen_trust_2025",
+    "authors": [
+      "Wen, Yanjun",
+      "Wang, Jiale",
+      "Chen, Xiaoxi"
+    ],
+    "year": 2025,
+    "title": "Trust and AI",
+    "type": "article",
+    "journal": "Frontiers in Organizational Psychology",
+    "volume": "3",
+    "doi": "10.3389/forgp.2025.1419403",
+    "url": "https://www.frontiersin.org/journals/organizational-psychology/articles/10.3389/forgp.2025.1419403/full"
+  },
+  {
+    "id": "chen_systematic_2025",
+    "authors": [
+      "Chen, Junjie",
+      "Xie, Wei",
+      "Xie, Qing",
+      "Hu, Anshu",
+      "Qiao, Yiran",
+      "Wan, Ruoyu",
+      "Liu, Yuhan"
+    ],
+    "year": 2025,
+    "title": "A Systematic",
+    "type": "article",
+    "journal": "Journal of Intelligence",
+    "volume": "13",
+    "issue": "7",
+    "pages": "78",
+    "doi": "10.3390/jintelligence13070078",
+    "url": "https://www.mdpi.com/2079-3200/13/7/78"
+  },
+  {
+    "id": "tversky_framing_1986",
+    "authors": [
+      "Tversky, Amos",
+      "Kahneman, Daniel"
+    ],
+    "year": 1986,
+    "title": "The Framing",
+    "type": "book",
+    "booktitle": "Studies in Logic",
+    "volume": "114",
+    "pages": "503--520",
+    "doi": "10.1016/S0049-237X(09)70710-4",
+    "url": "https://www.sciencedirect.com/science/article/pii/S0049237X09707104",
+    "publisher": "Elsevier"
+  },
+  {
+    "id": "freling_when_2014",
+    "authors": [
+      "Freling, Traci H.",
+      "Vincent, Leslie H.",
+      "Henard, David H."
+    ],
+    "year": 2014,
+    "title": "When not to accentuate the positive: Re",
+    "type": "article",
+    "journal": "Organizational Behavior and Human Decision Processes",
+    "volume": "124",
+    "issue": "2",
+    "pages": "95--109",
+    "doi": "10.1016/j.obhdp.2013.12.007",
+    "url": "https://www.sciencedirect.com/science/article/pii/S0749597814000090"
+  },
+  {
+    "id": "cugurullo_fear_2024",
+    "authors": [
+      "Cugurullo, Federico",
+      "Acheampong, Ransford A."
+    ],
+    "year": 2024,
+    "title": "Fear of AI",
+    "type": "article",
+    "journal": "AI \\& SOCIETY",
+    "volume": "39",
+    "issue": "4",
+    "pages": "1569--1584",
+    "doi": "10.1007/s00146-022-01598-6",
+    "url": "https://doi.org/10.1007/s00146-022-01598-6"
+  },
+  {
+    "id": "cunningham_how_2025",
+    "authors": [
+      "Cunningham, Thomas",
+      "Deming, J. David",
+      "Hitzig, Zoe",
+      "Ong, Christopher",
+      "Yan Shan, Carl",
+      "Wadman, Kevin"
+    ],
+    "year": 2025,
+    "title": "How People",
+    "type": "web",
+    "doi": "10.3386/w34255",
+    "url": "https://www.nber.org/papers/w34255"
+  },
+  {
+    "id": "baroni_ai-tam_2022",
+    "authors": [
+      "Baroni, Ilaria",
+      "Calegari, Gloria Re",
+      "Scandolari, Damiano",
+      "Celino, Irene"
+    ],
+    "year": 2022,
+    "title": "AI",
+    "type": "article",
+    "journal": "Human Computation",
+    "volume": "9",
+    "issue": "1",
+    "pages": "1--21",
+    "doi": "10.15346/hc.v9i1.134",
+    "url": "https://hcjournal.org/index.php/jhc/article/view/134"
+  },
+  {
+    "id": "ray_can_2019",
+    "authors": [
+      "Ray, Arijit",
+      "Yao, Yi",
+      "Kumar, Rakesh",
+      "Divakaran, Ajay",
+      "Burachas, Giedrius"
+    ],
+    "year": 2019,
+    "title": "Can You",
+    "type": "article",
+    "journal": "Proceedings of the AAAI Conference on Human Computation and Crowdsourcing",
+    "volume": "7",
+    "pages": "153--161",
+    "doi": "10.1609/hcomp.v7i1.5275"
+  },
+  {
+    "id": "lee_trust_2004",
+    "authors": [
+      "Lee, John D.",
+      "See, Katrina A."
+    ],
+    "year": 2004,
+    "title": "Trust in Automation",
+    "type": "article",
+    "journal": "Human Factors",
+    "volume": "46",
+    "issue": "1",
+    "pages": "50--80",
+    "doi": "10.1518/hfes.46.1.50_30392",
+    "url": "https://journals.sagepub.com/action/showAbstract"
+  },
+  {
+    "id": "sasmannshausen_vertrauen_2020",
+    "authors": [
+      "Saßmannshausen, Till Moritz",
+      "Heupel, Thomas"
+    ],
+    "year": 2020,
+    "title": "Vertrauen in KI",
+    "type": "book",
+    "booktitle": "Künstliche Intelligenz",
+    "pages": "169--192",
+    "doi": "10.1007/978-3-658-29550-9_10",
+    "url": "https://doi.org/10.1007/978-3-658-29550-9_10",
+    "publisher": "Springer Fachmedien"
+  },
+  {
+    "id": "singh_generative_2024",
+    "authors": [
+      "Singh, Dr Preet Deep"
+    ],
+    "year": 2024,
+    "title": "Generative AI",
+    "type": "web",
+    "doi": "10.2139/ssrn.4953174",
+    "url": "https://papers.ssrn.com/abstract=4953174",
+    "publisher": "Social Science Research Network"
+  },
+  {
+    "id": "kelly_what_2023",
+    "authors": [
+      "Kelly, Sage",
+      "Kaye, Sherrie-Anne",
+      "Oviedo-Trespalacios, Oscar"
+    ],
+    "year": 2023,
+    "title": "What factors contribute to the acceptance of artificial intelligence? A",
+    "type": "article",
+    "journal": "Telematics and Informatics",
+    "volume": "77",
+    "pages": "101925",
+    "doi": "10.1016/j.tele.2022.101925",
+    "url": "https://www.sciencedirect.com/science/article/pii/S0736585322001587"
+  },
+  {
+    "id": "budnik_can_2025",
+    "authors": [
+      "Budnik, Christian"
+    ],
+    "year": 2025,
+    "title": "Can We",
+    "type": "article",
+    "journal": "Philosophy \\& Technology",
+    "volume": "38",
+    "doi": "10.1007/s13347-024-00820-1"
+  },
+  {
+    "id": "kim_communicating_2022",
+    "authors": [
+      "Kim, Taenyun",
+      "Song, Hayeon"
+    ],
+    "year": 2022,
+    "title": "Communicating the Limitations",
+    "type": "article",
+    "journal": "International Journal of Human-Computer Interaction",
+    "volume": "39",
+    "pages": "1--11",
+    "doi": "10.1080/10447318.2022.2049134"
+  },
+  {
+    "id": "schreiber_psychologie_2020",
+    "authors": [
+      "Schreiber, Marc",
+      "Gloor, Peter A."
+    ],
+    "year": 2020,
+    "title": "Psychologie und künstliche Intelligenz",
+    "type": "article",
+    "pages": "161--180",
+    "doi": "10.1007/978-3-662-60465-6_12",
+    "url": "https://digitalcollection.zhaw.ch/handle/11475/19724"
+  },
+  {
+    "id": "karg_ai_2024",
+    "authors": [
+      "Karg, Jona"
+    ],
+    "year": 2024,
+    "title": "In AI",
+    "type": "article",
+    "url": "https://irf.fhnw.ch/handle/11654/47513"
+  },
+  {
+    "id": "lelli_co-intelligence_2025",
+    "authors": [
+      "Lelli, Chiara",
+      "Chiarello, Filippo",
+      "Giordano, Vito"
+    ],
+    "year": 2025,
+    "title": "Co-intelligence in design: the importance of trust in artificial intelligence",
+    "type": "article",
+    "journal": "Proceedings of the Design Society",
+    "volume": "5",
+    "pages": "971--980",
+    "doi": "10.1017/pds.2025.10111"
+  },
+  {
+    "id": "hoffmann_psychologie_2025",
+    "authors": [
+      "Hoffmann, Oliver"
+    ],
+    "year": 2025,
+    "title": "Die Psychologie",
+    "type": "book",
+    "doi": "10.1007/978-3-662-70966-5",
+    "url": "https://link.springer.com/10.1007/978-3-662-70966-5",
+    "publisher": "Springer"
+  },
+  {
+    "id": "kopp_vertrauen_2022",
+    "authors": [
+      "Kopp, Tobias"
+    ],
+    "year": 2022,
+    "title": "Vertrauen in Roboter",
+    "type": "book",
+    "doi": "10.5445/KSP/1000146827",
+    "url": "https://library.oapen.org/handle/20.500.12657/60477",
+    "publisher": "KIT Scientific Publishing"
+  },
+  {
+    "id": "rotzel_kunstliche_2024",
+    "authors": [
+      "Rötzel, Peter Gordon"
+    ],
+    "year": 2024,
+    "title": "Künstliche Intelligenz",
+    "type": "book",
+    "booktitle": "Vertrauen in Künstliche",
+    "pages": "19--33",
+    "doi": "10.1007/978-3-658-43816-6_2",
+    "url": "https://doi.org/10.1007/978-3-658-43816-6_2",
+    "publisher": "Springer Fachmedien"
+  },
+  {
+    "id": "schork_vertrauen_2024",
+    "authors": [
+      "Unknown"
+    ],
+    "year": 2024,
+    "title": "Vertrauen in Künstliche",
+    "type": "book",
+    "doi": "10.1007/978-3-658-43816-6",
+    "url": "https://link.springer.com/10.1007/978-3-658-43816-6",
+    "publisher": "Springer Fachmedien"
+  },
+  {
+    "id": "weitz_vertrauen_2021",
+    "authors": [
+      "Weitz, Katharina"
+    ],
+    "year": 2021,
+    "title": "Vertrauen und Vertrauenswürdigkeit",
+    "type": "book",
+    "booktitle": "Soziale Roboter",
+    "pages": "309--323",
+    "doi": "10.1007/978-3-658-31114-8_16",
+    "url": "https://doi.org/10.1007/978-3-658-31114-8_16",
+    "publisher": "Springer Fachmedien"
+  },
+  {
+    "id": "tschopp_vertrauen_2022",
+    "authors": [
+      "Tschopp, Marisa",
+      "Ruef, Marc",
+      "Monett, Dagmar"
+    ],
+    "year": 2022,
+    "title": "Vertrauen Sie",
+    "type": "book",
+    "booktitle": "Kreativität und Innovation",
+    "pages": "319--346",
+    "doi": "10.1007/978-3-662-63117-1_16",
+    "url": "https://doi.org/10.1007/978-3-662-63117-1_16",
+    "publisher": "Springer"
+  },
+  {
+    "id": "schwartz_enhancing_2023",
+    "authors": [
+      "Schwartz, Sivan",
+      "Yaeli, Avi",
+      "Shlomov, Segev"
+    ],
+    "year": 2023,
+    "title": "Enhancing Trust",
+    "type": "web",
+    "doi": "10.48550/arXiv.2308.05391",
+    "url": "http://arxiv.org/abs/2308.05391",
+    "publisher": "arXiv"
+  },
+  {
+    "id": "ding_citations_2025",
+    "authors": [
+      "Ding, Yifan",
+      "Facciani, Matthew",
+      "Joyce, Ellen",
+      "Poudel, Amrit",
+      "Bhattacharya, Sanmitra",
+      "Veeramani, Balaji",
+      "Aguinaga, Sal",
+      "Weninger, Tim"
+    ],
+    "year": 2025,
+    "title": "Citations and Trust",
+    "type": "article",
+    "journal": "Proceedings of the AAAI Conference on Artificial Intelligence",
+    "volume": "39",
+    "issue": "22",
+    "pages": "23787--23795",
+    "doi": "10.1609/aaai.v39i22.34550",
+    "url": "https://ojs.aaai.org/index.php/AAAI/article/view/34550"
+  },
+  {
+    "id": "schlogl_chatbots_2024",
+    "authors": [
+      "Schlögl, Stephan",
+      "Auer, Isabelle",
+      "Gundula, Glowka"
+    ],
+    "year": 2024,
+    "title": "Chatbots in Airport",
+    "type": "article",
+    "journal": "MDPI - Publisher of Open Access Journals",
+    "volume": "16",
+    "issue": "5",
+    "pages": "19",
+    "doi": "https://doi.org/10.3390/fi16050175",
+    "url": "https://www.researchgate.net/publication/380687481_Chatbots_in_Airport_Customer_Service-Exploring_Use_Cases_and_Technology_Acceptance"
+  },
+  {
+    "id": "clegg_artificial_2024",
+    "authors": [
+      "Clegg, Stewart",
+      "Sarkar, Soumodip"
+    ],
+    "year": 2024,
+    "title": "Artificial intelligence and management education: A",
+    "type": "article",
+    "journal": "The International Journal of Management Education",
+    "volume": "22",
+    "issue": "3",
+    "pages": "101007",
+    "doi": "10.1016/j.ijme.2024.101007",
+    "url": "https://www.sciencedirect.com/science/article/pii/S1472811724000788"
+  },
+  {
+    "id": "li_developing_2024",
+    "authors": [
+      "Li, Yugang",
+      "Wu, Baizhou",
+      "Huang, Yuqi",
+      "Luan, Shenghua"
+    ],
+    "year": 2024,
+    "title": "Developing trustworthy artificial intelligence: insights from research on interpersonal, human-automation, and human-AI",
+    "type": "article",
+    "journal": "Frontiers in Psychology",
+    "volume": "15",
+    "doi": "10.3389/fpsyg.2024.1382693",
+    "url": "https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2024.1382693/full"
+  },
+  {
+    "id": "riley_emotional_2024",
+    "authors": [
+      "Riley, Breagin K.",
+      "Dixon, Andrea"
+    ],
+    "year": 2024,
+    "title": "Emotional and cognitive trust in artificial intelligence: A",
+    "type": "article",
+    "journal": "Current Opinion in Psychology",
+    "volume": "58",
+    "pages": "101833",
+    "doi": "10.1016/j.copsyc.2024.101833",
+    "url": "https://www.sciencedirect.com/science/article/pii/S2352250X24000460"
+  },
+  {
+    "id": "kuper_psychological_2025",
+    "authors": [
+      "Küper, Alisa",
+      "and Krämer, Nicole"
+    ],
+    "year": 2025,
+    "title": "Psychological Traits",
+    "type": "article",
+    "journal": "International Journal of Human–Computer Interaction",
+    "volume": "41",
+    "issue": "7",
+    "pages": "4115--4131",
+    "doi": "10.1080/10447318.2024.2348216",
+    "url": "https://doi.org/10.1080/10447318.2024.2348216"
+  },
+  {
+    "id": "lukyanenko_trust_2022",
+    "authors": [
+      "Lukyanenko, Roman",
+      "Maass, Wolfgang",
+      "Storey, Veda C."
+    ],
+    "year": 2022,
+    "title": "Trust in artificial intelligence: From",
+    "type": "article",
+    "journal": "Electronic Markets",
+    "volume": "32",
+    "issue": "4",
+    "pages": "1993--2020",
+    "doi": "10.1007/s12525-022-00605-4",
+    "url": "https://doi.org/10.1007/s12525-022-00605-4"
+  },
+  {
+    "id": "kaplan_trust_2023",
+    "authors": [
+      "Kaplan, Alexandra D.",
+      "Kessler, Theresa T.",
+      "Brill, J. Christopher",
+      "Hancock, P. A."
+    ],
+    "year": 2023,
+    "title": "Trust in Artificial",
+    "type": "article",
+    "journal": "Human Factors",
+    "volume": "65",
+    "issue": "2",
+    "pages": "337--359",
+    "doi": "10.1177/00187208211013988",
+    "url": "https://doi.org/10.1177/00187208211013988"
+  },
+  {
+    "id": "abbass_social_2019",
+    "authors": [
+      "Abbass, Hussein A."
+    ],
+    "year": 2019,
+    "title": "Social Integration",
+    "type": "article",
+    "journal": "Cognitive Computation",
+    "volume": "11",
+    "issue": "2",
+    "pages": "159--171",
+    "doi": "10.1007/s12559-018-9619-0",
+    "url": "https://doi.org/10.1007/s12559-018-9619-0"
+  },
+  {
+    "id": "lockey_review_2021",
+    "authors": [
+      "Lockey, Steven",
+      "Gillespie, Nicole",
+      "Holm, Daniel",
+      "Someh, Ida Asadi"
+    ],
+    "year": 2021,
+    "title": "A Review",
+    "type": "article",
+    "journal": "Hawaii International Conference on System Sciences 2021 (HICSS-54)",
+    "url": "https://aisel.aisnet.org/hicss-54/os/trust/2"
+  },
+  {
+    "id": "sharan_effects_2020",
+    "authors": [
+      "Sharan, Navya Nishith",
+      "Romano, Daniela Maria"
+    ],
+    "year": 2020,
+    "title": "The effects of personality and locus of control on trust in humans versus artificial intelligence",
+    "type": "article",
+    "journal": "Heliyon",
+    "volume": "6",
+    "issue": "8",
+    "doi": "10.1016/j.heliyon.2020.e04572",
+    "url": "https://www.cell.com/heliyon/abstract/S2405-8440(20)31416-X"
+  },
+  {
+    "id": "oksanen_trust_2020",
+    "authors": [
+      "Oksanen, Atte",
+      "Savela, Nina",
+      "Latikka, Rita",
+      "Koivula, Aki"
+    ],
+    "year": 2020,
+    "title": "Trust Toward",
+    "type": "article",
+    "journal": "Frontiers in Psychology",
+    "volume": "11",
+    "doi": "10.3389/fpsyg.2020.568256",
+    "url": "https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2020.568256/full"
+  },
+  {
+    "id": "levin_all_1998",
+    "authors": [
+      "Levin, Irwin",
+      "Schneider, Sandra"
+    ],
+    "year": 1998,
+    "title": "All Frames",
+    "type": "article",
+    "journal": "Organizational Behavior and Human Decision Processes",
+    "volume": "76",
+    "pages": "149--188",
+    "doi": "10.1006/obhd.1998.2804"
+  },
+  {
+    "id": "grassi_knowledge-grounded_2022",
+    "authors": [
+      "Grassi, Lucrezia",
+      "Recchiuto, Carmine",
+      "Sgorbissa, Antonio"
+    ],
+    "year": 2022,
+    "title": "Knowledge-Grounded",
+    "type": "article",
+    "journal": "International Journal of Social Robotics",
+    "volume": "14",
+    "doi": "10.1007/s12369-022-00868-z"
+  },
+  {
+    "id": "kahr_understanding_2024",
+    "authors": [
+      "Kahr, Patricia K.",
+      "Rooks, Gerrit",
+      "Willemsen, Martijn C.",
+      "Snijders, Chris C. P."
+    ],
+    "year": 2024,
+    "title": "Understanding Trust",
+    "type": "article",
+    "journal": "ACM Trans. Interact. Intell. Syst.",
+    "volume": "14",
+    "issue": "4",
+    "pages": "29:1--29:30",
+    "doi": "10.1145/3686164",
+    "url": "https://dl.acm.org/doi/10.1145/3686164"
+  },
+  {
+    "id": "davis_perceived_1989",
+    "authors": [
+      "Davis, Fred D."
+    ],
+    "year": 1989,
+    "title": "Perceived Usefulness",
+    "type": "article",
+    "journal": "MIS Quarterly",
+    "volume": "13",
+    "issue": "3",
+    "pages": "319--340",
+    "doi": "10.2307/249008",
+    "url": "https://www.jstor.org/stable/249008"
+  },
+  {
+    "id": "davis_perceived_1989-1",
+    "authors": [
+      "Davis, Fred D."
+    ],
+    "year": 1989,
+    "title": "Perceived Usefulness",
+    "type": "article",
+    "journal": "MIS Quarterly",
+    "volume": "13",
+    "issue": "3",
+    "pages": "319--340",
+    "doi": "10.2307/249008",
+    "url": "https://www.jstor.org/stable/249008"
+  },
+  {
+    "id": "manresa_humanizing_2024",
+    "authors": [
+      "Manresa, Alba",
+      "Sammour, Ammar",
+      "Mas-Machuca, Marta",
+      "Chen, Weifeng",
+      "Botchie, David"
+    ],
+    "year": 2024,
+    "title": "Humanizing GenAI",
+    "type": "article",
+    "journal": "Journal of Managerial Psychology",
+    "volume": "40",
+    "issue": "5",
+    "pages": "472--492",
+    "doi": "10.1108/JMP-05-2024-0356",
+    "url": "https://doi.org/10.1108/JMP-05-2024-0356"
+  },
+  {
+    "id": "noauthor_impact_nodate",
+    "authors": [
+      "Unknown"
+    ],
+    "year": 0,
+    "title": "The Impact",
+    "type": "web",
+    "url": "https://ieeexplore.ieee.org/abstract/document/10730325"
+  },
+  {
+    "id": "topsakal_how_2025",
+    "authors": [
+      "Topsakal, Yunus"
+    ],
+    "year": 2025,
+    "title": "How Familiarity",
+    "type": "article",
+    "journal": "International Journal of Human–Computer Interaction",
+    "volume": "41",
+    "issue": "15",
+    "pages": "9478--9491",
+    "doi": "10.1080/10447318.2024.2426044",
+    "url": "https://doi.org/10.1080/10447318.2024.2426044"
+  },
+  {
+    "id": "horowitz_adopting_2023",
+    "authors": [
+      "Horowitz, Michael C.",
+      "Kahn, Lauren",
+      "Macdonald, Julia",
+      "Schneider, Jacquelyn"
+    ],
+    "year": 2023,
+    "title": "Adopting AI",
+    "type": "web",
+    "doi": "10.48550/arXiv.2305.01405",
+    "url": "http://arxiv.org/abs/2305.01405",
+    "publisher": "arXiv"
+  },
+  {
+    "id": "sindermann_assessing_2021",
+    "authors": [
+      "Sindermann, Cornelia",
+      "Sha, Peng",
+      "Zhou, Min",
+      "Wernicke, Jennifer",
+      "Schmitt, Helena S.",
+      "Li, Mei",
+      "Sariyska, Rayna",
+      "Stavrou, Maria",
+      "Becker, Benjamin",
+      "Montag, Christian"
+    ],
+    "year": 2021,
+    "title": "Assessing the Attitude",
+    "type": "article",
+    "journal": "KI - Künstliche Intelligenz",
+    "volume": "35",
+    "issue": "1",
+    "pages": "109--118",
+    "doi": "10.1007/s13218-020-00689-0",
+    "url": "https://doi.org/10.1007/s13218-020-00689-0"
+  },
+  {
+    "id": "schepman_general_2023",
+    "authors": [
+      "Schepman, Astrid",
+      "Rodway, Paul"
+    ],
+    "year": 2023,
+    "title": "The General",
+    "type": "article",
+    "journal": "International Journal of Human–Computer Interaction",
+    "volume": "39",
+    "issue": "13",
+    "pages": "2724--2741",
+    "doi": "10.1080/10447318.2022.2085400",
+    "url": "https://doi.org/10.1080/10447318.2022.2085400"
+  },
+  {
+    "id": "ibrahim_technology_2025",
+    "authors": [
+      "Ibrahim, Fabio",
+      "Münscher, Johann-Christoph",
+      "Daseking, Monika",
+      "Telle, Nils-Torge"
+    ],
+    "year": 2025,
+    "title": "The technology acceptance model and adopter type analysis in the context of artificial intelligence",
+    "type": "article",
+    "journal": "Frontiers in Artificial Intelligence",
+    "volume": "7",
+    "doi": "10.3389/frai.2024.1496518",
+    "url": "https://www.frontiersin.org/journals/artificial-intelligence/articles/10.3389/frai.2024.1496518/full"
+  },
+  {
+    "id": "baron_moderator-mediator_1986",
+    "authors": [
+      "Baron, Reuben",
+      "Kenny, David"
+    ],
+    "year": 1986,
+    "title": "The moderator-mediator variable distinction in social psychological research: Conceptual",
+    "type": "article",
+    "journal": "Journal of Personality and Social Psychology",
+    "volume": "51",
+    "pages": "1173--1182",
+    "doi": "10.1037//0022-3514.51.6.1173"
+  },
+  {
+    "id": "nunnally_psychometric_1994",
+    "authors": [
+      "Nunnally, Jum C.",
+      "Bernstein, Ira H."
+    ],
+    "year": 1994,
+    "title": "Psychometric Theory",
+    "type": "book",
+    "booktitle": "Psychometric Theory",
+    "pages": "752",
+    "url": "https://search.library.berkeley.edu/discovery/fulldisplay/alma991055658409706532/01UCS_BER:UCB",
+    "publisher": "McGraw-Hill"
+  },
+  {
+    "id": "nunnally_psychometric_nodate",
+    "authors": [
+      "Nunnally, Jum C.",
+      "Bernstein, Ira H."
+    ],
+    "year": 0,
+    "title": "Psychometric theory / Jum",
+    "type": "web",
+    "url": "https://search.library.berkeley.edu/discovery/fulldisplay/alma991055658409706532/01UCS_BER:UCB"
+  },
+  {
+    "id": "gade_konfirmatorische_2020",
+    "authors": [
+      "Gäde, Jana C.",
+      "Schermelleh-Engel, Karin",
+      "Brandt, Holger"
+    ],
+    "year": 2020,
+    "title": "Konfirmatorische Faktorenanalyse",
+    "type": "book",
+    "pages": "615--659",
+    "doi": "10.1007/978-3-662-61532-4_24"
+  },
+  {
+    "id": "joreskog_lisrel_1981",
+    "authors": [
+      "Jöreskog, Karl G.",
+      "Sörbom, Dag"
+    ],
+    "year": 1981,
+    "title": "LISREL",
+    "type": "book",
+    "publisher": "University of Uppsala"
+  },
+  {
+    "id": "anderson_structural_1988",
+    "authors": [
+      "Anderson, James C.",
+      "Gerbing, David W."
+    ],
+    "year": 1988,
+    "title": "Structural equation modeling in practice: A",
+    "type": "article",
+    "journal": "Psychological Bulletin",
+    "volume": "103",
+    "issue": "3",
+    "pages": "411--423",
+    "doi": "10.1037/0033-2909.103.3.411"
+  },
+  {
+    "id": "bentler_eqs_1995",
+    "authors": [
+      "Bentler, Peter M."
+    ],
+    "year": 1995,
+    "title": "EQS",
+    "type": "article",
+    "issue": "6",
+    "pages": "418",
+    "url": "https://www3.nd.edu/~kyuan/courses/sem/EQS-Manual6.pdf"
+  },
+  {
+    "id": "hu_cutoff_1999",
+    "authors": [
+      "Hu, Li-tze",
+      "Bentler, Peter M."
+    ],
+    "year": 1999,
+    "title": "Cutoff criteria for fit indexes in covariance structure analysis: Conventional",
+    "type": "article",
+    "journal": "Structural Equation Modeling",
+    "volume": "6",
+    "issue": "1",
+    "pages": "1--55",
+    "doi": "10.1080/10705519909540118"
+  },
+  {
+    "id": "browne_alternative_1992",
+    "authors": [
+      "Browne, Michael W.",
+      "Cudeck, Robert"
+    ],
+    "year": 1992,
+    "title": "Alternative Ways",
+    "type": "article",
+    "journal": "Sociological Methods \\& Research",
+    "volume": "21",
+    "issue": "2",
+    "pages": "230--258",
+    "doi": "10.1177/0049124192021002005",
+    "url": "https://doi.org/10.1177/0049124192021002005"
+  },
+  {
+    "id": "steiger_statistically-based_1980",
+    "authors": [
+      "Steiger, James H.",
+      "Lind, J.C."
+    ],
+    "year": 1980,
+    "title": "Statistically-based tests for the number of factors (Handout",
+    "type": "article",
+    "journal": "Structural Equation Modeling",
+    "volume": "23",
+    "issue": "6",
+    "pages": "777--781",
+    "doi": "10.1080/10705511.2016.1217487"
+  },
+  {
+    "id": "tucker_reliability_1973",
+    "authors": [
+      "Tucker, Ledyard R.",
+      "Lewis, Charles"
+    ],
+    "year": 1973,
+    "title": "A reliability coefficient for maximum likelihood factor analysis",
+    "type": "article",
+    "journal": "Psychometrika",
+    "volume": "38",
+    "issue": "1",
+    "pages": "1--10",
+    "doi": "10.1007/BF02291170",
+    "url": "https://doi.org/10.1007/BF02291170"
+  },
+  {
+    "id": "bentler_comparative_1990",
+    "authors": [
+      "Bentler, P. M."
+    ],
+    "year": 1990,
+    "title": "Comparative fit indexes in structural models",
+    "type": "article",
+    "journal": "Psychological Bulletin",
+    "volume": "107",
+    "issue": "2",
+    "pages": "238--246",
+    "doi": "10.1037/0033-2909.107.2.238",
+    "url": "https://psycnet.apa.org/record/1990-13755-001"
+  },
+  {
+    "id": "kano_software_1997",
+    "authors": [
+      "Kano, Yutaka",
+      "Arbuckle, James L.",
+      "McDonald, Roderick P.",
+      "Fraser, Colin",
+      "Bentier, Peter M.",
+      "Jöreskog, Karl G.",
+      "Arminger, G.",
+      "Browne, Michael W.",
+      "Steiger, James H."
+    ],
+    "year": 1997,
+    "title": "Software",
+    "type": "article",
+    "journal": "Behaviormetrika",
+    "volume": "24",
+    "issue": "1",
+    "pages": "85--125",
+    "doi": "10.2333/bhmk.24.85",
+    "url": "https://doi.org/10.2333/bhmk.24.85"
+  },
+  {
+    "id": "dolgopolova_effect_2022",
+    "authors": [
+      "Dolgopolova, Irina",
+      "Li, Bingqing",
+      "Pirhonen, Helena",
+      "Roosen, Jutta"
+    ],
+    "year": 2022,
+    "title": "The effect of attribute framing on consumers’ attitudes and intentions toward food: A",
+    "type": "article",
+    "journal": "Bio-based and Applied Economics",
+    "volume": "10",
+    "pages": "253--264",
+    "doi": "10.36253/bae-11511"
+  },
+  {
+    "id": "bollen_structural_1989",
+    "authors": [
+      "Bollen, Kenneth A."
+    ],
+    "year": 1989,
+    "title": "Structural Equations",
+    "type": "book",
+    "url": "https://onlinelibrary.wiley.com/doi/book/10.1002/9781118619179",
+    "publisher": "John Wiley \\& Sons, Inc."
+  },
+  {
+    "id": "fishbein_belief_1975",
+    "authors": [
+      "Fishbein, M.",
+      "Ajzen, Icek"
+    ],
+    "year": 1975,
+    "title": "Belief, attitude, intention and behaviour: An",
+    "type": "book",
+    "volume": "27"
+  },
+  {
+    "id": "richey_jr_artificial_2023",
+    "authors": [
+      "Richey Jr., Robert Glenn",
+      "Chowdhury, Soumyadeb",
+      "Davis-Sramek, Beth",
+      "Giannakis, Mihalis",
+      "Dwivedi, Yogesh K."
+    ],
+    "year": 2023,
+    "title": "Artificial intelligence in logistics and supply chain management: A",
+    "type": "article",
+    "journal": "Journal of Business Logistics",
+    "volume": "44",
+    "issue": "4",
+    "pages": "532--549",
+    "doi": "10.1111/jbl.12364",
+    "url": "https://onlinelibrary.wiley.com/doi/abs/10.1111/jbl.12364"
+  },
+  {
+    "id": "ajzen_bayesian_1975",
+    "authors": [
+      "Ajzen, Icek",
+      "Fishbein, Martin"
+    ],
+    "year": 1975,
+    "title": "A Bayesian",
+    "type": "article",
+    "journal": "Psychological Bulletin",
+    "volume": "82",
+    "pages": "261--277",
+    "doi": "10.1037/h0076477"
+  },
+  {
+    "id": "druckman_evaluating_2001",
+    "authors": [
+      "Druckman, James N."
+    ],
+    "year": 2001,
+    "title": "Evaluating framing effects",
+    "type": "article",
+    "journal": "Journal of Economic Psychology",
+    "volume": "22",
+    "issue": "1",
+    "pages": "91--101",
+    "doi": "10.1016/S0167-4870(00)00032-5",
+    "url": "https://www.sciencedirect.com/science/article/pii/S0167487000000325"
+  },
+  {
+    "id": "li_dimensions_2020",
+    "authors": [
+      "Li, Jian",
+      "Huang, Jin-Song"
+    ],
+    "year": 2020,
+    "title": "Dimensions of artificial intelligence anxiety based on the integrated fear acquisition theory",
+    "type": "article",
+    "journal": "Technology in Society",
+    "volume": "63",
+    "pages": "101410",
+    "doi": "10.1016/j.techsoc.2020.101410",
+    "url": "https://www.sciencedirect.com/science/article/pii/S0160791X20300476"
+  },
+  {
+    "id": "hoffman_metrics_2019",
+    "authors": [
+      "Hoffman, Robert R.",
+      "Mueller, Shane T.",
+      "Klein, Gary",
+      "Litman, Diane"
+    ],
+    "year": 2019,
+    "title": "Metrics for Explainable AI: Challenges and Prospects",
+    "type": "article",
+    "journal": "arXiv preprint arXiv:1812.04608"
+  },
+  {
+    "id": "alva_2025",
+    "authors": [
+      "Alva Team"
+    ],
+    "year": 2025,
+    "title": "Alva: AI Assistant",
+    "type": "web"
+  },
+  {
+    "id": "liip_2025",
+    "authors": [
+      "Liip"
+    ],
+    "year": 2025,
+    "title": "Liip AG",
+    "type": "web",
+    "url": "https://www.liip.ch"
+  },
+  {
+    "id": "kanton_basel_stadt_2025",
+    "authors": [
+      "Kanton Basel-Stadt"
+    ],
+    "year": 2025,
+    "title": "Kanton Basel-Stadt",
+    "type": "web",
+    "url": "https://www.bs.ch"
+  },
+  {
+    "id": "levin_gaeth_1988",
+    "authors": [
+      "Levin, Irwin P.",
+      "Gaeth, Gary J."
+    ],
+    "year": 1988,
+    "title": "How consumers are affected by the framing of attribute information before and after consuming the product",
+    "type": "article",
+    "journal": "Journal of Consumer Research",
+    "volume": "15",
+    "issue": "3",
+    "pages": "374--378",
+    "publisher": "The University of Chicago Press"
+  },
+  {
+    "id": "kelle_mixed_2022",
+    "authors": [
+      "Kelle, Udo"
+    ],
+    "year": 2022,
+    "title": "Mixed Methods",
+    "type": "book",
+    "booktitle": "Handbuch Methoden der empirischen Sozialforschung",
+    "pages": "173--185",
+    "doi": "10.1007/978-3-658-37985-8_12",
+    "publisher": "Springer Fachmedien Wiesbaden"
+  }
+]
