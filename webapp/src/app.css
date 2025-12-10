@@ -56,4 +56,40 @@
 	body {
 		@apply bg-background text-foreground;
 	}
+
+	/* Enhanced focus visibility for accessibility */
+	a:focus-visible,
+	button:focus-visible,
+	[role="button"]:focus-visible {
+		@apply outline-2 outline-offset-2 outline-ring;
+	}
+}
+
+@layer utilities {
+	/* Smooth hover transitions */
+	.hover-lift {
+		@apply transition-all duration-200;
+	}
+	.hover-lift:hover {
+		@apply -translate-y-0.5 shadow-md;
+	}
+
+	/* Consistent interactive element styling */
+	.interactive {
+		@apply cursor-pointer select-none transition-all duration-200;
+	}
+	.interactive:hover {
+		@apply opacity-90;
+	}
+	.interactive:active {
+		@apply scale-95;
+	}
+
+	/* Enhanced link styling with underline offset */
+	.link-enhanced {
+		@apply underline decoration-primary/50 underline-offset-4 transition-all duration-200;
+	}
+	.link-enhanced:hover {
+		@apply decoration-primary underline-offset-2;
+	}
 }
