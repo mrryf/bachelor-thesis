@@ -8,6 +8,7 @@
     } from "$lib/components/ui/card";
     import { Separator } from "$lib/components/ui/separator";
     import { FlaskConical, Target, Lightbulb } from "lucide-svelte";
+    import HypothesisDiagram from "$lib/components/HypothesisDiagram.svelte";
 
     const hypotheses = [
         {
@@ -29,6 +30,12 @@
         { id: "H6", path: "PEOU → BI", direction: "+", basis: "TAM" },
         { id: "H7", path: "PU → CI", direction: "+", basis: "AI-TAM" },
         { id: "H8", path: "BI → CI", direction: "+", basis: "AI-TAM" },
+        {
+            id: "H9",
+            path: "FAMTEC → PU",
+            direction: "+",
+            basis: "TAM Extension",
+        },
     ];
 </script>
 
@@ -86,8 +93,22 @@
     <section class="mb-16">
         <div class="flex items-center gap-3 mb-6">
             <FlaskConical class="h-6 w-6 text-primary" />
-            <h2 class="text-2xl font-semibold">Hypothesen</h2>
+            <h2 class="text-2xl font-semibold">Hypotheses</h2>
         </div>
+
+        <Card class="mb-8">
+            <CardHeader>
+                <CardTitle>Strukturmodell-Visualisierung</CardTitle>
+            </CardHeader>
+            <CardContent>
+                <HypothesisDiagram />
+                <p class="text-xs text-muted-foreground mt-2 text-center">
+                    Interaktives Modell: Bewegen Sie die Maus über die Elemente
+                    für Details.
+                </p>
+            </CardContent>
+        </Card>
+
         <div class="grid gap-4 md:grid-cols-2">
             {#each hypotheses as h}
                 <Card class="hover:shadow-md transition-shadow">
@@ -103,8 +124,8 @@
                                 <span
                                     class="text-lg font-bold {h.direction ===
                                     '+'
-                                        ? 'text-positive'
-                                        : 'text-negative'}"
+                                        ? 'text-green-600'
+                                        : 'text-red-600'}"
                                 >
                                     {h.direction}
                                 </span>
