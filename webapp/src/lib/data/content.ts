@@ -20,10 +20,11 @@ export interface NavItem {
     external?: boolean;
 }
 
-// Main navigation structure
-export const navItems: NavItem[] = [
+// Main navigation// Main navigation
+export const navItems = [
+    { title: 'Home', href: '/' },
     { title: 'Vorstudie', href: '/vorstudie' },
-    { title: 'Forschung', href: '/forschung' },
+    { title: 'Studie', href: '/studie' },
     { title: 'Materialien', href: '/materialien' },
     { title: 'Glossar', href: '/glossar' },
     { title: 'Downloads', href: '/downloads' }
@@ -201,12 +202,7 @@ export const figures = [
         caption: 'Ablauf des Experiments in drei Phasen',
         alt: 'Experiment Flow'
     },
-    {
-        id: '3x2-design',
-        src: '/images/ba_faryf_experiment_design_3x2.jpg',
-        caption: 'Experimentelles 3x2 faktorielles Design',
-        alt: '3x2 Factorial Design'
-    },
+
     {
         id: 'messmodell',
         src: '/images/ba_faryf_messmodell.jpg',

@@ -1,15 +1,18 @@
 <script lang="ts">
 	import { page } from "$app/stores";
-	import { Home } from "lucide-svelte";
+	// import { Home } from "lucide-svelte";
+	import Home from "@lucide/svelte/icons/home";
 	import * as Breadcrumb from "$lib/components/ui/breadcrumb";
 
 	// Route name mapping for human-readable breadcrumbs
-	const routeNames: Record<string, string> = {
+	const routeLabels: Record<string, string> = {
 		vorstudie: "Vorstudie",
-		forschung: "Forschung",
-		glossar: "Glossar",
+		studie: "Studie",
 		materialien: "Materialien",
+		glossar: "Glossar",
 		downloads: "Downloads",
+		impressum: "Impressum",
+		datenschutz: "Datenschutz",
 	};
 
 	// Derive breadcrumb items from current path
