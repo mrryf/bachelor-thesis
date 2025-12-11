@@ -2,7 +2,10 @@
     import { navItems, githubUrl } from "$lib/data/content";
     import { page } from "$app/stores";
     import { Button } from "$lib/components/ui/button";
-    import { Github, Menu, X } from "lucide-svelte";
+    // import { Github, Menu, X } from "lucide-svelte";
+    import Github from "@lucide/svelte/icons/github";
+    import Menu from "@lucide/svelte/icons/menu";
+    import X from "@lucide/svelte/icons/x";
 
     let mobileMenuOpen = $state(false);
 

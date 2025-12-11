@@ -15,9 +15,12 @@
 		reference?: Reference | null;
 	} = $props();
 
+	// Track actual height
+	let tooltipHeight = $state(0);
+
 	// Adjust position to keep tooltip on screen
 	const adjustedX = $derived.by(() => {
-		if (typeof window === 'undefined') return x;
+		if (typeof window === "undefined") return x;
 		const tooltipWidth = 384; // max-w-sm ~= 384px
 		const padding = 16;
 		const maxX = window.innerWidth - tooltipWidth - padding;
@@ -25,23 +28,28 @@
 	});
 
 	const adjustedY = $derived.by(() => {
-		if (typeof window === 'undefined') return y;
-		const tooltipHeight = 120; // approximate
+		if (typeof window === "undefined") return y;
+		const height = tooltipHeight || 120; // Fallback to 120 if measuring
 		const padding = 16;
 
 		// If tooltip would go off bottom of screen, show above instead
-		if (y + tooltipHeight + padding > window.innerHeight) {
-			return y - tooltipHeight - 8;
+		if (y + height + padding > window.innerHeight) {
+			return y - height - 8;
 		}
 		return y + 8;
 	});
 
 	const formattedAuthors = $derived.by(() => {
-		if (!reference) return '';
+		if (!reference) return "";
 		if (reference.authors.length === 1) return reference.authors[0];
-		if (reference.authors.length === 2) return `${reference.authors[0]} & ${reference.authors[1]}`;
+		if (reference.authors.length === 2)
+			return `${reference.authors[0]} & ${reference.authors[1]}`;
 		if (reference.authors.length <= 3) {
-			return reference.authors.slice(0, -1).join(', ') + ' & ' + reference.authors[reference.authors.length - 1];
+			return (
+				reference.authors.slice(0, -1).join(", ") +
+				" & " +
+				reference.authors[reference.authors.length - 1]
+			);
 		}
 		return `${reference.authors[0]} et al.`;
 	});
@@ -49,6 +57,7 @@
 
 {#if visible && reference}
 	<div
+		bind:clientHeight={tooltipHeight}
 		class="fixed z-50 max-w-sm rounded-lg border border-border bg-popover shadow-xl"
 		style="left: {adjustedX}px; top: {adjustedY}px; pointer-events: none;"
 		transition:fade={{ duration: 150 }}
@@ -92,7 +101,9 @@
 
 			<!-- DOI -->
 			{#if reference.doi}
-				<div class="text-xs text-primary flex items-center gap-1 pt-1 border-t border-border/50">
+				<div
+					class="text-xs text-primary flex items-center gap-1 pt-1 border-t border-border/50"
+				>
 					<ExternalLink class="h-3 w-3" />
 					<span>DOI: {reference.doi}</span>
 				</div>
