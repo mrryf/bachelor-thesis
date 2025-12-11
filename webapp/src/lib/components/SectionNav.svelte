@@ -28,7 +28,7 @@
 		<!-- Previous Section -->
 		{#if prevSection}
 			<a
-				href="#{prevSection.id}"
+				href="/vorstudie/{prevSection.id}"
 				class="group flex flex-1 items-center gap-3 rounded-lg border p-4 transition-all hover:border-primary hover:bg-accent"
 			>
 				<ChevronLeft
@@ -52,7 +52,7 @@
 		<!-- Next Section -->
 		{#if nextSection}
 			<a
-				href="#{nextSection.id}"
+				href="/vorstudie/{nextSection.id}"
 				class="group flex flex-1 items-center gap-3 rounded-lg border p-4 transition-all hover:border-primary hover:bg-accent"
 			>
 				<div class="min-w-0 flex-1 text-right">
