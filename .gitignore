@@ -66,6 +66,7 @@ htmlcov/
 .vscode/
 .idea/
 *.swp
+.claude/
 
 # MkDocs
 site/
