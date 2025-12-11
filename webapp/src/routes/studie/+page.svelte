@@ -143,19 +143,7 @@
     <!-- Experiment Design -->
     <section class="mb-16">
         <h2 class="text-2xl font-semibold mb-6">Experimentdesign</h2>
-        <div class="grid gap-6 md:grid-cols-2">
-            <Card>
-                <CardHeader>
-                    <CardTitle>3x2 Faktorielles Design</CardTitle>
-                </CardHeader>
-                <CardContent>
-                    <img
-                        src="/images/ba_faryf_experiment_design_3x2.jpg"
-                        alt="3x2 Design"
-                        class="w-full rounded-lg"
-                    />
-                </CardContent>
-            </Card>
+        <div class="grid gap-6 md:grid-cols-1">
             <Card>
                 <CardHeader>
                     <CardTitle>Ablauf Experiment</CardTitle>

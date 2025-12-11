@@ -111,9 +111,7 @@
 			<div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
 				{#each pageCards as card}
 					<a href={card.href} class="group">
-						<Card
-							class="h-full hover-lift hover:border-primary/50"
-						>
+						<Card class="h-full hover-lift hover:border-primary/50">
 							<CardHeader
 								class="flex flex-row items-center gap-4"
 							>
