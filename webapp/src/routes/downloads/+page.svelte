@@ -7,7 +7,10 @@
         CardTitle,
         CardDescription,
     } from "$lib/components/ui/card";
-    import { Download, FileText, FileSpreadsheet } from "lucide-svelte";
+    // import { Download, FileText, FileSpreadsheet } from "lucide-svelte";
+    import Download from "@lucide/svelte/icons/download";
+    import FileText from "@lucide/svelte/icons/file-text";
+    import FileSpreadsheet from "@lucide/svelte/icons/file-spreadsheet";
 
     const downloads = [
         {
