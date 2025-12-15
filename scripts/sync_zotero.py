@@ -145,6 +145,11 @@ def sync_zotero():
     def escape_latex(text):
         if not text:
             return text
+        
+        # Specific fixes for bad metadata
+        text = text.replace(r'\textitnot', r'\textit{not}')
+        text = text.replace('\u200e', '') # Remove Left-to-Right Mark
+        
         # Escape % and & which are common and break things
         # Also maybe #, _, $
         return text.replace('&', '\\&').replace('%', '\\%').replace('_', '\\_').replace('#', '\\#')
