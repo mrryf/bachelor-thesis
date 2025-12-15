@@ -3,7 +3,6 @@
 ![Build Status](https://github.com/mrryf/bachelor-thesis/actions/workflows/latex-build.yml/badge.svg)
 ![Python](https://img.shields.io/badge/python-3.x-blue.svg)
 ![LaTeX](https://img.shields.io/badge/latex-TeX%20Live-green.svg)
-![License](https://img.shields.io/badge/license-All%20Rights%20Reserved-blue.svg)
 
 This repository contains the LaTeX source code and associated resources for the Bachelor Thesis on **"Trust in Artificial Intelligence"** (Vertrauen in Künstliche Intelligenz). The thesis investigates the impact of accuracy framing on user trust in AI systems using the AI-TAM model.
 
@@ -18,8 +17,6 @@ This repository contains the LaTeX source code and associated resources for the 
 - [Continuous Integration](#continuous-integration-ci)
 - [Project Structure](#project-structure)
 - [Contributing](#contributing)
-- [License](#license)
-- [Contact](#contact)
 
 ## Quick Start
 
@@ -218,12 +215,3 @@ Contributions are welcome! Please follow these steps:
 
 ## Security
 This project takes security seriously. Please see our [Security Policy](SECURITY.md) for details on reporting vulnerabilities and supported versions.
-
-## License
-
-Copyright (c) 2025 mrryf. All Rights Reserved.
-See [LICENSE](LICENSE) for details.
-
-## Contact
-
-Created by [mrryf](https://github.com/mrryf).
