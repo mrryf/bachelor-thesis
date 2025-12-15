@@ -83,25 +83,7 @@ def sync_zotero():
     deduplicated_entries = list(unique_entries.values())
     bib_database.entries = deduplicated_entries
 
-    # Write to bibliography.bib
-    bib_path = os.path.join('content', 'resources', 'bibliography.bib')
-    local_bib_path = os.path.join('content', 'resources', 'local.bib')
-    
-    with open(bib_path, 'w', encoding='utf-8') as f:
-        bibtexparser.dump(bib_database, f)
-        f.write("\n")
-            
-        # Append local bibliography if it exists
-        if os.path.exists(local_bib_path):
-            print(f"Appending local citations from {local_bib_path}...")
-            with open(local_bib_path, 'r', encoding='utf-8') as local_f:
-                f.write("\n% Local Citations\n")
-                f.write(local_f.read())
-                f.write("\n")
-            
-    print(f"Successfully wrote bibliography to {bib_path}")
-
-    # Convert to JSON for webapp
+    # Convert to JSON for webapp FIRST (using Unicode data)
     json_path = os.path.join('webapp', 'src', 'lib', 'data', 'references.json')
     print(f"Converting to JSON at {json_path}...")
     
@@ -150,16 +132,47 @@ def sync_zotero():
         else:
             json_entry['year'] = 0
 
-        # Remove latex syntax from strings if any remain (bibtexparser convert_to_unicode handles most)
-        # But for title, we might want to be extra careful or keeping it as is if it's unicode
-        # The webapp handles it.
-        
         references_json.append(json_entry)
 
     with open(json_path, 'w', encoding='utf-8') as f:
         json.dump(references_json, f, indent=2, ensure_ascii=False)
         
     print(f"Successfully generated {json_path} with {len(references_json)} items")
+
+    # Now escape for BibTeX and write .bib
+    print("Escaping special characters for BibTeX...")
+    
+    def escape_latex(text):
+        if not text: return text
+        # Escape % and & which are common and break things
+        # Also maybe #, _, $
+        return text.replace('&', '\\&').replace('%', '\\%').replace('_', '\\_').replace('#', '\\#')
+
+    # Fields to skip escaping (urls, ids, etc)
+    skip_fields = ['ID', 'ENTRYTYPE', 'url', 'doi', 'file', 'urldate', 'year', 'month', 'issn', 'isbn']
+
+    for entry in deduplicated_entries:
+        for key, value in entry.items():
+            if key not in skip_fields and isinstance(value, str):
+                entry[key] = escape_latex(value)
+
+    # Write to bibliography.bib
+    bib_path = os.path.join('content', 'resources', 'bibliography.bib')
+    local_bib_path = os.path.join('content', 'resources', 'local.bib')
+    
+    with open(bib_path, 'w', encoding='utf-8') as f:
+        bibtexparser.dump(bib_database, f)
+        f.write("\n")
+            
+        # Append local bibliography if it exists
+        if os.path.exists(local_bib_path):
+            print(f"Appending local citations from {local_bib_path}...")
+            with open(local_bib_path, 'r', encoding='utf-8') as local_f:
+                f.write("\n% Local Citations\n")
+                f.write(local_f.read())
+                f.write("\n")
+            
+    print(f"Successfully wrote bibliography to {bib_path}")
 
 if __name__ == "__main__":
     sync_zotero()
