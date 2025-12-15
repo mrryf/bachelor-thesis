@@ -8,15 +8,13 @@
 	} from "$lib/components/ui/card";
 	import ContinueReading from "$lib/components/ContinueReading.svelte";
 	import { navItems, githubUrl } from "$lib/data/content";
-	import {
-		ArrowRight,
-		BookOpen,
-		FlaskConical,
-		FolderOpen,
-		BookMarked,
-		Download,
-		Github,
-	} from "lucide-svelte";
+	import ArrowRight from "@lucide/svelte/icons/arrow-right";
+	import BookOpen from "@lucide/svelte/icons/book-open";
+	import FlaskConical from "@lucide/svelte/icons/flask-conical";
+	import FolderOpen from "@lucide/svelte/icons/folder-open";
+	import BookMarked from "@lucide/svelte/icons/book-marked";
+	import Download from "@lucide/svelte/icons/download";
+	import Github from "@lucide/svelte/icons/github";
 
 	const pageCards = [
 		{
@@ -28,7 +26,7 @@
 		{
 			title: "Forschung",
 			description: "Hypothesen, AI-TAM Modell und Experimentdesign",
-			href: "/forschung",
+			href: "/studie",
 			icon: FlaskConical,
 		},
 		{

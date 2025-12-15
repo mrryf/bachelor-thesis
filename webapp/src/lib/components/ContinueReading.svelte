@@ -1,9 +1,15 @@
 <script lang="ts">
-	import { Card, CardContent, CardHeader, CardTitle } from "$lib/components/ui/card";
+	import {
+		Card,
+		CardContent,
+		CardHeader,
+		CardTitle,
+	} from "$lib/components/ui/card";
 	import { Button } from "$lib/components/ui/button";
 	import { Progress } from "$lib/components/ui/progress";
 	import { readingProgress } from "$lib/stores/readingProgress.svelte";
-	import { BookOpen, X } from "lucide-svelte";
+	import BookOpen from "@lucide/svelte/icons/book-open";
+	import X from "@lucide/svelte/icons/x";
 
 	function formatTimestamp(timestamp: number): string {
 		const now = Date.now();
@@ -13,14 +19,15 @@
 		const days = Math.floor(diff / 86400000);
 
 		if (minutes < 1) return "gerade eben";
-		if (minutes < 60) return `vor ${minutes} Minute${minutes > 1 ? "n" : ""}`;
+		if (minutes < 60)
+			return `vor ${minutes} Minute${minutes > 1 ? "n" : ""}`;
 		if (hours < 24) return `vor ${hours} Stunde${hours > 1 ? "n" : ""}`;
 		return `vor ${days} Tag${days > 1 ? "en" : ""}`;
 	}
 </script>
 
-{#if readingProgress.current}
-	{@const progress = readingProgress.current}
+{#if readingProgress.state.current}
+	{@const progress = readingProgress.state.current}
 	<Card class="border-primary/50 bg-primary/5">
 		<CardHeader class="pb-3">
 			<div class="flex items-start justify-between">

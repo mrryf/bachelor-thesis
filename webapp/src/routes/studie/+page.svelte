@@ -7,7 +7,9 @@
         CardTitle,
     } from "$lib/components/ui/card";
     import { Separator } from "$lib/components/ui/separator";
-    import { FlaskConical, Target, Lightbulb } from "lucide-svelte";
+    import FlaskConical from "@lucide/svelte/icons/flask-conical";
+    import Target from "@lucide/svelte/icons/target";
+    import Lightbulb from "@lucide/svelte/icons/lightbulb";
     import HypothesisDiagram from "$lib/components/HypothesisDiagram.svelte";
 
     const hypotheses = [

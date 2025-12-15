@@ -1,6 +1,9 @@
 <script lang="ts">
 	import { Button } from "$lib/components/ui/button";
-	import { X, ZoomIn, ZoomOut, Download } from "lucide-svelte";
+	import X from "@lucide/svelte/icons/x";
+	import ZoomIn from "@lucide/svelte/icons/zoom-in";
+	import ZoomOut from "@lucide/svelte/icons/zoom-out";
+	import Download from "@lucide/svelte/icons/download";
 	import { fade, scale } from "svelte/transition";
 
 	let {

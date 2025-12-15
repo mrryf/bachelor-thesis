@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { page } from "$app/stores";
-	// import { Home } from "lucide-svelte";
+
 	import Home from "@lucide/svelte/icons/home";
 	import * as Breadcrumb from "$lib/components/ui/breadcrumb";
 
@@ -27,7 +27,7 @@
 		return segments.map((segment, index) => {
 			const href = "/" + segments.slice(0, index + 1).join("/");
 			const isLast = index === segments.length - 1;
-			const label = routeNames[segment] || segment;
+			const label = routeLabels[segment] || segment;
 
 			return { href, label, isLast };
 		});

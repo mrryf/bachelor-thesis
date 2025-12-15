@@ -37,7 +37,6 @@
   },
   "type": "module",
   "dependencies": {
-    "@lucide/svelte": "^0.559.0",
-    "lucide-svelte": "^0.556.0"
+    "@lucide/svelte": "^0.559.0"
   }
 }

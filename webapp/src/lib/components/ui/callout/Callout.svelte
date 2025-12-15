@@ -1,5 +1,9 @@
 <script lang="ts">
-	import { Info, AlertTriangle, AlertCircle, CheckCircle2, Lightbulb } from "lucide-svelte";
+	import Info from "@lucide/svelte/icons/info";
+	import AlertTriangle from "@lucide/svelte/icons/alert-triangle";
+	import AlertCircle from "@lucide/svelte/icons/alert-circle";
+	import CheckCircle2 from "@lucide/svelte/icons/check-circle-2";
+	import Lightbulb from "@lucide/svelte/icons/lightbulb";
 	import type { Snippet } from "svelte";
 	import { cn } from "$lib/utils";
 
@@ -27,9 +31,11 @@
 
 	const styles = {
 		info: "bg-blue-50 dark:bg-blue-950/30 border-blue-200 dark:border-blue-800",
-		warning: "bg-yellow-50 dark:bg-yellow-950/30 border-yellow-200 dark:border-yellow-800",
+		warning:
+			"bg-yellow-50 dark:bg-yellow-950/30 border-yellow-200 dark:border-yellow-800",
 		error: "bg-red-50 dark:bg-red-950/30 border-red-200 dark:border-red-800",
-		success: "bg-green-50 dark:bg-green-950/30 border-green-200 dark:border-green-800",
+		success:
+			"bg-green-50 dark:bg-green-950/30 border-green-200 dark:border-green-800",
 		tip: "bg-purple-50 dark:bg-purple-950/30 border-purple-200 dark:border-purple-800",
 	};
 
@@ -53,22 +59,18 @@
 </script>
 
 <div
-	class={cn(
-		"border-l-4 rounded-r-lg p-4 my-4",
-		styles[type],
-		className
-	)}
+	class={cn("border-l-4 rounded-r-lg p-4 my-4", styles[type], className)}
 	role="note"
 >
 	<div class="flex gap-3">
-		<Icon
-			class="h-5 w-5 flex-shrink-0 mt-0.5 {iconStyles[type]}"
-		/>
+		<Icon class="h-5 w-5 flex-shrink-0 mt-0.5 {iconStyles[type]}" />
 		<div class="flex-1 min-w-0">
 			{#if title}
 				<h4 class="font-semibold mb-1 {titleStyles[type]}">{title}</h4>
 			{/if}
-			<div class="text-sm text-foreground/90 [&>p]:mb-2 [&>p:last-child]:mb-0">
+			<div
+				class="text-sm text-foreground/90 [&>p]:mb-2 [&>p:last-child]:mb-0"
+			>
 				{@render children?.()}
 			</div>
 		</div>

@@ -2,7 +2,9 @@
 	import { Button } from "$lib/components/ui/button";
 	import * as Sheet from "$lib/components/ui/sheet";
 	import { Card, CardContent } from "$lib/components/ui/card";
-	import { Quote, Copy, Check } from "lucide-svelte";
+	import Quote from "@lucide/svelte/icons/quote";
+	import Copy from "@lucide/svelte/icons/copy";
+	import Check from "@lucide/svelte/icons/check";
 
 	let {
 		title = "Vorstudie: Vertrauen in Künstliche Intelligenz",

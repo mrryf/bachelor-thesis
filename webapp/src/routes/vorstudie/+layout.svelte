@@ -6,7 +6,11 @@
     import { Button } from "$lib/components/ui/button";
     import * as Sheet from "$lib/components/ui/sheet";
     import { Separator } from "$lib/components/ui/separator";
-    import { Clock, List, Check, CheckCircle2 } from "lucide-svelte";
+    import Clock from "@lucide/svelte/icons/clock";
+    import List from "@lucide/svelte/icons/list";
+    import Check from "@lucide/svelte/icons/check";
+    import CheckCircle2 from "@lucide/svelte/icons/check-circle-2";
+    import BookOpen from "@lucide/svelte/icons/book-open";
 
     let { children } = $props();
     let tocSheetOpen = $state(false);

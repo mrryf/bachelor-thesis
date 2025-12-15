@@ -3,7 +3,9 @@
     import { Card, CardContent } from "$lib/components/ui/card";
     import { Separator } from "$lib/components/ui/separator";
     import Lightbox from "$lib/components/Lightbox.svelte";
-    import { Image, Table, BookOpen } from "lucide-svelte";
+    import Image from "@lucide/svelte/icons/image";
+    import Table from "@lucide/svelte/icons/table";
+    import BookOpen from "@lucide/svelte/icons/book-open";
 
     let lightboxOpen = $state(false);
     let lightboxSrc = $state("");

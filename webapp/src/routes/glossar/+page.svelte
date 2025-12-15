@@ -2,7 +2,7 @@
     import { glossaryTerms } from "$lib/data/content";
     import { Card, CardContent } from "$lib/components/ui/card";
     import { Input } from "$lib/components/ui/input";
-    import { Search } from "lucide-svelte";
+    import Search from "@lucide/svelte/icons/search";
 
     let searchQuery = $state("");
 

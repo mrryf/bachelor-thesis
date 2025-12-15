@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { fade } from "svelte/transition";
 	import type { Reference } from "$lib/data/references";
-	import { ExternalLink } from "lucide-svelte";
+	import ExternalLink from "@lucide/svelte/icons/external-link";
 
 	let {
 		visible = false,

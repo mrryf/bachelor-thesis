@@ -1,7 +1,8 @@
 <script lang="ts">
 	import { Button } from "$lib/components/ui/button";
 	import { Separator } from "$lib/components/ui/separator";
-	import { ChevronLeft, ChevronRight } from "lucide-svelte";
+	import ChevronLeft from "@lucide/svelte/icons/chevron-left";
+	import ChevronRight from "@lucide/svelte/icons/chevron-right";
 
 	let {
 		prevSection,

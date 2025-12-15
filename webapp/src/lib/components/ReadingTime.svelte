@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { Clock } from "lucide-svelte";
+    import Clock from "@lucide/svelte/icons/clock";
 
     export let minutes: number;
 </script>

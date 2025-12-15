@@ -2,27 +2,10 @@ import os
 import sys
 import subprocess
 import getpass
-import re
-
-def deduplicate_bibtex(bibtex_content):
-    """Remove duplicate entries from bibtex content, keeping the first occurrence."""
-    # Pattern to match bibtex entries
-    entry_pattern = re.compile(r'(@\w+\{([^,]+),.*?\n\})', re.DOTALL)
-    
-    seen_keys = set()
-    deduplicated_entries = []
-    
-    for match in entry_pattern.finditer(bibtex_content):
-        full_entry = match.group(1)
-        entry_key = match.group(2).strip()
-        
-        if entry_key not in seen_keys:
-            seen_keys.add(entry_key)
-            deduplicated_entries.append(full_entry)
-        else:
-            print(f"  Skipping duplicate entry: {entry_key}")
-    
-    return '\n\n'.join(deduplicated_entries)
+import json
+import bibtexparser
+from bibtexparser.bparser import BibTexParser
+from bibtexparser.customization import convert_to_unicode, author, type
 
 def sync_zotero():
     # Load .env if present
@@ -53,7 +36,7 @@ def sync_zotero():
     # X6YTQVV3: Bachelor Thesis / 01_ research
     collection_ids = ['5CCCD4LW', '6ABWTZEP', 'X6YTQVV3']
     
-    all_items = []
+    all_bibtex_data = ""
 
     for col_id in collection_ids:
         print(f"Syncing Zotero collection {col_id}...")
@@ -69,7 +52,7 @@ def sync_zotero():
             )
             data = result.stdout
             if data:
-                all_items.append(data)
+                all_bibtex_data += data + "\n"
             else:
                 print(f"Warning: No data received for collection {col_id}")
                 
@@ -79,22 +62,33 @@ def sync_zotero():
         except Exception as e:
             print(f"Unexpected error: {e}")
 
-    if not all_items:
+    if not all_bibtex_data:
         print("No items found in any collection.")
         return
 
-    # Combine all items and deduplicate
-    combined_bibtex = '\n'.join(all_items)
-    print("Deduplicating bibliography entries...")
-    deduplicated_bibtex = deduplicate_bibtex(combined_bibtex)
+    # Parse combined BibTeX data
+    print("Parsing and deduplicating bibliography entries...")
+    parser = BibTexParser()
+    parser.customization = convert_to_unicode
+    bib_database = bibtexparser.loads(all_bibtex_data, parser=parser)
+    
+    # Deduplicate by ID
+    unique_entries = {}
+    for entry in bib_database.entries:
+        if entry['ID'] not in unique_entries:
+            unique_entries[entry['ID']] = entry
+        else:
+             print(f"  Skipping duplicate entry: {entry['ID']}")
+    
+    deduplicated_entries = list(unique_entries.values())
+    bib_database.entries = deduplicated_entries
 
     # Write to bibliography.bib
-    # Define the output file path
     bib_path = os.path.join('content', 'resources', 'bibliography.bib')
     local_bib_path = os.path.join('content', 'resources', 'local.bib')
     
     with open(bib_path, 'w', encoding='utf-8') as f:
-        f.write(deduplicated_bibtex)
+        bibtexparser.dump(bib_database, f)
         f.write("\n")
             
         # Append local bibliography if it exists
@@ -107,6 +101,65 @@ def sync_zotero():
             
     print(f"Successfully wrote bibliography to {bib_path}")
 
+    # Convert to JSON for webapp
+    json_path = os.path.join('webapp', 'src', 'lib', 'data', 'references.json')
+    print(f"Converting to JSON at {json_path}...")
+    
+    references_json = []
+
+    for entry in deduplicated_entries:
+        # Prepare entry for JSON
+        json_entry = entry.copy()
+        
+        # Rename 'ID' to 'id'
+        json_entry['id'] = json_entry.pop('ID')
+        
+        # Lowercase type
+        if 'ENTRYTYPE' in json_entry:
+            json_entry['type'] = json_entry.pop('ENTRYTYPE').lower()
+            
+        # Handle authors
+        authors_list = []
+        if 'author' in json_entry:
+            authors_str = json_entry.pop('author')
+            authors_list = [a.strip() for a in authors_str.split(' and ')]
+        elif 'editor' in json_entry:
+             # Fallback to editor if no author
+            authors_str = json_entry.pop('editor')
+            authors_list = [a.strip() for a in authors_str.split(' and ')]
+        
+        if not authors_list:
+            authors_list = ["Unknown"]
+            
+        json_entry['authors'] = authors_list
+            
+        # Handle year
+        if 'year' in json_entry:
+            try:
+                json_entry['year'] = int(json_entry['year'])
+            except ValueError:
+                json_entry['year'] = 0
+        elif 'date' in json_entry:
+             # Try to extract year from date
+             import re
+             match = re.search(r'\d{4}', json_entry['date'])
+             if match:
+                 json_entry['year'] = int(match.group(0))
+             else:
+                 json_entry['year'] = 0
+        else:
+            json_entry['year'] = 0
+
+        # Remove latex syntax from strings if any remain (bibtexparser convert_to_unicode handles most)
+        # But for title, we might want to be extra careful or keeping it as is if it's unicode
+        # The webapp handles it.
+        
+        references_json.append(json_entry)
+
+    with open(json_path, 'w', encoding='utf-8') as f:
+        json.dump(references_json, f, indent=2, ensure_ascii=False)
+        
+    print(f"Successfully generated {json_path} with {len(references_json)} items")
+
 if __name__ == "__main__":
     sync_zotero()
-

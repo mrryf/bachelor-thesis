@@ -298,6 +298,8 @@
 </script>
 
 <!-- svelte-ignore a11y_no_static_element_interactions -->
+<!-- svelte-ignore a11y_no_noninteractive_tabindex -->
+<!-- svelte-ignore a11y_no_noninteractive_element_interactions -->
 <div
     class="relative w-full overflow-hidden p-6 bg-background border rounded-lg shadow-sm transition-shadow hover:shadow-md"
     onmousemove={handleMouseMove}

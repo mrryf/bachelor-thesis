@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Button } from "$lib/components/ui/button";
-	import { Share2 } from "lucide-svelte";
+	import Share2 from "@lucide/svelte/icons/share-2";
 	import { toast } from "$lib/stores/toast.svelte";
 
 	let {
@@ -20,7 +20,9 @@
 	} = $props();
 
 	// Get current URL if not provided
-	const shareUrl = $derived(url || (typeof window !== "undefined" ? window.location.href : ""));
+	const shareUrl = $derived(
+		url || (typeof window !== "undefined" ? window.location.href : ""),
+	);
 
 	async function handleShare() {
 		// Check if Web Share API is supported
