@@ -5,7 +5,7 @@ import getpass
 import json
 import bibtexparser
 from bibtexparser.bparser import BibTexParser
-from bibtexparser.customization import convert_to_unicode, author, type
+from bibtexparser.customization import convert_to_unicode
 
 def sync_zotero():
     # Load .env if present
