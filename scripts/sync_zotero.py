@@ -143,7 +143,8 @@ def sync_zotero():
     print("Escaping special characters for BibTeX...")
     
     def escape_latex(text):
-        if not text: return text
+        if not text:
+            return text
         # Escape % and & which are common and break things
         # Also maybe #, _, $
         return text.replace('&', '\\&').replace('%', '\\%').replace('_', '\\_').replace('#', '\\#')
