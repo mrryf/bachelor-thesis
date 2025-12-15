@@ -5,6 +5,7 @@ import sys
 def generate_latex_tables(csv_path, output_dir):
     """
     Reads items.csv and generates LaTeX tables for each construct and a master table.
+    Also generates a CSV with only adapted items for survey use.
     """
     if not os.path.exists(csv_path):
         print(f"Error: CSV file not found at {csv_path}")
@@ -15,6 +16,7 @@ def generate_latex_tables(csv_path, output_dir):
 
     items_by_construct = {}
     all_items = []
+    adapted_items_only = []
 
     with open(csv_path, 'r', encoding='utf-8') as f:
         reader = csv.DictReader(f)
@@ -28,56 +30,56 @@ def generate_latex_tables(csv_path, output_dir):
             
             items_by_construct[safe_construct].append(row)
             all_items.append(row)
+            
+            # Collect adapted items for CSV export
+            adapted_item = row['Angepasstes_Item'].strip()
+            if adapted_item and adapted_item != '-':
+                adapted_items_only.append({'Angepasstes_Item': adapted_item})
 
     # Generate individual tables
     for construct, items in items_by_construct.items():
         filename = os.path.join(output_dir, f"table_{construct}.tex")
         with open(filename, 'w', encoding='utf-8') as f:
-            f.write(create_latex_table(items, caption=f"Items for Construct: {construct}", label=f"tab:{construct}"))
+            f.write(create_latex_table(items, caption=f"Items für Konstrukt: {construct}", label=f"tab:{construct}"))
         print(f"Generated {filename}")
 
     # Generate master table
     master_filename = os.path.join(output_dir, "table_master.tex")
     with open(master_filename, 'w', encoding='utf-8') as f:
-        f.write(create_latex_table(all_items, caption="All Survey Items", label="tab:master_items"))
+        f.write(create_latex_table(all_items, caption="Alle Fragebogen-Items", label="tab:master_items"))
     print(f"Generated {master_filename}")
+    
+    # Generate adapted items only CSV
+    adapted_csv_path = os.path.join(os.path.dirname(csv_path), "adapted_items_only.csv")
+    with open(adapted_csv_path, 'w', encoding='utf-8', newline='') as f:
+        writer = csv.DictWriter(f, fieldnames=['Angepasstes_Item'])
+        writer.writeheader()
+        writer.writerows(adapted_items_only)
+    print(f"Generated {adapted_csv_path}")
 
 def create_latex_table(items, caption, label):
     """
     Creates a LaTeX table string from a list of items.
+    Now generates 2-column tables: Item and Angepasstes Item
     """
-    # APA7 style table using tabularx
     latex = []
     latex.append("\\begin{table}[ht]")
     latex.append("\\centering")
     latex.append("\\begin{threeparttable}")
     latex.append(f"\\caption{{{caption}}}")
     latex.append(f"\\label{{{label}}}")
-    # Adjust columns based on content. 
-    # Columns: Construct (if master), Original, Adapted, Scaling, Source
-    # Let's make it flexible.
     
-    latex.append("\\begin{tabularx}{\\textwidth}{l X X l l}")
+    # 2-column table: Item and Angepasstes Item
+    latex.append("\\begin{tabularx}{\\textwidth}{X X}")
     latex.append("\\toprule")
-    latex.append("\\textbf{Construct} & \\textbf{Original Item} & \\textbf{Adapted Item} & \\textbf{Scaling} & \\textbf{Source} \\\\")
+    latex.append("\\textbf{Item} & \\textbf{Angepasstes Item} \\\\")
     latex.append("\\midrule")
     
-    current_construct = ""
     for item in items:
-        construct = item['Construct']
-        original = escape_latex(item['Item_Original'])
-        adapted = escape_latex(item['Item_Adapted'])
-        scaling = escape_latex(item['Scaling'])
-        source = escape_latex(item['Source'])
+        original = escape_latex(item['Item'])
+        adapted = escape_latex(item['Angepasstes_Item'])
         
-        # Grouping visual aid: only show construct name on first occurrence or change
-        display_construct = construct if construct != current_construct else ""
-        current_construct = construct
-        
-        latex.append(f"{display_construct} & {original} & {adapted} & {scaling} & {source} \\\\")
-        # Add a small space between constructs if it changes, but not after the last one
-        # This logic is a bit complex for a simple script, let's stick to simple rows for now.
-        # Or add \addlinespace if construct changes
+        latex.append(f"{original} & {adapted} \\\\")
     
     latex.append("\\bottomrule")
     latex.append("\\end{tabularx}")
