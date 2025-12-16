@@ -4,7 +4,7 @@
 ![Python](https://img.shields.io/badge/python-3.x-blue.svg)
 ![LaTeX](https://img.shields.io/badge/latex-TeX%20Live-green.svg)
 
-This repository contains the LaTeX source code and associated resources for the Bachelor Thesis on **"Trust in Artificial Intelligence"** (Vertrauen in Künstliche Intelligenz). The thesis investigates the impact of accuracy framing on user trust in AI systems using the AI-TAM model.
+This repository contains the complete research project for the Bachelor Thesis on **"Trust in Artificial Intelligence"** (Vertrauen in Künstliche Intelligenz), investigating the impact of accuracy framing on user trust in AI systems using the AI-TAM model. It includes LaTeX source code, automated build tooling, comprehensive testing infrastructure, and a SvelteKit web presentation.
 
 ## Table of Contents
 - [Quick Start](#quick-start)
@@ -13,8 +13,13 @@ This repository contains the LaTeX source code and associated resources for the 
 - [Prerequisites](#prerequisites)
 - [Installation](#installation)
 - [Usage](#usage)
+  - [Building LaTeX Documents](#building-latex-documents)
+  - [Webapp Development](#webapp-development)
+  - [Bibliography Management](#bibliography-management)
 - [Testing & Verification](#testing--verification)
+- [Documentation](#documentation)
 - [Continuous Integration](#continuous-integration-ci)
+- [Deployment](#deployment)
 - [Project Structure](#project-structure)
 - [Contributing](#contributing)
 
@@ -28,56 +33,90 @@ git clone https://github.com/mrryf/bachelor-thesis.git
 cd bachelor-thesis
 
 # 2. Install dependencies
-pip install -r requirements.txt
+make install
 
-# 3. Build the Prestudy
-./scripts/build.sh content/prestudy
+# 3. Build the Prestudy PDF
+make build
+
+# 4. Run all tests
+make test
 ```
 
 The compiled PDF will be available at `content/prestudy/main.pdf`.
 
 ## Project Overview
 
-The repository is divided into two main components within the `content/` directory:
-- **Prestudy (`content/prestudy/`)**: Contains the current work for the Vorstudie.
-- **Thesis (`content/thesis/`)**: Reserved for the main bachelor thesis work.
+This is a comprehensive academic research project with three major components:
 
-The document is structured using the `subfiles` package. The main document for the prestudy is `content/prestudy/main.tex`.
+### 1. **LaTeX Thesis Documents** 📄
+- **Prestudy (`content/prestudy/`)**: Contains the complete Vorstudie document
+- **Thesis (`content/thesis/`)**: Reserved for the main bachelor thesis work
+- Modular structure using the `subfiles` package
+- Automated bibliography management via Zotero API
+- Survey item table generation from CSV data
+
+### 2. **SvelteKit Web Application** 🌐
+- Interactive web presentation of the research (`webapp/`)
+- Built with SvelteKit, Svelte 5, and TailwindCSS
+- Contains full thesis content with enhanced navigation
+- Deployed automatically to Netlify
+- Features: dark mode, responsive design, glossary, interactive diagrams
+
+### 3. **Documentation Site** 📚
+- Comprehensive MkDocs-powered documentation (`docs/`)
+- API reference for all scripts and tests
+- Build system guides and troubleshooting
+- CI/CD workflow documentation
+- Deployed to GitHub Pages
 
 ### Key Features
-- **Modular Structure**: Each section is a separate file in `content/prestudy/sections/`.
-- **Automated Build System**: Custom shell scripts and GitHub Actions for continuous integration.
-- **Bibliography Management**: Integrated with Zotero via `pyzotero` for automated bibliography updates.
-- **Quality Assurance**: Automated checks for Table of Contents (TOC), List of Figures (LOF), and List of Tables (LOT) integrity.
+- **Automated Build System**: Makefile interface, shell scripts, and GitHub Actions
+- **Quality Assurance**: 7 different test suites ensuring document integrity
+- **Continuous Integration**: Automated builds, tests, and deployments
+- **Bibliography Management**: Integrated with Zotero for automated reference updates
+- **Survey Data Processing**: Automated LaTeX table generation from CSV
 
 ## Tech Stack
 
-- **Language**: LaTeX, Python 3
-- **Build System**: `latexmk`, GitHub Actions
+### LaTeX Documents
+- **Language**: LaTeX (APA7 class)
+- **Build System**: `latexmk`, Docker (CI)
 - **Bibliography**: BibTeX, Zotero API
+
+### Webapp
+- **Framework**: SvelteKit (static site generation)
+- **UI**: Svelte 5, TailwindCSS, shadcn-svelte
+- **Language**: TypeScript
+- **Deployment**: Netlify
+
+### Build & Testing
+- **Language**: Python 3.x, Bash
 - **Testing**: `unittest` (Python)
+- **Linting**: Ruff
+- **Documentation**: MkDocs with Material theme
+- **CI/CD**: GitHub Actions
 
 ## Prerequisites
 
-To build this project locally, you need the following tools installed:
-
-### LaTeX Distribution
-- **macOS**: [MacTeX](https://www.tug.org/mactex/) (recommended)
+### For LaTeX Build
+- **macOS**: [MacTeX](https://www.tug.org/mactex/)
   ```bash
   brew install --cask mactex
   ```
-- **Linux/Windows**: TeX Live or MiKTeX.
+- **Linux/Windows**: TeX Live or MiKTeX
 
-### Python Environment
-Required for build scripts and tests.
-- Python 3.x
-- Dependencies: `bibtexparser`
+### For Development
+- **Python 3.x** with pip
+- **Node.js 20+** and npm (for webapp)
+- **Make** (usually pre-installed)
 
 ```bash
-pip install -r requirements.txt
+# Install Python dependencies
+pip install -r requirements-dev.txt
+
+# Install webapp dependencies
+cd webapp && npm install
 ```
-
-
 
 ## Installation
 
@@ -87,131 +126,252 @@ pip install -r requirements.txt
     cd bachelor-thesis
     ```
 
-2.  **Install Python dependencies:**
+2.  **Install all dependencies:**
     ```bash
-    pip install -r requirements.txt
+    make install
     ```
 
 ## Usage
 
-### Building the Thesis
-You can build the entire thesis or individual sections using the provided build script.
+The project uses a **Makefile** for common tasks. Run `make help` to see all available commands.
 
-**Build everything (Prestudy):**
+### Building LaTeX Documents
+
+**Build Prestudy PDF:**
 ```bash
-./scripts/build.sh content/prestudy
+make build
 ```
 
-**Build Main Document Only (Manual):**
+**Build all documents (prestudy + thesis):**
+```bash
+make build-all
+```
+
+**Using build script directly:**
+```bash
+./scripts/build.sh --prestudy
+./scripts/build.sh --thesis
+./scripts/build.sh --all
+```
+
+**Manual build:**
 ```bash
 cd content/prestudy
 latexmk -pdf main.tex
 ```
 
-**Build a Specific Section:**
+### Webapp Development
+
+**Start development server:**
 ```bash
-cd content/prestudy/sections
-latexmk -pdf 01_introduction.tex
+cd webapp
+npm run dev
 ```
 
+**Build for production:**
+```bash
+cd webapp
+npm run build
+npm run preview  # Preview production build
+```
+
+See [`webapp/README.md`](webapp/README.md) for detailed webapp documentation.
+
 ### Bibliography Management
-The bibliography is stored in `content/prestudy/resources/bibliography.bib`. To sync the latest references from Zotero:
 
-1.  Set your Zotero API credentials (optional, script will prompt if missing):
-    ```bash
-    export ZOTERO_API_KEY="your_api_key"
-    export ZOTERO_USER_ID="your_user_id"
-    ```
-2.  Run the sync script:
-    ```bash
-    python scripts/sync_zotero.py
-    ```
+Sync the latest references from Zotero:
 
-> **Note:** You must have read access to the specific Zotero libraries configured in the script. If you do not have access, the project includes a pre-generated `content/prestudy/resources/bibliography.bib` file that you can use.
+```bash
+make sync-zotero
+```
+
+Or manually:
+```bash
+export ZOTERO_API_KEY="your_api_key"
+export ZOTERO_USER_ID="your_user_id"
+python scripts/sync_zotero.py
+```
+
+> **Note:** A pre-generated `bibliography.bib` is included if you don't have Zotero access.
+
+### Generate Survey Item Tables
+
+```bash
+make generate-tables
+```
 
 ## Testing & Verification
 
-This project uses automated tests to ensure document integrity.
-
-**Run Structure Tests:**
-Verifies that the LaTeX structure is valid (e.g., APA7 class).
+**Run all tests:**
 ```bash
-python tests/test_structure.py
+make test
 ```
 
-**Run Citation Tests:**
-Verifies that all citations in the text match the bibliography.
+**Run specific tests:**
 ```bash
-python tests/test_citations.py
+python tests/test_structure.py         # LaTeX structure validation
+python tests/test_citations.py         # Citation-bibliography matching
+python tests/test_formal_guidelines.py # Required sections check
+python tests/test_formatting_rules.py  # Formatting validation
+python tests/test_bibliography_counts.py # Bibliography integrity
+python tests/test_items_csv.py         # Survey data validation
 ```
 
-**Run Formal Guidelines Tests:**
-Verifies that all required sections and chapters are present.
+**Verify document lists:**
 ```bash
-python tests/test_formal_guidelines.py
+python scripts/check_toc.py content/prestudy
 ```
 
-**Verify Lists (TOC, LOF, LOT):**
-Checks if the generated PDF contains populated lists.
+**Run linting:**
 ```bash
-python scripts/check_toc.py
+make lint
 ```
+
+**Run full CI pipeline locally:**
+```bash
+make ci
+```
+
+## Documentation
+
+Comprehensive documentation is available in multiple formats:
+
+### MkDocs Documentation Site
+Build and serve locally:
+```bash
+make docs
+```
+
+Build for deployment:
+```bash
+make docs-build
+```
+
+Visit the [documentation site](https://mrryf.github.io/bachelor-thesis/) for:
+- Installation and setup guides
+- Build system documentation
+- API reference for scripts and tests
+- CI/CD workflow details
+- Troubleshooting guides
+
+### Additional Documentation
+- **Webapp Design**: [`docs/webapp-concept.md`](docs/webapp-concept.md)
+- **Configuration**: [`docs/configuration.md`](docs/configuration.md)
+- **Troubleshooting**: [`docs/troubleshooting.md`](docs/troubleshooting.md)
+- **Contributing**: [`docs/contributing.md`](docs/contributing.md)
 
 ## Continuous Integration (CI)
 
-This repository uses GitHub Actions to automatically build and verify the thesis on every push to `main`.
+GitHub Actions automatically builds and verifies everything on every push to `main`:
 
-- **Workflow**: `.github/workflows/latex-build.yml`
-- **Jobs**:
-    - `lint_python`: Checks Python code style using Ruff.
-    - `test_structure`: Runs unit tests to verify LaTeX structure.
-    - `test_citations`: Verifies that citations match the bibliography.
-    - `test_formal_guidelines`: Checks for required sections and chapters.
-    - `test_formatting`: Validates formatting rules.
-    - `test_bibliography_counts`: Checks bibliography entry counts.
-    - `build_latex`: Compiles the PDF and verifies document lists (TOC, LOF, LOT).
-- **Artifacts**: The compiled `main.pdf` is uploaded as an artifact for each successful build.
+**Workflow**: `.github/workflows/latex-build.yml`
+
+**Jobs**:
+- `lint_python`: Python code quality (Ruff)
+- `test_structure`: LaTeX structure validation
+- `test_citations`: Citation-bibliography matching
+- `test_formal_guidelines`: Required sections verification
+- `test_formatting`: Formatting rules validation
+- `test_bibliography_counts`: Bibliography integrity
+- `test_items_csv`: Survey data validation
+- `build_latex`: Full PDF compilation + verification
+
+**Artifacts**: 
+- Compiled PDFs (`main.pdf`, `main_required.pdf`)
+- Automatic releases on successful builds
+
+## Deployment
+
+### LaTeX PDF
+- **Automated**: PDFs are built and released automatically via GitHub Actions on every push to `main`
+- **Access**: Download from GitHub Releases or CI artifacts
+
+### Webapp
+- **Platform**: Netlify
+- **Trigger**: Automatic deployment on commits to `main`
+- **Configuration**: [`netlify.toml`](netlify.toml)
+- **Base directory**: `webapp/`
+- **Build command**: `npm run build`
+
+### Documentation
+- **Platform**: GitHub Pages
+- **URL**: https://mrryf.github.io/bachelor-thesis/
+- **Trigger**: Manual deployment via `mkdocs gh-deploy`
 
 ## Project Structure
 
 ```
 bachelor-thesis/
-├── content/
-│   ├── prestudy/           # Current Prestudy Work
-│   │   ├── main.tex        # Main LaTeX entry point (full version with abstract)
-│   │   ├── main_required.tex  # Streamlined version (no abstract, only required sections)
-│   │   ├── sections/       # Individual chapters
-│   │   │   ├── 00_abstract.tex  # (Only in main.tex)
-│   │   │   ├── 01_introduction.tex
-│   │   │   └── ...
-│   │   └── resources/      # Assets and bibliography
-│   │       ├── bibliography.bib
-│   │       ├── images/
-│   │       ├── docs/
-│   │       └── design/
-│   ├── thesis/             # Future Thesis Work
-│   └── operationisation-constructs/
-├── lib/                    # Shared libraries/modules
-│   └── apa7/               # Custom APA7 class files
-├── scripts/                # Build and utility scripts
-│   ├── build.sh
-│   ├── check_toc.py
-│   └── sync_zotero.py
-├── tests/                  # Automated tests
-│   ├── test_structure.py
-│   ├── test_formal_guidelines.py
+├── content/                    # LaTeX source files
+│   ├── prestudy/              # Current prestudy work
+│   │   ├── main.tex           # Full version (with abstract)
+│   │   ├── main_required.tex  # Required version (without abstract)
+│   │   └── sections/          # Individual chapters
+│   ├── thesis/                # Future thesis work
+│   ├── resources/             # Shared resources
+│   │   ├── bibliography.bib   # Zotero-synced references
+│   │   ├── images/            # Figures and diagrams
+│   │   ├── data/              # Survey data (CSV)
+│   │   ├── tables/            # Generated LaTeX tables
+│   │   └── docs/              # Supporting documents
+│   └── lib/                   # LaTeX libraries (APA7 class)
+│
+├── webapp/                     # SvelteKit web application
+│   ├── src/                   # Source code
+│   │   ├── routes/            # SvelteKit pages
+│   │   └── lib/               # Components and utilities
+│   ├── static/                # Static assets
+│   └── package.json           # Dependencies
+│
+├── docs/                       # MkDocs documentation
+│   ├── index.md               # Documentation home
+│   ├── getting-started/       # Setup guides
+│   ├── scripts/               # Script documentation
+│   └── api/                   # API reference
+│
+├── scripts/                    # Build and utility scripts
+│   ├── build.sh               # LaTeX build orchestration
+│   ├── sync_zotero.py         # Bibliography sync
+│   ├── generate_item_tables.py # Table generation
+│   ├── check_toc.py           # Document verification
 │   └── ...
-└── .github/                # CI/CD configuration
+│
+├── tests/                      # Automated test suites
+│   ├── test_structure.py
+│   ├── test_citations.py
+│   ├── test_formal_guidelines.py
+│   ├── test_formatting_rules.py
+│   ├── test_bibliography_counts.py
+│   └── test_items_csv.py
+│
+├── .github/                    # CI/CD configuration
+│   └── workflows/
+│       └── latex-build.yml    # Main CI pipeline
+│
+├── Makefile                    # Build automation
+├── mkdocs.yml                  # Documentation config
+├── netlify.toml                # Webapp deployment config
+├── requirements.txt            # Python dependencies
+└── requirements-dev.txt        # Dev dependencies
 ```
 
 ## Contributing
 
 Contributions are welcome! Please follow these steps:
-1.  Fork the repository.
-2.  Create a new branch (`git checkout -b feature/YourFeature`).
-3.  Commit your changes (`git commit -m 'Add some feature'`).
-4.  Push to the branch (`git push origin feature/YourFeature`).
-5.  Open a Pull Request.
+
+1.  Fork the repository
+2.  Create a feature branch (`git checkout -b feature/YourFeature`)
+3.  Make your changes with clear commit messages
+4.  Ensure all tests pass (`make test`)
+5.  Push to your branch (`git push origin feature/YourFeature`)
+6.  Open a Pull Request
+
+See [`docs/contributing.md`](docs/contributing.md) for detailed guidelines.
 
 ## Security
+
 This project takes security seriously. Please see our [Security Policy](SECURITY.md) for details on reporting vulnerabilities and supported versions.
+
+## License
+
+This project is part of academic research. All content is subject to academic integrity policies.
