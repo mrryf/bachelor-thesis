@@ -10,11 +10,7 @@
   # Publish directory (relative to base)
   publish = "build/"
 
-# Redirect all requests to index.html for SPA routing
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
+# No redirects needed - SvelteKit static adapter generates proper HTML files for each route
 
 # Security headers
 [[headers]]
