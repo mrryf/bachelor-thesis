@@ -77,3 +77,10 @@ content/*/sections/*.pdf
 content/*/sections/*.synctex.gz
 !content/resources/**/*.pdf
 ~$*.docx
+
+# Temporary test/audit files
+.automaker/
+docs/*-audit.md
+tests/test_*.py
+webapp/*AUDIT.md
+webapp/*-audit.js
