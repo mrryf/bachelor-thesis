@@ -18,15 +18,18 @@ export interface Reference {
 
 export const references: Reference[] = referencesData as Reference[];
 
+// OPTIMIZATION: Map for O(1) reference lookup by ID
+const referenceMap = new Map(references.map(ref => [ref.id, ref]));
+
 // OPTIMIZATION: Memoization cache for getAuthorLastName
 const authorLastNameCache = new Map<string, string>();
 
 // OPTIMIZATION: Cache the built citation map (built once, reused)
 let cachedCitationMap: Map<string, string> | null = null;
 
-// Helper to get reference by ID
+// Helper to get reference by ID (O(1) lookup)
 export function getReferenceById(id: string): Reference | undefined {
-	return references.find(ref => ref.id === id);
+	return referenceMap.get(id);
 }
 
 // Helper to format authors for display

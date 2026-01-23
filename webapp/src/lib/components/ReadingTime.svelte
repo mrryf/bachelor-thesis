@@ -1,7 +1,7 @@
 <script lang="ts">
     import Clock from "@lucide/svelte/icons/clock";
 
-    export let minutes: number;
+    let { minutes }: { minutes: number } = $props();
 </script>
 
 <div class="flex items-center gap-2 text-sm text-muted-foreground">

@@ -65,16 +65,13 @@
 
         <div class="grid md:grid-cols-2 gap-0 border-2 border-black">
             {#each downloads as item, i}
+                {@const Icon = item.icon}
                 <div
                     class="group border-black p-8 lg:p-12 {i < downloads.length - 1 && downloads.length > 1 ? 'md:border-r-2' : ''} opacity-60"
                 >
                     <div class="mb-6">
                         <div class="w-12 h-12 border-2 border-black flex items-center justify-center">
-                            <svelte:component
-                                this={item.icon}
-                                size={24}
-                                strokeWidth={1.5}
-                            />
+                            <Icon size={24} strokeWidth={1.5} />
                         </div>
                     </div>
                     <h3 class="font-display text-2xl lg:text-3xl font-bold mb-3 tracking-tight">
