@@ -35,8 +35,15 @@ export function sanitizeHtml(html: string): string {
             "code",
             "pre",
             "span",
+            "div",
+            "table",
+            "thead",
+            "tbody",
+            "tr",
+            "th",
+            "td",
         ],
-        ALLOWED_ATTR: ["href", "target", "rel", "class"],
+        ALLOWED_ATTR: ["href", "target", "rel", "class", "colspan", "rowspan"],
         ALLOW_DATA_ATTR: false,
     });
 }

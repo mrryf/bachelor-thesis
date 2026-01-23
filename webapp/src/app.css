@@ -174,4 +174,48 @@
 		top: 50%;
 		transform: translateY(-50%);
 	}
+
+	/* Content tables - Monochrome academic style */
+	.prose table,
+	.hypothesis-table table,
+	.milestones-table table {
+		@apply w-full text-sm border-2 border-black;
+		border-collapse: collapse;
+	}
+
+	.prose thead,
+	.hypothesis-table thead,
+	.milestones-table thead {
+		@apply bg-black text-white;
+	}
+
+	.prose th,
+	.hypothesis-table th,
+	.milestones-table th {
+		@apply text-left py-3 px-4 font-semibold border-b-2 border-black;
+	}
+
+	.prose td,
+	.hypothesis-table td,
+	.milestones-table td {
+		@apply py-3 px-4 border-b border-gray-300;
+	}
+
+	.prose tbody tr:last-child td,
+	.hypothesis-table tbody tr:last-child td,
+	.milestones-table tbody tr:last-child td {
+		@apply border-b-0;
+	}
+
+	.prose tbody tr:hover,
+	.hypothesis-table tbody tr:hover,
+	.milestones-table tbody tr:hover {
+		@apply bg-gray-50;
+	}
+
+	/* Section header rows in tables */
+	.hypothesis-table td[colspan="3"],
+	.milestones-table td[colspan="3"] {
+		@apply bg-gray-100 font-semibold border-b-2 border-black py-2;
+	}
 }

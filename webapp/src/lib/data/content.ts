@@ -89,7 +89,49 @@ export const sections: Section[] = [
                 title: 'Arbeitsplan',
                 content: `
                     <p>Der folgende Arbeitsplan zeigt die zeitliche Planung der Vorstudie.</p>
-                    <p><em>Hinweis: Gantt-Chart Visualisierung wird in einer zukünftigen Version als dedizierte Komponente integriert.</em></p>
+                    <div class="milestones-table">
+                      <table>
+                        <thead>
+                          <tr>
+                            <th>Meilenstein</th>
+                            <th>Zeitraum</th>
+                            <th>Beteiligte</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>Gespräch Machbarkeit intern</td>
+                            <td>Juli 2025</td>
+                            <td>Liip</td>
+                          </tr>
+                          <tr>
+                            <td>Gespräch Machbarkeit extern</td>
+                            <td>Oktober 2025</td>
+                            <td>Kanton Basel-Stadt</td>
+                          </tr>
+                          <tr>
+                            <td>Entwicklung Anforderungen (Logik &amp; Userflow)</td>
+                            <td>Oktober 2025</td>
+                            <td>Studierender</td>
+                          </tr>
+                          <tr>
+                            <td>Schätzung benötigter Arbeiten</td>
+                            <td>November 2025</td>
+                            <td>Product Owner, Frontend Developer</td>
+                          </tr>
+                          <tr>
+                            <td>Kommunikation Investment extern</td>
+                            <td>November 2025</td>
+                            <td>Kanton Basel-Stadt</td>
+                          </tr>
+                          <tr>
+                            <td>Übereinkunft Investment-Teilung</td>
+                            <td>November 2025</td>
+                            <td>Liip, Kanton Basel-Stadt</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
                 `
             }
         ]
@@ -159,6 +201,67 @@ export const sections: Section[] = [
                 title: 'Hypothesenübersicht',
                 content: `
                     <p>Das folgende Hypothesenmodell zeigt die Pfadbeziehungen zwischen den Konstrukten des AI-TAM.</p>
+                    <div class="hypothesis-table">
+                      <table>
+                        <thead>
+                          <tr>
+                            <th>Bereich</th>
+                            <th>Nr.</th>
+                            <th>Hypothese</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr><td colspan="3">Framing-Hypothesen</td></tr>
+                          <tr>
+                            <td>Framing</td>
+                            <td>H1a</td>
+                            <td>Die Darstellung als Sicherheit (positiver Frame) führt zu einem höheren Vertrauen in künstliche Intelligenz.</td>
+                          </tr>
+                          <tr>
+                            <td></td>
+                            <td>H1b</td>
+                            <td>Die Darstellung als Unsicherheit (negativer Frame) führt zu einem niedrigeren Vertrauen in künstliche Intelligenz.</td>
+                          </tr>
+                          <tr><td colspan="3">AI-TAM-Hypothesen</td></tr>
+                          <tr>
+                            <td>AI-TAM</td>
+                            <td>H2</td>
+                            <td>Vertrauen in künstliche Intelligenz hat einen positiven Einfluss auf die wahrgenommene Nützlichkeit.</td>
+                          </tr>
+                          <tr>
+                            <td></td>
+                            <td>H3</td>
+                            <td>Vertrauen in künstliche Intelligenz hat einen positiven Einfluss auf die wahrgenommene Einfachheit in der Nutzung.</td>
+                          </tr>
+                          <tr><td colspan="3">TAM-Hypothesen</td></tr>
+                          <tr>
+                            <td>TAM</td>
+                            <td>H4</td>
+                            <td>Die wahrgenommene Nützlichkeit hat einen positiven Einfluss auf die Nutzungsintention.</td>
+                          </tr>
+                          <tr>
+                            <td></td>
+                            <td>H5</td>
+                            <td>Die wahrgenommene Einfachheit in der Nutzung hat einen positiven Einfluss auf die Nutzungsintention.</td>
+                          </tr>
+                          <tr>
+                            <td></td>
+                            <td>H6</td>
+                            <td>Die wahrgenommene Einfachheit in der Nutzung hat einen positiven Einfluss auf die wahrgenommene Nützlichkeit.</td>
+                          </tr>
+                          <tr>
+                            <td></td>
+                            <td>H7</td>
+                            <td>Die Nutzungsintention hat einen positiven Einfluss auf die Kollaborationsintention.</td>
+                          </tr>
+                          <tr>
+                            <td></td>
+                            <td>H8</td>
+                            <td>Die Vertrautheit mit Technologie hat einen positiven Einfluss auf die wahrgenommene Nützlichkeit.</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
                 `,
                 figure: {
                     id: 'fig-hypothesen',
@@ -204,7 +307,7 @@ export const sections: Section[] = [
         wordCount: 450,
         content: '',
         subsections: [
-            { id: 'selbstreflexion', title: 'Selbstreflexion', content: '<p>Die bisherige Arbeit an meiner Bachelor-Thesis bedeutete für mich einen grossen Wissensgewinn in einem Themenfeld, das mich seit Längerem fasziniert. Von Anfang an war mir klar, dass ich ein Experiment durchführen wollte. Die Möglichkeit, eigene Hypothesen empirisch zu prüfen, reizte mich besonders. Dabei konnte ich meinen Interessen folgen: Künstliche Intelligenz, Mensch-Maschine-Interaktion und die psychologischen Faktoren, die unsere Wahrnehmung von Technologie beeinflussen.</p><p>Das Ausarbeiten des Forschungsdesigns war eine spannende Erfahrung. Zum ersten Mal hatte ich die Gelegenheit, ein Design so auszugestalten, wie ich es mir vorstellte. Von der Definition der Forschungsfrage über die Hypothesenbildung bis zur Operationalisierung der Konstrukte war dieser Prozess lehrreich und zeigte mir, wie viele Entscheidungen in einem scheinbar einfachen experimentellen Setup stecken.</p>' },
+            { id: 'selbstreflexion', title: 'Selbstreflexion', content: '<p>Die bisherige Arbeit an meiner Bachelor-Thesis bedeutete für mich einen grossen Wissensgewinn in einem Themenfeld, das mich seit Längerem fasziniert. Von Anfang an war mir klar, dass ich ein Experiment durchführen wollte. Die Möglichkeit, eigene Hypothesen empirisch zu prüfen, reizte mich besonders. Dabei konnte ich meinen Interessen folgen: Künstliche Intelligenz, Mensch-Maschine-Interaktion und die psychologischen Faktoren, die unsere Wahrnehmung von Technologie beeinflussen.</p><p>Das Ausarbeiten des Forschungsdesigns war eine spannende Erfahrung. Zum ersten Mal hatte ich die Gelegenheit, ein Design so auszugestalten, wie ich es mir vorstellte. Von der Definition der Forschungsfrage über die Hypothesenbildung bis zur Operationalisierung der Konstrukte war dieser Prozess lehrreich und zeigte mir, wie viele Entscheidungen in einem scheinbar einfachen experimentellen Setup stecken.</p><p>Besonders zufrieden bin ich mit meinem Betreuungssetup. Mein Dozent erweist sich als wertvoller Sparringpartner, dessen Erfahrung mir half, mein Design zu schärfen und methodische Fallstricke zu vermeiden. Auf Seiten des Praxispartners darf ich mit einer äusserst versierten Ansprechpartnerin zusammenarbeiten, die das Projekt von Beginn an unterstützte und die nötigen Rahmenbedingungen schuf.</p><p>Was mich besonders freut: Das Experiment wird in einer realen Umgebung durchgeführt. Anstatt einer simulierten Trockenübung können echte Nutzende des KI-Assistenten Alva an der Studie teilnehmen. Dies erhöht nicht nur die externe Validität der Ergebnisse, sondern gibt der Arbeit auch eine praktische Relevanz, die über den akademischen Kontext hinausgeht.</p>' },
             { id: 'ausblick', title: 'Weiteres Vorgehen', content: '<p>Als nächster Schritt steht die Operationalisierung der Konstrukte an, welche bereits begonnen hat. Parallel dazu werden die User Stories erstellt, welche die technischen Anforderungen für die Integration des Experiments definieren. Sobald die Operationalisierung abgeschlossen ist, folgt ein Pre-Test zur Überprüfung der Stimuli und des Fragebogens. Die Erkenntnisse daraus dienen gegebenenfalls zur Anpassung der Stimuli oder zur Überarbeitung der Items.</p><p>Im Januar und Februar 2026 wird die benötigte Experiment-Logik auf der Website des Kantons Basel-Stadt implementiert. Das Experiment selbst ist für den Zeitraum von Mitte Februar bis Mitte April 2026 geplant. Im Anschluss erfolgen die Auswertung der erhobenen Daten und die Erstellung der Bachelor-Arbeit.</p>' }
         ]
     }
@@ -251,7 +354,14 @@ export const glossaryTerms = [
     { term: 'BI', definition: 'Behavioral Intention - Verhaltensabsicht' },
     { term: 'CI', definition: 'Collaborative Intention - Kooperationsabsicht' },
     { term: 'XAIT', definition: 'Explainable AI Trust - Vertrauen durch erklärbare KI' },
-    { term: 'Konfidenz', definition: 'Grad der Sicherheit/Unsicherheit einer KI-Antwort' }
+    { term: 'Konfidenz', definition: 'Grad der Sicherheit/Unsicherheit einer KI-Antwort' },
+    { term: 'KI', definition: 'Künstliche Intelligenz - Artificial Intelligence (AI)' },
+    { term: 'XAI', definition: 'Explainable Artificial Intelligence - Erklärbare Künstliche Intelligenz' },
+    { term: 'FAM-TEC', definition: 'Familiarity with Technology - Vertrautheit mit Technologie' },
+    { term: 'CLT', definition: 'Construal Level Theory - Konstruktebenen-Theorie' },
+    { term: 'SEM', definition: 'Structural Equation Model - Strukturgleichungsmodell' },
+    { term: 'UV', definition: 'Unabhängige Variable - Independent Variable' },
+    { term: 'N', definition: 'Sample Size - Stichprobengrösse' }
 ];
 
 // Total word count for full document
