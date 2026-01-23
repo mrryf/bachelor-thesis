@@ -2,11 +2,11 @@
 	import { githubUrl } from "$lib/data/content";
 	import BookOpen from "@lucide/svelte/icons/book-open";
 	import FlaskConical from "@lucide/svelte/icons/flask-conical";
-	import FolderOpen from "@lucide/svelte/icons/folder-open";
 	import BookMarked from "@lucide/svelte/icons/book-marked";
 	import Download from "@lucide/svelte/icons/download";
 	import Github from "@lucide/svelte/icons/github";
 	import ArrowRight from "@lucide/svelte/icons/arrow-right";
+	import Target from "@lucide/svelte/icons/target";
 
 	const pageCards = [
 		{
@@ -16,28 +16,22 @@
 			icon: BookOpen,
 		},
 		{
-			title: "Forschung",
+			title: "Bachelorarbeit",
 			description: "Hypothesen, AI-TAM Modell und Experimentdesign",
-			href: "/studie",
+			href: "/bachelorarbeit",
 			icon: FlaskConical,
 		},
 		{
-			title: "Materialien",
-			description: "Abbildungen, Tabellen und Quellen",
-			href: "/materialien",
-			icon: FolderOpen,
+			title: "Downloads",
+			description: "PDF-Dokumente, Abbildungen und Daten",
+			href: "/downloads",
+			icon: Download,
 		},
 		{
 			title: "Glossar",
 			description: "Begriffe und Definitionen",
 			href: "/glossar",
 			icon: BookMarked,
-		},
-		{
-			title: "Downloads",
-			description: "PDF-Dokumente zum Herunterladen",
-			href: "/downloads",
-			icon: Download,
 		},
 	];
 </script>
@@ -117,8 +111,27 @@
 		</div>
 	</section>
 
-	<!-- Section Divider -->
-	<div class="section-divider-ultra"></div>
+	<!-- Forschungsfrage Section -->
+	<section class="px-6 md:px-12 py-24 lg:py-32">
+		<div class="max-w-4xl mx-auto">
+			<div class="flex items-center gap-4 mb-12">
+				<div class="w-12 h-12 border-2 border-black flex items-center justify-center">
+					<Target size={24} strokeWidth={1.5} />
+				</div>
+				<h2 class="font-display text-3xl md:text-4xl font-bold tracking-tight">Forschungsfrage</h2>
+			</div>
+
+			<div class="border-2 border-black p-8 md:p-12 bg-white">
+				<div class="text-5xl md:text-6xl leading-none mb-8 opacity-20">"</div>
+				<blockquote class="text-2xl md:text-3xl font-display italic leading-tight -mt-12">
+					Wie beeinflusst das Framing von Konfidenzangaben einer
+					LLM-basierten Applikation das Vertrauen der Nutzer und deren
+					Nutzungsabsicht?
+				</blockquote>
+				<div class="text-5xl md:text-6xl leading-none mt-8 text-right opacity-20">"</div>
+			</div>
+		</div>
+	</section>
 
 	<!-- Content Grid Section -->
 	<section class="px-6 md:px-12 py-24 lg:py-32">
@@ -169,9 +182,6 @@
 		</div>
 	</section>
 
-	<!-- Section Divider -->
-	<div class="section-divider-ultra"></div>
-
 	<!-- Inverted Section - About -->
 	<section class="section-inverted px-6 md:px-12 py-32 lg:py-40">
 		<div class="max-w-6xl mx-auto relative z-10">
@@ -196,9 +206,6 @@
 			</div>
 		</div>
 	</section>
-
-	<!-- Section Divider -->
-	<div class="section-divider-ultra"></div>
 
 	<!-- Footer -->
 	<footer class="border-t-2 border-black py-16 px-6 md:px-12">

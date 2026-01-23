@@ -10,10 +10,9 @@ describe('Navigation Component Data', () => {
     it('should have expected routes in navigation', () => {
         const routes = navItems.map(item => item.href);
         expect(routes).toContain('/vorstudie');
-        expect(routes).toContain('/studie');
-        expect(routes).toContain('/materialien');
-        expect(routes).toContain('/glossar');
+        expect(routes).toContain('/bachelorarbeit');
         expect(routes).toContain('/downloads');
+        expect(routes).toContain('/glossar');
     });
 
     it('should have valid GitHub URL', () => {

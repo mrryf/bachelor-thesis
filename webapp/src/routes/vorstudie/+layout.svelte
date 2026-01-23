@@ -158,20 +158,21 @@
     <!-- Main Content -->
     <main class="flex-1 min-w-0 px-8 md:px-12 lg:px-16">
         <!-- Mobile TOC Trigger -->
-        <Sheet.Root bind:open={tocSheetOpen}>
-            <Sheet.Trigger>
-                {#snippet child({ props })}
-                    <Button
-                        variant="outline"
-                        size="icon"
-                        class="fixed bottom-6 right-6 z-40 h-12 w-12 rounded-full shadow-lg lg:hidden"
-                        {...props}
-                    >
-                        <List class="h-5 w-5" />
-                        <span class="sr-only">Inhaltsverzeichnis</span>
-                    </Button>
-                {/snippet}
-            </Sheet.Trigger>
+        <div class="lg:hidden">
+            <Sheet.Root bind:open={tocSheetOpen}>
+                <Sheet.Trigger>
+                    {#snippet child({ props })}
+                        <Button
+                            variant="outline"
+                            size="icon"
+                            class="fixed bottom-6 right-6 z-40 h-12 w-12 rounded-full shadow-lg border-2 border-black bg-white hover:bg-black hover:text-white"
+                            {...props}
+                        >
+                            <List class="h-5 w-5" />
+                            <span class="sr-only">Inhaltsverzeichnis</span>
+                        </Button>
+                    {/snippet}
+                </Sheet.Trigger>
             <Sheet.Content
                 side="left"
                 class="w-[85vw] sm:w-[540px] overflow-y-auto"
@@ -222,7 +223,8 @@
                     {/each}
                 </nav>
             </Sheet.Content>
-        </Sheet.Root>
+            </Sheet.Root>
+        </div>
 
         {@render children()}
 

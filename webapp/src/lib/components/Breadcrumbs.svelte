@@ -6,8 +6,7 @@
 	// Route name mapping for human-readable breadcrumbs
 	const routeLabels: Record<string, string> = {
 		vorstudie: "Vorstudie",
-		studie: "Studie",
-		materialien: "Materialien",
+		bachelorarbeit: "Bachelorarbeit",
 		glossar: "Glossar",
 		downloads: "Downloads",
 		impressum: "Impressum",
