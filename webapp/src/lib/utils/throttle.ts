@@ -12,14 +12,14 @@
  *
  * window.addEventListener('scroll', handleScroll);
  */
-export function throttle<T extends (...args: any[]) => void>(
+export function throttle<T extends (...args: unknown[]) => void>(
     func: T,
     delay: number
 ): (...args: Parameters<T>) => void {
     let timeoutId: ReturnType<typeof setTimeout> | null = null;
     let lastRan = 0;
 
-    return function(this: any, ...args: Parameters<T>) {
+    return function(this: unknown, ...args: Parameters<T>) {
         const now = Date.now();
 
         if (now - lastRan >= delay) {

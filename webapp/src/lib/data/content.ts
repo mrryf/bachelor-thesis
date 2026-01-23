@@ -41,9 +41,12 @@ export const navItems = [
 // GitHub link (separate for footer/header)
 export const githubUrl = 'https://github.com/mrryf/bachelor-thesis';
 
-// Calculate reading time (average 200 words per minute)
+// Average reading speed in words per minute
+const WORDS_PER_MINUTE = 200;
+
+// Calculate reading time based on word count
 export function calculateReadingTime(wordCount: number): number {
-    return Math.ceil(wordCount / 200);
+    return Math.ceil(wordCount / WORDS_PER_MINUTE);
 }
 
 // Prestudy document sections
