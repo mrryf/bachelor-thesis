@@ -3,6 +3,7 @@
     import { sections } from "$lib/data/content";
     import { Separator } from "$lib/components/ui/separator";
     import SectionNav from "$lib/components/SectionNav.svelte";
+    import Figure from "$lib/components/Figure.svelte";
     import { throttle, sanitizeHtml } from "$lib/utils";
     import { enhanceGlossaryTerms } from "$lib/actions/enhanceGlossaryTerms";
     import { enhanceCitations } from "$lib/actions/enhanceCitations";
@@ -88,6 +89,15 @@
                         >
                             {@html sanitizeHtml(subsection.content)}
                         </div>
+
+                        {#if subsection.figure}
+                            <Figure
+                                src={subsection.figure.src}
+                                alt={subsection.figure.alt}
+                                caption={subsection.figure.caption}
+                                figureNumber={subsection.figure.figureNumber}
+                            />
+                        {/if}
                     </section>
                 {/each}
             </div>
