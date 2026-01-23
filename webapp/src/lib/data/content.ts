@@ -7,10 +7,19 @@ export interface Section {
     subsections?: Subsection[];
 }
 
+export interface SubsectionFigure {
+    id: string;
+    src: string;
+    caption: string;
+    alt: string;
+    figureNumber: string;
+}
+
 export interface Subsection {
     id: string;
     title: string;
     content: string;
+    figure?: SubsectionFigure;
 }
 
 export interface NavItem {
@@ -106,8 +115,14 @@ export const sections: Section[] = [
                 title: 'Erweiterungen des TAM zum AI-TAM',
                 content: `
                     <p>Baroni et al. (2022) erweiterten das TAM um drei zusätzliche Konstrukte: «Explainable AI Trust» (Vertrauen in KI) aus der Literatur zu «Explainable AI» (XAI), «Collaborative Intention» (Kollaborationsabsicht) zur Messung der Bereitschaft zur Teilnahme an «Human-in-the-Loop»-Mechanismen sowie die Vertrautheit mit der Technologie und dem Anwendungskontext. Das im AI-TAM verwendete Vertrauenskonstrukt entstammt der Forschung von Hoffman et al. (2019) und erfasst, inwieweit Nutzer den Ergebnissen eines KI-Systems vertrauen. Ergänzend misst die Kollaborationsabsicht die Bereitschaft, aktiv an der Weiterentwicklung der KI mitzuwirken.</p>
-                    <p><em>Hinweis: AI-TAM Modell-Visualisierung wird als dedizierte Komponente integriert.</em></p>
-                `
+                `,
+                figure: {
+                    id: 'fig-ai-tam',
+                    src: '/images/ba_faryf_ai_tam.jpg',
+                    caption: 'Erweitertes TAM-Modell: Artificial Intelligence-Technology Acceptance Model (AI-TAM)',
+                    alt: 'AI-TAM Modell Diagramm zeigt die Erweiterung des Technology Acceptance Models',
+                    figureNumber: 'Abbildung 2.1'
+                }
             },
             {
                 id: 'framing',
@@ -130,14 +145,28 @@ export const sections: Section[] = [
                 title: 'Latente Konstrukte',
                 content: `
                     <p>Die latenten Konstrukte werden mittels einer Online-Befragung nach der Nutzung der KI-Assistenz erhoben. Die verwendeten Konstrukte basieren auf dem AI-TAM von Baroni et al. (2022) und wurden aus drei Quellen adaptiert: Ibrahim et al. (2025) für die Kernkonstrukte wahrgenommene Nützlichkeit, Einfachheit der Nutzung, Verhaltensintention und Vertrauen in KI; Topsakal et al. (2025) für die technologische Vorerfahrung; sowie Grassi et al. (2022) für die Kollaborationsintention. Alle Items werden auf einer 5-stufigen Likert-Skala erhoben.</p>
-                `
+                `,
+                figure: {
+                    id: 'fig-messmodell',
+                    src: '/images/ba_faryf_messmodell.jpg',
+                    caption: 'Messmodell mit latenten Konstrukten',
+                    alt: 'Messmodell zeigt die latenten Konstrukte und ihre Indikatoren',
+                    figureNumber: 'Abbildung 2.2'
+                }
             },
             {
                 id: 'hypothesen',
                 title: 'Hypothesenübersicht',
                 content: `
-                    <p><em>Hinweis: Hypothesenmodell und Hypothesentabellen werden als dedizierte Komponente integriert. Siehe Forschung-Seite für interaktives Hypothesendiagramm.</em></p>
-                `
+                    <p>Das folgende Hypothesenmodell zeigt die Pfadbeziehungen zwischen den Konstrukten des AI-TAM.</p>
+                `,
+                figure: {
+                    id: 'fig-hypothesen',
+                    src: '/images/ba_faryf_hypothesen_design.jpg',
+                    caption: 'Hypothesenmodell mit Pfadbeziehungen',
+                    alt: 'Hypothesenmodell zeigt die Pfadbeziehungen zwischen den Konstrukten',
+                    figureNumber: 'Abbildung 2.3'
+                }
             }
         ]
     },
@@ -162,7 +191,7 @@ export const sections: Section[] = [
 			<p>Das Experiment untersucht den Einfluss von Framing bezüglich Sicherheit und Unsicherheit auf das Vertrauen in KI-gestützte Systeme. In einem 3x2 Between-Subjects-Design wird die Darstellung von Konfidenzwerten (Sicherheit vs. Unsicherheit) bei variierenden Accuracy-Scores (hoch, mittel, niedrig) manipuliert. Daraus ergeben sich sechs Experimentalgruppen sowie eine Kontrollgruppe ohne Konfidenzwert-Anzeige. Die experimentelle Manipulation erfolgt während der realen Interaktion mit einem KI-Assistenten.</p>
 		`,
         subsections: [
-            { id: 'design', title: 'Experimentelles Design', content: '<p>Das Untersuchungsdesign entspricht einem 3x2 faktoriellen Between-Subjects-Design. Die erste unabhängige Variable (Framing) variiert die Darstellung als Sicherheit versus Unsicherheit, die zweite unabhängige Variable (Konfidenzwert) variiert den Konfidenzwert in drei Stufen (hoch, mittel, niedrig).</p><p><em>Hinweis: Experiment-Design-Tabellen werden als dedizierte Kompon enten integriert.</em></p>' },
+            { id: 'design', title: 'Experimentelles Design', content: '<p>Das Untersuchungsdesign entspricht einem 3x2 faktoriellen Between-Subjects-Design. Die erste unabhängige Variable (Framing) variiert die Darstellung als Sicherheit versus Unsicherheit, die zweite unabhängige Variable (Konfidenzwert) variiert den Konfidenzwert in drei Stufen (hoch, mittel, niedrig).</p>' },
             { id: 'stimulus', title: 'Stimulus-Konzept', content: '<p>Der Stimulus besteht aus der visuellen und textlichen Darstellung einer Sicherheits- bzw. Unsicherheitsanzeige, die direkt nach jeder LLM-Antwort entsprechend der zugewiesenen Stimulusgruppe eingeblendet wird. Die Manipulation erfolgt in Echtzeit während der natürlichen Interaktion mit dem digitalen Assistenten (Kanton Basel-Stadt, 2025).</p>' },
             { id: 'methodik', title: 'Methodische Einordnung', content: '<p>Das vorliegende Forschungsdesign verbindet ein kontrolliertes Experiment mit einer Felderhebung im realen Nutzungskontext. Die Wahl dieser Methode orientiert sich an der Fragestellung und dem untersuchten Gegenstandsbereich (vgl. Kelle, 2008, S. 174f.).</p>' },
             { id: 'ablauf', title: 'Ablauf Experiment', content: '<p>Das geplante Experiment findet in drei Phasen statt. In der ersten Phase werden die Nutzenden über das Experiment informiert und können sich für oder gegen eine Teilnahme entscheiden. In Phase 2 steht die Interaktion mit dem Chatbot Alva im Zentrum. In Phase 3 werden die Nutzenden aufgefordert, die dazugehörige Umfrage auszufüllen und das Experiment abzuschliessen.</p>' }
