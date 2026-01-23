@@ -20,14 +20,13 @@ export interface NavItem {
     external?: boolean;
 }
 
-// Main navigation// Main navigation
+// Main navigation
 export const navItems = [
     { title: 'Home', href: '/' },
     { title: 'Vorstudie', href: '/vorstudie' },
-    { title: 'Studie', href: '/studie' },
-    { title: 'Materialien', href: '/materialien' },
-    { title: 'Glossar', href: '/glossar' },
-    { title: 'Downloads', href: '/downloads' }
+    { title: 'Bachelorarbeit', href: '/bachelorarbeit' },
+    { title: 'Downloads', href: '/downloads' },
+    { title: 'Glossar', href: '/glossar' }
 ];
 
 // GitHub link (separate for footer/header)

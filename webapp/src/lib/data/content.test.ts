@@ -84,7 +84,7 @@ describe('navItems data integrity', () => {
     it('should have all required navigation items', () => {
         expect(navItems.length).toBeGreaterThan(0);
 
-        const expectedRoutes = ['/vorstudie', '/studie', '/materialien', '/glossar', '/downloads'];
+        const expectedRoutes = ['/vorstudie', '/bachelorarbeit', '/downloads', '/glossar'];
         const actualRoutes = navItems.map((item: NavItem) => item.href);
 
         expectedRoutes.forEach(route => {

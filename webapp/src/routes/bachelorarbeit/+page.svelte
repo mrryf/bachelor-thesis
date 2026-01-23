@@ -7,14 +7,14 @@
 </script>
 
 <svelte:head>
-    <title>Forschung - Vertrauen in KI</title>
+    <title>Bachelorarbeit - Vertrauen in KI</title>
 </svelte:head>
 
 <div class="container mx-auto max-w-6xl px-6 md:px-12 py-24 lg:py-32">
     <header class="mb-24">
         <p class="text-mono-label mb-6">Wissenschaftliche Grundlagen</p>
         <h1 class="font-display text-5xl md:text-6xl lg:text-7xl font-bold mb-8 tracking-tight">
-            Forschung
+            Bachelorarbeit
         </h1>
         <p class="text-xl md:text-2xl max-w-3xl leading-relaxed">
             Hypothesen, AI-TAM Modell und Experimentdesign
