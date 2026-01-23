@@ -4,34 +4,6 @@
     import Target from "@lucide/svelte/icons/target";
     import Lightbulb from "@lucide/svelte/icons/lightbulb";
     import Layout from "@lucide/svelte/icons/layout";
-
-    const hypotheses = [
-        {
-            id: "H1a",
-            path: "Stimulus Positiv → XAIT",
-            direction: "+",
-            basis: "Attribute Frame",
-        },
-        {
-            id: "H1b",
-            path: "Stimulus Negativ → XAIT",
-            direction: "−",
-            basis: "Attribute Frame",
-        },
-        { id: "H2", path: "XAIT → PU", direction: "+", basis: "AI-TAM" },
-        { id: "H3", path: "XAIT → PEOU", direction: "+", basis: "AI-TAM" },
-        { id: "H4", path: "PEOU → PU", direction: "+", basis: "TAM" },
-        { id: "H5", path: "PU → BI", direction: "+", basis: "TAM" },
-        { id: "H6", path: "PEOU → BI", direction: "+", basis: "TAM" },
-        { id: "H7", path: "PU → CI", direction: "+", basis: "AI-TAM" },
-        { id: "H8", path: "BI → CI", direction: "+", basis: "AI-TAM" },
-        {
-            id: "H9",
-            path: "FAMTEC → PU",
-            direction: "+",
-            basis: "TAM Extension",
-        },
-    ];
 </script>
 
 <svelte:head>
@@ -105,32 +77,12 @@
             <h2 class="font-display text-3xl md:text-4xl font-bold tracking-tight">Hypothesen</h2>
         </div>
 
-        <!-- Hypothesis Diagram -->
-        <div class="border-2 border-black p-8 mb-12 bg-white">
+        <!-- Interactive Hypothesis Diagram -->
+        <div class="border-2 border-black p-6 md:p-8 bg-white">
             <HypothesisDiagram />
-            <p class="text-mono-label mt-6 text-center">
-                Interaktives Modell: Bewegen Sie die Maus über die Elemente für Details
+            <p class="text-mono-label mt-4 text-center">
+                Interaktives Modell: Bewegen Sie die Maus über Elemente oder klicken Sie zur Fixierung
             </p>
-        </div>
-
-        <!-- Hypotheses Grid -->
-        <div class="grid md:grid-cols-2 gap-0 border-2 border-black">
-            {#each hypotheses as h, i}
-                <div
-                    class="p-8 border-black {i < hypotheses.length - 2 ? 'border-b-2' : ''} {i % 2 === 0 && i < hypotheses.length - 1 ? 'md:border-r-2' : ''}"
-                >
-                    <div class="flex items-start justify-between mb-4">
-                        <span class="font-mono text-lg font-bold">{h.id}</span>
-                        <span class="text-2xl font-bold">
-                            {h.direction}
-                        </span>
-                    </div>
-                    <p class="text-base mb-3">{h.path}</p>
-                    <p class="text-mono-label opacity-70">
-                        {h.basis}
-                    </p>
-                </div>
-            {/each}
         </div>
     </section>
 
