@@ -86,24 +86,24 @@
 <div class="flex min-h-screen">
     <!-- Sticky Table of Contents (Desktop) -->
     <aside
-        class="hidden lg:block w-72 shrink-0 border-r bg-background"
+        class="hidden lg:block w-80 shrink-0 border-r-2 border-black bg-background"
         aria-label="Inhaltsverzeichnis"
     >
-        <div class="sticky top-20 p-6">
+        <div class="sticky top-24 p-8">
             <div
-                class="flex items-center gap-2 mb-6 text-sm font-medium text-muted-foreground"
+                class="flex items-center gap-3 mb-8 text-sm font-medium text-muted-foreground"
             >
                 <List class="h-4 w-4" />
                 <span>Inhaltsverzeichnis</span>
             </div>
 
-            <nav class="space-y-6" aria-label="Abschnitte">
+            <nav class="space-y-8" aria-label="Abschnitte">
                 {#each sections as section}
                     {@const progress = getSectionProgress(section.id)}
-                    <div class="space-y-2">
+                    <div class="space-y-4">
                         <a
                             href="/vorstudie/{section.id}"
-                            class="flex items-start justify-between gap-2 text-sm font-medium transition-colors hover:text-primary {activeSectionId ===
+                            class="flex items-start justify-between gap-3 text-sm font-medium transition-colors hover:text-primary {activeSectionId ===
                             section.id
                                 ? 'text-primary'
                                 : 'text-muted-foreground'}"
@@ -125,7 +125,7 @@
                         <div
                             class="flex items-center gap-3 text-xs text-muted-foreground/60 pl-4"
                         >
-                            <span class="flex items-center gap-1">
+                            <span class="flex items-center gap-2">
                                 <Clock class="h-3 w-3" />
                                 {calculateReadingTime(section.wordCount)} min
                             </span>
@@ -133,11 +133,11 @@
 
                         <!-- Subsections (Level 2) -->
                         {#if section.subsections && section.subsections.length > 0}
-                            <div class="ml-4 space-y-1 border-l pl-3">
+                            <div class="ml-4 space-y-2 border-l-2 border-black pl-4">
                                 {#each section.subsections as subsection, i}
                                     <a
                                         href="/vorstudie/{section.id}#{subsection.id}"
-                                        class="block py-1 text-xs transition-colors hover:text-primary {activeSubsectionId ===
+                                        class="block py-2 text-xs transition-colors hover:text-primary {activeSubsectionId ===
                                             subsection.id &&
                                         activeSectionId === section.id
                                             ? 'text-foreground font-medium'
@@ -156,7 +156,7 @@
     </aside>
 
     <!-- Main Content -->
-    <main class="flex-1 min-w-0">
+    <main class="flex-1 min-w-0 px-8 md:px-12 lg:px-16">
         <!-- Mobile TOC Trigger -->
         <Sheet.Root bind:open={tocSheetOpen}>
             <Sheet.Trigger>
@@ -180,13 +180,13 @@
                     <Sheet.Title>Inhaltsverzeichnis</Sheet.Title>
                 </Sheet.Header>
 
-                <nav class="space-y-6">
+                <nav class="space-y-8">
                     {#each sections as section}
                         {@const progress = getSectionProgress(section.id)}
-                        <div class="space-y-3">
+                        <div class="space-y-4">
                             <a
                                 href="/vorstudie/{section.id}"
-                                class="flex items-center justify-between font-medium transition-colors hover:text-primary {activeSectionId ===
+                                class="flex items-center justify-between gap-4 font-medium transition-colors hover:text-primary {activeSectionId ===
                                 section.id
                                     ? 'text-primary'
                                     : 'text-foreground'}"
@@ -204,11 +204,11 @@
 
                             <!-- Subsections Mobile -->
                             {#if section.subsections && section.subsections.length > 0}
-                                <div class="ml-4 space-y-2 border-l pl-4">
+                                <div class="ml-4 space-y-3 border-l-2 border-black pl-4">
                                     {#each section.subsections as subsection, i}
                                         <a
                                             href="/vorstudie/{section.id}#{subsection.id}"
-                                            class="block text-sm text-muted-foreground transition-colors hover:text-foreground"
+                                            class="block py-1 text-sm text-muted-foreground transition-colors hover:text-foreground"
                                             onclick={() =>
                                                 (tocSheetOpen = false)}
                                         >

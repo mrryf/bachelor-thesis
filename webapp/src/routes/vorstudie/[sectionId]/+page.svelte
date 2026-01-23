@@ -53,9 +53,9 @@
 <svelte:window onscroll={handleScroll} />
 
 {#if section}
-    <div class="space-y-8 animate-in fade-in duration-500">
-        <header class="mb-8">
-            <h1 class="text-3xl font-bold mb-2">
+    <div class="space-y-12 animate-in fade-in duration-500 py-12">
+        <header class="mb-12">
+            <h1 class="text-3xl font-bold mb-4">
                 <span class="text-primary">{section.number}.</span>
                 {section.title}
             </h1>
@@ -63,7 +63,7 @@
 
         <!-- Main Content -->
         <div
-            class="prose prose-slate dark:prose-invert max-w-none mb-8"
+            class="prose prose-slate dark:prose-invert max-w-none mb-16"
             use:enhanceGlossaryTerms
             use:enhanceCitations
         >
@@ -72,10 +72,10 @@
 
         <!-- Subsections -->
         {#if section.subsections && section.subsections.length > 0}
-            <div class="space-y-12">
+            <div class="space-y-16">
                 {#each section.subsections as subsection, i}
-                    <section id={subsection.id} class="scroll-mt-24">
-                        <h3 class="text-2xl font-semibold mb-6">
+                    <section id={subsection.id} class="scroll-mt-32">
+                        <h3 class="text-2xl font-semibold mb-8">
                             <span class="text-primary"
                                 >{section.number}.{i + 1}</span
                             >
@@ -93,7 +93,7 @@
             </div>
         {/if}
 
-        <Separator class="my-8" />
+        <Separator class="my-16" />
 
         <!-- Navigation -->
         <SectionNav

@@ -1,8 +1,7 @@
 <script lang="ts">
 	import { page } from "$app/stores";
-
 	import Home from "@lucide/svelte/icons/home";
-	import * as Breadcrumb from "$lib/components/ui/breadcrumb";
+	import ChevronRight from "@lucide/svelte/icons/chevron-right";
 
 	// Route name mapping for human-readable breadcrumbs
 	const routeLabels: Record<string, string> = {
@@ -35,31 +34,37 @@
 </script>
 
 {#if breadcrumbs.length > 0}
-	<nav class="container mx-auto px-4 py-3" aria-label="Breadcrumb">
-		<Breadcrumb.Root>
-			<Breadcrumb.List>
+	<nav class="border-b-2 border-black bg-white" aria-label="Breadcrumb">
+		<div class="container mx-auto px-6 md:px-12 py-6">
+			<ol class="flex items-center gap-3 text-sm">
 				<!-- Home link -->
-				<Breadcrumb.Item>
-					<Breadcrumb.Link href="/" class="flex items-center gap-1.5">
-						<Home class="h-4 w-4" />
+				<li>
+					<a
+						href="/"
+						class="flex items-center gap-2 hover:opacity-70 transition-opacity duration-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
+					>
+						<Home size={16} strokeWidth={1.5} />
 						<span class="sr-only">Home</span>
-					</Breadcrumb.Link>
-				</Breadcrumb.Item>
+					</a>
+				</li>
 
 				<!-- Dynamic breadcrumb items -->
 				{#each breadcrumbs as crumb}
-					<Breadcrumb.Separator />
-					<Breadcrumb.Item>
+					<li class="flex items-center gap-3">
+						<ChevronRight size={16} strokeWidth={1.5} class="text-mutedForeground" />
 						{#if crumb.isLast}
-							<Breadcrumb.Page>{crumb.label}</Breadcrumb.Page>
+							<span class="font-semibold">{crumb.label}</span>
 						{:else}
-							<Breadcrumb.Link href={crumb.href}>
+							<a
+								href={crumb.href}
+								class="hover:opacity-70 transition-opacity duration-100 underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
+							>
 								{crumb.label}
-							</Breadcrumb.Link>
+							</a>
 						{/if}
-					</Breadcrumb.Item>
+					</li>
 				{/each}
-			</Breadcrumb.List>
-		</Breadcrumb.Root>
+			</ol>
+		</div>
 	</nav>
 {/if}

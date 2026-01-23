@@ -1,95 +1,177 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=JetBrains+Mono:wght@400;500&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
 	:root {
-		--background: 0 0% 100%;
-		--foreground: 222.2 84% 4.9%;
-		--card: 0 0% 100%;
-		--card-foreground: 222.2 84% 4.9%;
-		--popover: 0 0% 100%;
-		--popover-foreground: 222.2 84% 4.9%;
-		--primary: 221.2 83.2% 53.3%;
-		--primary-foreground: 210 40% 98%;
-		--secondary: 210 40% 96.1%;
-		--secondary-foreground: 222.2 47.4% 11.2%;
-		--muted: 210 40% 96.1%;
-		--muted-foreground: 215.4 16.3% 46.9%;
-		--accent: 210 40% 96.1%;
-		--accent-foreground: 222.2 47.4% 11.2%;
-		--destructive: 0 84.2% 60.2%;
-		--destructive-foreground: 210 40% 98%;
-		--border: 214.3 31.8% 91.4%;
-		--input: 214.3 31.8% 91.4%;
-		--ring: 221.2 83.2% 53.3%;
-		--radius: 0.5rem;
-	}
-
-	.dark {
-		--background: 222.2 84% 4.9%;
-		--foreground: 210 40% 98%;
-		--card: 222.2 84% 4.9%;
-		--card-foreground: 210 40% 98%;
-		--popover: 222.2 84% 4.9%;
-		--popover-foreground: 210 40% 98%;
-		--primary: 217.2 91.2% 59.8%;
-		--primary-foreground: 222.2 47.4% 11.2%;
-		--secondary: 217.2 32.6% 17.5%;
-		--secondary-foreground: 210 40% 98%;
-		--muted: 217.2 32.6% 17.5%;
-		--muted-foreground: 215 20.2% 65.1%;
-		--accent: 217.2 32.6% 17.5%;
-		--accent-foreground: 210 40% 98%;
-		--destructive: 0 62.8% 30.6%;
-		--destructive-foreground: 210 40% 98%;
-		--border: 217.2 32.6% 17.5%;
-		--input: 217.2 32.6% 17.5%;
-		--ring: 224.3 76.3% 48%;
+		--background: #FFFFFF;
+		--foreground: #000000;
+		--card: #FFFFFF;
+		--card-foreground: #000000;
+		--popover: #FFFFFF;
+		--popover-foreground: #000000;
+		--primary: #000000;
+		--primary-foreground: #FFFFFF;
+		--secondary: #F5F5F5;
+		--secondary-foreground: #000000;
+		--muted: #F5F5F5;
+		--muted-foreground: #525252;
+		--accent: #000000;
+		--accent-foreground: #FFFFFF;
+		--destructive: #000000;
+		--destructive-foreground: #FFFFFF;
+		--border: #000000;
+		--border-light: #E5E5E5;
+		--input: #000000;
+		--ring: #000000;
+		--radius: 0px;
 	}
 }
 
 @layer base {
 	* {
-		@apply border-border;
-	}
-	body {
-		@apply bg-background text-foreground;
+		@apply border-0;
+		border-radius: 0 !important;
 	}
 
-	/* Enhanced focus visibility for accessibility */
+	body {
+		@apply bg-background text-foreground font-serif antialiased;
+		background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+		background-size: 256px 256px;
+		background-attachment: fixed;
+	}
+
+	body::before {
+		content: '';
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-image: repeating-linear-gradient(
+			0deg,
+			transparent,
+			transparent 1px,
+			#000 1px,
+			#000 2px
+		);
+		background-size: 100% 4px;
+		opacity: 0.015;
+		pointer-events: none;
+		z-index: 0;
+	}
+
+	/* Enhanced focus visibility - Pure monochrome */
 	a:focus-visible,
 	button:focus-visible,
 	[role="button"]:focus-visible {
-		@apply outline-2 outline-offset-2 outline-ring;
+		@apply outline outline-[3px] outline-offset-[3px] outline-black;
+	}
+
+	input:focus-visible,
+	textarea:focus-visible {
+		@apply outline-none border-b-[4px] border-black;
 	}
 }
 
 @layer utilities {
-	/* Smooth hover transitions */
-	.hover-lift {
-		@apply transition-all duration-200;
+	/* Monochrome inversion hover */
+	.hover-invert {
+		@apply transition-colors duration-100;
 	}
-	.hover-lift:hover {
-		@apply -translate-y-0.5 shadow-md;
-	}
-
-	/* Consistent interactive element styling */
-	.interactive {
-		@apply cursor-pointer select-none transition-all duration-200;
-	}
-	.interactive:hover {
-		@apply opacity-90;
-	}
-	.interactive:active {
-		@apply scale-95;
+	.hover-invert:hover {
+		@apply bg-foreground text-background;
 	}
 
-	/* Enhanced link styling with underline offset */
-	.link-enhanced {
-		@apply underline decoration-primary/50 underline-offset-4 transition-all duration-200;
+	/* Instant interaction */
+	.interactive-instant {
+		@apply cursor-pointer select-none;
+		transition: all 0ms;
 	}
-	.link-enhanced:hover {
-		@apply decoration-primary underline-offset-2;
+
+	/* Border thicken on hover */
+	.hover-border-thicken {
+		@apply border-2 border-black transition-all duration-100;
+	}
+	.hover-border-thicken:hover {
+		@apply border-[4px];
+	}
+
+	/* Typography utilities */
+	.text-display {
+		@apply font-display;
+	}
+
+	.text-mono-label {
+		@apply font-mono uppercase tracking-widest text-xs;
+	}
+
+	/* Section divider - thick horizontal rule */
+	.section-divider {
+		@apply border-t-4 border-black w-full my-24;
+	}
+
+	.section-divider-ultra {
+		@apply border-t-8 border-black w-full my-32;
+	}
+
+	/* Inverted section */
+	.section-inverted {
+		@apply bg-black text-white relative overflow-hidden;
+	}
+
+	.section-inverted::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-image: repeating-linear-gradient(
+			90deg,
+			transparent,
+			transparent 1px,
+			#fff 1px,
+			#fff 2px
+		);
+		background-size: 4px 100%;
+		opacity: 0.03;
+		pointer-events: none;
+	}
+
+	/* Grid texture pattern */
+	.pattern-grid {
+		position: relative;
+	}
+
+	.pattern-grid::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-image:
+			linear-gradient(rgba(0,0,0,0.03) 1px, transparent 1px),
+			linear-gradient(90deg, rgba(0,0,0,0.03) 1px, transparent 1px);
+		background-size: 40px 40px;
+		pointer-events: none;
+		z-index: 0;
+	}
+
+	/* Decorative elements */
+	.hero-decorator {
+		@apply relative;
+	}
+
+	.hero-decorator::after {
+		content: '';
+		@apply absolute w-3 h-3 border-2 border-black;
+		right: -1.5rem;
+		top: 50%;
+		transform: translateY(-50%);
 	}
 }
