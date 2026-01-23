@@ -71,7 +71,7 @@ This is a comprehensive academic research project with three major components:
 
 ### Key Features
 - **Automated Build System**: Makefile interface, shell scripts, and GitHub Actions
-- **Quality Assurance**: 7 different test suites ensuring document integrity
+- **Quality Assurance**: 6 different test suites ensuring document integrity
 - **Continuous Integration**: Automated builds, tests, and deployments
 - **Bibliography Management**: Integrated with Zotero for automated reference updates
 - **Survey Data Processing**: Automated LaTeX table generation from CSV
@@ -207,7 +207,7 @@ make generate-tables
 make test
 ```
 
-**Run specific tests:**
+**Run specific tests (6 test suites):**
 ```bash
 python tests/test_structure.py         # LaTeX structure validation
 python tests/test_citations.py         # Citation-bibliography matching
@@ -220,6 +220,16 @@ python tests/test_items_csv.py         # Survey data validation
 **Verify document lists:**
 ```bash
 python scripts/check_toc.py content/prestudy
+```
+
+**Check for unused citations:**
+```bash
+python scripts/check_unused_citations.py
+```
+
+**Sanitize bibliography file:**
+```bash
+python scripts/sanitize_bib.py
 ```
 
 **Run linting:**
@@ -264,9 +274,9 @@ Visit the [documentation site](https://mrryf.github.io/bachelor-thesis/) for:
 
 GitHub Actions automatically builds and verifies everything on every push to `main`:
 
-**Workflow**: `.github/workflows/latex-build.yml`
+### Workflows
 
-**Jobs**:
+**LaTeX Build** (`.github/workflows/latex-build.yml`):
 - `lint_python`: Python code quality (Ruff)
 - `test_structure`: LaTeX structure validation
 - `test_citations`: Citation-bibliography matching
@@ -276,7 +286,19 @@ GitHub Actions automatically builds and verifies everything on every push to `ma
 - `test_items_csv`: Survey data validation
 - `build_latex`: Full PDF compilation + verification
 
-**Artifacts**: 
+**Webapp CI** (`.github/workflows/ci.yml`):
+- Runs Vitest test suite
+- Builds static site
+- Generates coverage reports
+- TypeScript and Svelte checks
+
+**Documentation** (`.github/workflows/docs.yml`):
+- Builds and deploys MkDocs to GitHub Pages
+
+**Security** (`.github/workflows/dependency-review.yml`):
+- Scans dependencies for vulnerabilities
+
+**Artifacts**:
 - Compiled PDFs (`main.pdf`, `main_required.pdf`)
 - Automatic releases on successful builds
 
@@ -334,7 +356,8 @@ bachelor-thesis/
 │   ├── sync_zotero.py         # Bibliography sync
 │   ├── generate_item_tables.py # Table generation
 │   ├── check_toc.py           # Document verification
-│   └── ...
+│   ├── check_unused_citations.py # Citation usage analysis
+│   └── sanitize_bib.py        # Bibliography sanitization
 │
 ├── tests/                      # Automated test suites
 │   ├── test_structure.py
