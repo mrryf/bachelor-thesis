@@ -89,45 +89,56 @@ export const sections: Section[] = [
                 title: 'Arbeitsplan',
                 content: `
                     <p>Der folgende Arbeitsplan zeigt die zeitliche Planung der Vorstudie.</p>
-                    <div class="milestones-table">
+                    <div class="working-plan-table">
                       <table>
                         <thead>
                           <tr>
-                            <th>Meilenstein</th>
+                            <th>Arbeitsschritt</th>
                             <th>Zeitraum</th>
-                            <th>Beteiligte</th>
+                            <th>KW</th>
                           </tr>
                         </thead>
                         <tbody>
+                          <tr><td colspan="3">Vorstudie (September - Dezember 2025)</td></tr>
                           <tr>
-                            <td>Gespräch Machbarkeit intern</td>
-                            <td>Juli 2025</td>
-                            <td>Liip</td>
+                            <td>Themeneingabe</td>
+                            <td>1. Sep - 28. Sep 2025</td>
+                            <td>KW 36-39</td>
                           </tr>
                           <tr>
-                            <td>Gespräch Machbarkeit extern</td>
-                            <td>Oktober 2025</td>
-                            <td>Kanton Basel-Stadt</td>
+                            <td>Vorbereitung Vorstudiengespräch</td>
+                            <td>29. Sep - 5. Okt 2025</td>
+                            <td>KW 40</td>
                           </tr>
                           <tr>
-                            <td>Entwicklung Anforderungen (Logik &amp; Userflow)</td>
-                            <td>Oktober 2025</td>
-                            <td>Studierender</td>
+                            <td>Durchführung Vorstudiengespräch</td>
+                            <td>6. Okt - 12. Okt 2025</td>
+                            <td>KW 41</td>
                           </tr>
                           <tr>
-                            <td>Schätzung benötigter Arbeiten</td>
-                            <td>November 2025</td>
-                            <td>Product Owner, Frontend Developer</td>
+                            <td>Zoom Call Vorstudie/BA</td>
+                            <td>10. Nov - 16. Nov 2025</td>
+                            <td>KW 46</td>
                           </tr>
                           <tr>
-                            <td>Kommunikation Investment extern</td>
-                            <td>November 2025</td>
-                            <td>Kanton Basel-Stadt</td>
+                            <td>Zoom Call Methodisches Vorgehen</td>
+                            <td>17. Nov - 23. Nov 2025</td>
+                            <td>KW 47</td>
                           </tr>
                           <tr>
-                            <td>Übereinkunft Investment-Teilung</td>
-                            <td>November 2025</td>
-                            <td>Liip, Kanton Basel-Stadt</td>
+                            <td>Literaturrecherche</td>
+                            <td>17. Nov - 7. Dez 2025</td>
+                            <td>KW 47-49</td>
+                          </tr>
+                          <tr>
+                            <td>Verfassen der Vorstudie</td>
+                            <td>24. Nov - 7. Dez 2025</td>
+                            <td>KW 48-49</td>
+                          </tr>
+                          <tr class="milestone">
+                            <td>Abgabe der Vorstudie</td>
+                            <td>5. Dezember 2025</td>
+                            <td>KW 49</td>
                           </tr>
                         </tbody>
                       </table>
@@ -294,10 +305,139 @@ export const sections: Section[] = [
 			<p>Das Experiment untersucht den Einfluss von Framing bezüglich Sicherheit und Unsicherheit auf das Vertrauen in KI-gestützte Systeme. In einem 3x2 Between-Subjects-Design wird die Darstellung von Konfidenzwerten (Sicherheit vs. Unsicherheit) bei variierenden Accuracy-Scores (hoch, mittel, niedrig) manipuliert. Daraus ergeben sich sechs Experimentalgruppen sowie eine Kontrollgruppe ohne Konfidenzwert-Anzeige. Die experimentelle Manipulation erfolgt während der realen Interaktion mit einem KI-Assistenten.</p>
 		`,
         subsections: [
-            { id: 'design', title: 'Experimentelles Design', content: '<p>Das Untersuchungsdesign entspricht einem 3x2 faktoriellen Between-Subjects-Design. Die erste unabhängige Variable (Framing) variiert die Darstellung als Sicherheit versus Unsicherheit, die zweite unabhängige Variable (Konfidenzwert) variiert den Konfidenzwert in drei Stufen (hoch, mittel, niedrig).</p>' },
-            { id: 'stimulus', title: 'Stimulus-Konzept', content: '<p>Der Stimulus besteht aus der visuellen und textlichen Darstellung einer Sicherheits- bzw. Unsicherheitsanzeige, die direkt nach jeder LLM-Antwort entsprechend der zugewiesenen Stimulusgruppe eingeblendet wird. Die Manipulation erfolgt in Echtzeit während der natürlichen Interaktion mit dem digitalen Assistenten (Kanton Basel-Stadt, 2025).</p>' },
-            { id: 'methodik', title: 'Methodische Einordnung', content: '<p>Das vorliegende Forschungsdesign verbindet ein kontrolliertes Experiment mit einer Felderhebung im realen Nutzungskontext. Die Wahl dieser Methode orientiert sich an der Fragestellung und dem untersuchten Gegenstandsbereich (vgl. Kelle, 2008, S. 174f.).</p>' },
-            { id: 'ablauf', title: 'Ablauf Experiment', content: '<p>Das geplante Experiment findet in drei Phasen statt. In der ersten Phase werden die Nutzenden über das Experiment informiert und können sich für oder gegen eine Teilnahme entscheiden. In Phase 2 steht die Interaktion mit dem Chatbot Alva im Zentrum. In Phase 3 werden die Nutzenden aufgefordert, die dazugehörige Umfrage auszufüllen und das Experiment abzuschliessen.</p>' }
+            { id: 'design', title: 'Experimentelles Design', content: `<p>Das Untersuchungsdesign entspricht einem 3x2 faktoriellen Between-Subjects-Design. Die erste unabhängige Variable (Framing) variiert die Darstellung als Sicherheit versus Unsicherheit, die zweite unabhängige Variable (Konfidenzwert) variiert den Konfidenzwert in drei Stufen (hoch, mittel, niedrig).</p>
+                    <div class="experiment-table">
+                      <table>
+                        <thead>
+                          <tr>
+                            <th>Bedingung</th>
+                            <th>Gruppe</th>
+                            <th>Manipulation</th>
+                            <th>Beispiel</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>Positive-Frame</td>
+                            <td>Gruppe 1</td>
+                            <td>Score wird als Konfidenz/Zuverlässigkeit dargestellt</td>
+                            <td>«Antwortsicherheit: 80%» oder «Antwortsicherheit zu 80% zuverlässig»</td>
+                          </tr>
+                          <tr>
+                            <td>Negative-Frame</td>
+                            <td>Gruppe 2</td>
+                            <td>Score wird als Unsicherheit/Fehlerwahrscheinlichkeit dargestellt</td>
+                            <td>«Antwortunsicherheit: 20%» oder «Diese Antwort hat eine Fehlerwahrscheinlichkeit von 20%»</td>
+                          </tr>
+                          <tr>
+                            <td>Kontrollgruppe</td>
+                            <td>Gruppe 3</td>
+                            <td>Kein Score wird angezeigt (Status Quo)</td>
+                            <td>-</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>` },
+            { id: 'stimulus', title: 'Stimulus-Konzept', content: `<p>Der Stimulus besteht aus der visuellen und textlichen Darstellung einer Sicherheits- bzw. Unsicherheitsanzeige, die direkt nach jeder LLM-Antwort entsprechend der zugewiesenen Stimulusgruppe eingeblendet wird. Die Manipulation erfolgt in Echtzeit während der natürlichen Interaktion mit dem digitalen Assistenten (Kanton Basel-Stadt, 2025).</p>
+                    <p>Das Stimulus-Design setzt sich aus zwei Dimensionen zusammen. Die erste Dimension betrifft die Valenz der Darstellung: Die Anzeige wird entweder positiv als «Sicherheit» oder negativ als «Unsicherheit» gerahmt. Die zweite Dimension umfasst die Ausprägungsstufe, wobei die angezeigte Sicherheit bzw. Unsicherheit in drei Stufen variiert – hoch, mittel und niedrig.</p>
+                    <div class="experiment-table">
+                      <table>
+                        <thead>
+                          <tr>
+                            <th>Konfidenz (UV 2)</th>
+                            <th>Positiver Frame</th>
+                            <th>Negativer Frame</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td><strong>Hoch</strong></td>
+                            <td>Sicherheit: Hoch</td>
+                            <td>Unsicherheit: Tief</td>
+                          </tr>
+                          <tr>
+                            <td><strong>Mittel</strong></td>
+                            <td>Sicherheit: Mittel</td>
+                            <td>Unsicherheit: Mittel</td>
+                          </tr>
+                          <tr>
+                            <td><strong>Niedrig</strong></td>
+                            <td>Sicherheit: Tief</td>
+                            <td>Unsicherheit: Hoch</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                    <p><em>Anmerkung: Die Kontrollgruppe (kein Score) ist in diesem 3x2 Design nicht abgebildet.</em></p>
+                    <p><strong>Treatment Check Stimulus:</strong> Als Treatment Check werden die Probanden post-experimentell gefragt, ob und in welcher Form ihnen Informationen zur Zuverlässigkeit der Antworten angezeigt wurden, um sicherzustellen, dass die experimentelle Manipulation wahrgenommen wurde.</p>` },
+            { id: 'methodik', title: 'Methodische Einordnung', content: `<p>Das vorliegende Forschungsdesign verbindet ein kontrolliertes Experiment mit einer Felderhebung im realen Nutzungskontext. Die Wahl dieser Methode orientiert sich an der Fragestellung und dem untersuchten Gegenstandsbereich (vgl. Kelle, 2008, S. 174f.).</p>
+                    <p>Die experimentelle Manipulation im Between-Subject-Design mit randomisierter Zuweisung zu den Experimentalbedingungen gewährleistet die interne Validität. Durch die Randomisierung wird sichergestellt, dass beobachtete Unterschiede in den abhängigen Variablen auf die experimentelle Manipulation (Framing und Konfidenz-Level) zurückgeführt werden können. Die Einbettung des Experiments in die tatsächliche Alva-Nutzung erhöht die ökologische Validität gegenüber rein laborbasierten oder szenariobasierten Designs.</p>
+                    <p><strong>Methodenintegration:</strong> Die Integration der Datenquellen erfolgt auf Analyseebene: Die experimentelle Gruppenzugehörigkeit (Framing und Konfidenz-Level) wird mit den Befragungsdaten (Vertrauen, TAM-Konstrukte) in einem gemeinsamen Datensatz zusammengeführt. Diese Integration ermöglicht die Analyse von Effekten des Framings (Sicherheit vs. Unsicherheit) und des Konfidenz-Levels (hoch, mittel, tief) auf das Vertrauen.</p>` },
+            { id: 'abgrenzung', title: 'Abgrenzung des Forschungsdesigns', content: `<p>Die vorliegende Studie fokussiert auf die valenzorientierte Darstellung von KI-Leistungsmetriken (Attribute Framing) und deren Einfluss auf Vertrauen und Technologieakzeptanz im Kontext des AI-TAM-Modells.</p>
+                    <p><strong>Inhaltliche Abgrenzung:</strong></p>
+                    <div class="experiment-table">
+                      <table>
+                        <thead>
+                          <tr>
+                            <th>Aspekt</th>
+                            <th>Fokus dieser Studie</th>
+                            <th>Abgrenzung</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>Framing-Typ</td>
+                            <td>Attribute Framing</td>
+                            <td>Risky Choice Framing, Goal Framing</td>
+                          </tr>
+                          <tr>
+                            <td>Zeithorizont</td>
+                            <td>Nutzungsintention (einmalige Messung)</td>
+                            <td>Tatsächliche Systemnutzung, Langzeiteffekte</td>
+                          </tr>
+                          <tr>
+                            <td>Transparenzmechanismen</td>
+                            <td>Konfidenz-Darstellung</td>
+                            <td>Erklärungen, Quellenangaben, Visualisierungen</td>
+                          </tr>
+                          <tr>
+                            <td>Anwendungskontext</td>
+                            <td>Verwaltungskontext (Kanton Basel-Stadt)</td>
+                            <td>Medizinische, kreative oder andere Bereiche</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                    <p><strong>Methodische Abgrenzung:</strong></p>
+                    <div class="experiment-table">
+                      <table>
+                        <thead>
+                          <tr>
+                            <th>Aspekt</th>
+                            <th>Fokus dieser Studie</th>
+                            <th>Abgrenzung</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>Studiendesign</td>
+                            <td>Between-Subjects, 3x2 faktoriell</td>
+                            <td>Within-Subjects</td>
+                          </tr>
+                          <tr>
+                            <td>Datenerhebung</td>
+                            <td>Quantitativ (standardisierte Skalen)</td>
+                            <td>Qualitative Vertiefungen</td>
+                          </tr>
+                          <tr>
+                            <td>Konfidenz-Level</td>
+                            <td>Experimentell manipuliert</td>
+                            <td>Natürliche Variation</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>` },
+            { id: 'ablauf', title: 'Ablauf Experiment', content: '<p>Das geplante Experiment findet in drei Phasen statt. In der ersten Phase werden die Nutzenden über das Experiment informiert und können sich für oder gegen eine Teilnahme entscheiden. In Phase 2 steht die Interaktion mit dem Chatbot Alva im Zentrum. In Phase 3 werden die Nutzenden aufgefordert, die dazugehörige Umfrage auszufüllen und das Experiment abzuschliessen. Es werden keine Daten im Vorfeld (Phase 1) oder während der Interaktion (Phase 2) erhoben, um die Abbruchrate zu minimieren und eine hohe Abschlussrate zu fördern.</p>' }
         ]
     },
     {
