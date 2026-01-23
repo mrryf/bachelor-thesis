@@ -6,7 +6,6 @@
 	import Download from "@lucide/svelte/icons/download";
 	import Github from "@lucide/svelte/icons/github";
 	import ArrowRight from "@lucide/svelte/icons/arrow-right";
-	import Target from "@lucide/svelte/icons/target";
 
 	const pageCards = [
 		{
@@ -112,24 +111,16 @@
 	</section>
 
 	<!-- Forschungsfrage Section -->
-	<section class="px-6 md:px-12 py-24 lg:py-32">
-		<div class="max-w-4xl mx-auto">
-			<div class="flex items-center gap-4 mb-12">
-				<div class="w-12 h-12 border-2 border-black flex items-center justify-center">
-					<Target size={24} strokeWidth={1.5} />
-				</div>
-				<h2 class="font-display text-3xl md:text-4xl font-bold tracking-tight">Forschungsfrage</h2>
-			</div>
-
-			<div class="border-2 border-black p-8 md:p-12 bg-white">
-				<div class="text-5xl md:text-6xl leading-none mb-8 opacity-20">"</div>
-				<blockquote class="text-2xl md:text-3xl font-display italic leading-tight -mt-12">
-					Wie beeinflusst das Framing von Konfidenzangaben einer
-					LLM-basierten Applikation das Vertrauen der Nutzer und deren
-					Nutzungsabsicht?
-				</blockquote>
-				<div class="text-5xl md:text-6xl leading-none mt-8 text-right opacity-20">"</div>
-			</div>
+	<section class="section-inverted px-6 md:px-12 py-32 lg:py-40">
+		<div class="max-w-6xl mx-auto relative z-10">
+			<p class="text-mono-label text-white/70 mb-8">
+				Forschungsfrage
+			</p>
+			<p class="font-display text-3xl md:text-4xl lg:text-5xl leading-normal font-serif italic">
+				Wie beeinflusst das Framing von Konfidenzangaben einer
+				LLM-basierten Applikation das Vertrauen der Nutzer und deren
+				Nutzungsabsicht?
+			</p>
 		</div>
 	</section>
 
@@ -185,23 +176,21 @@
 	<!-- Inverted Section - About -->
 	<section class="section-inverted px-6 md:px-12 py-32 lg:py-40">
 		<div class="max-w-6xl mx-auto relative z-10">
-			<div class="max-w-3xl">
-				<p class="text-mono-label text-white/70 mb-8">
-					Über diese Arbeit
-				</p>
-				<p class="font-display text-3xl md:text-4xl lg:text-5xl leading-tight mb-12 font-serif italic">
-					Diese Vorstudie untersucht, wie die Art und Weise der Präsentation—das Framing—das
-					Vertrauen von Nutzern in KI-basierte Systeme beeinflusst.
-				</p>
-				<div class="flex items-start gap-4">
-					<div class="w-8 h-[2px] bg-white mt-3"></div>
-					<div class="text-lg leading-relaxed space-y-4">
-						<p>
-							Im Kontext von Large Language Models (LLMs) wird untersucht, welche
-							Faktoren das Vertrauensverhältnis zwischen Mensch und Maschine prägen
-							und wie verschiedene Darstellungsformen die Wahrnehmung beeinflussen.
-						</p>
-					</div>
+			<p class="text-mono-label text-white/70 mb-8">
+				Über diese Arbeit
+			</p>
+			<p class="font-display text-3xl md:text-4xl lg:text-5xl leading-normal mb-12 font-serif italic">
+				Diese Vorstudie untersucht, wie die Art und Weise der Präsentation—das Framing—das
+				Vertrauen von Nutzern in KI-basierte Systeme beeinflusst.
+			</p>
+			<div class="flex items-start gap-4">
+				<div class="w-8 h-[2px] bg-white mt-3"></div>
+				<div class="text-lg leading-relaxed space-y-4">
+					<p>
+						Im Kontext von Large Language Models (LLMs) wird untersucht, welche
+						Faktoren das Vertrauensverhältnis zwischen Mensch und Maschine prägen
+						und wie verschiedene Darstellungsformen die Wahrnehmung beeinflussen.
+					</p>
 				</div>
 			</div>
 		</div>
