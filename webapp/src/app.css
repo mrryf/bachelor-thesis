@@ -174,4 +174,106 @@
 		top: 50%;
 		transform: translateY(-50%);
 	}
+
+	/* Content tables - Monochrome academic style */
+	.prose table,
+	.hypothesis-table table,
+	.milestones-table table {
+		@apply w-full text-sm border-t-2 border-b-2 border-black;
+		border-collapse: collapse;
+	}
+
+	.prose thead,
+	.hypothesis-table thead,
+	.milestones-table thead {
+		@apply border-b-2 border-black;
+	}
+
+	.prose th,
+	.hypothesis-table th,
+	.milestones-table th {
+		@apply text-left py-3 px-4 font-semibold;
+	}
+
+	.prose td,
+	.hypothesis-table td,
+	.milestones-table td {
+		@apply py-3 px-4 border-b border-gray-300;
+	}
+
+	.prose tbody tr:last-child td,
+	.hypothesis-table tbody tr:last-child td,
+	.milestones-table tbody tr:last-child td {
+		@apply border-b-0;
+	}
+
+	.prose tbody tr:hover,
+	.hypothesis-table tbody tr:hover,
+	.milestones-table tbody tr:hover {
+		@apply bg-gray-50;
+	}
+
+	/* Section header rows in tables */
+	.hypothesis-table td[colspan="3"],
+	.milestones-table td[colspan="3"],
+	.working-plan-table td[colspan="3"] {
+		@apply bg-gray-100 font-semibold border-b border-black py-2;
+	}
+
+	/* Working plan table */
+	.working-plan-table table {
+		@apply w-full text-sm border-t-2 border-b-2 border-black;
+		border-collapse: collapse;
+	}
+
+	.working-plan-table thead {
+		@apply border-b-2 border-black;
+	}
+
+	.working-plan-table th {
+		@apply text-left py-3 px-4 font-semibold;
+	}
+
+	.working-plan-table td {
+		@apply py-3 px-4 border-b border-gray-300;
+	}
+
+	.working-plan-table tbody tr:last-child td {
+		@apply border-b-0;
+	}
+
+	.working-plan-table tbody tr:hover {
+		@apply bg-gray-50;
+	}
+
+	/* Milestone row styling */
+	.working-plan-table tr.milestone td {
+		@apply font-semibold bg-gray-50;
+	}
+
+	/* Experiment design tables */
+	.experiment-table table {
+		@apply w-full text-sm border-t-2 border-b-2 border-black;
+		border-collapse: collapse;
+	}
+
+	.experiment-table thead {
+		@apply border-b-2 border-black;
+	}
+
+	.experiment-table th {
+		@apply text-left py-3 px-4 font-semibold;
+	}
+
+	.experiment-table td {
+		@apply py-3 px-4 border-b border-gray-300;
+	}
+
+	.experiment-table tbody tr:last-child td {
+		@apply border-b-0;
+	}
+
+	.experiment-table tbody tr:hover {
+		@apply bg-gray-50;
+	}
 }

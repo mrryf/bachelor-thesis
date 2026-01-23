@@ -89,7 +89,60 @@ export const sections: Section[] = [
                 title: 'Arbeitsplan',
                 content: `
                     <p>Der folgende Arbeitsplan zeigt die zeitliche Planung der Vorstudie.</p>
-                    <p><em>Hinweis: Gantt-Chart Visualisierung wird in einer zukünftigen Version als dedizierte Komponente integriert.</em></p>
+                    <div class="working-plan-table">
+                      <table>
+                        <thead>
+                          <tr>
+                            <th>Arbeitsschritt</th>
+                            <th>Zeitraum</th>
+                            <th>KW</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr><td colspan="3">Vorstudie (September - Dezember 2025)</td></tr>
+                          <tr>
+                            <td>Themeneingabe</td>
+                            <td>1. Sep - 28. Sep 2025</td>
+                            <td>KW 36-39</td>
+                          </tr>
+                          <tr>
+                            <td>Vorbereitung Vorstudiengespräch</td>
+                            <td>29. Sep - 5. Okt 2025</td>
+                            <td>KW 40</td>
+                          </tr>
+                          <tr>
+                            <td>Durchführung Vorstudiengespräch</td>
+                            <td>6. Okt - 12. Okt 2025</td>
+                            <td>KW 41</td>
+                          </tr>
+                          <tr>
+                            <td>Zoom Call Vorstudie/BA</td>
+                            <td>10. Nov - 16. Nov 2025</td>
+                            <td>KW 46</td>
+                          </tr>
+                          <tr>
+                            <td>Zoom Call Methodisches Vorgehen</td>
+                            <td>17. Nov - 23. Nov 2025</td>
+                            <td>KW 47</td>
+                          </tr>
+                          <tr>
+                            <td>Literaturrecherche</td>
+                            <td>17. Nov - 7. Dez 2025</td>
+                            <td>KW 47-49</td>
+                          </tr>
+                          <tr>
+                            <td>Verfassen der Vorstudie</td>
+                            <td>24. Nov - 7. Dez 2025</td>
+                            <td>KW 48-49</td>
+                          </tr>
+                          <tr class="milestone">
+                            <td>Abgabe der Vorstudie</td>
+                            <td>5. Dezember 2025</td>
+                            <td>KW 49</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
                 `
             }
         ]
@@ -159,6 +212,67 @@ export const sections: Section[] = [
                 title: 'Hypothesenübersicht',
                 content: `
                     <p>Das folgende Hypothesenmodell zeigt die Pfadbeziehungen zwischen den Konstrukten des AI-TAM.</p>
+                    <div class="hypothesis-table">
+                      <table>
+                        <thead>
+                          <tr>
+                            <th>Bereich</th>
+                            <th>Nr.</th>
+                            <th>Hypothese</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr><td colspan="3">Framing-Hypothesen</td></tr>
+                          <tr>
+                            <td>Framing</td>
+                            <td>H1a</td>
+                            <td>Die Darstellung als Sicherheit (positiver Frame) führt zu einem höheren Vertrauen in künstliche Intelligenz.</td>
+                          </tr>
+                          <tr>
+                            <td></td>
+                            <td>H1b</td>
+                            <td>Die Darstellung als Unsicherheit (negativer Frame) führt zu einem niedrigeren Vertrauen in künstliche Intelligenz.</td>
+                          </tr>
+                          <tr><td colspan="3">AI-TAM-Hypothesen</td></tr>
+                          <tr>
+                            <td>AI-TAM</td>
+                            <td>H2</td>
+                            <td>Vertrauen in künstliche Intelligenz hat einen positiven Einfluss auf die wahrgenommene Nützlichkeit.</td>
+                          </tr>
+                          <tr>
+                            <td></td>
+                            <td>H3</td>
+                            <td>Vertrauen in künstliche Intelligenz hat einen positiven Einfluss auf die wahrgenommene Einfachheit in der Nutzung.</td>
+                          </tr>
+                          <tr><td colspan="3">TAM-Hypothesen</td></tr>
+                          <tr>
+                            <td>TAM</td>
+                            <td>H4</td>
+                            <td>Die wahrgenommene Nützlichkeit hat einen positiven Einfluss auf die Nutzungsintention.</td>
+                          </tr>
+                          <tr>
+                            <td></td>
+                            <td>H5</td>
+                            <td>Die wahrgenommene Einfachheit in der Nutzung hat einen positiven Einfluss auf die Nutzungsintention.</td>
+                          </tr>
+                          <tr>
+                            <td></td>
+                            <td>H6</td>
+                            <td>Die wahrgenommene Einfachheit in der Nutzung hat einen positiven Einfluss auf die wahrgenommene Nützlichkeit.</td>
+                          </tr>
+                          <tr>
+                            <td></td>
+                            <td>H7</td>
+                            <td>Die Nutzungsintention hat einen positiven Einfluss auf die Kollaborationsintention.</td>
+                          </tr>
+                          <tr>
+                            <td></td>
+                            <td>H8</td>
+                            <td>Die Vertrautheit mit Technologie hat einen positiven Einfluss auf die wahrgenommene Nützlichkeit.</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
                 `,
                 figure: {
                     id: 'fig-hypothesen',
@@ -191,10 +305,139 @@ export const sections: Section[] = [
 			<p>Das Experiment untersucht den Einfluss von Framing bezüglich Sicherheit und Unsicherheit auf das Vertrauen in KI-gestützte Systeme. In einem 3x2 Between-Subjects-Design wird die Darstellung von Konfidenzwerten (Sicherheit vs. Unsicherheit) bei variierenden Accuracy-Scores (hoch, mittel, niedrig) manipuliert. Daraus ergeben sich sechs Experimentalgruppen sowie eine Kontrollgruppe ohne Konfidenzwert-Anzeige. Die experimentelle Manipulation erfolgt während der realen Interaktion mit einem KI-Assistenten.</p>
 		`,
         subsections: [
-            { id: 'design', title: 'Experimentelles Design', content: '<p>Das Untersuchungsdesign entspricht einem 3x2 faktoriellen Between-Subjects-Design. Die erste unabhängige Variable (Framing) variiert die Darstellung als Sicherheit versus Unsicherheit, die zweite unabhängige Variable (Konfidenzwert) variiert den Konfidenzwert in drei Stufen (hoch, mittel, niedrig).</p>' },
-            { id: 'stimulus', title: 'Stimulus-Konzept', content: '<p>Der Stimulus besteht aus der visuellen und textlichen Darstellung einer Sicherheits- bzw. Unsicherheitsanzeige, die direkt nach jeder LLM-Antwort entsprechend der zugewiesenen Stimulusgruppe eingeblendet wird. Die Manipulation erfolgt in Echtzeit während der natürlichen Interaktion mit dem digitalen Assistenten (Kanton Basel-Stadt, 2025).</p>' },
-            { id: 'methodik', title: 'Methodische Einordnung', content: '<p>Das vorliegende Forschungsdesign verbindet ein kontrolliertes Experiment mit einer Felderhebung im realen Nutzungskontext. Die Wahl dieser Methode orientiert sich an der Fragestellung und dem untersuchten Gegenstandsbereich (vgl. Kelle, 2008, S. 174f.).</p>' },
-            { id: 'ablauf', title: 'Ablauf Experiment', content: '<p>Das geplante Experiment findet in drei Phasen statt. In der ersten Phase werden die Nutzenden über das Experiment informiert und können sich für oder gegen eine Teilnahme entscheiden. In Phase 2 steht die Interaktion mit dem Chatbot Alva im Zentrum. In Phase 3 werden die Nutzenden aufgefordert, die dazugehörige Umfrage auszufüllen und das Experiment abzuschliessen.</p>' }
+            { id: 'design', title: 'Experimentelles Design', content: `<p>Das Untersuchungsdesign entspricht einem 3x2 faktoriellen Between-Subjects-Design. Die erste unabhängige Variable (Framing) variiert die Darstellung als Sicherheit versus Unsicherheit, die zweite unabhängige Variable (Konfidenzwert) variiert den Konfidenzwert in drei Stufen (hoch, mittel, niedrig).</p>
+                    <div class="experiment-table">
+                      <table>
+                        <thead>
+                          <tr>
+                            <th>Bedingung</th>
+                            <th>Gruppe</th>
+                            <th>Manipulation</th>
+                            <th>Beispiel</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>Positive-Frame</td>
+                            <td>Gruppe 1</td>
+                            <td>Score wird als Konfidenz/Zuverlässigkeit dargestellt</td>
+                            <td>«Antwortsicherheit: 80%» oder «Antwortsicherheit zu 80% zuverlässig»</td>
+                          </tr>
+                          <tr>
+                            <td>Negative-Frame</td>
+                            <td>Gruppe 2</td>
+                            <td>Score wird als Unsicherheit/Fehlerwahrscheinlichkeit dargestellt</td>
+                            <td>«Antwortunsicherheit: 20%» oder «Diese Antwort hat eine Fehlerwahrscheinlichkeit von 20%»</td>
+                          </tr>
+                          <tr>
+                            <td>Kontrollgruppe</td>
+                            <td>Gruppe 3</td>
+                            <td>Kein Score wird angezeigt (Status Quo)</td>
+                            <td>-</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>` },
+            { id: 'stimulus', title: 'Stimulus-Konzept', content: `<p>Der Stimulus besteht aus der visuellen und textlichen Darstellung einer Sicherheits- bzw. Unsicherheitsanzeige, die direkt nach jeder LLM-Antwort entsprechend der zugewiesenen Stimulusgruppe eingeblendet wird. Die Manipulation erfolgt in Echtzeit während der natürlichen Interaktion mit dem digitalen Assistenten (Kanton Basel-Stadt, 2025).</p>
+                    <p>Das Stimulus-Design setzt sich aus zwei Dimensionen zusammen. Die erste Dimension betrifft die Valenz der Darstellung: Die Anzeige wird entweder positiv als «Sicherheit» oder negativ als «Unsicherheit» gerahmt. Die zweite Dimension umfasst die Ausprägungsstufe, wobei die angezeigte Sicherheit bzw. Unsicherheit in drei Stufen variiert – hoch, mittel und niedrig.</p>
+                    <div class="experiment-table">
+                      <table>
+                        <thead>
+                          <tr>
+                            <th>Konfidenz (UV 2)</th>
+                            <th>Positiver Frame</th>
+                            <th>Negativer Frame</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td><strong>Hoch</strong></td>
+                            <td>Sicherheit: Hoch</td>
+                            <td>Unsicherheit: Tief</td>
+                          </tr>
+                          <tr>
+                            <td><strong>Mittel</strong></td>
+                            <td>Sicherheit: Mittel</td>
+                            <td>Unsicherheit: Mittel</td>
+                          </tr>
+                          <tr>
+                            <td><strong>Niedrig</strong></td>
+                            <td>Sicherheit: Tief</td>
+                            <td>Unsicherheit: Hoch</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                    <p><em>Anmerkung: Die Kontrollgruppe (kein Score) ist in diesem 3x2 Design nicht abgebildet.</em></p>
+                    <p><strong>Treatment Check Stimulus:</strong> Als Treatment Check werden die Probanden post-experimentell gefragt, ob und in welcher Form ihnen Informationen zur Zuverlässigkeit der Antworten angezeigt wurden, um sicherzustellen, dass die experimentelle Manipulation wahrgenommen wurde.</p>` },
+            { id: 'methodik', title: 'Methodische Einordnung', content: `<p>Das vorliegende Forschungsdesign verbindet ein kontrolliertes Experiment mit einer Felderhebung im realen Nutzungskontext. Die Wahl dieser Methode orientiert sich an der Fragestellung und dem untersuchten Gegenstandsbereich (vgl. Kelle, 2008, S. 174f.).</p>
+                    <p>Die experimentelle Manipulation im Between-Subject-Design mit randomisierter Zuweisung zu den Experimentalbedingungen gewährleistet die interne Validität. Durch die Randomisierung wird sichergestellt, dass beobachtete Unterschiede in den abhängigen Variablen auf die experimentelle Manipulation (Framing und Konfidenz-Level) zurückgeführt werden können. Die Einbettung des Experiments in die tatsächliche Alva-Nutzung erhöht die ökologische Validität gegenüber rein laborbasierten oder szenariobasierten Designs.</p>
+                    <p><strong>Methodenintegration:</strong> Die Integration der Datenquellen erfolgt auf Analyseebene: Die experimentelle Gruppenzugehörigkeit (Framing und Konfidenz-Level) wird mit den Befragungsdaten (Vertrauen, TAM-Konstrukte) in einem gemeinsamen Datensatz zusammengeführt. Diese Integration ermöglicht die Analyse von Effekten des Framings (Sicherheit vs. Unsicherheit) und des Konfidenz-Levels (hoch, mittel, tief) auf das Vertrauen.</p>` },
+            { id: 'abgrenzung', title: 'Abgrenzung des Forschungsdesigns', content: `<p>Die vorliegende Studie fokussiert auf die valenzorientierte Darstellung von KI-Leistungsmetriken (Attribute Framing) und deren Einfluss auf Vertrauen und Technologieakzeptanz im Kontext des AI-TAM-Modells.</p>
+                    <p><strong>Inhaltliche Abgrenzung:</strong></p>
+                    <div class="experiment-table">
+                      <table>
+                        <thead>
+                          <tr>
+                            <th>Aspekt</th>
+                            <th>Fokus dieser Studie</th>
+                            <th>Abgrenzung</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>Framing-Typ</td>
+                            <td>Attribute Framing</td>
+                            <td>Risky Choice Framing, Goal Framing</td>
+                          </tr>
+                          <tr>
+                            <td>Zeithorizont</td>
+                            <td>Nutzungsintention (einmalige Messung)</td>
+                            <td>Tatsächliche Systemnutzung, Langzeiteffekte</td>
+                          </tr>
+                          <tr>
+                            <td>Transparenzmechanismen</td>
+                            <td>Konfidenz-Darstellung</td>
+                            <td>Erklärungen, Quellenangaben, Visualisierungen</td>
+                          </tr>
+                          <tr>
+                            <td>Anwendungskontext</td>
+                            <td>Verwaltungskontext (Kanton Basel-Stadt)</td>
+                            <td>Medizinische, kreative oder andere Bereiche</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                    <p><strong>Methodische Abgrenzung:</strong></p>
+                    <div class="experiment-table">
+                      <table>
+                        <thead>
+                          <tr>
+                            <th>Aspekt</th>
+                            <th>Fokus dieser Studie</th>
+                            <th>Abgrenzung</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>Studiendesign</td>
+                            <td>Between-Subjects, 3x2 faktoriell</td>
+                            <td>Within-Subjects</td>
+                          </tr>
+                          <tr>
+                            <td>Datenerhebung</td>
+                            <td>Quantitativ (standardisierte Skalen)</td>
+                            <td>Qualitative Vertiefungen</td>
+                          </tr>
+                          <tr>
+                            <td>Konfidenz-Level</td>
+                            <td>Experimentell manipuliert</td>
+                            <td>Natürliche Variation</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>` },
+            { id: 'ablauf', title: 'Ablauf Experiment', content: '<p>Das geplante Experiment findet in drei Phasen statt. In der ersten Phase werden die Nutzenden über das Experiment informiert und können sich für oder gegen eine Teilnahme entscheiden. In Phase 2 steht die Interaktion mit dem Chatbot Alva im Zentrum. In Phase 3 werden die Nutzenden aufgefordert, die dazugehörige Umfrage auszufüllen und das Experiment abzuschliessen. Es werden keine Daten im Vorfeld (Phase 1) oder während der Interaktion (Phase 2) erhoben, um die Abbruchrate zu minimieren und eine hohe Abschlussrate zu fördern.</p>' }
         ]
     },
     {
@@ -204,7 +447,7 @@ export const sections: Section[] = [
         wordCount: 450,
         content: '',
         subsections: [
-            { id: 'selbstreflexion', title: 'Selbstreflexion', content: '<p>Die bisherige Arbeit an meiner Bachelor-Thesis bedeutete für mich einen grossen Wissensgewinn in einem Themenfeld, das mich seit Längerem fasziniert. Von Anfang an war mir klar, dass ich ein Experiment durchführen wollte. Die Möglichkeit, eigene Hypothesen empirisch zu prüfen, reizte mich besonders. Dabei konnte ich meinen Interessen folgen: Künstliche Intelligenz, Mensch-Maschine-Interaktion und die psychologischen Faktoren, die unsere Wahrnehmung von Technologie beeinflussen.</p><p>Das Ausarbeiten des Forschungsdesigns war eine spannende Erfahrung. Zum ersten Mal hatte ich die Gelegenheit, ein Design so auszugestalten, wie ich es mir vorstellte. Von der Definition der Forschungsfrage über die Hypothesenbildung bis zur Operationalisierung der Konstrukte war dieser Prozess lehrreich und zeigte mir, wie viele Entscheidungen in einem scheinbar einfachen experimentellen Setup stecken.</p>' },
+            { id: 'selbstreflexion', title: 'Selbstreflexion', content: '<p>Die bisherige Arbeit an meiner Bachelor-Thesis bedeutete für mich einen grossen Wissensgewinn in einem Themenfeld, das mich seit Längerem fasziniert. Von Anfang an war mir klar, dass ich ein Experiment durchführen wollte. Die Möglichkeit, eigene Hypothesen empirisch zu prüfen, reizte mich besonders. Dabei konnte ich meinen Interessen folgen: Künstliche Intelligenz, Mensch-Maschine-Interaktion und die psychologischen Faktoren, die unsere Wahrnehmung von Technologie beeinflussen.</p><p>Das Ausarbeiten des Forschungsdesigns war eine spannende Erfahrung. Zum ersten Mal hatte ich die Gelegenheit, ein Design so auszugestalten, wie ich es mir vorstellte. Von der Definition der Forschungsfrage über die Hypothesenbildung bis zur Operationalisierung der Konstrukte war dieser Prozess lehrreich und zeigte mir, wie viele Entscheidungen in einem scheinbar einfachen experimentellen Setup stecken.</p><p>Besonders zufrieden bin ich mit meinem Betreuungssetup. Mein Dozent erweist sich als wertvoller Sparringpartner, dessen Erfahrung mir half, mein Design zu schärfen und methodische Fallstricke zu vermeiden. Auf Seiten des Praxispartners darf ich mit einer äusserst versierten Ansprechpartnerin zusammenarbeiten, die das Projekt von Beginn an unterstützte und die nötigen Rahmenbedingungen schuf.</p><p>Was mich besonders freut: Das Experiment wird in einer realen Umgebung durchgeführt. Anstatt einer simulierten Trockenübung können echte Nutzende des KI-Assistenten Alva an der Studie teilnehmen. Dies erhöht nicht nur die externe Validität der Ergebnisse, sondern gibt der Arbeit auch eine praktische Relevanz, die über den akademischen Kontext hinausgeht.</p>' },
             { id: 'ausblick', title: 'Weiteres Vorgehen', content: '<p>Als nächster Schritt steht die Operationalisierung der Konstrukte an, welche bereits begonnen hat. Parallel dazu werden die User Stories erstellt, welche die technischen Anforderungen für die Integration des Experiments definieren. Sobald die Operationalisierung abgeschlossen ist, folgt ein Pre-Test zur Überprüfung der Stimuli und des Fragebogens. Die Erkenntnisse daraus dienen gegebenenfalls zur Anpassung der Stimuli oder zur Überarbeitung der Items.</p><p>Im Januar und Februar 2026 wird die benötigte Experiment-Logik auf der Website des Kantons Basel-Stadt implementiert. Das Experiment selbst ist für den Zeitraum von Mitte Februar bis Mitte April 2026 geplant. Im Anschluss erfolgen die Auswertung der erhobenen Daten und die Erstellung der Bachelor-Arbeit.</p>' }
         ]
     }
@@ -251,7 +494,14 @@ export const glossaryTerms = [
     { term: 'BI', definition: 'Behavioral Intention - Verhaltensabsicht' },
     { term: 'CI', definition: 'Collaborative Intention - Kooperationsabsicht' },
     { term: 'XAIT', definition: 'Explainable AI Trust - Vertrauen durch erklärbare KI' },
-    { term: 'Konfidenz', definition: 'Grad der Sicherheit/Unsicherheit einer KI-Antwort' }
+    { term: 'Konfidenz', definition: 'Grad der Sicherheit/Unsicherheit einer KI-Antwort' },
+    { term: 'KI', definition: 'Künstliche Intelligenz - Artificial Intelligence (AI)' },
+    { term: 'XAI', definition: 'Explainable Artificial Intelligence - Erklärbare Künstliche Intelligenz' },
+    { term: 'FAM-TEC', definition: 'Familiarity with Technology - Vertrautheit mit Technologie' },
+    { term: 'CLT', definition: 'Construal Level Theory - Konstruktebenen-Theorie' },
+    { term: 'SEM', definition: 'Structural Equation Model - Strukturgleichungsmodell' },
+    { term: 'UV', definition: 'Unabhängige Variable - Independent Variable' },
+    { term: 'N', definition: 'Sample Size - Stichprobengrösse' }
 ];
 
 // Total word count for full document
