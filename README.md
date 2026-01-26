@@ -18,6 +18,7 @@ This repository contains the complete research project for the Bachelor Thesis o
   - [Bibliography Management](#bibliography-management)
 - [Testing & Verification](#testing--verification)
 - [Documentation](#documentation)
+- [PageIndex MCP Integration](#pageindex-mcp-integration)
 - [Continuous Integration](#continuous-integration-ci)
 - [Deployment](#deployment)
 - [Project Structure](#project-structure)
@@ -75,6 +76,7 @@ This is a comprehensive academic research project with three major components:
 - **Continuous Integration**: Automated builds, tests, and deployments
 - **Bibliography Management**: Integrated with Zotero for automated reference updates
 - **Survey Data Processing**: Automated LaTeX table generation from CSV
+- **PageIndex MCP Integration**: Semantic search across thesis and research papers via Claude Code
 
 ## Tech Stack
 
@@ -269,6 +271,105 @@ Visit the [documentation site](https://mrryf.github.io/bachelor-thesis/) for:
 - **Configuration**: [`docs/configuration.md`](docs/configuration.md)
 - **Troubleshooting**: [`docs/troubleshooting.md`](docs/troubleshooting.md)
 - **Contributing**: [`docs/contributing.md`](docs/contributing.md)
+
+## PageIndex MCP Integration
+
+This project integrates with [PageIndex](https://pageindex.io) via the Model Context Protocol (MCP) to enable semantic search and retrieval across thesis documents and research papers directly from Claude Code.
+
+### Overview
+
+PageIndex processes and indexes PDF documents, allowing Claude to query specific pages, retrieve document structures, and perform cross-document synthesis without manually reading files. This is particularly useful for:
+
+- Quickly locating specific sections in the thesis or prestudy
+- Cross-referencing research papers during writing
+- Finding relevant citations across the indexed library
+
+### Architecture
+
+```
+┌─────────────────────────────────────────────────────────┐
+│                    Claude Code CLI                       │
+├─────────────────────────────────────────────────────────┤
+│  MCP Transport (stdio)                                   │
+│  ┌─────────────────────────────────────────────────┐    │
+│  │               PageIndex MCP                      │    │
+│  │  - process_document()   - get_page_content()    │    │
+│  │  - find_relevant_documents()                    │    │
+│  │  - get_document_structure()                     │    │
+│  └─────────────────────────────────────────────────┘    │
+└─────────────────────────────────────────────────────────┘
+                            │
+                            ▼
+┌─────────────────────────────────────────────────────────┐
+│                   PageIndex Cloud                        │
+│  ┌────────────┐  ┌────────────┐  ┌────────────┐        │
+│  │  Prestudy  │  │  Research  │  │   Thesis   │        │
+│  │  main.pdf  │  │   Papers   │  │  (future)  │        │
+│  └────────────┘  └────────────┘  └────────────┘        │
+└─────────────────────────────────────────────────────────┘
+```
+
+### Setup
+
+**Prerequisites:**
+- A PageIndex account and API key (sign up at [pageindex.io](https://pageindex.io))
+- Claude Code CLI installed
+
+**Installation:**
+
+```bash
+# Add PageIndex MCP to Claude Code
+claude mcp add --transport stdio pageindex -- npx -y @pageindex/mcp
+
+# Verify connection
+claude mcp list
+```
+
+> **Note:** A PageIndex API key is required to use this integration. The key is configured during the MCP setup process.
+
+### Indexed Documents
+
+| Category | Documents | Description |
+|----------|-----------|-------------|
+| Prestudy | 1 document (31 pages) | Current prestudy work |
+| Research Papers | 63 documents (~2,800 pages) | TAM/AI-TAM, Framing, Trust in AI, Methodology |
+| Thesis | TBD | Future thesis work |
+
+### Usage
+
+```bash
+# In Claude Code, query documents using PageIndex tools:
+
+# Find papers by topic
+find_relevant_documents(limit: 10)
+
+# Get specific pages (most efficient)
+get_page_content("main.pdf", pages: "13-14")
+
+# Get document structure (use sparingly - higher token cost)
+get_document_structure("main.pdf")
+```
+
+### Syncing Documents
+
+After significant changes to prestudy or thesis documents:
+
+1. Compile the PDF: `./scripts/build.sh --prestudy`
+2. In Claude Code, remove old version: `remove_document(["main.pdf"])`
+3. Upload new version: `process_document("/path/to/main.pdf")`
+4. Verify: `get_document("main.pdf", wait_for_completion: true)`
+
+The Zotero sync script can also detect new research papers for indexing:
+
+```bash
+python scripts/sync_zotero.py --pageindex
+```
+
+### Documentation
+
+For detailed documentation including tiered query strategies, token cost optimization, and troubleshooting, see:
+- [`docs/pageindex-integration.md`](docs/pageindex-integration.md) - Full integration guide
+- [`docs/specs/zotero-pageindex-sync.md`](docs/specs/zotero-pageindex-sync.md) - Automated sync extension
 
 ## Continuous Integration (CI)
 
