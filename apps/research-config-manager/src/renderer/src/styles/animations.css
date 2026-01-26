@@ -1,0 +1,69 @@
+/**
+ * Animation effects for interactive polish
+ * Includes spotlight, border glow, and performance optimizations
+ */
+
+/* Spotlight effect overlay */
+.spotlight-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border-radius: inherit;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  background: radial-gradient(
+    300px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+    rgba(132, 0, 255, 0.15),
+    transparent 80%
+  );
+  z-index: 1;
+}
+
+/* Border glow effect */
+.border-glow {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border-radius: inherit;
+  padding: 1px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  background: radial-gradient(
+    300px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+    rgba(132, 0, 255, 0.8),
+    transparent 40%
+  );
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  z-index: 2;
+}
+
+/* GPU acceleration for smooth animations */
+.spotlight-overlay,
+.border-glow {
+  will-change: opacity;
+  transform: translateZ(0); /* Force GPU layer */
+}
+
+/* Disable effects on mobile (no hover support) */
+@media (hover: none) {
+  .spotlight-overlay,
+  .border-glow {
+    display: none !important;
+  }
+}
+
+/* Respect user's motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .spotlight-overlay,
+  .border-glow {
+    display: none !important;
+  }
+
+  * {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
