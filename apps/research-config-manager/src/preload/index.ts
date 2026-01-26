@@ -4,7 +4,8 @@ import type {
   DocumentScope,
   DocumentMetadata,
   ParsedCatalog,
-  RefreshResult
+  RefreshResult,
+  ExternalChangeEvent
 } from '../shared/types';
 
 export type API = {
@@ -12,6 +13,7 @@ export type API = {
     read: () => Promise<DocumentScope | null>;
     write: (scope: DocumentScope) => Promise<void>;
     onUpdate: (callback: (scope: DocumentScope) => void) => () => void;
+    onExternalChange: (callback: (event: ExternalChangeEvent) => void) => () => void;
   };
   documents: {
     list: () => Promise<DocumentMetadata[]>;
@@ -36,6 +38,14 @@ const api: API = {
       ipcRenderer.on(IPC_CHANNELS.CONFIG_WATCH, handler);
       return () => {
         ipcRenderer.removeListener(IPC_CHANNELS.CONFIG_WATCH, handler);
+      };
+    },
+    onExternalChange: (callback) => {
+      const handler = (_event: Electron.IpcRendererEvent, event: ExternalChangeEvent) =>
+        callback(event);
+      ipcRenderer.on(IPC_CHANNELS.CONFIG_EXTERNAL_CHANGE, handler);
+      return () => {
+        ipcRenderer.removeListener(IPC_CHANNELS.CONFIG_EXTERNAL_CHANGE, handler);
       };
     }
   },

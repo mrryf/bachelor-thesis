@@ -9,19 +9,14 @@ export const DocumentScopeMetadataSchema = z.object({
 });
 
 export const DocumentScopeSchema = z.object({
-  version: z.literal('1.0'),
+  version: z.enum(['1.0', '1.1']),
   lastModified: z.string(),
   enabled: z.array(z.string()),
   disabled: z.array(z.string()),
-  categories: z
-    .record(
-      z.string(),
-      z.object({
-        enabled: z.boolean(),
-        documents: z.array(z.string())
-      })
-    )
-    .optional(),
+  // v1.1: document name -> array of category names
+  categories: z.record(z.string(), z.array(z.string())).optional(),
+  // v1.1: category name -> description
+  categoryDefinitions: z.record(z.string(), z.string()).optional(),
   metadata: DocumentScopeMetadataSchema.optional()
 });
 

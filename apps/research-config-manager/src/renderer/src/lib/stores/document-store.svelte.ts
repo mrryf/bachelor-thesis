@@ -1,4 +1,5 @@
-import type { DocumentMetadata, DocumentScope, RefreshResult } from '@shared/types';
+import type { DocumentMetadata, DocumentScope, RefreshResult, ExternalChangeEvent } from '@shared/types';
+import { toast } from 'svelte-sonner';
 
 interface DocumentState {
   documents: DocumentMetadata[];
@@ -114,11 +115,30 @@ class DocumentStore {
       const config = await window.api.config.read();
       this.state.config = config;
 
-      // Subscribe to config updates
+      // Subscribe to config updates (from our own changes)
       window.api.config.onUpdate((updatedConfig: DocumentScope) => {
         this.state.config = updatedConfig;
         // Reload documents to reflect new enabled/disabled state
         this.loadDocuments();
+      });
+
+      // Subscribe to external config changes (from other tools or manual edits)
+      window.api.config.onExternalChange((event: ExternalChangeEvent) => {
+        console.log('External config change detected:', event.file);
+        toast.info('Configuration changed externally', {
+          description: `${event.file} was modified outside the app`,
+          action: {
+            label: 'Reload',
+            onClick: () => this.loadDocuments()
+          },
+          duration: 5000
+        });
+
+        // Auto-reload after a brief delay
+        setTimeout(() => {
+          this.loadDocuments();
+          this.loadConfig();
+        }, 1000);
       });
     } catch (err) {
       console.error('Failed to load config:', err);

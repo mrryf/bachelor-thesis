@@ -75,3 +75,9 @@ export interface RefreshResult {
   removedDocuments: string[];
   error?: string;
 }
+
+export interface ExternalChangeEvent {
+  file: string;
+  path: string;
+  timestamp: number;
+}

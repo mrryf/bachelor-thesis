@@ -71,20 +71,22 @@
 				<div class="relative flex-1">
 					<Search class="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
 					<Input
+						id="search-input-tablet"
 						type="search"
 						placeholder="Search documents..."
-						class="pl-10 h-9 no-drag"
+						class="pl-10 h-9 no-drag search-input"
 						value={documentStore.state.searchQuery}
 						oninput={(e) => documentStore.setSearchQuery(e.currentTarget.value)}
 					/>
 				</div>
 				<Button
+					id="refresh-button-tablet"
 					variant="outline"
 					size="icon"
-					class="h-9 w-9 shrink-0"
+					class="h-9 w-9 shrink-0 refresh-button"
 					onclick={handleRefresh}
 					disabled={isLoading || isRefreshing}
-					title="Refresh from PageIndex"
+					title="Refresh from PageIndex (⌘R)"
 				>
 					<RefreshCw class="h-4 w-4 {isRefreshing ? 'animate-spin' : ''}" />
 				</Button>
@@ -139,9 +141,10 @@
 				<div class="relative flex-1 min-w-0">
 					<Search class="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
 					<Input
+						id="search-input-desktop"
 						type="search"
 						placeholder="Search documents..."
-						class="pl-10 h-9 no-drag"
+						class="pl-10 h-9 no-drag search-input"
 						value={documentStore.state.searchQuery}
 						oninput={(e) => documentStore.setSearchQuery(e.currentTarget.value)}
 					/>
@@ -188,12 +191,13 @@
 					Disable All
 				</Button>
 				<Button
+					id="refresh-button-desktop"
 					variant="outline"
 					size="icon"
-					class="h-9 w-9"
+					class="h-9 w-9 refresh-button"
 					onclick={handleRefresh}
 					disabled={isLoading || isRefreshing}
-					title="Refresh from PageIndex"
+					title="Refresh from PageIndex (⌘R)"
 				>
 					<RefreshCw class="h-4 w-4 {isRefreshing ? 'animate-spin' : ''}" />
 				</Button>
@@ -208,9 +212,10 @@
 				<div class="relative">
 					<Search class="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
 					<Input
+						id="search-input-mobile"
 						type="search"
 						placeholder="Search..."
-						class="pl-10 h-11 no-drag touch-manipulation"
+						class="pl-10 h-11 no-drag touch-manipulation search-input"
 						value={documentStore.state.searchQuery}
 						oninput={(e) => documentStore.setSearchQuery(e.currentTarget.value)}
 					/>
@@ -239,9 +244,10 @@
 				<!-- Mobile refresh button (44px minimum) -->
 				<div class="flex items-center gap-2 shrink-0">
 					<Button
+						id="refresh-button-mobile"
 						variant="outline"
 						size="icon"
-						class="h-11 w-11 touch-manipulation"
+						class="h-11 w-11 touch-manipulation refresh-button"
 						onclick={handleRefresh}
 						disabled={isLoading || isRefreshing}
 						title="Refresh from PageIndex"

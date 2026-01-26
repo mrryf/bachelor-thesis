@@ -106,6 +106,13 @@ export class ConfigService {
       // Get catalog entry if available
       const catalogEntry = catalogLookup.get(name);
 
+      // Get categories: prefer scope.categories, fallback to catalog, then 'Uncategorized'
+      const scopeCategories = scope?.categories?.[name];
+      const categories =
+        scopeCategories && scopeCategories.length > 0
+          ? scopeCategories
+          : catalogEntry?.categories ?? ['Uncategorized'];
+
       documents.push({
         name,
         shortName: this.shortenName(name),
@@ -114,7 +121,7 @@ export class ConfigService {
         tokenEstimate: pages * TOKENS_PER_PAGE,
         indexedAt: entry.indexed_at,
         enabled,
-        categories: catalogEntry?.categories ?? ['Uncategorized'],
+        categories,
         relevance: catalogEntry?.relevance ?? 'SUPPORTING',
         focus: catalogEntry?.focus,
         keyPages: catalogEntry?.keyPages,

@@ -1,9 +1,10 @@
 import { app, shell, BrowserWindow } from 'electron';
 import { join } from 'path';
 import { electronApp, optimizer, is } from '@electron-toolkit/utils';
-import { registerIpcHandlers } from './ipc/handlers';
+import { registerIpcHandlers, PROJECT_PATH } from './ipc/handlers';
+import { getFileWatcher } from './services/file-watcher';
 
-function createWindow(): void {
+function createWindow(): BrowserWindow {
   const mainWindow = new BrowserWindow({
     width: 1000,
     height: 700,
@@ -36,6 +37,8 @@ function createWindow(): void {
   } else {
     mainWindow.loadFile(join(__dirname, '../renderer/index.html'));
   }
+
+  return mainWindow;
 }
 
 app.whenReady().then(() => {
@@ -50,10 +53,17 @@ app.whenReady().then(() => {
   // Register IPC handlers
   registerIpcHandlers();
 
+  // Create main window
   createWindow();
 
+  // Start file watcher for external config changes
+  const fileWatcher = getFileWatcher(PROJECT_PATH);
+  fileWatcher.start();
+
   app.on('activate', function () {
-    if (BrowserWindow.getAllWindows().length === 0) createWindow();
+    if (BrowserWindow.getAllWindows().length === 0) {
+      createWindow();
+    }
   });
 });
 

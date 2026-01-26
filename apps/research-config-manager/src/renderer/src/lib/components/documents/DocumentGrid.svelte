@@ -15,7 +15,7 @@
 
 	// Build filter description for empty state
 	const filterDesc = $derived(() => {
-		const parts = [];
+		const parts: string[] = [];
 		if (searchQuery) parts.push(`"${searchQuery}"`);
 		if (selectedCategory) parts.push(`category "${selectedCategory}"`);
 		return parts.length > 0 ? parts.join(' and ') : '';

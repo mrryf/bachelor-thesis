@@ -7,7 +7,7 @@ import { join } from 'path';
 import type { DocumentScope } from '../../shared/types';
 
 // Project path - hardcoded for now, will be configurable later
-const PROJECT_PATH = '/Users/mrryf/develop/python/data-analysis/projects/bachelor-thesis';
+export const PROJECT_PATH = '/Users/mrryf/develop/python/data-analysis/projects/bachelor-thesis';
 
 let configService: ConfigService;
 

@@ -3,6 +3,7 @@ export const IPC_CHANNELS = {
   CONFIG_READ: 'config:read',
   CONFIG_WRITE: 'config:write',
   CONFIG_WATCH: 'config:watch',
+  CONFIG_EXTERNAL_CHANGE: 'config:external-change',
 
   // Document operations
   DOCUMENTS_LIST: 'documents:list',

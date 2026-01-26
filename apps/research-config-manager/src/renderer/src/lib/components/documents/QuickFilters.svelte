@@ -3,7 +3,6 @@
 	import { Button } from "$lib/components/ui/button";
 	import X from "@lucide/svelte/icons/x";
 	import { documentStore } from "$lib/stores/document-store.svelte";
-	import { cn } from "$lib/utils";
 
 	const TOP_N_CATEGORIES = 5;
 
