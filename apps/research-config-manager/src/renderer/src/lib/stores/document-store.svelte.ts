@@ -7,6 +7,11 @@ interface DocumentState {
   error: string | null;
   searchQuery: string;
   selectedCategory: string | null;
+  // Responsive state
+  viewMode: 'compact' | 'list' | 'grid';
+  isMobile: boolean;
+  isTablet: boolean;
+  filtersCollapsed: boolean;
 }
 
 class DocumentStore {
@@ -16,7 +21,12 @@ class DocumentStore {
     isLoading: false,
     error: null,
     searchQuery: '',
-    selectedCategory: null
+    selectedCategory: null,
+    // Responsive defaults
+    viewMode: 'compact',
+    isMobile: false,
+    isTablet: false,
+    filtersCollapsed: false
   });
 
   // Computed: filtered documents based on search query and selected category
@@ -184,6 +194,23 @@ class DocumentStore {
       await this.loadDocuments();
       throw err;
     }
+  }
+
+  // Responsive helpers
+  setViewportSize(width: number): void {
+    this.state.isMobile = width < 640;
+    this.state.isTablet = width >= 640 && width < 1024;
+    if (this.state.isMobile && !this.state.filtersCollapsed) {
+      this.state.filtersCollapsed = true; // Auto-collapse on mobile
+    }
+  }
+
+  toggleFilters(): void {
+    this.state.filtersCollapsed = !this.state.filtersCollapsed;
+  }
+
+  setViewMode(mode: 'compact' | 'list' | 'grid'): void {
+    this.state.viewMode = mode;
   }
 }
 
