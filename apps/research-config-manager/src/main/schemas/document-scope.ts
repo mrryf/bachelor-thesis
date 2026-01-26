@@ -8,6 +8,11 @@ export const DocumentScopeMetadataSchema = z.object({
   disabledCount: z.number()
 });
 
+export const DocumentScopePreferencesSchema = z.object({
+  defaultModel: z.enum(['haiku', 'sonnet', 'opus']),
+  showModelIndicator: z.boolean()
+});
+
 export const DocumentScopeSchema = z.object({
   version: z.enum(['1.0', '1.1']),
   lastModified: z.string(),
@@ -17,7 +22,8 @@ export const DocumentScopeSchema = z.object({
   categories: z.record(z.string(), z.array(z.string())).optional(),
   // v1.1: category name -> description
   categoryDefinitions: z.record(z.string(), z.string()).optional(),
-  metadata: DocumentScopeMetadataSchema.optional()
+  metadata: DocumentScopeMetadataSchema.optional(),
+  preferences: DocumentScopePreferencesSchema.optional()
 });
 
 export type DocumentScope = z.infer<typeof DocumentScopeSchema>;

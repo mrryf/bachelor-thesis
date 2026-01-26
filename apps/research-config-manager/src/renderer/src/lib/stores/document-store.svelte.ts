@@ -15,8 +15,8 @@ interface DocumentState {
   filtersCollapsed: boolean;
 }
 
-class DocumentStore {
-  state = $state<DocumentState>({
+function createDocumentStore() {
+  const state = $state<DocumentState>({
     documents: [],
     config: null,
     isLoading: false,
@@ -31,54 +31,52 @@ class DocumentStore {
   });
 
   // Computed: filtered documents based on search query and selected category
-  get filteredDocuments(): DocumentMetadata[] {
-    let filtered = this.state.documents;
+  const filteredDocuments = $derived.by(() => {
+    let filtered = state.documents;
 
     // Filter by category
-    if (this.state.selectedCategory) {
-      filtered = filtered.filter((doc) => doc.categories.includes(this.state.selectedCategory!));
+    if (state.selectedCategory) {
+      filtered = filtered.filter((doc) => doc.categories.includes(state.selectedCategory!));
     }
 
-    // Filter by search query
-    if (this.state.searchQuery.trim()) {
-      const query = this.state.searchQuery.toLowerCase();
+    // Filter by search query (searches name, citation, categories, focus, and relevance)
+    if (state.searchQuery.trim()) {
+      const query = state.searchQuery.toLowerCase();
       filtered = filtered.filter(
         (doc) =>
           doc.name.toLowerCase().includes(query) ||
-          doc.shortCitation.toLowerCase().includes(query)
+          doc.shortCitation.toLowerCase().includes(query) ||
+          doc.categories.some(cat => cat.toLowerCase().includes(query)) ||
+          (doc.focus?.toLowerCase().includes(query) ?? false) ||
+          (doc.relevance?.toLowerCase().includes(query) ?? false)
       );
     }
 
     return filtered;
-  }
+  });
 
   // Computed: document statistics
-  get stats(): {
-    total: number;
-    enabled: number;
-    disabled: number;
-    totalPages: number;
-    totalTokens: number;
-    enabledTokens: number;
-  } {
-    const enabled = this.state.documents.filter((d) => d.enabled);
-    const disabled = this.state.documents.filter((d) => !d.enabled);
+  const stats = $derived.by(() => {
+    const documents = state.documents;
+    const enabled = documents.filter((d) => d.enabled);
+    const disabled = documents.filter((d) => !d.enabled);
 
     return {
-      total: this.state.documents.length,
+      total: documents.length,
       enabled: enabled.length,
       disabled: disabled.length,
-      totalPages: this.state.documents.reduce((sum, d) => sum + d.pages, 0),
-      totalTokens: this.state.documents.reduce((sum, d) => sum + d.tokenEstimate, 0),
+      totalPages: documents.reduce((sum, d) => sum + d.pages, 0),
+      totalTokens: documents.reduce((sum, d) => sum + d.tokenEstimate, 0),
       enabledTokens: enabled.reduce((sum, d) => sum + d.tokenEstimate, 0)
     };
-  }
+  });
 
   // Computed: categories with counts
-  get categories(): Array<{ name: string; count: number; enabledCount: number }> {
+  const categories = $derived.by(() => {
+    const documents = state.documents;
     const categoryMap = new Map<string, { count: number; enabledCount: number }>();
 
-    for (const doc of this.state.documents) {
+    for (const doc of documents) {
       for (const cat of doc.categories) {
         if (!categoryMap.has(cat)) {
           categoryMap.set(cat, { count: 0, enabledCount: 0 });
@@ -94,32 +92,32 @@ class DocumentStore {
     return Array.from(categoryMap.entries())
       .map(([name, data]) => ({ name, ...data }))
       .sort((a, b) => b.count - a.count);
-  }
+  });
 
   // Actions
-  async loadDocuments(): Promise<void> {
-    this.state.isLoading = true;
-    this.state.error = null;
+  async function loadDocuments(): Promise<void> {
+    state.isLoading = true;
+    state.error = null;
     try {
       const documents = await window.api.documents.list();
-      this.state.documents = documents;
-      this.state.isLoading = false;
+      state.documents = documents;
+      state.isLoading = false;
     } catch (err) {
-      this.state.error = err instanceof Error ? err.message : 'Failed to load documents';
-      this.state.isLoading = false;
+      state.error = err instanceof Error ? err.message : 'Failed to load documents';
+      state.isLoading = false;
     }
   }
 
-  async loadConfig(): Promise<void> {
+  async function loadConfig(): Promise<void> {
     try {
       const config = await window.api.config.read();
-      this.state.config = config;
+      state.config = config;
 
       // Subscribe to config updates (from our own changes)
       window.api.config.onUpdate((updatedConfig: DocumentScope) => {
-        this.state.config = updatedConfig;
+        state.config = updatedConfig;
         // Reload documents to reflect new enabled/disabled state
-        this.loadDocuments();
+        loadDocuments();
       });
 
       // Subscribe to external config changes (from other tools or manual edits)
@@ -129,15 +127,15 @@ class DocumentStore {
           description: `${event.file} was modified outside the app`,
           action: {
             label: 'Reload',
-            onClick: () => this.loadDocuments()
+            onClick: () => loadDocuments()
           },
           duration: 5000
         });
 
         // Auto-reload after a brief delay
         setTimeout(() => {
-          this.loadDocuments();
-          this.loadConfig();
+          loadDocuments();
+          loadConfig();
         }, 1000);
       });
     } catch (err) {
@@ -145,9 +143,9 @@ class DocumentStore {
     }
   }
 
-  async toggleDocument(docName: string, enabled: boolean): Promise<void> {
+  async function toggleDocument(docName: string, enabled: boolean): Promise<void> {
     // Optimistic update
-    this.state.documents = this.state.documents.map((doc) =>
+    state.documents = state.documents.map((doc) =>
       doc.name === docName ? { ...doc, enabled } : doc
     );
 
@@ -155,55 +153,55 @@ class DocumentStore {
       await window.api.documents.toggle(docName, enabled);
     } catch (err) {
       // Revert on error
-      this.state.documents = this.state.documents.map((doc) =>
+      state.documents = state.documents.map((doc) =>
         doc.name === docName ? { ...doc, enabled: !enabled } : doc
       );
-      this.state.error = err instanceof Error ? err.message : 'Failed to toggle document';
+      state.error = err instanceof Error ? err.message : 'Failed to toggle document';
     }
   }
 
-  async enableAll(): Promise<void> {
-    this.state.isLoading = true;
+  async function enableAll(): Promise<void> {
+    state.isLoading = true;
     try {
       await window.api.documents.enableAll();
-      await this.loadDocuments();
+      await loadDocuments();
     } catch (err) {
-      this.state.error = err instanceof Error ? err.message : 'Failed to enable all';
+      state.error = err instanceof Error ? err.message : 'Failed to enable all';
     } finally {
-      this.state.isLoading = false;
+      state.isLoading = false;
     }
   }
 
-  async disableAll(): Promise<void> {
-    this.state.isLoading = true;
+  async function disableAll(): Promise<void> {
+    state.isLoading = true;
     try {
       await window.api.documents.disableAll();
-      await this.loadDocuments();
+      await loadDocuments();
     } catch (err) {
-      this.state.error = err instanceof Error ? err.message : 'Failed to disable all';
+      state.error = err instanceof Error ? err.message : 'Failed to disable all';
     } finally {
-      this.state.isLoading = false;
+      state.isLoading = false;
     }
   }
 
-  setSearchQuery(query: string): void {
-    this.state.searchQuery = query;
+  function setSearchQuery(query: string): void {
+    state.searchQuery = query;
   }
 
-  setSelectedCategory(category: string | null): void {
-    this.state.selectedCategory = category;
+  function setSelectedCategory(category: string | null): void {
+    state.selectedCategory = category;
   }
 
-  async refresh(): Promise<RefreshResult> {
+  async function refresh(): Promise<RefreshResult> {
     return window.api.documents.refresh();
   }
 
-  async bulkToggleCategory(category: string, enabled: boolean): Promise<void> {
-    const categoryDocs = this.state.documents.filter((d) => d.categories.includes(category));
+  async function bulkToggleCategory(category: string, enabled: boolean): Promise<void> {
+    const categoryDocs = state.documents.filter((d) => d.categories.includes(category));
     const names = categoryDocs.map((d) => d.name);
 
     // Optimistic update
-    this.state.documents = this.state.documents.map((d) =>
+    state.documents = state.documents.map((d) =>
       names.includes(d.name) ? { ...d, enabled } : d
     );
 
@@ -211,27 +209,46 @@ class DocumentStore {
       await window.api.documents.bulkToggle(category, enabled);
     } catch (err) {
       // Revert on error
-      await this.loadDocuments();
+      await loadDocuments();
       throw err;
     }
   }
 
   // Responsive helpers
-  setViewportSize(width: number): void {
-    this.state.isMobile = width < 640;
-    this.state.isTablet = width >= 640 && width < 1024;
-    if (this.state.isMobile && !this.state.filtersCollapsed) {
-      this.state.filtersCollapsed = true; // Auto-collapse on mobile
+  function setViewportSize(width: number): void {
+    state.isMobile = width < 640;
+    state.isTablet = width >= 640 && width < 1024;
+    if (state.isMobile && !state.filtersCollapsed) {
+      state.filtersCollapsed = true; // Auto-collapse on mobile
     }
   }
 
-  toggleFilters(): void {
-    this.state.filtersCollapsed = !this.state.filtersCollapsed;
+  function toggleFilters(): void {
+    state.filtersCollapsed = !state.filtersCollapsed;
   }
 
-  setViewMode(mode: 'compact' | 'list' | 'grid'): void {
-    this.state.viewMode = mode;
+  function setViewMode(mode: 'compact' | 'list' | 'grid'): void {
+    state.viewMode = mode;
   }
+
+  return {
+    get state() { return state; },
+    get filteredDocuments() { return filteredDocuments; },
+    get stats() { return stats; },
+    get categories() { return categories; },
+    loadDocuments,
+    loadConfig,
+    toggleDocument,
+    enableAll,
+    disableAll,
+    setSearchQuery,
+    setSelectedCategory,
+    refresh,
+    bulkToggleCategory,
+    setViewportSize,
+    toggleFilters,
+    setViewMode
+  };
 }
 
-export const documentStore = new DocumentStore();
+export const documentStore = createDocumentStore();

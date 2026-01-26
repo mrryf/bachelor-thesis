@@ -5,7 +5,7 @@ import { parseCatalog } from '../services/catalog-parser';
 import { getRefreshService } from '../services/refresh-service';
 import { join } from 'path';
 import { statSync } from 'fs';
-import type { DocumentScope } from '../../shared/types';
+import type { DocumentScope, DocumentScopePreferences } from '../../shared/types';
 import { logger } from '../utils/logger';
 
 function resolveProjectPath(): string {
@@ -141,6 +141,24 @@ export function registerIpcHandlers(): void {
         }
       } catch (error) {
         logger.error('DOCUMENTS_BULK_TOGGLE failed', error as Error);
+        throw error;
+      }
+    }
+  );
+
+  // Preferences
+  ipcMain.handle(
+    IPC_CHANNELS.CONFIG_UPDATE_PREFERENCES,
+    async (_event, preferences: Partial<DocumentScopePreferences>) => {
+      try {
+        const updated = await configService.updatePreferences(preferences);
+        const scope = await configService.readScope();
+        if (scope) {
+          broadcastConfigUpdate(scope);
+        }
+        return updated;
+      } catch (error) {
+        logger.error('CONFIG_UPDATE_PREFERENCES failed', error as Error);
         throw error;
       }
     }

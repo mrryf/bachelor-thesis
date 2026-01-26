@@ -23,6 +23,13 @@ export interface DocumentScopeMetadata {
   disabledCount: number;
 }
 
+export type ModelPreference = 'haiku' | 'sonnet' | 'opus';
+
+export interface DocumentScopePreferences {
+  defaultModel: ModelPreference;
+  showModelIndicator: boolean;
+}
+
 export interface DocumentScope {
   version: '1.0' | '1.1';
   lastModified: string;
@@ -31,6 +38,7 @@ export interface DocumentScope {
   categories?: Record<string, string[]>;
   categoryDefinitions?: Record<string, string>;
   metadata?: DocumentScopeMetadata;
+  preferences?: DocumentScopePreferences;
 }
 
 export interface PageIndexEntry {

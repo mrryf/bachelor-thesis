@@ -8,7 +8,7 @@ import {
   type PageIndexState
 } from '../schemas/document-scope';
 import { atomicWriteJson } from '../utils/atomic-write';
-import type { DocumentMetadata } from '../../shared/types';
+import type { DocumentMetadata, DocumentScopePreferences } from '../../shared/types';
 import { parseCatalog, createCatalogLookup, type ParsedCatalog, type CatalogEntry } from './catalog-parser';
 import { ConfigParseError, ConfigValidationError } from '../errors/config-errors';
 import { getFileWatcher } from './file-watcher';
@@ -320,6 +320,48 @@ export class ConfigService {
     };
 
     await this.writeScope(updatedScope);
+  }
+
+  /**
+   * Update user preferences in the document scope
+   */
+  async updatePreferences(preferences: Partial<DocumentScopePreferences>): Promise<DocumentScopePreferences> {
+    let scope = await this.readScope();
+
+    if (!scope) {
+      scope = createDefaultScope();
+    }
+
+    const defaultPreferences: DocumentScopePreferences = {
+      defaultModel: 'sonnet',
+      showModelIndicator: true
+    };
+
+    const currentPreferences = scope.preferences ?? defaultPreferences;
+    const updatedPreferences: DocumentScopePreferences = {
+      ...currentPreferences,
+      ...preferences
+    };
+
+    const updatedScope: DocumentScope = {
+      ...scope,
+      preferences: updatedPreferences,
+      lastModified: new Date().toISOString()
+    };
+
+    await this.writeScope(updatedScope);
+    return updatedPreferences;
+  }
+
+  /**
+   * Get current preferences
+   */
+  async getPreferences(): Promise<DocumentScopePreferences> {
+    const scope = await this.readScope();
+    return scope?.preferences ?? {
+      defaultModel: 'sonnet',
+      showModelIndicator: true
+    };
   }
 
   private shortenName(name: string, maxLength = 60): string {

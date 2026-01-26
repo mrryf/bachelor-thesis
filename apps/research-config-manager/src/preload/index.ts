@@ -5,7 +5,8 @@ import type {
   DocumentMetadata,
   ParsedCatalog,
   RefreshResult,
-  ExternalChangeEvent
+  ExternalChangeEvent,
+  DocumentScopePreferences
 } from '../shared/types';
 
 export type API = {
@@ -14,6 +15,7 @@ export type API = {
     write: (scope: DocumentScope) => Promise<void>;
     onUpdate: (callback: (scope: DocumentScope) => void) => () => void;
     onExternalChange: (callback: (event: ExternalChangeEvent) => void) => () => void;
+    updatePreferences: (preferences: Partial<DocumentScopePreferences>) => Promise<DocumentScopePreferences>;
   };
   documents: {
     list: () => Promise<DocumentMetadata[]>;
@@ -47,7 +49,9 @@ const api: API = {
       return () => {
         ipcRenderer.removeListener(IPC_CHANNELS.CONFIG_EXTERNAL_CHANGE, handler);
       };
-    }
+    },
+    updatePreferences: (preferences) =>
+      ipcRenderer.invoke(IPC_CHANNELS.CONFIG_UPDATE_PREFERENCES, preferences)
   },
   documents: {
     list: () => ipcRenderer.invoke(IPC_CHANNELS.DOCUMENTS_LIST),

@@ -77,3 +77,35 @@ The `pageindex-context-manager` agent enforces these rules automatically. When s
 1. Check scope before any `find_relevant_documents()` or `get_page_content()` call
 2. Filter out disabled documents from search results
 3. Return appropriate messages for disabled document requests
+
+## Electron Debugging Protocols
+
+### Path Mismatch Protocol
+
+When seeing "Unable to load [preload/main] script: /path/to/file":
+
+1. **FIRST**: Grep for where that path is referenced in source
+   ```bash
+   grep -r "preload" src/main/  # for preload errors
+   grep -r "index.mjs\|index.js" src/main/  # for specific file
+   ```
+2. **SECOND**: Check actual build output exists at that path
+   ```bash
+   ls out/preload/  # or out/main/
+   ```
+3. **THEN**: Fix either the reference OR the build output
+
+Do NOT assume build config changes will automatically update hardcoded paths.
+
+### General Electron Error Protocol
+
+When debugging Electron errors, follow the error path literally:
+
+| Error Type | First Action |
+|------------|--------------|
+| "Unable to load script: X" | Grep for where X is referenced |
+| "Cannot find module X" | Check if X exists at expected path |
+| "contextBridge not defined" | Verify preload loaded successfully first |
+| IPC errors | Check channel names match between main/preload/renderer |
+
+**Principle**: Follow the error message literally before theorizing about causes.

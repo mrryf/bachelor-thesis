@@ -4,6 +4,7 @@ export const IPC_CHANNELS = {
   CONFIG_WRITE: 'config:write',
   CONFIG_WATCH: 'config:watch',
   CONFIG_EXTERNAL_CHANGE: 'config:external-change',
+  CONFIG_UPDATE_PREFERENCES: 'config:update-preferences',
 
   // Document operations
   DOCUMENTS_LIST: 'documents:list',

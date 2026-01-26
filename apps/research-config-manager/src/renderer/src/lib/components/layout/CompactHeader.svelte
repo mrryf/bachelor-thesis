@@ -6,6 +6,8 @@
 	import { Input } from "$lib/components/ui/input";
 	import { Button } from "$lib/components/ui/button";
 	import { Separator } from "$lib/components/ui/separator";
+	import FilterPanel from "$lib/components/documents/FilterPanel.svelte";
+	import { SettingsPanel, ModelIndicator } from "$lib/components/settings";
 	import { documentStore } from "$lib/stores/document-store.svelte";
 	import { formatTokens } from "$lib/utils";
 	import { toast } from "svelte-sonner";
@@ -65,7 +67,7 @@
 	<div class="px-4 py-3">
 		<!-- Tablet layout: 2 rows for better fit (md to lg) -->
 		<div class="hidden md:flex lg:hidden flex-col gap-2">
-			<!-- Row 1: Title + Search + Refresh -->
+			<!-- Row 1: Title + Search + Filter + Refresh -->
 			<div class="flex items-center gap-3">
 				<h1 class="text-sm font-semibold whitespace-nowrap">Research Config</h1>
 				<div class="relative flex-1">
@@ -73,12 +75,13 @@
 					<Input
 						id="search-input-tablet"
 						type="search"
-						placeholder="Search documents..."
+						placeholder="Search by author, category, topic..."
 						class="pl-10 h-9 no-drag search-input"
 						value={documentStore.state.searchQuery}
 						oninput={(e) => documentStore.setSearchQuery(e.currentTarget.value)}
 					/>
 				</div>
+				<FilterPanel />
 				<Button
 					id="refresh-button-tablet"
 					variant="outline"
@@ -90,9 +93,10 @@
 				>
 					<RefreshCw class="h-4 w-4 {isRefreshing ? 'animate-spin' : ''}" />
 				</Button>
+				<SettingsPanel />
 			</div>
 
-			<!-- Row 2: Stats + Action buttons -->
+			<!-- Row 2: Stats + Model Indicator + Action buttons -->
 			<div class="flex items-center justify-between gap-4">
 				<div class="flex items-center gap-2 text-xs">
 					<div class="flex items-center gap-1">
@@ -109,6 +113,8 @@
 						<XCircle class="h-3 w-3" />
 						<span>{stats.disabled}</span>
 					</div>
+					<Separator orientation="vertical" class="h-3" />
+					<ModelIndicator />
 				</div>
 				<div class="flex items-center gap-2">
 					<Button
@@ -135,7 +141,7 @@
 
 		<!-- Desktop layout: everything in one row (lg and up) -->
 		<div class="hidden lg:flex items-center gap-4">
-			<!-- Left: Title + Search -->
+			<!-- Left: Title + Search + Filter -->
 			<div class="flex items-center gap-4 flex-1 max-w-2xl">
 				<h1 class="text-base font-semibold whitespace-nowrap">Research Config</h1>
 				<div class="relative flex-1 min-w-0">
@@ -143,15 +149,16 @@
 					<Input
 						id="search-input-desktop"
 						type="search"
-						placeholder="Search documents..."
+						placeholder="Search by author, category, topic..."
 						class="pl-10 h-9 no-drag search-input"
 						value={documentStore.state.searchQuery}
 						oninput={(e) => documentStore.setSearchQuery(e.currentTarget.value)}
 					/>
 				</div>
+				<FilterPanel />
 			</div>
 
-			<!-- Center: Stats -->
+			<!-- Center: Stats + Model Indicator -->
 			<div class="flex items-center gap-2 text-xs shrink-0">
 				<div class="flex items-center gap-1.5">
 					<span class="font-medium">{stats.total}</span>
@@ -168,6 +175,8 @@
 					<XCircle class="h-3 w-3" />
 					<span>{stats.disabled}</span>
 				</div>
+				<Separator orientation="vertical" class="h-3" />
+				<ModelIndicator />
 			</div>
 
 			<!-- Right: Action buttons -->
@@ -201,6 +210,7 @@
 				>
 					<RefreshCw class="h-4 w-4 {isRefreshing ? 'animate-spin' : ''}" />
 				</Button>
+				<SettingsPanel />
 			</div>
 		</div>
 
@@ -214,7 +224,7 @@
 					<Input
 						id="search-input-mobile"
 						type="search"
-						placeholder="Search..."
+						placeholder="Author, category, topic..."
 						class="pl-10 h-11 no-drag touch-manipulation search-input"
 						value={documentStore.state.searchQuery}
 						oninput={(e) => documentStore.setSearchQuery(e.currentTarget.value)}
@@ -241,8 +251,9 @@
 					</div>
 				</div>
 
-				<!-- Mobile refresh button (44px minimum) -->
+				<!-- Mobile action buttons (44px minimum touch targets) -->
 				<div class="flex items-center gap-2 shrink-0">
+					<FilterPanel />
 					<Button
 						id="refresh-button-mobile"
 						variant="outline"
@@ -254,6 +265,7 @@
 					>
 						<RefreshCw class="h-4 w-4 {isRefreshing ? 'animate-spin' : ''}" />
 					</Button>
+					<SettingsPanel />
 				</div>
 			</div>
 		</div>

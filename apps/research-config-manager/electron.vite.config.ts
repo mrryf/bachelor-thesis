@@ -13,7 +13,15 @@ export default defineConfig({
     }
   },
   preload: {
-    plugins: [externalizeDepsPlugin()]
+    plugins: [externalizeDepsPlugin()],
+    build: {
+      rollupOptions: {
+        output: {
+          format: 'cjs',
+          entryFileNames: '[name].js'
+        }
+      }
+    }
   },
   renderer: {
     resolve: {
