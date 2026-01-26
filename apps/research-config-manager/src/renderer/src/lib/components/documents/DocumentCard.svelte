@@ -4,6 +4,8 @@
 	import { Badge } from "$lib/components/ui/badge";
 	import { documentStore } from "$lib/stores/document-store.svelte";
 	import { useBreakpoint } from "$lib/hooks/useBreakpoint.svelte";
+	import { spotlight } from "$lib/effects/spotlight";
+	import { ripple } from "$lib/effects/ripple";
 	import { cn, formatTokens } from "$lib/utils";
 	import type { DocumentMetadata } from "@shared/types";
 
@@ -32,17 +34,22 @@
 <div
 	id={docId}
 	class={cn(
-		"group relative flex items-center gap-3 rounded-md border p-3 md:p-3 transition-colors hover:bg-muted/50 touch-manipulation",
+		"group relative flex items-center gap-3 rounded-md border p-3 md:p-3 transition-colors hover:bg-muted/50 touch-manipulation overflow-hidden",
 		document.isNew && "bg-amber-50 dark:bg-amber-950/20 border-l-2 border-l-amber-500"
 	)}
 	title={document.name}
+	use:spotlight
+	use:ripple
 >
-	<!-- Placeholder for spotlight/glow effects (Phase 4) -->
-	<!-- These will be populated in Phase 4 -->
+	<!-- Spotlight overlay (desktop only, respects prefers-reduced-motion) -->
+	<div class="spotlight-overlay"></div>
 
-	<FileText class="h-4 w-4 shrink-0 text-muted-foreground" />
+	<!-- Border glow overlay (desktop only, respects prefers-reduced-motion) -->
+	<div class="border-glow"></div>
 
-	<div class="flex-1 min-w-0 overflow-hidden">
+	<FileText class="h-4 w-4 shrink-0 text-muted-foreground relative z-10" />
+
+	<div class="flex-1 min-w-0 overflow-hidden relative z-10">
 		<!-- Citation + Toggle -->
 		<div class="flex items-center justify-between gap-2">
 			<div class="flex items-center gap-2 min-w-0 flex-1 overflow-hidden">
