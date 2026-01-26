@@ -19,9 +19,18 @@ export function useBreakpoint() {
     };
   });
 
-  const isMobile = $derived(width < 640);
-  const isTablet = $derived(width >= 640 && width < 1024);
-  const isDesktop = $derived(width >= 1024);
-
-  return { isMobile, isTablet, isDesktop, width };
+  return {
+    get isMobile() {
+      return width < 640;
+    },
+    get isTablet() {
+      return width >= 640 && width < 1024;
+    },
+    get isDesktop() {
+      return width >= 1024;
+    },
+    get width() {
+      return width;
+    }
+  };
 }
