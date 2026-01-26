@@ -1,6 +1,7 @@
 import { ConfigService } from './config-service';
 import { getPageIndexClient, type PageIndexDocument } from './pageindex-client';
 import type { RefreshResult } from '../../shared/types';
+import { logger } from '../utils/logger';
 
 export class RefreshService {
   constructor(private configService: ConfigService) {}
@@ -15,7 +16,7 @@ export class RefreshService {
         pageIndexDocs = await pageIndexClient.listDocuments();
       } catch (error) {
         // If MCP client fails, fall back to returning current state
-        console.error('Failed to connect to PageIndex:', error);
+        logger.error('Failed to connect to PageIndex', error as Error);
         return {
           success: false,
           totalDocuments: 0,
@@ -83,7 +84,7 @@ export class RefreshService {
         removedDocuments: removedDocs
       };
     } catch (error) {
-      console.error('Refresh failed:', error);
+      logger.error('Refresh failed', error as Error);
       return {
         success: false,
         totalDocuments: 0,

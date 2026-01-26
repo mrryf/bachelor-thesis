@@ -2,6 +2,7 @@ import { watch, type FSWatcher } from 'fs';
 import { BrowserWindow } from 'electron';
 import { join, basename } from 'path';
 import { IPC_CHANNELS } from '../../shared/channels';
+import { logger } from '../utils/logger';
 
 export interface ExternalChangeEvent {
   file: string;
@@ -44,14 +45,14 @@ export class FileWatcherService {
         });
 
         watcher.on('error', (error) => {
-          console.error(`File watcher error for ${watchPath}:`, error);
+          logger.error(`File watcher error for ${watchPath}`, error as Error);
         });
 
         this.watchers.set(watchPath, watcher);
-        console.log(`Watching for changes: ${watchPath}`);
+        logger.info(`Watching for changes: ${watchPath}`);
       } catch (error) {
         // File might not exist yet, that's okay
-        console.warn(`Could not watch ${watchPath}:`, error);
+        logger.warn(`Could not watch ${watchPath}`, { error });
       }
     }
   }
@@ -85,7 +86,7 @@ export class FileWatcherService {
       timestamp: Date.now()
     };
 
-    console.log(`External change detected: ${filename}`);
+    logger.info(`External change detected: ${filename}`);
 
     // Notify all windows
     const windows = BrowserWindow.getAllWindows();
@@ -107,7 +108,7 @@ export class FileWatcherService {
   stop(): void {
     for (const [path, watcher] of this.watchers) {
       watcher.close();
-      console.log(`Stopped watching: ${path}`);
+      logger.info(`Stopped watching: ${path}`);
     }
     this.watchers.clear();
 

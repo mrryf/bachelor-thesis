@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { onMount, onDestroy } from "svelte";
 	import { documentStore } from "$lib/stores/document-store.svelte";
 	import CompactHeader from "$lib/components/layout/CompactHeader.svelte";
 	import MobileFilterSheet from "$lib/components/mobile/MobileFilterSheet.svelte";
@@ -52,16 +51,14 @@
 		}
 	}
 
-	onMount(async () => {
-		await documentStore.loadDocuments();
-		await documentStore.loadConfig();
-
-		// Add keyboard shortcut listener
+	$effect(() => {
+		documentStore.loadDocuments();
+		documentStore.loadConfig();
 		window.addEventListener('keydown', handleKeyDown);
-	});
 
-	onDestroy(() => {
-		window.removeEventListener('keydown', handleKeyDown);
+		return () => {
+			window.removeEventListener('keydown', handleKeyDown);
+		};
 	});
 </script>
 

@@ -1,8 +1,23 @@
-import { app, shell, BrowserWindow } from 'electron';
+import { app, shell, BrowserWindow, session } from 'electron';
 import { join } from 'path';
 import { electronApp, optimizer, is } from '@electron-toolkit/utils';
 import { registerIpcHandlers, PROJECT_PATH } from './ipc/handlers';
 import { getFileWatcher } from './services/file-watcher';
+
+function setupCSP(): void {
+  const csp = is.dev
+    ? "default-src 'self' 'unsafe-inline' 'unsafe-eval'; connect-src 'self' ws://localhost:*"
+    : "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:";
+
+  session.defaultSession.webRequest.onHeadersReceived((details, callback) => {
+    callback({
+      responseHeaders: {
+        ...details.responseHeaders,
+        'Content-Security-Policy': [csp]
+      }
+    });
+  });
+}
 
 function createWindow(): BrowserWindow {
   const mainWindow = new BrowserWindow({
@@ -16,7 +31,6 @@ function createWindow(): BrowserWindow {
     trafficLightPosition: { x: 15, y: 10 },
     webPreferences: {
       preload: join(__dirname, '../preload/index.mjs'),
-      sandbox: false,
       contextIsolation: true,
       nodeIntegration: false
     }
@@ -45,6 +59,9 @@ app.whenReady().then(() => {
   // Set app user model id for windows
   electronApp.setAppUserModelId('com.research-config-manager');
 
+  // Setup Content Security Policy
+  setupCSP();
+
   // Default open or close DevTools by F12 in development
   app.on('browser-window-created', (_, window) => {
     optimizer.watchWindowShortcuts(window);
@@ -71,4 +88,13 @@ app.on('window-all-closed', () => {
   if (process.platform !== 'darwin') {
     app.quit();
   }
+});
+
+// Cleanup FileWatcher on quit
+app.on('will-quit', () => {
+  getFileWatcher(PROJECT_PATH).stop();
+});
+
+app.on('before-quit', () => {
+  getFileWatcher(PROJECT_PATH).stop();
 });

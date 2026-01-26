@@ -24,10 +24,12 @@ export interface DocumentScopeMetadata {
 }
 
 export interface DocumentScope {
-  version: '1.0';
+  version: '1.0' | '1.1';
   lastModified: string;
   enabled: string[];
   disabled: string[];
+  categories?: Record<string, string[]>;
+  categoryDefinitions?: Record<string, string>;
   metadata?: DocumentScopeMetadata;
 }
 
