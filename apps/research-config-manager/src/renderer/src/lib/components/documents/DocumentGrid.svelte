@@ -56,7 +56,7 @@
 		</div>
 	{:else}
 		<!-- Document grid -->
-		<div class="grid grid-cols-1 gap-1 p-4">
+		<div class="grid grid-cols-1 gap-1 p-4 pb-20 md:pb-4">
 			{#each filteredDocs as doc (doc.name)}
 				<DocumentCard document={doc} />
 			{/each}

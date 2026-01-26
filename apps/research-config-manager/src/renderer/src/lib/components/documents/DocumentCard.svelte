@@ -3,6 +3,7 @@
 	import { Switch } from "$lib/components/ui/switch";
 	import { Badge } from "$lib/components/ui/badge";
 	import { documentStore } from "$lib/stores/document-store.svelte";
+	import { useBreakpoint } from "$lib/hooks/useBreakpoint.svelte";
 	import { cn, formatTokens } from "$lib/utils";
 	import type { DocumentMetadata } from "@shared/types";
 
@@ -11,6 +12,8 @@
 	}
 
 	let { document }: Props = $props();
+
+	const { isMobile } = useBreakpoint();
 
 	function handleToggle(checked: boolean) {
 		documentStore.toggleDocument(document.name, checked);
@@ -21,12 +24,15 @@
 
 	// Display focus if available, otherwise fallback to short filename
 	const secondaryText = $derived(document.focus || document.shortName || document.name.replace(/\.pdf$/i, ''));
+
+	// Show fewer badges on mobile (2 instead of 3)
+	const maxBadges = $derived(isMobile ? 2 : 3);
 </script>
 
 <div
 	id={docId}
 	class={cn(
-		"group relative flex items-center gap-3 rounded-md border p-3 transition-colors hover:bg-muted/50",
+		"group relative flex items-center gap-3 rounded-md border p-3 md:p-3 transition-colors hover:bg-muted/50 touch-manipulation",
 		document.isNew && "bg-amber-50 dark:bg-amber-950/20 border-l-2 border-l-amber-500"
 	)}
 	title={document.name}
@@ -49,7 +55,7 @@
 					</Badge>
 				{/if}
 			</div>
-			<Switch checked={document.enabled} onCheckedChange={handleToggle} class="shrink-0" />
+			<Switch checked={document.enabled} onCheckedChange={handleToggle} class="shrink-0 scale-110 md:scale-100" />
 		</div>
 
 		<!-- Focus/Purpose (1 line truncated) -->
@@ -59,15 +65,15 @@
 
 		<!-- Badges + Metrics -->
 		<div class="flex items-center gap-1.5 mt-1">
-			<!-- Categories (max 3 visible) -->
-			{#each document.categories.slice(0, 3) as cat (cat)}
+			<!-- Categories (max 2 on mobile, 3 on desktop) -->
+			{#each document.categories.slice(0, maxBadges) as cat (cat)}
 				<Badge variant="secondary" class="text-[10px] px-1.5 py-0">
 					{cat}
 				</Badge>
 			{/each}
-			{#if document.categories.length > 3}
+			{#if document.categories.length > maxBadges}
 				<span class="text-[10px] text-muted-foreground">
-					+{document.categories.length - 3}
+					+{document.categories.length - maxBadges}
 				</span>
 			{/if}
 
