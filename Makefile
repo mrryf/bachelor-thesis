@@ -1,4 +1,4 @@
-.PHONY: help install test lint build build-all clean docs docs-build sync-zotero generate-tables ci
+.PHONY: help install test lint build build-all clean docs docs-build sync-zotero generate-tables ci electron-test electron-build electron-dev
 
 .DEFAULT_GOAL := help
 
@@ -65,5 +65,14 @@ sync-zotero: ## Sync bibliography from Zotero
 generate-tables: ## Generate LaTeX tables from items.csv
 	python scripts/generate_item_tables.py
 
-ci: lint test ## Run full CI pipeline locally
+electron-test: ## Run Electron app tests
+	cd apps/research-config-manager && npm test
+
+electron-build: ## Build Electron app
+	cd apps/research-config-manager && npm run build
+
+electron-dev: ## Run Electron app in dev mode
+	cd apps/research-config-manager && npm run dev
+
+ci: lint test electron-test ## Run full CI pipeline locally
 	@echo "✅ All CI checks passed!"
