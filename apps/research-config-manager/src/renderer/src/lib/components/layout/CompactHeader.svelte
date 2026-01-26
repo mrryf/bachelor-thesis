@@ -63,12 +63,80 @@
 	<div class="drag-region h-8"></div>
 
 	<div class="px-4 py-3">
-		<!-- Desktop layout: everything in one row -->
-		<div class="hidden md:flex items-center justify-between gap-4">
+		<!-- Tablet layout: 2 rows for better fit (md to lg) -->
+		<div class="hidden md:flex lg:hidden flex-col gap-2">
+			<!-- Row 1: Title + Search + Refresh -->
+			<div class="flex items-center gap-3">
+				<h1 class="text-sm font-semibold whitespace-nowrap">Research Config</h1>
+				<div class="relative flex-1">
+					<Search class="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+					<Input
+						type="search"
+						placeholder="Search documents..."
+						class="pl-10 h-9 no-drag"
+						value={documentStore.state.searchQuery}
+						oninput={(e) => documentStore.setSearchQuery(e.currentTarget.value)}
+					/>
+				</div>
+				<Button
+					variant="outline"
+					size="icon"
+					class="h-9 w-9 shrink-0"
+					onclick={handleRefresh}
+					disabled={isLoading || isRefreshing}
+					title="Refresh from PageIndex"
+				>
+					<RefreshCw class="h-4 w-4 {isRefreshing ? 'animate-spin' : ''}" />
+				</Button>
+			</div>
+
+			<!-- Row 2: Stats + Action buttons -->
+			<div class="flex items-center justify-between gap-4">
+				<div class="flex items-center gap-2 text-xs">
+					<div class="flex items-center gap-1">
+						<span class="font-medium">{stats.total}</span>
+						<span class="text-muted-foreground">docs</span>
+					</div>
+					<Separator orientation="vertical" class="h-3" />
+					<div class="flex items-center gap-1 text-green-600">
+						<CheckCircle2 class="h-3 w-3" />
+						<span>{stats.enabled}</span>
+					</div>
+					<Separator orientation="vertical" class="h-3" />
+					<div class="flex items-center gap-1 text-muted-foreground">
+						<XCircle class="h-3 w-3" />
+						<span>{stats.disabled}</span>
+					</div>
+				</div>
+				<div class="flex items-center gap-2">
+					<Button
+						variant="outline"
+						size="sm"
+						class="h-9 whitespace-nowrap"
+						onclick={() => documentStore.enableAll()}
+						disabled={isLoading || isRefreshing}
+					>
+						Enable All
+					</Button>
+					<Button
+						variant="outline"
+						size="sm"
+						class="h-9 whitespace-nowrap"
+						onclick={() => documentStore.disableAll()}
+						disabled={isLoading || isRefreshing}
+					>
+						Disable All
+					</Button>
+				</div>
+			</div>
+		</div>
+
+		<!-- Desktop layout: everything in one row (lg and up) -->
+		<div class="hidden lg:flex items-center gap-4">
 			<!-- Left: Title + Search -->
 			<div class="flex items-center gap-4 flex-1 max-w-2xl">
 				<h1 class="text-base font-semibold whitespace-nowrap">Research Config</h1>
-				<div class="relative flex-1">
+				<div class="relative flex-1 min-w-0">
 					<Search class="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
 					<Input
 						type="search"
@@ -81,7 +149,7 @@
 			</div>
 
 			<!-- Center: Stats -->
-			<div class="flex items-center gap-2 text-xs">
+			<div class="flex items-center gap-2 text-xs shrink-0">
 				<div class="flex items-center gap-1.5">
 					<span class="font-medium">{stats.total}</span>
 					<span class="text-muted-foreground">docs</span>
@@ -100,11 +168,11 @@
 			</div>
 
 			<!-- Right: Action buttons -->
-			<div class="flex items-center gap-2">
+			<div class="flex items-center gap-2 shrink-0">
 				<Button
 					variant="outline"
 					size="sm"
-					class="h-9"
+					class="h-9 whitespace-nowrap"
 					onclick={() => documentStore.enableAll()}
 					disabled={isLoading || isRefreshing}
 				>
@@ -113,7 +181,7 @@
 				<Button
 					variant="outline"
 					size="sm"
-					class="h-9"
+					class="h-9 whitespace-nowrap"
 					onclick={() => documentStore.disableAll()}
 					disabled={isLoading || isRefreshing}
 				>
@@ -142,7 +210,7 @@
 					<Input
 						type="search"
 						placeholder="Search..."
-						class="pl-10 h-10 no-drag"
+						class="pl-10 h-11 no-drag touch-manipulation"
 						value={documentStore.state.searchQuery}
 						oninput={(e) => documentStore.setSearchQuery(e.currentTarget.value)}
 					/>
@@ -151,7 +219,7 @@
 
 			<!-- Stats row -->
 			<div class="flex items-center justify-between text-xs">
-				<div class="flex items-center gap-2">
+				<div class="flex items-center gap-2 min-w-0 flex-1">
 					<div class="flex items-center gap-1">
 						<span class="font-medium">{stats.total}</span>
 						<span class="text-muted-foreground">docs</span>
@@ -168,12 +236,12 @@
 					</div>
 				</div>
 
-				<!-- Mobile action buttons (icon only) -->
-				<div class="flex items-center gap-2">
+				<!-- Mobile refresh button (44px minimum) -->
+				<div class="flex items-center gap-2 shrink-0">
 					<Button
 						variant="outline"
 						size="icon"
-						class="h-10 w-10"
+						class="h-11 w-11 touch-manipulation"
 						onclick={handleRefresh}
 						disabled={isLoading || isRefreshing}
 						title="Refresh from PageIndex"

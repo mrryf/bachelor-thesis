@@ -31,13 +31,13 @@
 	}
 </script>
 
-<div class="border-b bg-card/50 px-4 py-3">
-	<div class="flex items-center gap-2 overflow-x-auto scrollbar-hide">
+<div class="border-b bg-card/50 px-4 py-3 overflow-hidden">
+	<div class="flex items-center gap-2 overflow-x-auto scrollbar-hide -mx-1 px-1">
 		<!-- All button -->
 		<Button
 			variant={selectedCategory === null ? "default" : "outline"}
 			size="sm"
-			class="h-8 shrink-0"
+			class="h-11 md:h-9 shrink-0 touch-manipulation"
 			onclick={() => handleCategoryClick(null)}
 		>
 			All ({totalDocs})
@@ -48,10 +48,11 @@
 			<Button
 				variant={selectedCategory === cat.name ? "default" : "outline"}
 				size="sm"
-				class="h-8 shrink-0"
+				class="h-11 md:h-9 shrink-0 whitespace-nowrap touch-manipulation"
 				onclick={() => handleCategoryClick(cat.name)}
 			>
-				{cat.name} ({cat.count})
+				<span class="truncate max-w-[120px]">{cat.name}</span>
+				<span class="ml-1">({cat.count})</span>
 			</Button>
 		{/each}
 
@@ -62,13 +63,13 @@
 				value={selectedCategory && remainingCategories.some(c => c.name === selectedCategory) ? selectedCategory : undefined}
 				onValueChange={handleDropdownChange}
 			>
-				<Select.Trigger class="h-8 shrink-0">
+				<Select.Trigger class="h-11 md:h-9 shrink-0 touch-manipulation">
 					<span class="text-sm">+{remainingCategories.length} more</span>
 				</Select.Trigger>
 				<Select.Content>
 					{#each remainingCategories as cat (cat.name)}
 						<Select.Item value={cat.name}>
-							{cat.name} ({cat.count})
+							<span class="truncate">{cat.name}</span> ({cat.count})
 						</Select.Item>
 					{/each}
 				</Select.Content>
@@ -80,7 +81,7 @@
 			<Button
 				variant="ghost"
 				size="icon"
-				class="h-8 w-8 shrink-0"
+				class="h-11 w-11 md:h-9 md:w-9 shrink-0 touch-manipulation"
 				onclick={handleClearFilter}
 				title="Clear filter"
 			>

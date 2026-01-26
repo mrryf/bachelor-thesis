@@ -42,11 +42,11 @@
 
 	<FileText class="h-4 w-4 shrink-0 text-muted-foreground" />
 
-	<div class="flex-1 min-w-0">
+	<div class="flex-1 min-w-0 overflow-hidden">
 		<!-- Citation + Toggle -->
 		<div class="flex items-center justify-between gap-2">
-			<div class="flex items-center gap-2 min-w-0 flex-1">
-				<p class="text-sm font-medium truncate" title={document.shortCitation}>
+			<div class="flex items-center gap-2 min-w-0 flex-1 overflow-hidden">
+				<p class="text-sm md:text-sm font-medium truncate flex-1" title={document.shortCitation}>
 					{document.shortCitation}
 				</p>
 				{#if document.isNew}
@@ -59,29 +59,31 @@
 		</div>
 
 		<!-- Focus/Purpose (1 line truncated) -->
-		<p class="text-xs text-muted-foreground line-clamp-1 mt-0.5" title={secondaryText}>
+		<p class="text-xs text-muted-foreground line-clamp-1 mt-0.5 overflow-hidden" title={secondaryText}>
 			{secondaryText}
 		</p>
 
 		<!-- Badges + Metrics -->
-		<div class="flex items-center gap-1.5 mt-1">
+		<div class="flex items-center gap-1 md:gap-1.5 mt-1 overflow-hidden">
 			<!-- Categories (max 2 on mobile, 3 on desktop) -->
-			{#each document.categories.slice(0, maxBadges) as cat (cat)}
-				<Badge variant="secondary" class="text-[10px] px-1.5 py-0">
-					{cat}
-				</Badge>
-			{/each}
-			{#if document.categories.length > maxBadges}
-				<span class="text-[10px] text-muted-foreground">
-					+{document.categories.length - maxBadges}
-				</span>
-			{/if}
+			<div class="flex items-center gap-1 min-w-0 flex-shrink">
+				{#each document.categories.slice(0, maxBadges) as cat (cat)}
+					<Badge variant="secondary" class="text-[10px] px-1.5 py-0 whitespace-nowrap">
+						<span class="truncate max-w-[80px] inline-block">{cat}</span>
+					</Badge>
+				{/each}
+				{#if document.categories.length > maxBadges}
+					<span class="text-[10px] text-muted-foreground whitespace-nowrap">
+						+{document.categories.length - maxBadges}
+					</span>
+				{/if}
+			</div>
 
 			<!-- Relevance badge -->
 			<Badge
 				variant="outline"
 				class={cn(
-					"text-[10px] px-1.5 py-0",
+					"text-[10px] px-1.5 py-0 whitespace-nowrap shrink-0",
 					document.relevance === "FOUNDATIONAL" && "border-purple-300 text-purple-700 dark:border-purple-600 dark:text-purple-400",
 					document.relevance === "CORE" && "border-blue-300 text-blue-700 dark:border-blue-600 dark:text-blue-400",
 					document.relevance === "SUPPORTING" && "border-gray-300 text-gray-500"
@@ -91,7 +93,7 @@
 			</Badge>
 
 			<!-- Compact metrics -->
-			<span class="text-[10px] text-muted-foreground ml-auto shrink-0">
+			<span class="text-[10px] text-muted-foreground ml-auto shrink-0 whitespace-nowrap">
 				{document.pages}p • {formatTokens(document.tokenEstimate)}
 			</span>
 		</div>
