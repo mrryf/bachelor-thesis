@@ -68,3 +68,41 @@
 .no-drag {
   -webkit-app-region: no-drag;
 }
+
+/* Mobile touch optimizations */
+@media (max-width: 640px) {
+  /* Larger touch targets (WCAG 2.5.5) */
+  button,
+  a,
+  [role="button"] {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  /* Better active states for visual feedback */
+  button:active {
+    transform: scale(0.98);
+    transition: transform 0.1s ease;
+  }
+
+  /* Prevent double-tap zoom on buttons */
+  button,
+  a,
+  input,
+  select,
+  textarea {
+    touch-action: manipulation;
+  }
+
+  /* Disable hover effects on touch devices */
+  @media (hover: none) {
+    .hover\:bg-muted\/50:hover {
+      background-color: inherit;
+    }
+  }
+}
+
+/* Utility class for touch-friendly elements */
+.touch-manipulation {
+  touch-action: manipulation;
+}
