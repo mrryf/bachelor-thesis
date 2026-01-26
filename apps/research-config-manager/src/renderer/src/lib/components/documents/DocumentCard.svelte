@@ -5,7 +5,6 @@
 	import { documentStore } from "$lib/stores/document-store.svelte";
 	import { useBreakpoint } from "$lib/hooks/useBreakpoint.svelte";
 	import { spotlight } from "$lib/effects/spotlight";
-	import { ripple } from "$lib/effects/ripple";
 	import { cn, formatTokens } from "$lib/utils";
 	import type { DocumentMetadata } from "@shared/types";
 
@@ -39,7 +38,6 @@
 	)}
 	title={document.name}
 	use:spotlight
-	use:ripple
 >
 	<!-- Spotlight overlay (desktop only, respects prefers-reduced-motion) -->
 	<div class="spotlight-overlay"></div>
