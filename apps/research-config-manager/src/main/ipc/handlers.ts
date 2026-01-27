@@ -3,6 +3,7 @@ import { IPC_CHANNELS } from '../../shared/channels';
 import { ConfigService } from '../services/config-service';
 import { parseCatalog } from '../services/catalog-parser';
 import { getRefreshService } from '../services/refresh-service';
+import { getEnrichmentService } from '../services/enrichment-service';
 import { join } from 'path';
 import { statSync } from 'fs';
 import type { DocumentScope, DocumentScopePreferences } from '../../shared/types';
@@ -170,6 +171,48 @@ export function registerIpcHandlers(): void {
       return PROJECT_PATH;
     } catch (error) {
       logger.error('APP_GET_PROJECT_PATH failed', error as Error);
+      throw error;
+    }
+  });
+
+  // BibTeX enrichment operations
+  const enrichmentService = getEnrichmentService(PROJECT_PATH);
+
+  // Initial sync on startup
+  enrichmentService.loadOrGenerateCatalog().catch((error) => {
+    logger.error('Initial BibTeX sync failed', error as Error);
+  });
+
+  ipcMain.handle(IPC_CHANNELS.BIBTEX_SYNC, async (_event, forceRefresh = false) => {
+    try {
+      return enrichmentService.loadOrGenerateCatalog(forceRefresh);
+    } catch (error) {
+      logger.error('BIBTEX_SYNC failed', error as Error);
+      throw error;
+    }
+  });
+
+  ipcMain.handle(IPC_CHANNELS.BIBTEX_GET_CATALOG, async () => {
+    try {
+      // Load from cache or generate if needed
+      const result = await enrichmentService.loadOrGenerateCatalog();
+      return result.catalog;
+    } catch (error) {
+      logger.error('BIBTEX_GET_CATALOG failed', error as Error);
+      throw error;
+    }
+  });
+
+  ipcMain.handle(IPC_CHANNELS.BIBTEX_GET_DOCUMENT, async (_event, identifier: string) => {
+    try {
+      // Try to find by PageIndex name first, then by BibTeX key
+      let doc = enrichmentService.getDocumentByPageIndexName(identifier);
+      if (!doc) {
+        doc = enrichmentService.getDocumentByBibtexKey(identifier);
+      }
+      return doc;
+    } catch (error) {
+      logger.error('BIBTEX_GET_DOCUMENT failed', error as Error);
       throw error;
     }
   });

@@ -1,10 +1,12 @@
-import type { DocumentMetadata, DocumentScope, RefreshResult, ExternalChangeEvent } from '@shared/types';
+import type { DocumentMetadata, DocumentScope, RefreshResult, ExternalChangeEvent, EnrichedCatalog, EnrichedDocument } from '@shared/types';
 import { toast } from 'svelte-sonner';
 
 interface DocumentState {
   documents: DocumentMetadata[];
   config: DocumentScope | null;
+  enrichedCatalog: EnrichedCatalog | null;
   isLoading: boolean;
+  isSyncingBibtex: boolean;
   error: string | null;
   searchQuery: string;
   selectedCategory: string | null;
@@ -19,7 +21,9 @@ function createDocumentStore() {
   const state = $state<DocumentState>({
     documents: [],
     config: null,
+    enrichedCatalog: null,
     isLoading: false,
+    isSyncingBibtex: false,
     error: null,
     searchQuery: '',
     selectedCategory: null,
@@ -28,6 +32,18 @@ function createDocumentStore() {
     isMobile: false,
     isTablet: false,
     filtersCollapsed: false
+  });
+
+  // Create a lookup map for enriched documents by PageIndex name
+  const enrichedLookup = $derived.by(() => {
+    if (!state.enrichedCatalog) return new Map<string, EnrichedDocument>();
+    const lookup = new Map<string, EnrichedDocument>();
+    for (const doc of Object.values(state.enrichedCatalog.documents)) {
+      if (doc.pageindexName) {
+        lookup.set(doc.pageindexName, doc);
+      }
+    }
+    return lookup;
   });
 
   // Computed: filtered documents based on search query and selected category
@@ -39,16 +55,44 @@ function createDocumentStore() {
       filtered = filtered.filter((doc) => doc.categories.includes(state.selectedCategory!));
     }
 
-    // Filter by search query (searches name, citation, categories, and focus)
+    // Filter by search query (searches name, citation, categories, focus, and enriched metadata)
     if (state.searchQuery.trim()) {
       const query = state.searchQuery.toLowerCase();
-      filtered = filtered.filter(
-        (doc) =>
+      filtered = filtered.filter((doc) => {
+        // Basic document fields
+        if (
           doc.name.toLowerCase().includes(query) ||
           doc.shortCitation.toLowerCase().includes(query) ||
           doc.categories.some(cat => cat.toLowerCase().includes(query)) ||
           (doc.focus?.toLowerCase().includes(query) ?? false)
-      );
+        ) {
+          return true;
+        }
+
+        // Enriched metadata fields
+        const enriched = enrichedLookup.get(doc.name);
+        if (enriched) {
+          // Search in title
+          if (enriched.title.toLowerCase().includes(query)) return true;
+
+          // Search in authors
+          if (enriched.authors.some(a =>
+            a.surname.toLowerCase().includes(query) ||
+            (a.givenName?.toLowerCase().includes(query) ?? false)
+          )) return true;
+
+          // Search in abstract
+          if (enriched.abstract?.toLowerCase().includes(query)) return true;
+
+          // Search in keywords
+          if (enriched.keywords?.some(kw => kw.toLowerCase().includes(query))) return true;
+
+          // Search in journal
+          if (enriched.journal?.toLowerCase().includes(query)) return true;
+        }
+
+        return false;
+      });
     }
 
     return filtered;
@@ -195,6 +239,40 @@ function createDocumentStore() {
     return window.api.documents.refresh();
   }
 
+  async function loadEnrichedCatalog(): Promise<void> {
+    try {
+      const catalog = await window.api.bibtex.getCatalog();
+      state.enrichedCatalog = catalog;
+    } catch (err) {
+      console.error('Failed to load enriched catalog:', err);
+      // Non-fatal - the app works without enrichment
+    }
+  }
+
+  async function syncBibtex(forceRefresh = false): Promise<void> {
+    state.isSyncingBibtex = true;
+    try {
+      const result = await window.api.bibtex.sync(forceRefresh);
+      if (result.success && result.catalog) {
+        state.enrichedCatalog = result.catalog;
+        toast.success('BibTeX synchronized', {
+          description: `${result.stats?.matched ?? 0} documents enriched with metadata`
+        });
+      } else if (result.error) {
+        toast.error('BibTeX sync failed', { description: result.error });
+      }
+    } catch (err) {
+      console.error('Failed to sync BibTeX:', err);
+      toast.error('BibTeX sync failed', { description: (err as Error).message });
+    } finally {
+      state.isSyncingBibtex = false;
+    }
+  }
+
+  function getEnrichedDocument(docName: string): EnrichedDocument | undefined {
+    return enrichedLookup.get(docName);
+  }
+
   async function bulkToggleCategory(category: string, enabled: boolean): Promise<void> {
     const categoryDocs = state.documents.filter((d) => d.categories.includes(category));
     const names = categoryDocs.map((d) => d.name);
@@ -235,14 +313,18 @@ function createDocumentStore() {
     get filteredDocuments() { return filteredDocuments; },
     get stats() { return stats; },
     get categories() { return categories; },
+    get enrichedLookup() { return enrichedLookup; },
     loadDocuments,
     loadConfig,
+    loadEnrichedCatalog,
     toggleDocument,
     enableAll,
     disableAll,
     setSearchQuery,
     setSelectedCategory,
     refresh,
+    syncBibtex,
+    getEnrichedDocument,
     bulkToggleCategory,
     setViewportSize,
     toggleFilters,

@@ -53,6 +53,7 @@
 	$effect(() => {
 		documentStore.loadDocuments();
 		documentStore.loadConfig();
+		documentStore.loadEnrichedCatalog();
 		window.addEventListener('keydown', handleKeyDown);
 
 		return () => {

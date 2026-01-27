@@ -6,6 +6,8 @@
 	import { Separator } from "$lib/components/ui/separator";
 	import Settings from "@lucide/svelte/icons/settings";
 	import X from "@lucide/svelte/icons/x";
+	import RefreshCw from "@lucide/svelte/icons/refresh-cw";
+	import BookOpen from "@lucide/svelte/icons/book-open";
 	import { useBreakpoint } from "$lib/hooks/useBreakpoint.svelte";
 	import { documentStore } from "$lib/stores/document-store.svelte";
 	import type { ModelPreference } from "@shared/types";
@@ -125,6 +127,49 @@
 									{/each}
 								</Select.Content>
 							</Select.Root>
+						</div>
+					</div>
+				</section>
+
+				<Separator />
+
+				<!-- BibTeX Enrichment Section -->
+				<section>
+					<h3 class="text-xs font-medium text-muted-foreground uppercase tracking-wider mb-3">
+						BibTeX Metadata
+					</h3>
+					<div class="space-y-3">
+						<div class="rounded-lg border p-3">
+							<div class="mb-3">
+								<p class="text-sm font-medium">Sync Metadata</p>
+								<p class="text-xs text-muted-foreground mt-0.5">
+									Enrich documents with authors, abstracts, and keywords from Zotero
+								</p>
+							</div>
+							{#if documentStore.state.enrichedCatalog}
+								<div class="text-xs text-muted-foreground mb-2 space-y-1">
+									<div class="flex items-center gap-2">
+										<BookOpen class="h-3 w-3" />
+										<span>{documentStore.state.enrichedCatalog.stats.matched} / {documentStore.state.enrichedCatalog.stats.totalPageIndex} matched</span>
+									</div>
+									<p>Last sync: {new Date(documentStore.state.enrichedCatalog.generatedAt).toLocaleDateString()}</p>
+								</div>
+							{/if}
+							<Button
+								variant="outline"
+								size="sm"
+								class="w-full"
+								onclick={() => documentStore.syncBibtex(true)}
+								disabled={documentStore.state.isSyncingBibtex}
+							>
+								{#if documentStore.state.isSyncingBibtex}
+									<RefreshCw class="h-4 w-4 mr-2 animate-spin" />
+									Syncing...
+								{:else}
+									<RefreshCw class="h-4 w-4 mr-2" />
+									Sync BibTeX
+								{/if}
+							</Button>
 						</div>
 					</div>
 				</section>

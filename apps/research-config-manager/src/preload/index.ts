@@ -6,7 +6,10 @@ import type {
   ParsedCatalog,
   RefreshResult,
   ExternalChangeEvent,
-  DocumentScopePreferences
+  DocumentScopePreferences,
+  EnrichedCatalog,
+  EnrichedDocument,
+  EnrichmentResult
 } from '../shared/types';
 
 export type API = {
@@ -25,6 +28,11 @@ export type API = {
     getCatalog: () => Promise<ParsedCatalog | null>;
     bulkToggle: (category: string, enabled: boolean) => Promise<void>;
     refresh: () => Promise<RefreshResult>;
+  };
+  bibtex: {
+    sync: (forceRefresh?: boolean) => Promise<EnrichmentResult>;
+    getCatalog: () => Promise<EnrichedCatalog | null>;
+    getDocument: (identifier: string) => Promise<EnrichedDocument | null>;
   };
   app: {
     getProjectPath: () => Promise<string>;
@@ -63,6 +71,11 @@ const api: API = {
     bulkToggle: (category, enabled) =>
       ipcRenderer.invoke(IPC_CHANNELS.DOCUMENTS_BULK_TOGGLE, category, enabled),
     refresh: () => ipcRenderer.invoke(IPC_CHANNELS.DOCUMENTS_REFRESH)
+  },
+  bibtex: {
+    sync: (forceRefresh = false) => ipcRenderer.invoke(IPC_CHANNELS.BIBTEX_SYNC, forceRefresh),
+    getCatalog: () => ipcRenderer.invoke(IPC_CHANNELS.BIBTEX_GET_CATALOG),
+    getDocument: (identifier) => ipcRenderer.invoke(IPC_CHANNELS.BIBTEX_GET_DOCUMENT, identifier)
   },
   app: {
     getProjectPath: () => ipcRenderer.invoke(IPC_CHANNELS.APP_GET_PROJECT_PATH)

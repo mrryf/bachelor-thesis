@@ -15,6 +15,11 @@ export const IPC_CHANNELS = {
   DOCUMENTS_BULK_TOGGLE: 'documents:bulk-toggle',
   DOCUMENTS_REFRESH: 'documents:refresh',
 
+  // BibTeX enrichment operations
+  BIBTEX_SYNC: 'bibtex:sync',
+  BIBTEX_GET_CATALOG: 'bibtex:get-catalog',
+  BIBTEX_GET_DOCUMENT: 'bibtex:get-document',
+
   // App operations
   APP_GET_PROJECT_PATH: 'app:get-project-path'
 } as const;
