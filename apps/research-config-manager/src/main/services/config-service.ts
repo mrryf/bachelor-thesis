@@ -201,7 +201,6 @@ export class ConfigService {
       indexedAt: doc.indexedAt,
       enabled,
       categories,
-      relevance: catalogEntry?.relevance ?? 'SUPPORTING',
       focus: catalogEntry?.focus,
       keyPages: catalogEntry?.keyPages,
       isNew: false
