@@ -4,7 +4,6 @@ export interface CatalogEntry {
   shortCitation: string;
   pageIndexName: string;
   categories: string[];
-  relevance: 'FOUNDATIONAL' | 'CORE' | 'SUPPORTING';
   keyPages?: string;
   focus?: string;
 }
@@ -107,10 +106,6 @@ export async function parseCatalog(catalogPath: string): Promise<ParsedCatalog |
           if (!existing.keyPages && entry.keyPages) {
             existing.keyPages = entry.keyPages;
           }
-          // Use higher relevance
-          if (compareRelevance(entry.relevance, existing.relevance) > 0) {
-            existing.relevance = entry.relevance;
-          }
         } else {
           entries.push(entry);
         }
@@ -161,7 +156,7 @@ function parseTableRow(
 
   if (cells.length < 5) return null;
 
-  const [shortCitation, pageIndexNameCell, focus, keyPages, relevanceCell] = cells;
+  const [shortCitation, pageIndexNameCell, focus, keyPages] = cells;
 
   // Extract document name from backticks
   const nameMatch = pageIndexNameCell.match(/`([^`]+)`/);
@@ -182,22 +177,9 @@ function parseTableRow(
     shortCitation: shortCitation.trim(),
     pageIndexName,
     categories,
-    relevance: parseRelevance(relevanceCell),
     keyPages: keyPages !== 'TBD' ? keyPages : undefined,
     focus: focus !== 'TBD' ? focus : undefined
   };
-}
-
-function parseRelevance(value: string): 'FOUNDATIONAL' | 'CORE' | 'SUPPORTING' {
-  const upper = value.toUpperCase().trim();
-  if (upper.includes('FOUNDATIONAL')) return 'FOUNDATIONAL';
-  if (upper.includes('CORE')) return 'CORE';
-  return 'SUPPORTING';
-}
-
-function compareRelevance(a: string, b: string): number {
-  const order = { FOUNDATIONAL: 3, CORE: 2, SUPPORTING: 1 };
-  return (order[a as keyof typeof order] || 0) - (order[b as keyof typeof order] || 0);
 }
 
 /**

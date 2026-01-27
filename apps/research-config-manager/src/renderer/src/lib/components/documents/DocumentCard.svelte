@@ -60,16 +60,6 @@
 						NEW
 					</Badge>
 				{/if}
-				<!-- Compact relevance indicator (always visible) -->
-				<span
-					class={cn(
-						"w-2 h-2 rounded-full shrink-0",
-						document.relevance === "FOUNDATIONAL" && "bg-purple-500",
-						document.relevance === "CORE" && "bg-blue-500",
-						document.relevance === "SUPPORTING" && "bg-gray-400"
-					)}
-					title={document.relevance}
-				></span>
 			</div>
 			<Switch checked={document.enabled} onCheckedChange={handleToggle} class="shrink-0 scale-110 md:scale-100" />
 		</div>
@@ -100,19 +90,6 @@
 						</span>
 					{/if}
 				</div>
-
-				<!-- Relevance badge (full text on hover) -->
-				<Badge
-					variant="outline"
-					class={cn(
-						"text-[10px] px-1.5 py-0 whitespace-nowrap shrink-0",
-						document.relevance === "FOUNDATIONAL" && "border-purple-300 text-purple-700 dark:border-purple-600 dark:text-purple-400",
-						document.relevance === "CORE" && "border-blue-300 text-blue-700 dark:border-blue-600 dark:text-blue-400",
-						document.relevance === "SUPPORTING" && "border-gray-300 text-gray-500"
-					)}
-				>
-					{document.relevance}
-				</Badge>
 
 				<!-- Compact metrics -->
 				<span class="text-[10px] text-muted-foreground ml-auto shrink-0 whitespace-nowrap">

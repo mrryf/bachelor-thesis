@@ -8,7 +8,6 @@ export interface DocumentMetadata {
   enabled: boolean;
   // From catalog
   categories: string[];
-  relevance: 'FOUNDATIONAL' | 'CORE' | 'SUPPORTING';
   focus?: string;
   keyPages?: string;
   // UI state
@@ -61,7 +60,6 @@ export interface CatalogEntry {
   shortCitation: string;
   pageIndexName: string;
   categories: string[];
-  relevance: 'FOUNDATIONAL' | 'CORE' | 'SUPPORTING';
   keyPages?: string;
   focus?: string;
 }

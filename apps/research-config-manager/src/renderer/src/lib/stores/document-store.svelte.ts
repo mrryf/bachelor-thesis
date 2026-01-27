@@ -39,7 +39,7 @@ function createDocumentStore() {
       filtered = filtered.filter((doc) => doc.categories.includes(state.selectedCategory!));
     }
 
-    // Filter by search query (searches name, citation, categories, focus, and relevance)
+    // Filter by search query (searches name, citation, categories, and focus)
     if (state.searchQuery.trim()) {
       const query = state.searchQuery.toLowerCase();
       filtered = filtered.filter(
@@ -47,8 +47,7 @@ function createDocumentStore() {
           doc.name.toLowerCase().includes(query) ||
           doc.shortCitation.toLowerCase().includes(query) ||
           doc.categories.some(cat => cat.toLowerCase().includes(query)) ||
-          (doc.focus?.toLowerCase().includes(query) ?? false) ||
-          (doc.relevance?.toLowerCase().includes(query) ?? false)
+          (doc.focus?.toLowerCase().includes(query) ?? false)
       );
     }
 

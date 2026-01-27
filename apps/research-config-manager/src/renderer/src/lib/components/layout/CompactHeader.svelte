@@ -60,7 +60,7 @@
 	}
 </script>
 
-<header class="sticky top-0 z-10 border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+<header class="sticky top-0 z-10 border-b bg-background">
 	<!-- Electron drag region -->
 	<div class="drag-region h-8"></div>
 
