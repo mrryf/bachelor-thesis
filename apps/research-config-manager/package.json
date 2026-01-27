@@ -1,0 +1,49 @@
+{
+  "name": "research-config-manager",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Manage document queryability and agent configurations for Claude Code research workflows",
+  "main": "./out/main/index.js",
+  "author": "",
+  "license": "MIT",
+  "scripts": {
+    "dev": "electron-vite dev",
+    "build": "electron-vite build",
+    "preview": "electron-vite preview",
+    "typecheck:node": "tsc --noEmit -p tsconfig.node.json --composite false",
+    "typecheck:web": "svelte-check --tsconfig ./tsconfig.web.json",
+    "typecheck": "npm run typecheck:node && npm run typecheck:web",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.0",
+    "bits-ui": "^1.8.0",
+    "clsx": "^2.1.1",
+    "gsap": "^3.14.2",
+    "svelte-sonner": "^0.3.28",
+    "tailwind-merge": "^2.6.0",
+    "tailwind-variants": "^0.2.1",
+    "zod": "^3.24.1"
+  },
+  "devDependencies": {
+    "@electron-toolkit/preload": "^3.0.1",
+    "@electron-toolkit/tsconfig": "^1.0.1",
+    "@electron-toolkit/utils": "^3.0.0",
+    "@vitest/coverage-v8": "^2.1.0",
+    "vitest": "^2.1.0",
+    "@lucide/svelte": "^0.559.0",
+    "@sveltejs/vite-plugin-svelte": "^4.0.0",
+    "@types/node": "^22.10.5",
+    "autoprefixer": "^10.4.20",
+    "electron": "^33.3.1",
+    "electron-vite": "^2.3.0",
+    "postcss": "^8.4.49",
+    "svelte": "^5.0.0",
+    "svelte-check": "^4.0.0",
+    "tailwindcss": "^3.4.17",
+    "typescript": "^5.7.2",
+    "vite": "^5.4.11"
+  }
+}

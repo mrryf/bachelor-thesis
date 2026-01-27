@@ -84,3 +84,8 @@ docs/*-audit.md
 tests/test_*.py
 webapp/*AUDIT.md
 webapp/*-audit.js
+
+# Node.js / Electron
+node_modules/
+out/
+dist/
