@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Popover } from "bits-ui";
+	import { Popover, Portal } from "bits-ui";
 	import { slide, fade } from "svelte/transition";
 	import { Button } from "$lib/components/ui/button";
 	import { Badge } from "$lib/components/ui/badge";
@@ -46,11 +46,12 @@
 				<Badge variant="secondary" class="ml-1 px-1.5 py-0 text-xs">1</Badge>
 			{/if}
 		</Popover.Trigger>
-		<Popover.Content
-			class="w-72 p-0 bg-popover border rounded-lg shadow-lg z-50"
-			sideOffset={8}
-			align="start"
-		>
+		<Popover.Portal>
+			<Popover.Content
+				class="w-72 p-0 bg-popover border rounded-lg shadow-lg z-50"
+				sideOffset={8}
+				align="start"
+			>
 			<div class="flex items-center justify-between px-4 py-3 border-b">
 				<span class="text-sm font-medium">Filter by Category</span>
 				{#if hasActiveFilter}
@@ -99,7 +100,8 @@
 					{/each}
 				</div>
 			</ScrollArea>
-		</Popover.Content>
+			</Popover.Content>
+		</Popover.Portal>
 	</Popover.Root>
 {:else}
 	<!-- Mobile/Tablet: Button that triggers slide panel -->
@@ -119,22 +121,23 @@
 	</Button>
 {/if}
 
-<!-- Mobile/Tablet: Slide-down panel (shown outside header) -->
+<!-- Mobile/Tablet: Slide-down panel (portaled to body) -->
 {#if !isDesktop && open}
-	<!-- Backdrop -->
-	<button
-		type="button"
-		class="fixed inset-0 z-40 bg-black/50"
-		transition:fade={{ duration: 150 }}
-		onclick={handleClose}
-		aria-label="Close filter panel"
-	></button>
+	<Portal>
+		<!-- Backdrop -->
+		<button
+			type="button"
+			class="fixed inset-0 z-40 bg-black/50"
+			transition:fade={{ duration: 150 }}
+			onclick={handleClose}
+			aria-label="Close filter panel"
+		></button>
 
-	<!-- Panel -->
-	<div
-		class="fixed {isMobile ? 'inset-x-0 bottom-0 rounded-t-xl max-h-[70vh]' : 'top-[120px] left-4 right-4 rounded-lg max-h-[60vh]'} z-50 bg-popover border shadow-lg overflow-hidden"
-		transition:slide={{ duration: 200 }}
-	>
+		<!-- Panel -->
+		<div
+			class="fixed {isMobile ? 'inset-x-0 bottom-0 rounded-t-xl max-h-[70vh]' : 'top-[120px] left-4 right-4 rounded-lg max-h-[60vh]'} z-50 bg-popover border shadow-lg overflow-hidden"
+			transition:slide={{ duration: 200 }}
+		>
 		<!-- Header -->
 		<div class="flex items-center justify-between px-4 py-3 border-b bg-background/50">
 			<span class="text-sm font-medium">Filter by Category</span>
@@ -201,5 +204,6 @@
 			<!-- Safe area padding for mobile -->
 			<div class="h-safe-area-inset-bottom bg-popover"></div>
 		{/if}
-	</div>
+		</div>
+	</Portal>
 {/if}
