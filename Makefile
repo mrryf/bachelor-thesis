@@ -1,4 +1,4 @@
-.PHONY: help install test lint build build-all clean docs docs-build sync-zotero generate-tables ci electron-test electron-build electron-dev
+.PHONY: help install test lint build build-all clean docs docs-build sync-zotero generate-tables ci electron-test electron-build electron-dev ralph-electron ralph-webapp ralph-latex ralph-ci ralph-feature-electron ralph-feature-webapp ralph-all
 
 .DEFAULT_GOAL := help
 
@@ -76,3 +76,25 @@ electron-dev: ## Run Electron app in dev mode
 
 ci: lint test electron-test ## Run full CI pipeline locally
 	@echo "✅ All CI checks passed!"
+
+# Ralph Loop Targets
+ralph-electron: ## Run ralph loop for Electron app
+	cd apps/research-config-manager && ralph run --completion-signal "DONE" --max-iterations 10
+
+ralph-webapp: ## Run ralph loop for webapp
+	cd webapp && ralph run --completion-signal "DONE" --max-iterations 10
+
+ralph-latex: ## Run ralph loop for LaTeX
+	ralph run --completion-signal "DONE" --max-iterations 10
+
+ralph-ci: ## Run ralph loop for CI recovery
+	cd .claude/ci && ralph run --completion-signal "DONE" --max-iterations 15
+
+ralph-feature-electron: ## PRD-driven feature development for Electron
+	cd apps/research-config-manager && ralph run --completion-signal "DONE" --max-iterations 20
+
+ralph-feature-webapp: ## PRD-driven feature development for webapp
+	cd webapp && ralph run --completion-signal "DONE" --max-iterations 20
+
+ralph-all: ralph-electron ralph-webapp ralph-latex ## All components
+	@echo "✅ All components verified!"
