@@ -109,3 +109,47 @@ When debugging Electron errors, follow the error path literally:
 | IPC errors | Check channel names match between main/preload/renderer |
 
 **Principle**: Follow the error message literally before theorizing about causes.
+
+### Responsive UI Debugging Protocol
+
+When debugging UI issues in components with multiple responsive variants (mobile/tablet/desktop):
+
+1. **Identify the variant**: Map visual markers in screenshot to breakpoint
+   - X close button, full-width panel → tablet/mobile slide panel
+   - Small dropdown near trigger button → desktop popover
+   - Bottom sheet → mobile
+
+2. **Find the code path**: Locate the exact `{#if}` branch that renders the visible UI
+   ```
+   Screenshot shows [visual marker] → this is [variant] → rendered at [file:lines]
+   ```
+
+3. **Check ALL variants**: Same architectural issue often exists in multiple variants
+   | Variant | Condition | Lines | Has Same Issue? |
+   |---------|-----------|-------|-----------------|
+   | Desktop | `isDesktop` | X-Y | ? |
+   | Tablet | `!isDesktop && !isMobile` | X-Y | ? |
+   | Mobile | `isMobile` | X-Y | ? |
+
+4. **State your mapping before fixing**: "Screenshot shows tablet view (X button visible) → lines 125-207"
+
+**Common gotcha**: Fixing desktop popover while user sees tablet panel.
+
+### CSS Stacking Context Protocol
+
+When `position: fixed` elements appear behind other content:
+
+1. **Check parent elements** for properties that create containing blocks:
+   - `backdrop-blur` / `filter`
+   - `transform`
+   - `perspective`
+   - `contain: paint`
+
+2. **Solution**: Use Portal to render outside the parent DOM tree
+   ```svelte
+   <Portal>
+     <div class="fixed ...">...</div>
+   </Portal>
+   ```
+
+3. **Check ALL fixed-position elements** in the component, not just one
