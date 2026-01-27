@@ -59,9 +59,17 @@ jobs:
         working-directory: ./apps/research-config-manager
         run: npm ci
 
-      - name: Run tests
+      - name: Run tests with coverage
         working-directory: ./apps/research-config-manager
-        run: npm test
+        run: npm run test:coverage
+
+      - name: Upload coverage
+        uses: codecov/codecov-action@v4
+        if: success()
+        with:
+          files: ./apps/research-config-manager/coverage/coverage-final.json
+          flags: electron-config-manager
+          fail_ci_if_error: false
 
   build:
     name: Build
@@ -86,3 +94,10 @@ jobs:
       - name: Build application
         working-directory: ./apps/research-config-manager
         run: npm run build
+
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: electron-build-ubuntu
+          path: ./apps/research-config-manager/out
+          retention-days: 7
