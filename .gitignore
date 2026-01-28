@@ -91,3 +91,8 @@ out/
 dist/
 coverage/
 CLAUDE.md
+
+# Working documents (plans, research, audits)
+**/plan*.md
+**/research*.md
+**/audit*.md
