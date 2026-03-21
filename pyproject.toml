@@ -1,0 +1,17 @@
+[project]
+name = "bachelor-thesis"
+version = "0.1.0"
+requires-python = ">=3.13"
+description = "Bachelor thesis: Trust in AI — build tooling and tests"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+norecursedirs = [".git", "_archive", "node_modules", ".venv", "__pycache__", "*.egg", ".tox"]
+
+[tool.ruff]
+line-length = 120
+target-version = "py313"
+
+[tool.ruff.lint]
+select = ["E", "F", "W"]

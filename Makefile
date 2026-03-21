@@ -1,6 +1,11 @@
-.PHONY: help install test lint build build-all clean sync-zotero generate-tables chktex bib-validate electron-test electron-build electron-dev ci
+.PHONY: help install test lint build build-all clean sync-zotero generate-tables chktex bib-validate electron-test electron-build electron-dev ci venv
 
 .DEFAULT_GOAL := help
+
+# Python: prefer .venv if available, fallback to system python3
+# Override-friendly: CI or users can set PYTHON=... explicitly
+VENV ?= .venv
+PYTHON ?= $(shell test -x $(VENV)/bin/python3 && echo $(VENV)/bin/python3 || which python3)
 
 help: ## Show this help message
 	@echo "Bachelor Thesis Build System"
@@ -8,29 +13,29 @@ help: ## Show this help message
 	@echo "Available targets:"
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*?## "}; {printf "  \033[36m%-20s\033[0m %s\n", $$1, $$2}'
 
-install: ## Install all development dependencies
-	python3 -m pip install --upgrade pip
-	pip install -r requirements-dev.txt
+install: ## Install development dependencies
+	$(PYTHON) -m pip install --upgrade pip
+	$(PYTHON) -m pip install -r requirements-dev.txt
 
 test: ## Run all tests
 	@echo "Running structure tests..."
-	python3 tests/test_structure.py
+	$(PYTHON) tests/test_structure.py
 	@echo "Running citation tests..."
-	python3 tests/test_citations.py
+	$(PYTHON) tests/test_citations.py
 	@echo "Running formal guidelines tests..."
-	python3 tests/test_formal_guidelines.py
+	$(PYTHON) tests/test_formal_guidelines.py
 	@echo "Running formatting tests..."
-	python3 tests/test_formatting_rules.py
+	$(PYTHON) tests/test_formatting_rules.py
 	@echo "Running bibliography tests..."
-	python3 tests/test_bibliography_counts.py
+	$(PYTHON) tests/test_bibliography_counts.py
 	@echo "Running cross-reference tests..."
-	python3 tests/test_cross_references.py
+	$(PYTHON) tests/test_cross_references.py
 	@echo "Running bibliography quality tests..."
-	python3 tests/test_bibliography_quality.py
+	$(PYTHON) tests/test_bibliography_quality.py
 	@echo "✅ All tests passed!"
 
 lint: ## Run code linting with ruff
-	ruff check .
+	$(PYTHON) -m ruff check .
 
 build: ## Build thesis LaTeX document
 	./scripts/build.sh --thesis
@@ -72,10 +77,10 @@ clean: ## Remove build artifacts and cache files
 	@echo "✅ Cleanup complete!"
 
 sync-zotero: ## Sync bibliography from Zotero
-	python3 scripts/sync_zotero.py
+	$(PYTHON) scripts/sync_zotero.py
 
 generate-tables: ## Generate LaTeX tables from items.csv
-	python3 scripts/generate_item_tables.py
+	$(PYTHON) scripts/generate_item_tables.py
 
 electron-test: ## Run Electron app tests
 	cd apps/research-config-manager && npm test
@@ -88,3 +93,9 @@ electron-dev: ## Run Electron app in dev mode
 
 ci: lint chktex bib-validate test electron-test ## Run full CI pipeline locally
 	@echo "✅ All CI checks passed!"
+
+venv: ## Create Python virtual environment
+	python3 -m venv $(VENV)
+	$(VENV)/bin/pip install --upgrade pip
+	$(VENV)/bin/pip install -r requirements-dev.txt
+	@echo "Activate: source $(VENV)/bin/activate"
