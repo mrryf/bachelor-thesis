@@ -87,26 +87,39 @@ def test_label_naming_convention():
 
 
 def test_no_duplicate_labels():
-    """No two \\label{} definitions should share the same key."""
-    tex_files = _collect_tex_files()
-    seen = {}
-    duplicates = []
+    """No two \\label{} definitions should share the same key within a document.
 
-    for tex_file in tex_files:
-        lines = tex_file.read_text(encoding='utf-8').splitlines(keepends=True)
-        for i, line in enumerate(lines, 1):
-            clean = _strip_comments(line)
-            for match in re.finditer(r'\\label\{([^}]+)\}', clean):
-                key = match.group(1).strip()
-                rel_path = tex_file.relative_to(PROJECT_ROOT)
-                if key in seen:
-                    prev_file, prev_line = seen[key]
-                    prev_rel = prev_file.relative_to(PROJECT_ROOT)
-                    duplicates.append(
-                        f"\\label{{{key}}} defined at {prev_rel}:{prev_line} AND {rel_path}:{i}"
-                    )
-                else:
-                    seen[key] = (tex_file, i)
+    Checks per document directory (prestudy/thesis) since they are separate
+    LaTeX compilation units — duplicate labels across documents are harmless.
+    """
+    duplicates = []
+    for doc_dir in ['content/prestudy', 'content/thesis']:
+        full_path = PROJECT_ROOT / doc_dir
+        if not full_path.is_dir():
+            continue
+        doc_files = []
+        for root, dirs, files in os.walk(full_path):
+            dirs[:] = [d for d in dirs if d != '_archive']
+            for f in files:
+                if f.endswith('.tex'):
+                    doc_files.append(Path(root) / f)
+
+        seen = {}
+        for tex_file in doc_files:
+            lines = tex_file.read_text(encoding='utf-8').splitlines(keepends=True)
+            for i, line in enumerate(lines, 1):
+                clean = _strip_comments(line)
+                for match in re.finditer(r'\\label\{([^}]+)\}', clean):
+                    key = match.group(1).strip()
+                    rel_path = tex_file.relative_to(PROJECT_ROOT)
+                    if key in seen:
+                        prev_file, prev_line = seen[key]
+                        prev_rel = prev_file.relative_to(PROJECT_ROOT)
+                        duplicates.append(
+                            f"\\label{{{key}}} in {doc_dir}: {prev_rel}:{prev_line} AND {rel_path}:{i}"
+                        )
+                    else:
+                        seen[key] = (tex_file, i)
 
     assert not duplicates, "Duplicate labels found:\n" + "\n".join(duplicates)
 
