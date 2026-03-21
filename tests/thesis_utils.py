@@ -38,7 +38,7 @@ def get_bibliography_keys(bib_path: Path) -> set[str]:
 
 
 def get_tex_files(base_dir: Path) -> list[Path]:
-    """Get all .tex files in a document directory (main + sections)."""
+    """Get all .tex files in a document directory (main + sections + sections_required)."""
     files = []
     main = base_dir / "main.tex"
     if main.exists():
@@ -46,6 +46,9 @@ def get_tex_files(base_dir: Path) -> list[Path]:
     sections_dir = base_dir / "sections"
     if sections_dir.exists():
         files.extend(sorted(sections_dir.glob("*.tex")))
+    sections_required = base_dir / "sections_required"
+    if sections_required.exists():
+        files.extend(sorted(sections_required.glob("*.tex")))
     return files
 
 

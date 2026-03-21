@@ -26,14 +26,22 @@ def load_env():
 
 
 def get_credentials():
-    """Get Zotero API credentials from environment or prompt."""
+    """Get Zotero API credentials from environment or prompt.
+
+    In non-interactive environments (CI), exits immediately if credentials
+    are missing instead of hanging on interactive prompts.
+    """
     api_key = os.environ.get('ZOTERO_API_KEY', '').strip()
     user_id = os.environ.get('ZOTERO_USER_ID', '').strip()
 
-    if not api_key:
-        api_key = getpass.getpass("Enter your Zotero API Key: ").strip()
-    if not user_id:
-        user_id = input("Enter your Zotero User ID: ").strip()
+    if not api_key or not user_id:
+        if not sys.stdin.isatty():
+            print("Error: ZOTERO_API_KEY and ZOTERO_USER_ID must be set in environment (non-interactive mode).")
+            sys.exit(1)
+        if not api_key:
+            api_key = getpass.getpass("Enter your Zotero API Key: ").strip()
+        if not user_id:
+            user_id = input("Enter your Zotero User ID: ").strip()
 
     if not api_key or not user_id:
         print("Error: ZOTERO_API_KEY or ZOTERO_USER_ID not set.")

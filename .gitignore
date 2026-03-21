@@ -33,6 +33,7 @@ credentials.json
 !content/prestudy/main.pdf
 !content/thesis/main.pdf
 !content/resources/**/*.pdf
+!content/archive/**/*.pdf
 
 # Section build artifacts
 sections/*.pdf
