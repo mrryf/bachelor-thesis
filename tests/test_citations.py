@@ -1,6 +1,8 @@
 """Test citation consistency between .tex files and bibliography."""
 import warnings
-from tests.thesis_utils import extract_citations_from_tex, get_bibliography_keys, read_tex_content, find_unused_citations
+from tests.thesis_utils import (
+    extract_citations_from_tex, find_unused_citations, get_bibliography_keys, read_tex_content,
+)
 
 
 def test_references_consistency(thesis_dir, bibliography_path):

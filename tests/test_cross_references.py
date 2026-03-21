@@ -64,7 +64,7 @@ def test_no_broken_references():
             rel_path = filepath.relative_to(PROJECT_ROOT)
             broken.append(f"{rel_path}:{line_num} -> \\ref{{{key}}}")
 
-    assert not broken, f"Broken references found (no matching \\label):\n" + "\n".join(broken)
+    assert not broken, "Broken references found (no matching \\label):\n" + "\n".join(broken)
 
 
 def test_label_naming_convention():
@@ -108,7 +108,7 @@ def test_no_duplicate_labels():
                 else:
                     seen[key] = (tex_file, i)
 
-    assert not duplicates, f"Duplicate labels found:\n" + "\n".join(duplicates)
+    assert not duplicates, "Duplicate labels found:\n" + "\n".join(duplicates)
 
 
 def test_heading_hierarchy():
@@ -142,7 +142,7 @@ def test_heading_hierarchy():
                 prev_level = level
                 prev_heading = cmd
 
-    assert not violations, f"Heading hierarchy violations:\n" + "\n".join(violations)
+    assert not violations, "Heading hierarchy violations:\n" + "\n".join(violations)
 
 
 def test_figures_have_captions_and_labels():
@@ -163,7 +163,7 @@ def test_figures_have_captions_and_labels():
             if '\\label' not in body:
                 missing.append(f"{rel_path}:{line_num} -> figure missing \\label")
 
-    assert not missing, f"Figures with missing caption/label:\n" + "\n".join(missing)
+    assert not missing, "Figures with missing caption/label:\n" + "\n".join(missing)
 
 
 def test_tables_have_captions_and_labels():
@@ -184,4 +184,4 @@ def test_tables_have_captions_and_labels():
             if '\\label' not in body:
                 missing.append(f"{rel_path}:{line_num} -> table missing \\label")
 
-    assert not missing, f"Tables with missing caption/label:\n" + "\n".join(missing)
+    assert not missing, "Tables with missing caption/label:\n" + "\n".join(missing)

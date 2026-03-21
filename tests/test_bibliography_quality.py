@@ -74,7 +74,7 @@ def test_required_fields_by_type(bibliography_path):
             if field not in entry['fields']:
                 missing.append(f"@{etype}{{{entry['key']}}}: missing '{field}'")
 
-    assert not missing, f"Missing required fields:\n" + "\n".join(missing[:20])
+    assert not missing, "Missing required fields:\n" + "\n".join(missing[:20])
 
 
 def test_year_is_reasonable(bibliography_path):
@@ -98,7 +98,7 @@ def test_year_is_reasonable(bibliography_path):
             except ValueError:
                 bad_years.append(f"@{entry['type']}{{{entry['key']}}}: non-numeric year='{year_str}'")
 
-    assert not bad_years, f"Unreasonable years:\n" + "\n".join(bad_years)
+    assert not bad_years, "Unreasonable years:\n" + "\n".join(bad_years)
 
 
 def test_no_duplicate_keys(bibliography_path):
@@ -113,7 +113,7 @@ def test_no_duplicate_keys(bibliography_path):
         else:
             seen[key] = entry['type']
 
-    assert not duplicates, f"Duplicate bibliography keys:\n" + "\n".join(duplicates)
+    assert not duplicates, "Duplicate bibliography keys:\n" + "\n".join(duplicates)
 
 
 def test_doi_or_url_present(bibliography_path):
@@ -144,7 +144,7 @@ def test_author_field_not_empty(bibliography_path):
         elif author and len(author.strip()) < 2:
             empty_authors.append(f"@{entry['type']}{{{entry['key']}}}: author too short: '{author}'")
 
-    assert not empty_authors, f"Missing/empty authors:\n" + "\n".join(empty_authors)
+    assert not empty_authors, "Missing/empty authors:\n" + "\n".join(empty_authors)
 
 
 def test_no_encoding_issues(bibliography_path):
@@ -160,4 +160,4 @@ def test_no_encoding_issues(bibliography_path):
     if content.startswith('\ufeff'):
         issues.append("File starts with BOM — may cause biber issues")
 
-    assert not issues, f"Encoding issues:\n" + "\n".join(issues)
+    assert not issues, "Encoding issues:\n" + "\n".join(issues)

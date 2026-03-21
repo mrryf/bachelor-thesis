@@ -24,7 +24,9 @@ def generate_latex_tables(csv_path, output_dir):
             if not construct:
                 continue
             # Clean up construct name for filename (remove special chars if any)
-            safe_construct = "".join([c for c in construct if c.isalnum() or c in (' ', '-', '_')]).strip().replace(' ', '_')
+            safe_construct = "".join(
+                [c for c in construct if c.isalnum() or c in (' ', '-', '_')]
+            ).strip().replace(' ', '_')
 
             if safe_construct not in items_by_construct:
                 items_by_construct[safe_construct] = []
@@ -38,7 +40,8 @@ def generate_latex_tables(csv_path, output_dir):
         # Escape construct name for caption but keep raw for label (labels can have underscores)
         construct_display = escape_latex(construct)
         with open(filename, 'w', encoding='utf-8') as f:
-            f.write(create_latex_table(items, caption=f"Items für Konstrukt: {construct_display}", label=f"tab:{construct}"))
+            caption = f"Items für Konstrukt: {construct_display}"
+            f.write(create_latex_table(items, caption=caption, label=f"tab:{construct}"))
         print(f"Generated {filename}")
 
     # Generate master table
@@ -115,5 +118,5 @@ if __name__ == "__main__":
     PROJECT_ROOT = os.getcwd()
     CSV_PATH = os.path.join(PROJECT_ROOT, "content", "resources", "data", "items.csv")
     OUTPUT_DIR = os.path.join(PROJECT_ROOT, "content", "resources", "tables")
-    
+
     generate_latex_tables(CSV_PATH, OUTPUT_DIR)
