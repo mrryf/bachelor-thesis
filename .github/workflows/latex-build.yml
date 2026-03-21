@@ -79,11 +79,9 @@ jobs:
 
       - name: Build Thesis (Docker)
         env:
-          # TODO: Pin by digest after first successful run for reproducibility
-          # Step 1: Use :latest for first CI run (guaranteed to exist)
-          # Step 2: From workflow logs, get digest: docker inspect --format='{{index .RepoDigests 0}}'
-          # Step 3: Replace with: ghcr.io/xu-cheng/texlive-full@sha256:<digest>
-          TEXLIVE_IMAGE: ghcr.io/xu-cheng/texlive-full:latest
+          # Pinned by digest for reproducibility (2026-03-21, TeX Live 2025)
+          # To update: run with :latest, get digest from logs, replace below
+          TEXLIVE_IMAGE: ghcr.io/xu-cheng/texlive-full@sha256:9aa57c8ddef934cb1f25837539c654980680ea4d42554a05ca7a672845ebfe6a
         run: |
           docker run --rm \
             -v "${{ github.workspace }}:/workspace" \
