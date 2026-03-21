@@ -5,6 +5,10 @@ Consolidates functions previously duplicated across test files.
 import re
 from pathlib import Path
 
+import bibtexparser
+from bibtexparser.bparser import BibTexParser
+from bibtexparser.customization import convert_to_unicode
+
 
 def extract_citations_from_tex(tex_content: str) -> set[str]:
     """Extract all citation keys from LaTeX content.
@@ -25,10 +29,6 @@ def extract_citations_from_tex(tex_content: str) -> set[str]:
 
 def get_bibliography_keys(bib_path: Path) -> set[str]:
     """Get all entry keys from a .bib file."""
-    import bibtexparser
-    from bibtexparser.bparser import BibTexParser
-    from bibtexparser.customization import convert_to_unicode
-
     parser = BibTexParser()
     parser.customization = convert_to_unicode
 

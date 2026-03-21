@@ -47,6 +47,10 @@ def get_credentials():
         print("Error: ZOTERO_API_KEY or ZOTERO_USER_ID not set.")
         sys.exit(1)
 
+    if not re.match(r'^\d+$', user_id):
+        print(f"Error: ZOTERO_USER_ID must be numeric, got: '{user_id[:20]}'")
+        sys.exit(1)
+
     return api_key, user_id
 
 
@@ -57,10 +61,10 @@ def _fetch_url(url: str, api_key: str) -> str:
         with urllib.request.urlopen(req, timeout=30) as response:
             return response.read().decode('utf-8')
     except urllib.error.HTTPError as e:
-        print(f"HTTP error {e.code} fetching {url}: {e.reason}")
+        print(f"HTTP error {e.code}: {e.reason}")
         return ''
     except urllib.error.URLError as e:
-        print(f"URL error fetching {url}: {e.reason}")
+        print(f"URL error: {e.reason}")
         return ''
 
 

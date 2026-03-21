@@ -1,4 +1,6 @@
 """Test bibliography configuration and citation counts."""
+import warnings
+
 from tests.thesis_utils import extract_citations_from_tex, get_bibliography_keys, read_tex_content
 
 
@@ -14,7 +16,6 @@ def test_thesis_has_citations(thesis_dir):
     cited = extract_citations_from_tex(tex_content)
     # Thesis may have very few citations early on — warn rather than fail
     if not cited:
-        import warnings
         warnings.warn("No citations found in thesis text")
 
 

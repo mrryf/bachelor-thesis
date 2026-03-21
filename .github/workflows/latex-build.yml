@@ -65,6 +65,7 @@ jobs:
         run: pip install -r requirements-dev.txt
 
       - name: Sync Zotero References
+        if: github.event_name != 'pull_request'
         env:
           ZOTERO_API_KEY: ${{ secrets.ZOTERO_API_KEY }}
           ZOTERO_USER_ID: ${{ secrets.ZOTERO_USER_ID }}
@@ -85,7 +86,7 @@ jobs:
           TEXLIVE_IMAGE: ghcr.io/xu-cheng/texlive-full:latest
         run: |
           docker run --rm \
-            -v ${{ github.workspace }}:/workspace \
+            -v "${{ github.workspace }}:/workspace" \
             -w /workspace \
             -e SKIP_GEN_TABLES=true \
             -e SKIP_SANITIZE=true \

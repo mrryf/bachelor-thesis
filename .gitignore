@@ -93,10 +93,13 @@ out/
 dist/
 coverage/
 
-# Working documents (plans, research, audits)
-**/plan*.md
-**/research*.md
-**/audit*.md
+# Working documents (plans, research, audits — kebab-case convention)
+**/*-plan*.md
+**/*-research*.md
+**/*-audit*.md
+**/plan-*.md
+**/research-*.md
+**/audit-*.md
 
 # Local Netlify folder
 .netlify

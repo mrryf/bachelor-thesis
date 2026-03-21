@@ -93,7 +93,7 @@ build_target() {
     
     # Clear Biber cache to avoid corruption issues
     echo "Clearing Biber cache..."
-    CACHE=$(biber --cache 2>/dev/null) && [ -n "$CACHE" ] && rm -rf "$CACHE"
+    CACHE=$(biber --cache 2>&1) && [ -n "$CACHE" ] && rm -rf "$CACHE" || true
 
     # Define files to build
     FILES_TO_BUILD=("main.tex")
