@@ -3,7 +3,10 @@ import sys
 import subprocess
 import getpass
 import json
+import re
 import argparse
+import urllib.request
+import urllib.error
 from datetime import datetime
 from pathlib import Path
 import bibtexparser
@@ -42,6 +45,20 @@ def get_credentials():
         sys.exit(1)
 
     return api_key, user_id
+
+
+def _fetch_url(url: str, api_key: str) -> str:
+    """Fetch URL with Zotero API key. Keeps secret in-process (no subprocess/tempfile)."""
+    req = urllib.request.Request(url, headers={'Zotero-API-Key': api_key})
+    try:
+        with urllib.request.urlopen(req, timeout=30) as response:
+            return response.read().decode('utf-8')
+    except urllib.error.HTTPError as e:
+        print(f"HTTP error {e.code} fetching {url}: {e.reason}")
+        return ''
+    except urllib.error.URLError as e:
+        print(f"URL error fetching {url}: {e.reason}")
+        return ''
 
 
 def load_index_state() -> dict:
@@ -371,25 +388,11 @@ def sync_zotero():
         print(f"Syncing Zotero collection {col_id}...")
         url = f"https://api.zotero.org/users/{user_id}/collections/{col_id}/items?format=bibtex&limit=100"
         
-        try:
-            # Use curl instead of urllib/requests to avoid python SSL issues
-            result = subprocess.run(
-                ['curl', '-s', '-H', f'Zotero-API-Key: {api_key}', url],
-                capture_output=True,
-                text=True,
-                check=True
-            )
-            data = result.stdout
-            if data:
-                all_bibtex_data += data + "\n"
-            else:
-                print(f"Warning: No data received for collection {col_id}")
-                
-        except subprocess.CalledProcessError as e:
-            print(f"Error fetching items from collection {col_id}: {e}")
-            print(f"Stderr: {e.stderr}")
-        except Exception as e:
-            print(f"Unexpected error: {e}")
+        data = _fetch_url(url, api_key)
+        if data:
+            all_bibtex_data += data + "\n"
+        else:
+            print(f"Warning: No data received for collection {col_id}")
 
     if not all_bibtex_data:
         print("No items found in any collection.")
@@ -452,7 +455,6 @@ def sync_zotero():
                 json_entry['year'] = 0
         elif 'date' in json_entry:
              # Try to extract year from date
-             import re
              match = re.search(r'\d{4}', json_entry['date'])
              if match:
                  json_entry['year'] = int(match.group(0))
@@ -472,16 +474,18 @@ def sync_zotero():
     print("Escaping special characters for BibTeX...")
     
     def escape_latex(text):
+        """Escape LaTeX special characters. Idempotent: already-escaped chars are left alone."""
         if not text:
             return text
-        
-        # Specific fixes for bad metadata
+        # Normalization rules (separate from escaping per Codex review)
         text = text.replace(r'\textitnot', r'\textit{not}')
-        text = text.replace('\u200e', '') # Remove Left-to-Right Mark
-        
-        # Escape % and & which are common and break things
-        # Also maybe #, _, $
-        return text.replace('&', '\\&').replace('%', '\\%').replace('_', '\\_').replace('#', '\\#')
+        text = text.replace('\u200e', '')  # Remove Left-to-Right Mark
+        # Escape only characters NOT already preceded by backslash
+        text = re.sub(r'(?<!\\)&', r'\\&', text)
+        text = re.sub(r'(?<!\\)%', r'\\%', text)
+        text = re.sub(r'(?<!\\)_', r'\\_', text)
+        text = re.sub(r'(?<!\\)#', r'\\#', text)
+        return text
 
     # Fields to skip escaping (urls, ids, etc)
     skip_fields = ['ID', 'ENTRYTYPE', 'url', 'doi', 'file', 'urldate', 'year', 'month', 'issn', 'isbn']

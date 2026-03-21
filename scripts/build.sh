@@ -5,8 +5,8 @@ usage() {
     echo "Usage: $0 [options]"
     echo "Options:"
     echo "  --all       Build both Prestudy and Thesis"
-    echo "  --prestudy  Build Prestudy (default)"
-    echo "  --thesis    Build Thesis"
+    echo "  --thesis    Build Thesis (default)"
+    echo "  --prestudy  Build Prestudy"
     echo "  --help      Show this help message"
     exit 1
 }
@@ -16,7 +16,7 @@ BUILD_PRESTUDY=false
 BUILD_THESIS=false
 
 if [ $# -eq 0 ]; then
-    BUILD_PRESTUDY=true
+    BUILD_THESIS=true
 else
     for arg in "$@"; do
         case $arg in
@@ -59,8 +59,12 @@ else
 fi
 
 # Sanitize bibliography (remove hidden Unicode characters)
-echo "Sanitizing bibliography..."
-python3 scripts/sanitize_bib.py
+if [ "$SKIP_SANITIZE" != "true" ]; then
+    echo "Sanitizing bibliography..."
+    python3 scripts/sanitize_bib.py
+else
+    echo "Skipping bibliography sanitization (SKIP_SANITIZE=true)"
+fi
 
 # Function to build a target
 build_target() {
@@ -89,22 +93,29 @@ build_target() {
     
     # Clear Biber cache to avoid corruption issues
     echo "Clearing Biber cache..."
-    rm -rf $(biber --cache)
+    CACHE=$(biber --cache 2>/dev/null) && [ -n "$CACHE" ] && rm -rf "$CACHE"
 
     # Define files to build
     FILES_TO_BUILD=("main.tex")
 
-    # Check if main_required.tex exists and add it to the list
-    if [ -f "main_required.tex" ]; then
-        FILES_TO_BUILD+=("main_required.tex")
-    fi
-
     for file in "${FILES_TO_BUILD[@]}"; do
         echo "Building $file..."
-        latexmk -pdf -interaction=nonstopmode -file-line-error -outdir=. "$file"
+        LATEXMKRC_OPT=""
+        [ -f "$START_DIR/.latexmkrc" ] && LATEXMKRC_OPT="-r $START_DIR/.latexmkrc"
+        latexmk -pdf -interaction=nonstopmode -file-line-error -outdir=. $LATEXMKRC_OPT "$file"
         
         if [ $? -ne 0 ]; then
             echo "Error building $file in $target_name"
+            # Filter log output to show only real errors/warnings
+            local log_file="${file%.tex}.log"
+            if command -v texlogsieve &> /dev/null && [ -f "$log_file" ]; then
+                echo ""
+                echo "--- Filtered log output (texlogsieve) ---"
+                texlogsieve "$log_file" 2>&1 | head -n 100
+                echo "--- End filtered output ---"
+            else
+                echo "(Install texlogsieve for filtered error output)"
+            fi
             cd "$START_DIR"
             return 1
         fi

@@ -1,0 +1,22 @@
+# ChkTeX configuration for German academic LaTeX documents
+# Placed in project root — ChkTeX auto-discovers it
+
+# Suppress warnings that conflict with German typographic conventions or thesis style
+# Warning 1: Command terminated with space (acceptable in modern LaTeX)
+# Warning 12: Interword spacing (\ ) - German academic style differs
+# Warning 18: Wrong length of dash (German em-dash rules differ)
+# Warning 24: Delete this space (German punctuation spacing)
+# Warning 44: User Regex (disable custom regex by default)
+CmdLine {
+    -n1
+    -n12
+    -n18
+    -n24
+    -n44
+}
+
+# Suppress warnings for custom commands defined in thesis preamble
+# Add thesis-specific commands here as needed
+VerbEnvir {
+    lstlisting
+}

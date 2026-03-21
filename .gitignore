@@ -27,11 +27,14 @@ credentials.json
 *.nav
 *.snm
 *.vrb
+
+# PDFs — ignore all except committed documents
 *.pdf
-!main.pdf
-!prestudy/main.pdf
-!prestudy/main_required.pdf
-!content/resources/design/**/*.pdf
+!content/prestudy/main.pdf
+!content/thesis/main.pdf
+!content/resources/**/*.pdf
+
+# Section build artifacts
 sections/*.pdf
 sections/*.log
 sections/*.aux
@@ -42,6 +45,13 @@ sections/*.synctex.gz
 sections/*.bbl
 sections/*.bcf
 sections/*.blg
+content/*/sections/*.pdf
+content/*/sections/*.synctex.gz
+
+# Generated build artifacts
+content/resources/bibliography_bibertool.bib
+content/resources/bibliography.bib.blg
+content/resources/tables/table_*.tex
 
 # Python
 __pycache__/
@@ -68,20 +78,11 @@ htmlcov/
 *.swp
 .claude/
 
-# MkDocs
-site/
-.mkdocs_cache/
-
-# Section PDFs (built via subfiles, not standalone)
-content/*/sections/*.pdf
-content/*/sections/*.synctex.gz
-!content/resources/**/*.pdf
+# Word lock files
 ~$*.docx
 
 # Temporary test/audit files
 .automaker/
-docs/*-audit.md
-tests/test_*.py
 webapp/*AUDIT.md
 webapp/*-audit.js
 
@@ -90,9 +91,11 @@ node_modules/
 out/
 dist/
 coverage/
-CLAUDE.md
 
 # Working documents (plans, research, audits)
 **/plan*.md
 **/research*.md
 **/audit*.md
+
+# Local Netlify folder
+.netlify
