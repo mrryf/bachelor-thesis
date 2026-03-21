@@ -17,6 +17,10 @@
 \DeclareLanguageMapping{ngerman}{ngerman-apa}
 
 \usepackage{subcaption}
+\usepackage{float} % Allow forcing float placement with [H]
+
+% Enable numbered sections (apa7-native, no titlesec needed)
+\setcounter{secnumdepth}{4}
 \usepackage{subfiles}
 
 \addbibresource{../resources/bibliography.bib}
