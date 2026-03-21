@@ -18,21 +18,7 @@ install: ## Install development dependencies
 	$(PYTHON) -m pip install -r requirements-dev.txt
 
 test: ## Run all tests
-	@echo "Running structure tests..."
-	$(PYTHON) tests/test_structure.py
-	@echo "Running citation tests..."
-	$(PYTHON) tests/test_citations.py
-	@echo "Running formal guidelines tests..."
-	$(PYTHON) tests/test_formal_guidelines.py
-	@echo "Running formatting tests..."
-	$(PYTHON) tests/test_formatting_rules.py
-	@echo "Running bibliography tests..."
-	$(PYTHON) tests/test_bibliography_counts.py
-	@echo "Running cross-reference tests..."
-	$(PYTHON) tests/test_cross_references.py
-	@echo "Running bibliography quality tests..."
-	$(PYTHON) tests/test_bibliography_quality.py
-	@echo "✅ All tests passed!"
+	$(PYTHON) -m pytest tests/ -v
 
 lint: ## Run code linting with ruff
 	$(PYTHON) -m ruff check .

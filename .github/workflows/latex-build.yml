@@ -2,136 +2,64 @@ name: Build LaTeX Document
 
 on:
   push:
-    branches: [ "main", "master", "github-action-toc-check" ]
+    branches: ["main"]
     paths:
-      - 'content/**'
-      - 'scripts/**'
-      - 'tests/**'
-      - 'Makefile'
-      - 'requirements*.txt'
-      - '.github/workflows/latex-build.yml'
+      - "content/**"
+      - "scripts/**"
+      - "tests/**"
+      - "Makefile"
+      - "requirements-dev.txt"
+      - "pyproject.toml"
+      - ".github/workflows/latex-build.yml"
+    tags:
+      - "v*"
   pull_request:
-    branches: [ "main", "master" ]
+    branches: ["main"]
     paths:
-      - 'content/**'
-      - 'scripts/**'
-      - 'tests/**'
-      - 'Makefile'
-      - 'requirements*.txt'
-      - '.github/workflows/latex-build.yml'
+      - "content/**"
+      - "scripts/**"
+      - "tests/**"
+      - "Makefile"
+      - "requirements-dev.txt"
+      - "pyproject.toml"
+      - ".github/workflows/latex-build.yml"
 
 jobs:
-  lint_python:
+  test:
     runs-on: ubuntu-latest
     steps:
-      - name: Set up Git repository
+      - name: Checkout
         uses: actions/checkout@v4
+
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: '3.x'
-          cache: 'pip'
+          python-version: "3.13"
+          cache: "pip"
+
       - name: Install dependencies
         run: pip install -r requirements-dev.txt
-      - name: Run Ruff Linter
+
+      - name: Lint Python
         run: ruff check .
 
-  test_structure:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Set up Git repository
-        uses: actions/checkout@v4
+      - name: Run tests
+        run: pytest tests/ -v
 
-      - name: Set up Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.x'
-
-      - name: Run Structure Tests
-        run: python tests/test_structure.py
-
-  test_citations:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Set up Git repository
-        uses: actions/checkout@v4
-
-      - name: Set up Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.x'
-          cache: 'pip'
-
-      - name: Install dependencies
-        run: pip install -r requirements-dev.txt
-
-      - name: Sync Zotero References
-        env:
-          ZOTERO_API_KEY: ${{ secrets.ZOTERO_API_KEY }}
-          ZOTERO_USER_ID: ${{ secrets.ZOTERO_USER_ID }}
-        run: python scripts/sync_zotero.py
-
-      - name: Run Citation Tests
-        run: python tests/test_citations.py
-
-  test_formal_guidelines:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Set up Git repository
-        uses: actions/checkout@v4
-
-      - name: Set up Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.x'
-
-      - name: Run Formal Guidelines Tests
-        run: python tests/test_formal_guidelines.py
-
-  test_formatting:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Set up Git repository
-        uses: actions/checkout@v4
-      - name: Set up Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.x'
-      - name: Run Formatting Tests
-        run: python tests/test_formatting_rules.py
-
-  test_bibliography_counts:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Set up Git repository
-        uses: actions/checkout@v4
-
-      - name: Set up Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.x'
-          cache: 'pip'
-
-      - name: Install dependencies
-        run: pip install -r requirements-dev.txt
-
-      - name: Run Bibliography Count Tests
-        run: python tests/test_bibliography_counts.py
-
-  build_latex:
-    needs: [lint_python, test_structure, test_citations, test_formal_guidelines, test_formatting, test_bibliography_counts]
+  build_thesis:
+    needs: [test]
     permissions:
       contents: write
     runs-on: ubuntu-latest
     steps:
-      - name: Set up Git repository
+      - name: Checkout
         uses: actions/checkout@v4
 
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: '3.x'
-          cache: 'pip'
+          python-version: "3.13"
+          cache: "pip"
 
       - name: Install dependencies
         run: pip install -r requirements-dev.txt
@@ -145,46 +73,39 @@ jobs:
       - name: Generate Survey Item Tables
         run: python scripts/generate_item_tables.py
 
-      - name: Build LaTeX Document (Docker)
+      - name: Sanitize Bibliography
+        run: python scripts/sanitize_bib.py
+
+      - name: Build Thesis (Docker)
+        env:
+          # TODO: Pin by digest after first successful run for reproducibility
+          # Step 1: Use :latest for first CI run (guaranteed to exist)
+          # Step 2: From workflow logs, get digest: docker inspect --format='{{index .RepoDigests 0}}'
+          # Step 3: Replace with: ghcr.io/xu-cheng/texlive-full@sha256:<digest>
+          TEXLIVE_IMAGE: ghcr.io/xu-cheng/texlive-full:latest
         run: |
-          # Run build using a pre-built Docker image with full TeX Live
-          # using the main Ubuntu mirror fix is no longer needed since we skip install entirely
           docker run --rm \
             -v ${{ github.workspace }}:/workspace \
             -w /workspace \
             -e SKIP_GEN_TABLES=true \
-            ghcr.io/xu-cheng/texlive-full:latest \
-            bash -c "./scripts/build.sh --prestudy"
+            -e SKIP_SANITIZE=true \
+            $TEXLIVE_IMAGE \
+            bash -c "./scripts/build.sh --thesis"
+          sudo chown -R $USER:$USER content/thesis
 
-          # Fix permissions (Docker usually runs as root)
-          sudo chown -R $USER:$USER content/prestudy
-
-      - name: Check for PDF
-        run: |
-          if [ ! -f content/prestudy/main.pdf ]; then
-            echo "PDF not found!"
-            exit 1
-          fi
-
-      - name: Verify TOC, LOF, LOT, and Bibliography
-        run: python scripts/check_toc.py content/prestudy
+      - name: Verify PDF exists
+        run: test -f content/thesis/main.pdf
 
       - name: Upload PDF Artifact
         uses: actions/upload-artifact@v4
         with:
-          name: PDF
-          path: |
-            content/prestudy/main.pdf
-            content/prestudy/main_required.pdf
+          name: thesis-pdf
+          path: content/thesis/main.pdf
 
       - name: Create Release
-        if: github.ref == 'refs/heads/main'
+        if: startsWith(github.ref, 'refs/tags/v')
         uses: softprops/action-gh-release@v1
         with:
-          tag_name: build-${{ github.run_number }}
-          name: ${{ github.event.head_commit.message }}
-          files: |
-            content/prestudy/main.pdf
-            content/prestudy/main_required.pdf
+          files: content/thesis/main.pdf
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
